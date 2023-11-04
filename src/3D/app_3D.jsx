@@ -3,7 +3,7 @@ import { OrbitControls } from "@react-three/drei"
 import { Physics } from "@react-three/rapier"
 import { OrthographicCamera } from '@react-three/drei';
 //libs
-import Experience    from "./World/experience"
+import Experience  from "./World/Experience"
 const app_3D = () => {
     const orthographicCameraSettings = {
         makeDefault: true, // Make this camera the default camera
