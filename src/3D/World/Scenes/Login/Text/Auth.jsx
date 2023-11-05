@@ -29,7 +29,7 @@ export const Auth = () => {
     }
 
     const checkSavedata = (savedata) => {
-        if (!savedata) return []
+        if (!savedata) return {}
         else return savedata
     }
 
@@ -41,11 +41,11 @@ export const Auth = () => {
         })
     }, [email, displayName])
 
-    /*     useEffect(() => {
+    useEffect(() => {
             if (valuesUser) {
                 saveDataUser(valuesUser)
             }
-        }, [valuesUser]) */
+        }, [valuesUser])
 
     const onHandleLogout = async (e) => {
         e.preventDefault()
