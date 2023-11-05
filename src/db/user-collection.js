@@ -7,7 +7,7 @@ import {
     query,
     updateDoc,
     where,
-  } from "firebase/firestore"
+    } from "firebase/firestore"
 import { db } from "../firebase.config"
 
 const usersRef = collection(db, "users")

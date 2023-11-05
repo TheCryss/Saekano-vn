@@ -4,9 +4,11 @@ import { Rocks } from "./Models/Rocks"
 const Login = () => {
     return (
         <>
-            <Cherry_Blossom/>
             <Floor position={[0,-2,0]}></Floor>
-            <Rocks position-x={-5} scale={0.008}></Rocks>
+            <group position={[0,0,0]}>
+                <Cherry_Blossom position={[0,-0.3,-0.5]}/>
+                <Rocks position-x={-5} scale={0.008}></Rocks>
+            </group>
         </>
     )
 }
