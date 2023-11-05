@@ -1,0 +1,5 @@
+.small-image {
+    width: 12em; /* Ajusta este valor a lo que necesites */
+    height: auto; /* Esto mantiene la relación de aspecto de la imagen */
+    user-select: none;
+}   

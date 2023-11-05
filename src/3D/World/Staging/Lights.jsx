@@ -4,7 +4,7 @@ import { useHelper } from "@react-three/drei";
 const Lights = () => {
     const hemisphereLightRef = useRef();
     const pointLightRef = useRef();
-    useHelper(pointLightRef, PointLightHelper);
+    // useHelper(pointLightRef, PointLightHelper);
     return (
         <>
             <ambientLight intensity={0.2} color={0xfff} />
