@@ -1,8 +1,9 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Deployment
+## How to Deploy in GCP App Engine
+1. Create a Google Cloud Source repository mirroring github.
+2. Enable App Engine in the project, then open cloud shell (docker and git preinstalled).
+3. Clone GSR repository.
+4. As HEAD tag not provided use git checkout [branch].
+5. Create app.yaml to deploy the app
+6. run gcloud app deploy
+7. run gcloud app browse
