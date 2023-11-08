@@ -57,6 +57,15 @@ export const Auth = () => {
         }
     }
 
+/*     const onHandleGame = (event) => {
+        if (event) {
+            console.log("new game");
+            
+        } else{
+            console.log("continue game");
+        }
+    } */
+
     return (
         <>
             <div className="flex justify-end  ">
@@ -81,12 +90,12 @@ export const Auth = () => {
                                 Iniciar Sesion
                             </button>
                         ) : (
-                            <button className="select-none my-3  w-48  bg-pink-600   hover:bg-indigo-500 hover:scale-105  transition-all text-white rounded-md py-1 font-bold " type='submit'>
+                            <button  className="select-none my-3  w-48  bg-pink-600   hover:bg-indigo-500 hover:scale-105  transition-all text-white rounded-md py-1 font-bold " type='button'>
                                 Nuevo Juego
                             </button>
                         )}
 
-                        <button className="select-none w-48  bg-pink-600   hover:bg-indigo-500 hover:scale-105  transition-all text-white rounded-md py-1 font-bold " type="button">
+                        <button  className="select-none w-48  bg-pink-600   hover:bg-indigo-500 hover:scale-105  transition-all text-white rounded-md py-1 font-bold " type="button">
                             Continuar
                         </button>
                     </div>
