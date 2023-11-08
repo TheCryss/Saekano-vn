@@ -43,7 +43,7 @@ export const Auth = () => {
 
     useEffect(() => {
             if (valuesUser) {
-                saveDataUser(valuesUser)
+                if (valuesUser.email) saveDataUser(valuesUser)
             }
         }, [valuesUser])
 
@@ -60,7 +60,7 @@ export const Auth = () => {
 /*     const onHandleGame = (event) => {
         if (event) {
             console.log("new game");
-            
+
         } else{
             console.log("continue game");
         }
