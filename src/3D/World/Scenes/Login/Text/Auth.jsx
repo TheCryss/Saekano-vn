@@ -2,10 +2,11 @@ import { useAuth } from "../../../../../context/AuthContext"
 import './styles.css'
 import { useEffect, useState } from 'react'
 import { createUser, editUser } from '../../../../../db/user-collection'
-
+import { useNavigate } from "react-router-dom"
 
 export const Auth = () => {
     const auth = useAuth()
+    const navigate = useNavigate()
     const { displayName, email, savedata } = auth.userLogged
     const [valuesUser, setValuesUser] = useState(null)
 
@@ -57,14 +58,15 @@ export const Auth = () => {
         }
     }
 
-/*     const onHandleGame = (event) => {
-        if (event) {
+    const onHandleGame = (evento) => {
+        if (evento==1) {
             console.log("new game");
+            navigate('/first_scene/1')
 
         } else{
             console.log("continue game");
         }
-    } */
+    }
 
     return (
         <>
@@ -90,12 +92,12 @@ export const Auth = () => {
                                 Iniciar Sesion
                             </button>
                         ) : (
-                            <button  className="select-none my-3  w-48  bg-pink-600   hover:bg-indigo-500 hover:scale-105  transition-all text-white rounded-md py-1 font-bold " type='button'>
+                            <button onClick={()=>onHandleGame(1)} className="select-none my-3  w-48  bg-pink-600   hover:bg-indigo-500 hover:scale-105  transition-all text-white rounded-md py-1 font-bold " type='button'>
                                 Nuevo Juego
                             </button>
                         )}
 
-                        <button  className="select-none w-48  bg-pink-600   hover:bg-indigo-500 hover:scale-105  transition-all text-white rounded-md py-1 font-bold " type="button">
+                        <button onClick={()=>onHandleGame(0)} className="select-none w-48  bg-pink-600   hover:bg-indigo-500 hover:scale-105  transition-all text-white rounded-md py-1 font-bold " type="button">
                             Continuar
                         </button>
                     </div>

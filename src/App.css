@@ -15,5 +15,5 @@ canvas{
 
 @font-face {
   font-family: 'Allerta';
-  src: url('../public/assets/fonts/Allerta-Regular.ttf') format('.tff');
+  src: url('/assets/fonts/Allerta-Regular.ttf') format('truetype');
 }
