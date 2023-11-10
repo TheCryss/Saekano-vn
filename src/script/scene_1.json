@@ -1,0 +1,74 @@
+{
+    "scenes": [
+        {
+            "id": 1,
+            "content": [
+                {
+                    "character": "Tomoya",
+                    "speech": "La alarma suena incesantemente.",
+                    "action": "Apago la alarma que anuncia que las vacaciones de verano han terminado."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Debo de alistarme para ir a la escuela.",
+                    "thoughts": "Pero en el fondo, no olvidaba aquel momento que tuve aquel día… ¿Por qué a mí? ¿Por qué ese día y no otro? Me era imposible olvidarlo. Tal vez no sería… ¿El destino comunicándome un mensaje…?",
+                    "music": "Inicia música 2_Day_1_Master.ogg"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Debo de alistarme, no vaya a ser que vaya a llegar tarde el primer día.",
+                    "thoughts": "Y si alcanzo, es posible que pueda adelantar mi gran proyecto…"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "transition": true,
+            "content": [
+                {
+                    "character": "Tomoya",
+                    "speech": "Al llegar, la escuela no se encuentra llena.",
+                    "thoughts": "Supongo que he llegado temprano, más vale ubicar mi salón y disponerme rápido."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Doy un vistazo rápido a la distribución de los salones.",
+                    "thoughts": "Mira, que aquí estoy. Salón B-2.",
+                    "action": "Espera… Leyendo más abajo encuentro dos nombres que me son familiares."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Se encuentran… ¿¡Se encuentran conmigo!?",
+                    "thoughts": "Hmmm… Ya pensaré algo, tengo que hacer primero lo que he pensado"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "transition": true,
+            "content": [
+                {
+                    "character": "Tomoya",
+                    "speech": "Al llegar me acomodo en una silla para iniciar lo que había pensado.",
+                    "action": "Finalmente, mi gran proyecto…",
+                    "sound": "Sonido de brillos ✨"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "¡Una novela visual!",
+                    "thoughts": "Una novela visual no solo es un juego como dicen algunos. Se tratan de más que simples juegos o historias en papel."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Una novela visual es una forma de arte única que nos permite sumergir a los jugadores en un mundo completamente nuevo.",
+                    "thoughts": "Cada elección que se toma, cada ruta que es decidida, es un chance que puede cambiar el destino de los personajes y el rumbo de la historia. El poder está en las manos del jugador y eso lo hace emocionante."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Y si deseo que mi novela sea emocionante, debo de aplicar el conocimiento que he adquirido a través de mi vida.",
+                    "thoughts": "¡Finalmente, años de mangas y videojuegos culminarán en mi obra MAESTRA!"
+                }
+            ]
+        }
+    ]
+}
