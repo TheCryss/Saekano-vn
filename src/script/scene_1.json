@@ -4,69 +4,321 @@
             "id": 1,
             "content": [
                 {
-                    "character": "Tomoya",
+                    "action": "Play 2_Day_1_Master.ogg music"
+                },
+                {
+                    "character": "Narrador",
                     "speech": "La alarma suena incesantemente.",
-                    "action": "Apago la alarma que anuncia que las vacaciones de verano han terminado."
+                },
+                {
+                    "character": "Narrador",
+                    "speech": "Tomayo apaga la alarma que anuncia que las vacaciones de verano han terminado."
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Debo de alistarme para ir a la escuela.",
-                    "thoughts": "Pero en el fondo, no olvidaba aquel momento que tuve aquel día… ¿Por qué a mí? ¿Por qué ese día y no otro? Me era imposible olvidarlo. Tal vez no sería… ¿El destino comunicándome un mensaje…?",
-                    "music": "Inicia música 2_Day_1_Master.ogg"
+                    "speech": "Debo de alistarme para ir a la escuela."
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Debo de alistarme, no vaya a ser que vaya a llegar tarde el primer día.",
-                    "thoughts": "Y si alcanzo, es posible que pueda adelantar mi gran proyecto…"
+                    "thought": "Pero en el fondo, no olvidaba aquel momento que tuve aquel día…"
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "¿Por qué a mí? ¿Por qué ese día y no otro? Me era imposible olvidarlo."
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Tal vez no sería… ¿El destino comunicándome un mensaje…?"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Debo de alistarme, no vaya a ser que vaya a llegar tarde el primer día."
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Y si alcanzo, es posible que pueda adelantar mi gran proyecto…"
                 }
             ]
         },
         {
             "id": 2,
-            "transition": true,
             "content": [
                 {
-                    "character": "Tomoya",
-                    "speech": "Al llegar, la escuela no se encuentra llena.",
-                    "thoughts": "Supongo que he llegado temprano, más vale ubicar mi salón y disponerme rápido."
+                    "character": "Narrador",
+                    "speech": "Al llegar, la escuela no se encuentra llena."
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Doy un vistazo rápido a la distribución de los salones.",
-                    "thoughts": "Mira, que aquí estoy. Salón B-2.",
-                    "action": "Espera… Leyendo más abajo encuentro dos nombres que me son familiares."
+                    "speech": "Supongo que he llegado temprano, más vale ubicar mi salón y disponerme rápido."
+                },
+                {
+                    "character": "Narrador",
+                    "speech": "Al llegar, la escuela no se encuentra llena."
+                },
+                {
+                    "character": "Narrador",
+                    "speech": "Tomayo da un vistazo rápido a la distribución de los salones."
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Se encuentran… ¿¡Se encuentran conmigo!?",
-                    "thoughts": "Hmmm… Ya pensaré algo, tengo que hacer primero lo que he pensado"
+                    "speech": "Mira, que aquí estoy. Salón B-2."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Espera"
+                },
+                {
+                    "character": "Narrador",
+                    "speech": "Tomayo leyendo algunos nombres asignados en los puestos, encuentra dos nombres que le son familiares."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Se encuentran… ¿¡Se encuentran conmigo!?"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Hmmm… Ya pensaré algo, tengo que hacer primero lo que he pensado"
                 }
             ]
         },
         {
             "id": 3,
-            "transition": true,
+            "content": [
+                {
+                    "character": "Narrador",
+                    "speech": "Al llegar Tomayo se acomoda en una silla para iniciar lo que había pensado."
+                },
+                {
+                    "character": "Narrador",
+                    "speech": "Finalmente, mi gran proyecto…"
+                },
+                {
+                    "action": "Play sparkles.mp3"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "¡Una novela visual!"
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Una novela visual no solo es un juego como dicen algunos. Se tratan de más que simples juegos o historias en papel."
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Una novela visual es una forma de arte única que nos permite sumergir a los jugadores en un mundo completamente nuevo."
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Cada elección que se toma, cada ruta que es decidida, es un chance que puede cambiar el destino de los personajes y el rumbo de la historia. El poder está en las manos del jugador y eso lo hace emocionante."
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Y si deseo que mi novela sea emocionante, debo de aplicar el conocimiento que he adquirido a través de mi vida."
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "¡Finalmente, años de mangas y videojuegos culminarán en mi obra MAESTRA!"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "content": [
+                {
+                    "action": "Stop 2_Day_1_Master.ogg music"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Es…"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "¡Es…!"
+                },
+                {
+                    "action": "Play 6_Stinger_Victory_1_Master.ogg"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "¡Es perfecta!"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "¿¡Cómo antes no se me pudo haber ocurrido!?"
+                },
+                {
+                    "action": "Play opening_door.mp3"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "¿Egh?"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "¿Quién ha entrado?"
+                },
+                {
+                    "character": "...",
+                    "speech": "¡Tomoya! Qué coincidencia verte aquí. Tal parece que este año compartiremos el mismo salón."
+                },
+                {
+                    "character": "Narrador",
+                    "speech": "A Tamayo esta voz le pareció conocida"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "?"
+                },
+                {
+                    "action": "Play 2_Day_1_Master.ogg"
+                },
+                {
+                    "character": "Yoshihiko",
+                    "speech": "Claro, ¿No me recuerdas?"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Ah, sí. Claro que te recuerdo. Lo siento que te interrumpa, pero necesito que me dejes solo."
+                },
+                {
+                    "character": "Yoshihiko",
+                    "speech": "Ahhh. Claro que estás ocupado. Aquellos comentarios de los animes de invierno no se van a leer solos, lo entiendo."
+                },
+                {
+                    "character": "Yoshihiko",
+                    "speech": "Espera, ¿Esa no es?"
+                },
+                {
+                    "character": "Narrador",
+                    "speech": "Yoshihiko mira a través de la ventana las personas que se encuentran buscando su salón"
+                },
+                {
+                    "character": "Yoshihiko",
+                    "speech": "Pero claro. ¡Es la mismísima Sawamura-san!"
+                },
+                {
+                    "character": "Yoshihiko",
+                    "speech": "Eriri Spencer Sawamura, dama cuyo padre se trata de un diplomático inglés. Ganó una exhibición nada más llegar aquí. ¡Y se trata de la estrella del club de arte!"
+                },
+                {
+                    "character": "Yoshihiko",
+                    "speech": "Tez blanca, cabello rubio. Es como si irradiara una especie de gracia que te atrae de inmediato. Es tan perfecta..."
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Estrella del club de arte... Lo tengo... Debo hablar con ella para tenerla en mi proyecto."
+                }
+            ]
+        },
+        {
+            "id": 5,
             "content": [
                 {
                     "character": "Tomoya",
-                    "speech": "Al llegar me acomodo en una silla para iniciar lo que había pensado.",
-                    "action": "Finalmente, mi gran proyecto…",
-                    "sound": "Sonido de brillos ✨"
+                    "thought": "Ya he hablado con ella"
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "¡Una novela visual!",
-                    "thoughts": "Una novela visual no solo es un juego como dicen algunos. Se tratan de más que simples juegos o historias en papel."
+                    "speech": "Ha rechazado mi concepto de guión, no lo entiendo. Pero tengo una segunda oportunidad de convencerla. La he invitado a mi casa a que me escuche otra vez"
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Una novela visual es una forma de arte única que nos permite sumergir a los jugadores en un mundo completamente nuevo.",
-                    "thoughts": "Cada elección que se toma, cada ruta que es decidida, es un chance que puede cambiar el destino de los personajes y el rumbo de la historia. El poder está en las manos del jugador y eso lo hace emocionante."
+                    "speech": "Dejando de lado a mi ilustradora, bueno… Posible ilustradora, debo de enfocarme en alguien en el guión."
+                },
+                {
+                    "character": "Yoshihiko",
+                    "speech": "¿Por qué estás tan pensativo? ¿Ya acaso alguien te ha rechazado?"
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Y si deseo que mi novela sea emocionante, debo de aplicar el conocimiento que he adquirido a través de mi vida.",
-                    "thoughts": "¡Finalmente, años de mangas y videojuegos culminarán en mi obra MAESTRA!"
+                    "speech": "Nada, solamente presento un problema"
+                },
+                {
+                    "character": "Yoshihiko",
+                    "speech": "Calla, calla. Que acaba de salir Utaha Kasumigaoka-san"
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "¿¡Quién!?"
+                },
+                {
+                    "character": "Yoshihiko",
+                    "speech": "Utaha Kasumigaoka-san, chica con talento. Nadie ha conseguido robarle el primer puesto en los dos años que lleva en la escuela. Siempre con su ritmo, logra dormir en clase y aun así ocupa los primeros puestos."
+                },
+                {
+                    "character": "Yoshihiko",
+                    "speech": "Aparte de que se trata de una de las líderes del club de teatro."
+                },
+                {
+                    "character": "Yoshihiko",
+                    "speech": "Es que es imposible concertarse con ella en el salón, su precioso pelo largo y negro, su esbelto rostro. Se trata de una misma heroína moe."
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Club de teatro, ¿Escritora…? Lo tengo. Mi concepto de guión no podrá ser bueno, ¡Sino el mejor!. Y quien para darme de razón que la misma líder del club de teatro."
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Con ella en mi equipo, Eriri no tendrá más opción que aceptar mi propuesta y unirse. Debo hablar con ella lo más pronto posible."
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "content": [
+                {
+                    "character": "Tomoya",
+                    "thought": "No ha salido bien, lo ha vuelto a arrugar en una bola de papel como lo hizo Eriri."
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "“La basura es basura, las inmundicias, inmundicias, y la suciedad, suciedad”"
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Me ha dicho que ni siquiera merezco un consejo. Pero aun así, he logrado que me diera otra oportunidad."
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Cada vez peor..."
+                },
+                {
+                    "character": "...",
+                    "speech": "Gracias por lo del otro día"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Eh?"
+                },
+                {
+                    "character": "...",
+                    "speech": "Qué gracias por lo del otro día"
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "¿Y ahora quien me habla?"
+                },
+                {
+                    "character": "...",
+                    "speech": "En vacaciones recogiste mi boina blanca"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "¿¡…!?"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "¿Eres…? ¿¡Tú eres…!?"
+                },
+                {
+                    "action": "Stop 2_Day_1_Master.ogg"
+                },
+                {
+                    "action": "Black background"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "¿La chica del sombrero?"
                 }
             ]
         }
