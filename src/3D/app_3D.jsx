@@ -8,7 +8,7 @@ import { useGame } from "../Context/GameContext"
 //libs
 import Experience from "./World/Experience"
 
-export const RoomScene = () => {
+export const app_3D = () => {
     const orthographicCameraSettings = {
         makeDefault: true, // Make this camera the default camera
         zoom: 35,             // Zoom level of the camera
