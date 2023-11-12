@@ -1,7 +1,9 @@
 import React from 'react'
 import { Panel } from '../../Components/Panel'
 import { useState, useEffect } from 'react'
+import data from '../../script/scene_1.json'
 import { useGame } from '../../context/GameContext'
+import { useNavigate } from 'react-router-dom'
 
 export const Dialog_2D = () => {
     const { getActualContent, nextContent, nextScene } = useGame();
@@ -12,8 +14,13 @@ export const Dialog_2D = () => {
         const result = nextContent();
 
         if (!result.success) {
-            nextScene();
-            console.log("next scene");
+            const { success } = nextScene();
+            if (!success) {
+                console.log("no more scenes");
+            } else {
+                console.log("next scene");
+            }
+
         }
     }
 
@@ -37,25 +44,32 @@ export const Dialog_2D = () => {
     const [dialog, setDialog] = useState("...")
 
     const sendDialog = () => {
-        const keys = Object.keys(getActualContent())
+        const { is3D, content } = getActualContent()
+        if (is3D) {
+            console.log("is3D")
+            navigate(`/${content}`) // Here you put the 3D scene (content)
+        }
+        else {
+            const keys = Object.keys(content)
 
         switch (keys[0]) {
             case "music":
-                playMusic(getActualContent().music)
+                playMusic(content.music)
                 break;
             case "sound":
-                playSound(getActualContent().sound)
+                playSound(content.sound)
                 break;
             case "character":
-                setCharacter(getActualContent().character)
+                setCharacter(content.character)
                 if (keys[1] == "speech") {
-                    setDialog(getActualContent().speech)
+                    setDialog(content.speech)
                 } else {
-                    setDialog(getActualContent().thought)
+                    setDialog(content.thought)
                 }
                 break;
             default:
                 break;
+        }
         }
     }
 

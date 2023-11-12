@@ -2,6 +2,7 @@
     "scenes": [
         {
             "id": 1,
+            "3d": false,
             "content": [
                 {
 
@@ -48,6 +49,7 @@
         },
         {
             "id": 2,
+            "3d":false,
             "content": [
                 {
                     "character": "Narrador",
@@ -89,6 +91,7 @@
         },
         {
             "id": 3,
+            "3d": false,
             "content": [
                 {
                     "character": "Narrador",
@@ -129,6 +132,12 @@
         },
         {
             "id": 4,
+            "3d": true,
+            "scenario": "Minijuego-guion"
+        },
+        {
+            "id": 5,
+            "3d": false,
             "content": [
                 {
                     "music": "Music_1"
@@ -217,7 +226,8 @@
             ]
         },
         {
-            "id": 5,
+            "id": 6,
+            "3d": false,
             "content": [
                 {
                     "character": "Tomoya",
@@ -270,7 +280,8 @@
             ]
         },
         {
-            "id": 6,
+            "id": 7,
+            "3d":false,
             "content": [
                 {
                     "character": "Tomoya",

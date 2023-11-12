@@ -47,15 +47,14 @@ export function GameProvider({ children }) {
 
     const getActualContent = () => {
         const { actualScene, actualContentIndex } = gameState;
-        return scenes[actualScene].content[actualContentIndex];
-    }
-
-    const getScenario = () => {
-        return gameState.scenario;
+        if (scenes[actualScene]["3d"]) {
+            return { is3D: true, content: scenes[actualScene].scenario };
+        }
+        return {is3D: false, content: scenes[actualScene].content[actualContentIndex]};
     }
 
     return (
-        <gameContext.Provider value={{ getActualContent, nextScene, nextContent, getScenario }}>
+        <gameContext.Provider value={{ getActualContent, nextScene, nextContent }}>
             {children}
         </gameContext.Provider>
     );
