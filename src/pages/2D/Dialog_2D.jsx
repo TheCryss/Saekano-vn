@@ -1,28 +1,50 @@
 import React from 'react'
 import { Panel } from '../../Components/Panel'
 import { useState, useEffect } from 'react'
-import data from '../../script/scene_1.json'
-import { useGame } from '../../Context/GameContext'
+import { useGame } from '../../context/GameContext'
 
 export const Dialog_2D = () => {
     const { getActualContent, nextContent, nextScene } = useGame();
 
+    const [currentMusic, setCurrentMusic] = useState(null)
+
     const onClick = () => {
         const result = nextContent();
+
         if (!result.success) {
             nextScene();
             console.log("next scene");
         }
     }
 
+    const playMusic = (musicName) => {
+        if (currentMusic) {
+            console.log("This isn't working")
+            currentMusic.pause();
+        }
+        const newMusic = new Audio("../../../assets/music/" + musicName + ".ogg");
+        newMusic.volume = 0.3;
+        newMusic.loop = true;
+        setCurrentMusic(newMusic);
+        newMusic.play();
+    }
+
+    const playSound = (soundName) => {
+        new Audio("../../../assets/sound/" + soundName + ".ogg").play()
+    }
 
     const [character, setCharacter] = useState("...")
     const [dialog, setDialog] = useState("...")
+
     const sendDialog = () => {
         const keys = Object.keys(getActualContent())
+
         switch (keys[0]) {
-            case "action":
-                return character
+            case "music":
+                playMusic(getActualContent().music)
+                break;
+            case "sound":
+                playSound(getActualContent().sound)
                 break;
             case "character":
                 setCharacter(getActualContent().character)
