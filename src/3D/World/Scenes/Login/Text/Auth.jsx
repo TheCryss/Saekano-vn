@@ -1,4 +1,4 @@
-import { useAuth } from "../../../../../Context/AuthContext"
+import { useAuth } from "../../../../../context/AuthContext"
 import './styles.css'
 import { useEffect, useState } from 'react'
 import { createUser, editUser } from '../../../../../db/user-collection'

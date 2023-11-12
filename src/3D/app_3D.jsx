@@ -4,7 +4,7 @@ import { Camera_controls_room } from "./World/Controls/Camera"
 import { Physics } from "@react-three/rapier"
 import { OrthographicCamera } from '@react-three/drei';
 import { Loader } from "@react-three/drei";
-import { useGame } from "../Context/GameContext"
+import { useGame } from "../context/GameContext"
 //libs
 import Experience from "./World/Experience"
 

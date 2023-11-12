@@ -4,7 +4,13 @@
             "id": 1,
             "content": [
                 {
-                    "action": "Play 2_Day_1_Master.ogg music"
+
+                },
+                {
+                    "music": "Music_1"
+                },
+                {
+                    "music": "Music_1"
                 },
                 {
                     "character": "Narrador",
@@ -93,7 +99,7 @@
                     "speech": "Finalmente, mi gran proyecto…"
                 },
                 {
-                    "action": "Play sparkles.mp3"
+                    "sound": "Sparkles"
                 },
                 {
                     "character": "Tomoya",
@@ -125,7 +131,7 @@
             "id": 4,
             "content": [
                 {
-                    "action": "Stop 2_Day_1_Master.ogg music"
+                    "music": "Music_1"
                 },
                 {
                     "character": "Tomoya",
@@ -136,7 +142,7 @@
                     "speech": "¡Es…!"
                 },
                 {
-                    "action": "Play 6_Stinger_Victory_1_Master.ogg"
+                    "sound": "Stinger_victory"
                 },
                 {
                     "character": "Tomoya",
@@ -147,7 +153,7 @@
                     "speech": "¿¡Cómo antes no se me pudo haber ocurrido!?"
                 },
                 {
-                    "action": "Play opening_door.mp3"
+                    "sound": "Opening_door.ogg"
                 },
                 {
                     "character": "Tomoya",
@@ -170,7 +176,7 @@
                     "speech": "?"
                 },
                 {
-                    "action": "Play 2_Day_1_Master.ogg"
+                    "music": "Music_1"
                 },
                 {
                     "character": "Yoshihiko",
@@ -272,7 +278,7 @@
                 },
                 {
                     "character": "Tomoya",
-                    "thought": "“La basura es basura, las inmundicias, inmundicias, y la suciedad, suciedad”"
+                    "thought": "La basura es basura, las inmundicias, inmundicias, y la suciedad, suciedad"
                 },
                 {
                     "character": "Tomoya",
@@ -311,7 +317,7 @@
                     "speech": "¿Eres…? ¿¡Tú eres…!?"
                 },
                 {
-                    "action": "Stop 2_Day_1_Master.ogg"
+                    "music": "Music_1"
                 },
                 {
                     "action": "Black background"
