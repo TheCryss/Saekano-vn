@@ -19,10 +19,10 @@ export const Dialog_2D = () => {
 
     const playMusic = (musicName) => {
         if (currentMusic) {
-            console.log("This isn't working")
+            currentMusic.volume = 0;
             currentMusic.pause();
         }
-        const newMusic = new Audio("../../../assets/music/" + musicName + ".ogg");
+        const newMusic = new Audio("/assets/music/" + musicName + ".ogg");
         newMusic.volume = 0.3;
         newMusic.loop = true;
         setCurrentMusic(newMusic);
@@ -30,7 +30,7 @@ export const Dialog_2D = () => {
     }
 
     const playSound = (soundName) => {
-        new Audio("../../../assets/sound/" + soundName + ".ogg").play()
+        new Audio("/assets/sound/" + soundName + ".ogg").play()
     }
 
     const [character, setCharacter] = useState("...")
