@@ -1,14 +1,18 @@
 //Models
 import Login from './Scenes/Login/Login'
-import Lights from './Staging/Lights'
+import {Room} from './Scenes/Room/Room'
+import {Lights} from './Staging/Lights'
+import { useGame } from '../../Context/GameContext'
 //Libraries
 
 
 const Experience = () => {
+  const { getActualContent, nextContent, nextScene, getScenario } = useGame();
   return (
   <>
-    <Lights></Lights>
-    <Login></Login>
+
+    {getScenario() == 0 ? <Room></Room> : <Login/>}
+    
   </>
   )
 }

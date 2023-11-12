@@ -13,3 +13,13 @@ export const Camera_controls = (props) => {
 
     return <OrbitControls {...props}  minPolarAngle={Math.PI / 4} enableZoom={false} maxPolarAngle={Math.PI / 2.5} />;
 };
+
+export const Camera_controls_room = (props) => {
+
+    useFrame(({ camera }) => {
+        camera.lookAt(0, 2, 3)
+    })
+    
+
+    return <OrbitControls {...props}   enableZoom={false}  />;
+};

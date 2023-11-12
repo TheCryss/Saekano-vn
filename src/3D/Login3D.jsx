@@ -1,17 +1,19 @@
 import { Canvas } from "@react-three/fiber"
-import { OrbitControls } from "@react-three/drei"
-import { Camera_controls_room } from "./World/Controls/Camera"
+// import { OrbitControls } from "@react-three/drei"
+import { Camera_controls } from "./World/Controls/Camera"
 import { Physics } from "@react-three/rapier"
 import { OrthographicCamera } from '@react-three/drei';
 import { Loader } from "@react-three/drei";
-import { useGame } from "../Context/GameContext"
 //libs
 import Experience from "./World/Experience"
+import { Auth } from "./World/Scenes/Login/Text/Auth";
+import { useGame } from "../Context/GameContext";
 
-export const RoomScene = () => {
+
+const Login3D = () => {
     const orthographicCameraSettings = {
         makeDefault: true, // Make this camera the default camera
-        zoom: 35,             // Zoom level of the camera
+        zoom: 55,             // Zoom level of the camera
         near: 0.1,         // Near clipping plane
         far: 500,            // Far clipping plane
         position: [0, 16, 50],
@@ -22,19 +24,23 @@ export const RoomScene = () => {
     };
 
     const { getActualContent, nextContent, nextScene } = useGame();
-
+    
     return (
         <>
-            <Canvas shadows className="bg-[#C6F5EB]" onPointerDown={(e) => {e.target.requestPointerLock()}} >
-
+            <Auth></Auth>
+            <Canvas shadows >
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {/* <OrbitControls></OrbitControls> */}
-                <Camera_controls_room />
-                <Physics timeStep="vary" >
+                <Camera_controls autoRotate autoRotateSpeed={0.4}></Camera_controls>
+                <Physics>
                     <Experience />
                 </Physics>
             </Canvas>
             <Loader />
+
+
         </>
     )
 }
+
+export default Login3D

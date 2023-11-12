@@ -16,6 +16,7 @@ export function GameProvider({ children }) {
     const [gameState, setGameState] = useState({
         actualScene: 0,
         actualContentIndex: 0,
+        scenario: 0
         // Here you can add more game states
     });
 
@@ -49,8 +50,12 @@ export function GameProvider({ children }) {
         return scenes[actualScene].content[actualContentIndex];
     }
 
+    const getScenario = () => {
+        return gameState.scenario;
+    }
+
     return (
-        <gameContext.Provider value={{ getActualContent, nextScene, nextContent }}>
+        <gameContext.Provider value={{ getActualContent, nextScene, nextContent, getScenario }}>
             {children}
         </gameContext.Provider>
     );
