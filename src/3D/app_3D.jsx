@@ -24,26 +24,35 @@ export const app_3D = () => {
     const { getActualContent, nextContent, nextScene } = useGame();
 
     const getCamera = () => {
-        const { is3D, content } = getActualContent()
+        const { content } = getActualContent();
         switch (content) {
             case "room":
-                return (<Camera_controls_room/>)
-                break;
+                return {
+                    camera: <Camera_controls_room />,
+                    onPointerDown: (e) => {
+                        e.target.requestPointerLock();
+                    },
+                };
             case "Minijuego-guion":
-                // return (<Room/>); // this have to change
-                return (<Camera_controls_minigame1/>)
-                break;
+                return {
+                    camera: <Camera_controls_minigame1 />,
+                    onPointerDown: undefined, // No event handler for this case
+                };
             default:
-                return (<Camera_controls_room/>)
-                break;
+                return {
+                    camera: <Camera_controls_room />,
+                    onPointerDown: undefined, // No event handler for this case
+                };
         }
-    }
+    };
+
+    const { camera, onPointerDown } = getCamera();
 
     return (
         <>
-            <Canvas shadows className="bg-[#C6F5EB]"  > {/*onPointerDown={(e) => { e.target.requestPointerLock() }} */}
+            <Canvas shadows className="bg-[#C6F5EB]" onPointerDown={onPointerDown} >
                 <OrthographicCamera {...orthographicCameraSettings} />
-                {getCamera()}
+                {camera}
                 <Physics timeStep="vary" >
                     <Experience />
                 </Physics>
