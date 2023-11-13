@@ -7,7 +7,7 @@ import { Loader } from "@react-three/drei";
 //libs
 import Experience from "./World/Experience"
 import { Auth } from "./World/Scenes/Login/Text/Auth";
-import { useGame } from "../context/GameContext";
+import { useGame } from "../Context/GameContext";
 
 
 const Login3D = () => {
