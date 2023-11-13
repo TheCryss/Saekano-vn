@@ -1,63 +1,22 @@
 import { Panel } from '../../Components/Panel'
-import { useState, useEffect } from 'react'
 import { useGame } from '../../context/GameContext'
+import { useState, useEffect } from 'react'
+
 
 export const Dialog_2D = () => {
-    const { getActualContent, nextContent, nextScene } = useGame();
-
-    const [currentMusic, setCurrentMusic] = useState(null)
-
-    const onClick = () => {
-        const result = nextContent();
-        
-        if (!result.success) {
-            const { success } = nextScene();
-            if (!success) {
-                console.log("no more scenes");
-            } else {
-                console.log("next scene");
-            }
-
-        }
-    }
-
-    const playMusic = (musicName) => {
-        if (currentMusic) {
-            currentMusic.pause();
-        }
-        const newMusic = new Audio("/assets/music/" + musicName + ".ogg");
-        newMusic.volume = 0.2;
-        newMusic.loop = true;
-        setCurrentMusic(newMusic);
-        newMusic.play();
-    }
-
-    const playSound = (soundName) => {
-        new Audio("/assets/sound/" + soundName + ".ogg").play()
-    }
+    const { getActualContent } = useGame()
     const [background, setBackground] = useState("Act_0-1")
 
-    const sendDialog = () => {
+    const checkBackground = () => {
         const { is3D, content } = getActualContent()
-        if (!is3D) {
-            if ("sound" in content) {
-                playSound(content.sound)
-            }
-    
-            if ("music" in content) {
-                playMusic(content.music)
-            }
-    
-            if ("background" in content) {
-                setBackground(content.background)
-            }
+
+        if (!is3D && "background" in content) {
+            setBackground(content.background)
         }
-
-
     }
 
     useEffect(() => {
-        sendDialog()
+        checkBackground()
     }, [getActualContent])
 
     return (
