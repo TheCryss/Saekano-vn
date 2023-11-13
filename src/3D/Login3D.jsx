@@ -31,7 +31,7 @@ const Login3D = () => {
             <Canvas shadows >
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {/* <OrbitControls></OrbitControls> */}
-                <Camera_controls autoRotate autoRotateSpeed={0.4}></Camera_controls>
+                <Camera_controls></Camera_controls>
                 <Physics>
                     <Experience />
                 </Physics>

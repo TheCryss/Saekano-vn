@@ -1,8 +1,9 @@
 //Models
 import Login from './Scenes/Login/Login'
 import {Room} from './Scenes/Room/Room'
+import { Minigame1 } from './Scenes/Word_Minigame/Minigame1'
 import {Lights} from './Staging/Lights'
-import { useGame } from '../../context/GameContext'
+import { useGame } from '../../Context/GameContext'
 //Libraries
 
 
@@ -18,20 +19,19 @@ const Experience = () => {
           return (<Room/>);
           break;
         case "Minijuego-guion":
-          return (<Room/>); // this have to change
+          // return (<Room/>); // this have to change
+          return (<Minigame1/>);
           break;
         default:
           return (<Login/>);
           break;
       }
     }
-    return (<Login/>);
+    return (<Minigame1/>);
   }
   return (
   <>
-
     {getScenario()}
-    
   </>
   )
 }

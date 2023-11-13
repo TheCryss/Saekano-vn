@@ -1,7 +1,6 @@
 import { Panel } from '../../Components/Panel'
 import { useState, useEffect } from 'react'
-import { useGame } from '../../context/GameContext'
-import { useNavigate } from 'react-router-dom'
+import { useGame } from '../../Context/GameContext'
 
 export const Dialog_2D = () => {
     const { getActualContent, nextContent, nextScene } = useGame();
@@ -10,7 +9,7 @@ export const Dialog_2D = () => {
 
     const onClick = () => {
         const result = nextContent();
-
+        
         if (!result.success) {
             const { success } = nextScene();
             if (!success) {
@@ -36,56 +35,36 @@ export const Dialog_2D = () => {
     const playSound = (soundName) => {
         new Audio("/assets/sound/" + soundName + ".ogg").play()
     }
-
-    const [character, setCharacter] = useState("...")
-    const [dialog, setDialog] = useState("...")
-    const [background, setBackground] = useState(null)
-
-    const navigate = useNavigate()
+    const [background, setBackground] = useState("Act_0-1")
 
     const sendDialog = () => {
         const { is3D, content } = getActualContent()
-        if (is3D) {
-            console.log("is3D")
-            navigate(`/${content}`) // Here you put the 3D scene (content)
-        } else {
-            const keys = Object.keys(content)
-
-            switch (keys[0]) {
-                case "music":
-                    playMusic(content.music)
-                    break;
-                case "sound":
-                    playSound(content.sound)
-                    break;
-                case "character":
-                    setCharacter(content.character)
-                    if (keys[1] == "speech") {
-                        setDialog(content.speech)
-                    } else {
-                        setDialog(content.thought)
-                    }
-                    break;
-                default:
-                    break;
+        if (!is3D) {
+            if ("sound" in content) {
+                playSound(content.sound)
+            }
+    
+            if ("music" in content) {
+                playMusic(content.music)
+            }
+    
+            if ("background" in content) {
+                setBackground(content.background)
             }
         }
 
-        if ("background" in content) {
-            setBackground(content.background)
-        }
+
     }
 
     useEffect(() => {
         sendDialog()
-        console.log(background)
     }, [getActualContent])
 
     return (
         <>
-            <div className={`h-screen w-full bg-[url('/assets/background/${background}.png')] bg-cover"`}>
+            <div className="h-screen w-full bg-cover transition-all duration-700 " style={{ backgroundImage: `url('/assets/background/${background}.png')` }}>
                 <div className='flex flex-col h-screen justify-end'>
-                    <Panel dialog={dialog} change={onClick} character={character} />
+                    <Panel />
                 </div>
             </div>
         </>

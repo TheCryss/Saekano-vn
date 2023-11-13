@@ -1,10 +1,10 @@
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
-import { Camera_controls_room } from "./World/Controls/Camera"
+import { Camera_controls_room, Camera_controls_minigame1 } from "./World/Controls/Camera"
 import { Physics } from "@react-three/rapier"
 import { OrthographicCamera } from '@react-three/drei';
 import { Loader } from "@react-three/drei";
-import { useGame } from "../context/GameContext"
+import { useGame } from "../Context/GameContext"
 //libs
 import Experience from "./World/Experience"
 
@@ -23,13 +23,27 @@ export const app_3D = () => {
 
     const { getActualContent, nextContent, nextScene } = useGame();
 
+    const getCamera = () => {
+        const { is3D, content } = getActualContent()
+        switch (content) {
+            case "room":
+                return (<Camera_controls_room/>)
+                break;
+            case "Minijuego-guion":
+                // return (<Room/>); // this have to change
+                return (<Camera_controls_minigame1/>)
+                break;
+            default:
+                return (<Camera_controls_room/>)
+                break;
+        }
+    }
+
     return (
         <>
-            <Canvas shadows className="bg-[#C6F5EB]" onPointerDown={(e) => {e.target.requestPointerLock()}} >
-
+            <Canvas shadows className="bg-[#C6F5EB]"  > {/*onPointerDown={(e) => { e.target.requestPointerLock() }} */}
                 <OrthographicCamera {...orthographicCameraSettings} />
-                {/* <OrbitControls></OrbitControls> */}
-                <Camera_controls_room />
+                {getCamera()}
                 <Physics timeStep="vary" >
                     <Experience />
                 </Physics>
