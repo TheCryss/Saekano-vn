@@ -61,7 +61,7 @@ export const Auth = () => {
     const onHandleGame = (evento) => {
         if (evento==1) {
             console.log("new game");
-            navigate('/first_scene/1')
+            navigate('/acto/1')
 
         } else{
             console.log("continue game");

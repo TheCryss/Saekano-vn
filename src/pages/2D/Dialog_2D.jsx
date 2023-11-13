@@ -42,6 +42,7 @@ export const Dialog_2D = () => {
 
     const [character, setCharacter] = useState("...")
     const [dialog, setDialog] = useState("...")
+    const navigate = useNavigate()
 
     const sendDialog = () => {
         const { is3D, content } = getActualContent()
