@@ -1,6 +1,6 @@
 import { Panel } from '../../Components/Panel'
 import { useState, useEffect } from 'react'
-import { useGame } from '../../Context/GameContext'
+import { useGame } from '../../context/GameContext'
 
 export const Dialog_2D = () => {
     const { getActualContent, nextContent, nextScene } = useGame();

@@ -4,7 +4,7 @@ import { Camera_controls_room, Camera_controls_minigame1 } from "./World/Control
 import { Physics } from "@react-three/rapier"
 import { OrthographicCamera } from '@react-three/drei';
 import { Loader } from "@react-three/drei";
-import { useGame } from "../Context/GameContext"
+import { useGame } from "../context/GameContext"
 //libs
 import Experience from "./World/Experience"
 

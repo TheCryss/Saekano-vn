@@ -3,7 +3,7 @@ import Login from './Scenes/Login/Login'
 import {Room} from './Scenes/Room/Room'
 import { Minigame1 } from './Scenes/Word_Minigame/Minigame1'
 import {Lights} from './Staging/Lights'
-import { useGame } from '../../Context/GameContext'
+import { useGame } from '../../context/GameContext'
 //Libraries
 
 

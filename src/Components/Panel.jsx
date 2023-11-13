@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { useGame } from '../Context/GameContext'
+import { useGame } from '../context/GameContext'
 import { useNavigate } from 'react-router-dom'
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
