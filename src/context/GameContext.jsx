@@ -16,7 +16,7 @@ export function GameProvider({ children }) {
     const [gameState, setGameState] = useState({
         actualScene: 0,
         actualContentIndex: 0,
-        scenario: 0
+        scenario: 0,
         // Here you can add more game states
     });
 
@@ -25,8 +25,8 @@ export function GameProvider({ children }) {
     // useEffect(() => {}, []);
 
     const nextScene = () => {
-
         const nextScene = gameState.actualScene + 1;
+
         if (scenes[nextScene] == undefined) {
             return { success: false, error: "No more scenes" }
         };
@@ -48,9 +48,9 @@ export function GameProvider({ children }) {
     const getActualContent = () => {
         const { actualScene, actualContentIndex } = gameState;
         if (scenes[actualScene]["3d"]) {
-            return { is3D: true, content: scenes[actualScene].scenario };
+            return { is3D: true, content: scenes[actualScene].scenario};
         }
-        return {is3D: false, content: scenes[actualScene].content[actualContentIndex]};
+        return { is3D: false, content: scenes[actualScene].content[actualContentIndex] };
     }
 
     return (

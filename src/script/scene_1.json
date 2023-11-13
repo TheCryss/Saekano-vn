@@ -5,13 +5,16 @@
             "3d": false,
             "content": [
                 {
-
+                    "background": "Act_0-1"
                 },
                 {
                     "music": "Music_1"
                 },
                 {
                     "music": "Music_1"
+                },
+                {
+                    "background": "Act_1-Scene_1-1"
                 },
                 {
                     "character": "Narrador",
