@@ -27,7 +27,7 @@ const Experience = () => {
           break;
       }
     }
-    return (<Minigame1/>);
+    return (<Login/>);
   }
   return (
   <>

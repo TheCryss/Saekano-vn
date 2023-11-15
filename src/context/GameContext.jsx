@@ -17,6 +17,7 @@ export function GameProvider({ children }) {
         actualScene: 0,
         actualContentIndex: 0,
         scenario: 0,
+        dev: false,
         // Here you can add more game states
     });
 
@@ -45,16 +46,25 @@ export function GameProvider({ children }) {
         return { success: true, content: nextContent };
     }
 
-    const getActualContent = () => {
+    function getActualContent() {
         const { actualScene, actualContentIndex } = gameState;
-        if (scenes[actualScene]["3d"]) {
-            return { is3D: true, content: scenes[actualScene].scenario};
+        if (gameState.dev) {
+            return { is3D: true, content: "room" };
+        } else {
+            if (scenes[actualScene]["3d"]) {
+                return { is3D: true, content: scenes[actualScene].scenario };
+            }
+            return { is3D: false, content: scenes[actualScene].content[actualContentIndex] };
         }
-        return { is3D: false, content: scenes[actualScene].content[actualContentIndex] };
     }
 
+    function setDev() {
+        setGameState({ ...gameState, dev: true });
+    }
+    
+
     return (
-        <gameContext.Provider value={{ getActualContent, nextScene, nextContent }}>
+        <gameContext.Provider value={{ getActualContent, nextScene, nextContent,setDev }}>
             {children}
         </gameContext.Provider>
     );

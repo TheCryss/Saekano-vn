@@ -25,6 +25,7 @@ export const app_3D = () => {
 
     const getCamera = () => {
         const { content } = getActualContent();
+        console.log(getActualContent());
         switch (content) {
             case "room":
                 return {
@@ -44,6 +45,7 @@ export const app_3D = () => {
                     onPointerDown: undefined, // No event handler for this case
                 };
         }
+        
     };
 
     const { camera, onPointerDown } = getCamera();
