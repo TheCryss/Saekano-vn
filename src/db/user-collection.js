@@ -14,6 +14,13 @@ const usersRef = collection(db, "users")
 
 const createUser = async (userData) => {
     try {
+        const probablyRegisteredUser = await getUser(userData.email)
+
+        if (probablyRegisteredUser.success) {
+            console.log("User with this email already exists")
+            return { success: false, data: "User with this email already exists" }
+        }
+
         const res = await addDoc(usersRef, userData)
         return { success: true, data: res }
     } catch (error) {

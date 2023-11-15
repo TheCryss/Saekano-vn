@@ -1,6 +1,9 @@
 body {
   font-family: 'Allerta', sans-serif; /* Add a fallback font */
 }
+body {
+  font-family: 'Allerta', sans-serif; /* Add a fallback font */
+}
 #root {
   top: 0;
   left: 0;
@@ -15,5 +18,5 @@ canvas{
 
 @font-face {
   font-family: 'Allerta';
-  src: url('../public/assets/fonts/Allerta-Regular.ttf') format('.tff');
+  src: url('/assets/fonts/Allerta-Regular.ttf') format('truetype');
 }

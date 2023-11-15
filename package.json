@@ -14,10 +14,12 @@
     "@react-three/fiber": "^8.15.9",
     "@react-three/rapier": "^1.1.2",
     "@types/three": "^0.158.0",
+    "ecctrl": "^1.0.42",
     "firebase": "^10.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0",
+    "react-transition-group": "^4.4.5",
     "three": "^0.158.0"
   },
   "devDependencies": {
