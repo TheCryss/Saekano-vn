@@ -32,7 +32,7 @@ export const Room = () => {
     const characterURL = "/assets/models/playable_character/Tomoya.glb"
 
     const roomInteractions = useSelector(state => state.room.room)
-    console.log(roomInteractions);
+    // console.log(roomInteractions);
 
     return (
         <>

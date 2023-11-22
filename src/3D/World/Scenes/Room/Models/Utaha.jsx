@@ -1,11 +1,16 @@
 import { useRef, useEffect } from 'react'
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { RigidBody, CuboidCollider, Physics } from '@react-three/rapier';
+import { setUtahaInteraction } from '../../../../../store/slicers/RoomSlicers';
+import { useDispatch, useSelector } from "react-redux";
+
 
 export const Utaha = (props) => {
     const group = useRef();
     const { nodes, materials, animations } = useGLTF("/assets/models/utaha/Utaha.glb");
     const { actions } = useAnimations(animations, group);
+    const dispatch = useDispatch();
+    const roomInteractions = useDispatch();
 
     useEffect(() => {
         const action = actions["Idle"]
@@ -19,7 +24,8 @@ export const Utaha = (props) => {
                     <CuboidCollider
                         args={[3, 3, 3]}
                         sensor
-                        onIntersectionEnter={() => console.log("utaha")}
+                        onIntersectionEnter={(() => dispatch(setUtahaInteraction(true)))}
+                        onIntersectionExit={(() => dispatch(setUtahaInteraction(false)))}
                     />
                 </RigidBody>
             

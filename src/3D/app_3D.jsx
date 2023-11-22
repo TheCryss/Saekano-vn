@@ -4,9 +4,11 @@ import { Camera_controls_room, Camera_controls_minigame1 } from "./World/Control
 import { Physics } from "@react-three/rapier"
 import { OrthographicCamera } from '@react-three/drei';
 import { Loader } from "@react-three/drei";
-import { useGame } from "../context/GameContext"
+import { useGame } from "../context/GameContext";
+import { useDispatch, useSelector } from "react-redux";
 //libs
-import Experience from "./World/Experience"
+import Experience from "./World/Experience";
+import { Panel3D } from "../Components/Panel3D";
 
 export const app_3D = () => {
     const orthographicCameraSettings = {
@@ -22,10 +24,12 @@ export const app_3D = () => {
     };
 
     const { getActualContent, nextContent, nextScene } = useGame();
-
+    const dispatch = useDispatch();
+    const roomInteractions = useSelector(state => state.room.room)
+    // console.log(roomInteractions);
     const getCamera = () => {
         const { content } = getActualContent();
-        console.log(getActualContent());
+        // console.log(getActualContent());
         switch (content) {
             case "room":
                 return {
@@ -52,7 +56,9 @@ export const app_3D = () => {
 
     return (
         <>
-            <Canvas shadows className="bg-[#C6F5EB]" onPointerDown={onPointerDown}>
+        {}
+            {roomInteractions.utahaInteraction && <Panel3D />}
+            <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {camera}
                 <Physics timeStep="vary" >
