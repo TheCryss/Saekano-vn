@@ -27,11 +27,11 @@ export const Room = () => {
 
     return (
         <>
-            <RigidBody type="fixed" colliders="trimesh" linearDamping={0.5} >
+            <RigidBody type="fixed" colliders="trimesh" wireframe linearDamping={0.5} >
                 <Room3D/>
             </RigidBody>
             <KeyboardControls map={keyboardMap}>
-                <Ecctrl  animated camInitDir={Math.PI / 4} dragDampingC={0.4} jumpVel={5} capsuleRadius={1} autoBalance={false} floatHeight={0} friction={1e-10} maxVelLimit={6} >
+                <Ecctrl animated camInitDir={Math.PI / 4} friction={1e-9} maxVelLimit={6.04} dragDampingC={0.1} autoBalanceDampingC={3}   capsuleRadius={0.8} rayOriginOffest={{"x":0,"y":-1.2,"z":0}} floatingDis={0.3} >
                     <EcctrlAnimation characterURL={characterURL} animationSet={animationSet}>
                         <PlayableCharacter scale={1.6} position={[0, -1.2, 0]} ></PlayableCharacter>
                     </EcctrlAnimation>
