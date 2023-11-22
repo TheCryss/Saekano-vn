@@ -19,15 +19,16 @@ const Experience = () => {
           return (<Room/>);
           break;
         case "Minijuego-guion":
-          // return (<Room/>); // this have to change
-          return (<Minigame1/>);
+          return (<Room/>); // this have to change
+          // return (<Minigame1/>);
           break;
         default:
           return (<Login/>);
           break;
       }
     }
-    return (<Login/>);
+    // return (<Login/>);
+    return (<Room/>)
   }
   return (
   <>

@@ -7,7 +7,7 @@ export const Camera_controls = (props) => {
     useFrame(({ camera }) => {
         camera.lookAt(0, 0, -1.5)
     })
-    return <OrbitControls {...props}  autoRotate autoRotateSpeed={0.4}  minPolarAngle={Math.PI / 4} enableZoom={false} maxPolarAngle={Math.PI / 2.5} />;
+    return <OrbitControls {...props}   autoRotateSpeed={0.4}  minPolarAngle={Math.PI / 4} enableZoom={false} maxPolarAngle={Math.PI / 2.5} />;
 };
 
 export const Camera_controls_room = (props) => {

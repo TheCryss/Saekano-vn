@@ -52,10 +52,10 @@ export const app_3D = () => {
 
     return (
         <>
-            <Canvas shadows className="bg-[#C6F5EB]" onPointerDown={onPointerDown} >
+            <Canvas shadows className="bg-[#C6F5EB]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {camera}
-                <Physics timeStep="vary" >
+                <Physics timeStep="vary">
                     <Experience />
                 </Physics>
             </Canvas>
