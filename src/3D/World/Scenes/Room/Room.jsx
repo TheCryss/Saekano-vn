@@ -5,7 +5,8 @@ import { KeyboardControls } from '@react-three/drei'
 import Ecctrl, { EcctrlAnimation } from 'ecctrl'
 import { PlayableCharacter } from './Models/PlayableCharacter'
 import { Lights_Room } from '../../Staging/Lights'
-
+import { useFrame } from '@react-three/fiber'
+import { Utaha } from './Models/Utaha'
 export const Room = () => {
     const keyboardMap = [
         { name: 'backward', keys: ['ArrowUp', 'KeyW'] },
@@ -13,7 +14,9 @@ export const Room = () => {
         { name: 'rightward', keys: ['ArrowLeft', 'KeyA'] },
         { name: 'leftward', keys: ['ArrowRight', 'KeyD'] },
         { name: 'jump', keys: ['Space'] },
-        { name: 'run', keys: ['Shift'] }
+        { name: 'run', keys: ['Shift'] },
+        {name: 'action1', keys: ['KeyE'] },
+        
     ]
     const animationSet = {
         idle: "Idle",
@@ -21,7 +24,8 @@ export const Room = () => {
         run: "Run",
         fall: "0Tpose",
         jump: "Clapping",
-        jumpIdle: "Surprise"
+        jumpIdle: "Surprise",
+        action1: "Clapping"
     }
     const characterURL = "/assets/models/playable_character/Tomoya.glb"
 
@@ -31,13 +35,16 @@ export const Room = () => {
                 <Room3D/>
             </RigidBody>
             <KeyboardControls map={keyboardMap}>
-                <Ecctrl animated camInitDir={Math.PI / 4} friction={1e-9} maxVelLimit={6.04} dragDampingC={0.1} autoBalanceDampingC={3}   capsuleRadius={0.8} rayOriginOffest={{"x":0,"y":-1.2,"z":0}} floatingDis={0.3} >
+                <Ecctrl  position={[-5,3.4,4]} autoBalance={false} animated camInitDir={Math.PI / 4} friction={1} maxVelLimit={6.04} dragDampingC={0.1} autoBalanceDampingC={3}   capsuleRadius={0.8} rayOriginOffest={{"x":0,"y":-1.2,"z":0}} floatingDis={0.3} >
                     <EcctrlAnimation characterURL={characterURL} animationSet={animationSet}>
-                        <PlayableCharacter scale={1.6} position={[0, -1.2, 0]} ></PlayableCharacter>
+                        <PlayableCharacter scale={1.6} position={[0, -1.1, 0]} ></PlayableCharacter>
                     </EcctrlAnimation>
                 </Ecctrl>
 
             </KeyboardControls>
+            <RigidBody type="fixed" colliders="cuboid">
+            <Utaha scale={1.6}></Utaha>
+            </RigidBody>
             <Lights_Room />
         </>
     )
