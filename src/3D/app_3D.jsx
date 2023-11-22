@@ -49,7 +49,7 @@ export const app_3D = () => {
                     onPointerDown: undefined, // No event handler for this case
                 };
         }
-        
+
     };
 
     const { camera, onPointerDown } = getCamera();
@@ -61,7 +61,7 @@ export const app_3D = () => {
             <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {camera}
-                <Physics timeStep="vary" >
+                <Physics timeStep="vary" debug>
                     <Experience />
                 </Physics>
             </Canvas>

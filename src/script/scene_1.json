@@ -5,15 +5,12 @@
             "3d": false,
             "content": [
                 {
-
-                },
-                {
-                    "music": "Music_1"
-                },
-                {
                     "character": "Narrador",
                     "speech": "La alarma suena incesantemente.",
                     "background": "Act_1-Scene_1-1"
+                },
+                {
+                    "music": "Music_1"
                 },
                 {
                     "character": "Narrador",

@@ -19,21 +19,25 @@ export const Utaha = (props) => {
 
     return (
         <>
-            
-                <RigidBody type={"fixed"} position-y={3} >
-                    <CuboidCollider
-                        args={[3, 3, 3]}
-                        sensor
-                        onIntersectionEnter={(() => dispatch(setUtahaInteraction(true)))}
-                        onIntersectionExit={(() => dispatch(setUtahaInteraction(false)))}
-                    />
-                </RigidBody>
-            
-            
+
+            <RigidBody type={"fixed"} position-y={3} >
+                <CuboidCollider
+                    args={[3, 3, 3]}
+                    sensor
+                    onIntersectionEnter={(() => dispatch(setUtahaInteraction(true)))}
+                    onIntersectionExit={(() => dispatch(setUtahaInteraction(false)))}
+                />
+            </RigidBody>
+
+            <RigidBody type="fixed" colliders="cuboid" position-y={2}>
+                <CuboidCollider
+                    args={[1.25, 1.75, 1]}
+                />
+            </RigidBody>
+
             <group ref={group} {...props} dispose={null}>
-            <RigidBody type="fixed" colliders="cuboid">
                 <group name="Scene">
-                    <group name="Armature" position={[0, 0.495, 0]}>
+                    <group name="Armature">
                         <group name="Hair_14">
                             <skinnedMesh
                                 name="NurbsPath006"
@@ -79,9 +83,8 @@ export const Utaha = (props) => {
                         <primitive object={nodes.IKTargetR} />
                     </group>
                 </group>
-                </RigidBody>
             </group>
-            </>
+        </>
     );
 }
 

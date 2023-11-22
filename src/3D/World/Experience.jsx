@@ -8,33 +8,29 @@ import { useGame } from '../../context/GameContext'
 
 
 const Experience = () => {
-  const { getActualContent, nextContent, nextScene } = useGame();
+    const { getActualContent, nextContent, nextScene } = useGame();
 
-  const getScenario = () => {
-    const { is3D, content } = getActualContent()
-    console.log(content)
-    if (is3D) {
-      switch (content) {
-        case "room":
-          return (<Room/>);
-          break;
-        case "Minijuego-guion":
-          return (<Room/>); // this have to change
-          // return (<Minigame1/>);
-          break;
-        default:
-          return (<Login/>);
-          break;
-      }
+    const getScenario = () => {
+        const { is3D, content } = getActualContent()
+        if (is3D) {
+            switch (content) {
+            case "room":
+                return (<Room/>);
+            case "Minijuego-guion":
+                return (<Room debug/>); // this have to change
+                // return (<Minigame1/>);
+            default:
+                return (<Login/>);
+            }
+        }
+        // return (<Login/>);
+        return (<Room/>)
     }
-    // return (<Login/>);
-    return (<Room/>)
-  }
-  return (
-  <>
-    {getScenario()}
-  </>
-  )
+    return (
+        <>
+            {getScenario()}
+        </>
+    )
 }
 
 export default Experience

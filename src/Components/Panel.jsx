@@ -105,14 +105,29 @@ export const Panel = () => {
     }
 
     const handleExit = () => {
-        console.log(currentMusic)
-        console.log(!currentMusic.pause)
+        if (!currentMusic) {
+            if (!currentMusic.paused) {
+                currentMusic.pause()
+            }
+        }
+
         navigate("/")
+    }
+
+    const handleTest = () => {
+        if (!currentMusic) {
+            if (!currentMusic.paused) {
+                console.log("Audio paused");
+                currentMusic.pause()
+            } else {
+                console.log("Audio played");
+                currentMusic.play()
+            }
+        }
     }
 
     return (
         <>
-
             <div className='flex justify-center '>
 
                 <div className=' w-1/6 text-md my-8 h-40 flex flex-col mt-12 '>
@@ -125,6 +140,9 @@ export const Panel = () => {
                     </button>
                     <button onClick={handleExit} className={`border-[#C6F5EB] text-pink-950 border-4 select-none my-2 flex items-center justify-center  bg-[rgba(242,198,245,0.75)] hover:bg-[#F5EAC6] hover:scale-105 hover:  transition-all  rounded-md py-1 font-bold `} type='button'>
                         Exit
+                    </button>
+                    <button onClick={handleTest} className={`border-[#C6F5EB] text-pink-950 border-4 select-none my-2 flex items-center justify-center  bg-[rgba(242,198,245,0.75)] hover:bg-[#F5EAC6] hover:scale-105 hover:  transition-all  rounded-md py-1 font-bold `} type='button'>
+                        Test
                     </button>
                 </div>
                 <div className='w-3/4 h-56' onClick={onClickText} >
