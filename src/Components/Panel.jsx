@@ -1,28 +1,36 @@
 import { useState, useEffect, useRef } from 'react'
-import { useGame } from '../context/GameContext'
+import { useSelector, useDispatch } from "react-redux";
+import { nextScene, nextContent } from '../store/slicers/GameStatusSlice';
 import { useNavigate } from 'react-router-dom'
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
+import data from '../script/scene_1.json'
+
 import './Panel.css';
 
+const scenes = data.scenes
+
 export const Panel = () => {
-    const { getActualContent, nextContent, nextScene } = useGame();
     const navigate = useNavigate()
+    const dispatch = useDispatch();
+
     const [isAuto, setIsAuto] = useState(false)
     const [currentMusic, setCurrentMusic] = useState(null)
     const [character, setCharacter] = useState("...")
     const [dialog, setDialog] = useState("...")
 
+    const gameStatus = useSelector((state) => state.gameStatus)
+
     const playMusic = (musicName) => {
-        if (!currentMusic) {
+        if (currentMusic) {
             if (!currentMusic.paused) currentMusic.pause()
-            else {
-                const newMusic = new Audio("/assets/music/" + musicName + ".ogg");
-                newMusic.volume = 0.2;
-                newMusic.loop = true;
-                setCurrentMusic(newMusic);
-                newMusic.play();
-            }
+        } else {
+            console.log("Test")
+            const newMusic = new Audio("/assets/music/" + musicName + ".ogg");
+            newMusic.volume = 0.2;
+            newMusic.loop = true;
+            setCurrentMusic(newMusic);
+            newMusic.play();
         }
     }
 
@@ -31,52 +39,55 @@ export const Panel = () => {
     }
 
     const playEvent = () => {
-        const { is3D, content } = getActualContent()
-        if (is3D) {
-            console.log("is3D")
-            navigate(`/${content}`) // Here you put the 3D scene (content)
+        const { actualSceneIndex, actualContentIndex } = gameStatus
+
+        const actualScene = scenes[actualSceneIndex]
+
+        if (actualScene["3d"]) {
+            console.log("3D")
+            navigate(`/${actualScene.scenario}`) // Here you put the 3D scene (content)
         } else {
-            const keys = Object.keys(content)
+
+            const actualContent = actualScene.content[actualContentIndex]
+            const keys = Object.keys(actualContent)
+
             switch (keys[0]) {
                 case "character":
-                    setCharacter(content.character)
+                    setCharacter(actualContent.character)
                     if (keys[1] == "speech") {
-                        setDialog(content.speech)
+                        setDialog(actualContent.speech)
                     } else {
-                        setDialog(content.thought)
+                        setDialog(actualContent.thought)
                     }
                     break;
                 default: break;
             }
 
-            if ("sound" in content) {
-                playSound(content.sound)
+            if ("sound" in actualContent) {
+                playSound(actualContent.sound)
             }
 
-            if ("music" in content) {
-                playMusic(content.music)
+            if ("music" in actualContent) {
+                playMusic(actualContent.music)
             }
         }
     }
 
     useEffect(() => {
         playEvent()
-    }, [getActualContent])
+    }, [gameStatus])
+
 
     const nodeRef = useRef(null);
     const nodeRefCharacter = useRef(null);
 
     const onClickText = () => {
-        const result = nextContent();
-
-        if (!result.success) {
-            const { success } = nextScene();
-            if (!success) {
-                console.log("no more scenes");
-            } else {
-                console.log("next scene");
-            }
+        console.log(gameStatus)
+        if (gameStatus.finishedScene) {
+            dispatch(nextScene())
         }
+
+        dispatch(nextContent())
     }
 
     useEffect(() => {
@@ -96,13 +107,7 @@ export const Panel = () => {
     }, [isAuto, onClickText])
 
     const handleSkip = () => {
-        const { success } = nextScene();
-
-        if (!success) {
-            console.log("no more scenes");
-        } else {
-            console.log("next scene");
-        }
+        dispatch(nextScene());
     }
 
     const handleExit = () => {

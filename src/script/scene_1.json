@@ -1,7 +1,6 @@
 {
     "scenes": [
         {
-            "id": 1,
             "3d": false,
             "content": [
                 {
@@ -10,11 +9,9 @@
                     "background": "Act_1-Scene_1-1"
                 },
                 {
-                    "music": "Music_1"
-                },
-                {
                     "character": "Narrador",
-                    "speech": "Tomoyo apaga la alarma que anuncia que las vacaciones de verano han terminado."
+                    "speech": "Tomoyo apaga la alarma que anuncia que las vacaciones de verano han terminado.",
+                    "music": "Music_1"
                 },
                 {
                     "music": "Music_1"
@@ -46,7 +43,6 @@
             ]
         },
         {
-            "id": 2,
             "3d":false,
             "content": [
                 {
@@ -88,7 +84,6 @@
             ]
         },
         {
-            "id": 3,
             "3d": false,
             "content": [
                 {
@@ -127,12 +122,6 @@
             ]
         },
         {
-            "id": 4,
-            "3d": true,
-            "scenario": "Minijuego-guion"
-        },
-        {
-            "id": 5,
             "3d": false,
             "content": [
                 {
@@ -222,7 +211,6 @@
             ]
         },
         {
-            "id": 6,
             "3d": false,
             "content": [
                 {
@@ -276,7 +264,6 @@
             ]
         },
         {
-            "id": 7,
             "3d":false,
             "content": [
                 {
