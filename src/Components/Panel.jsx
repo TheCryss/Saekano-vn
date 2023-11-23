@@ -14,14 +14,15 @@ export const Panel = () => {
     const [dialog, setDialog] = useState("...")
 
     const playMusic = (musicName) => {
-        if (currentMusic) {
-            currentMusic.pause();
-        } else {
-            const newMusic = new Audio("/assets/music/" + musicName + ".ogg");
-            newMusic.volume = 0.2;
-            newMusic.loop = true;
-            setCurrentMusic(newMusic);
-            newMusic.play();
+        if (!currentMusic) {
+            if (!currentMusic.paused) currentMusic.pause()
+            else {
+                const newMusic = new Audio("/assets/music/" + musicName + ".ogg");
+                newMusic.volume = 0.2;
+                newMusic.loop = true;
+                setCurrentMusic(newMusic);
+                newMusic.play();
+            }
         }
     }
 
@@ -106,9 +107,7 @@ export const Panel = () => {
 
     const handleExit = () => {
         if (!currentMusic) {
-            if (!currentMusic.paused) {
-                currentMusic.pause()
-            }
+            if (!currentMusic.paused) currentMusic.pause()
         }
 
         navigate("/")

@@ -25,7 +25,7 @@
                 },
                 {
                     "character": "Tomoya",
-                    "thought": "Pero en el fondo, no olvidaba aquel momento que tuve aquel día…"
+                    "thought": "Pero en el fondo, no olvidaba aquel momento que tuve aquel día..."
                 },
                 {
                     "character": "Tomoya",
@@ -33,7 +33,7 @@
                 },
                 {
                     "character": "Tomoya",
-                    "thought": "Tal vez no sería… ¿El destino comunicándome un mensaje…?"
+                    "thought": "Tal vez no sería... ¿El destino comunicándome un mensaje...?"
                 },
                 {
                     "character": "Tomoya",
@@ -41,7 +41,7 @@
                 },
                 {
                     "character": "Tomoya",
-                    "thought": "Y si alcanzo, es posible que pueda adelantar mi gran proyecto…"
+                    "thought": "Y si alcanzo, es posible que pueda adelantar mi gran proyecto..."
                 }
             ]
         },
@@ -79,11 +79,11 @@
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Se encuentran… ¿¡Se encuentran conmigo!?"
+                    "speech": "Se encuentran... ¿¡Se encuentran conmigo!?"
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Hmmm… Ya pensaré algo, tengo que hacer primero lo que he pensado"
+                    "speech": "Hmmm... Ya pensaré algo, tengo que hacer primero lo que he pensado"
                 }
             ]
         },
@@ -97,9 +97,7 @@
                 },
                 {
                     "character": "Narrador",
-                    "speech": "Finalmente, mi gran proyecto…"
-                },
-                {
+                    "speech": "Finalmente, mi gran proyecto...",
                     "sound": "Sparkles"
                 },
                 {
@@ -142,11 +140,11 @@
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Es…"
+                    "speech": "Es..."
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "¡Es…!"
+                    "speech": "¡Es...!"
                 },
                 {
                     "sound": "Stinger_victory"
@@ -160,7 +158,7 @@
                     "speech": "¿¡Cómo antes no se me pudo haber ocurrido!?"
                 },
                 {
-                    "sound": "Opening_door.ogg"
+                    "sound": "Opening_door"
                 },
                 {
                     "character": "Tomoya",
@@ -237,7 +235,7 @@
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Dejando de lado a mi ilustradora, bueno… Posible ilustradora, debo de enfocarme en alguien en el guión."
+                    "speech": "Dejando de lado a mi ilustradora, bueno... Posible ilustradora, debo de enfocarme en alguien en el guión."
                 },
                 {
                     "character": "Yoshihiko",
@@ -269,7 +267,7 @@
                 },
                 {
                     "character": "Tomoya",
-                    "thought": "Club de teatro, ¿Escritora…? Lo tengo. Mi concepto de guión no podrá ser bueno, ¡Sino el mejor!. Y quien para darme de razón que la misma líder del club de teatro."
+                    "thought": "Club de teatro, ¿Escritora...? Lo tengo. Mi concepto de guión no podrá ser bueno, ¡Sino el mejor!. Y quien para darme de razón que la misma líder del club de teatro."
                 },
                 {
                     "character": "Tomoya",
@@ -319,11 +317,11 @@
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "¿¡…!?"
+                    "speech": "¿¡...!?"
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "¿Eres…? ¿¡Tú eres…!?"
+                    "speech": "¿Eres...? ¿¡Tú eres...!?"
                 },
                 {
                     "music": "Music_1"
