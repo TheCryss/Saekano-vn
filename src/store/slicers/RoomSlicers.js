@@ -7,6 +7,7 @@ const initialState = {
         megumiInteraction: false,
         tomoyaInteraction: false,
     },
+    action: false,
 };
 
 const roomSlice = createSlice({
@@ -25,8 +26,11 @@ const roomSlice = createSlice({
     setTomoyaInteraction: (state, action) => {
       state.room.tomoyaInteraction = action.payload;
     },
+    setAction: (state, action) => {
+      state.action = action.payload;
+    },
   },
 });
 
-export const { setUtahaInteraction, setEririInteraction, setMegumiInteraction, setTomoyaInteraction } = roomSlice.actions;
+export const { setUtahaInteraction, setEririInteraction, setMegumiInteraction, setTomoyaInteraction, setAction } = roomSlice.actions;
 export default roomSlice.reducer;

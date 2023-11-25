@@ -9,8 +9,9 @@ export const Utaha = (props) => {
     const group = useRef();
     const { nodes, materials, animations } = useGLTF("/assets/models/utaha/Utaha.glb");
     const { actions } = useAnimations(animations, group);
+
     const dispatch = useDispatch();
-    const roomInteractions = useDispatch();
+
 
     useEffect(() => {
         const action = actions["Idle"]
@@ -19,7 +20,6 @@ export const Utaha = (props) => {
 
     return (
         <>
-
             <RigidBody type={"fixed"} position-y={3} >
                 <CuboidCollider
                     args={[3, 3, 3]}

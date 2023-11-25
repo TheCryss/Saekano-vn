@@ -56,7 +56,6 @@ export const app_3D = () => {
 
     return (
         <>
-        {}
             {roomInteractions.utahaInteraction && <Panel3D />}
             <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />
