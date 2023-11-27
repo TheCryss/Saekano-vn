@@ -81,7 +81,7 @@ export const Book = (props) => {
                     position={[0, 0.057, 0.56]}
                     rotation={[-0.262, 0, 0]}
                 >
-                    <Html position={[0,1e-2,0]} transform occlude  rotation-x={-Math.PI/2} rotation-z={-Math.PI/2}>
+                    <Html position={[0,1e-3,0]} transform occlude  rotation-x={-Math.PI/2} rotation-z={-Math.PI/2}>
                         <Poem  />
                     </Html>
                 </mesh>

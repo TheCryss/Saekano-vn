@@ -1,40 +1,34 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import './styles.css'
 import { Environment } from '@react-three/drei';
 
 export const Poem = () => {
-    const words = []
-    const handleClick = (event) => {
-        const clickedWord = event.target.textContent;
-        
-        if (clickedWord.length< 20  && words.length < 5) {
-            words.push(clickedWord)
-            event.target.setAttribute('disabled', true);
-            
+    const [clickedWords, setClickedWords] = useState([]);
+
+    const handleClick = (word) => {
+        if (word.length < 20 && clickedWords.length < 5) {
+            setClickedWords(prevWords => [...prevWords, word]);
         }
-        // console.log(`Se hizo clic en la palabra: ${clickedWord}`);
-        console.log(words);
     };
+
+    useEffect(() => {
+        console.log(clickedWords);
+    }, [clickedWords]);
 
     return (
         <div className='w-10  content' onClick={handleClick}>
             <div className='grid grid-cols-2 gap-1  '>
-                <button  >Heroina</button>
-                <button>Paisaje</button>
-                <button>Amor</button>
-                <button>Miedo</button>
-                <button>Profundo</button>
-                <button>familia</button>
-                <button>Susurro</button>
-                <button>Éxtasis</button>
-                <button>Melodía</button>
-                <button>Aurora</button>
-                <button>Esencia</button>
-                <button>Sinfonía</button>
-                <button>Serenidad</button>
-                <button>Destino</button>
-                <button>Quimera</button>
-                <button>Cielo</button>
+                {["Heroina", "Paisaje", "Amor", "Miedo", "Profundo", "familia", "Susurro", "Éxtasis", "Melodía", "Aurora", "Esencia",
+                "Sinfonía", "Serenidad", "Destino", "Quimera", "Cielo"].map(word => (
+                    <button
+                        key={word}
+                        onClick={() => handleClick(word)}
+                        disabled={clickedWords.includes(word)}
+                        className={clickedWords.includes(word) ? 'transition-colors text-gray-500 underline decoration-1  ' : ''}
+                    >
+                        {word}
+                    </button>
+                ))}
                 { false && <>
                 <button>Efímero</button>
                 <button>Encanto</button>

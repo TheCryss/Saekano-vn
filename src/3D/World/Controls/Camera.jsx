@@ -15,7 +15,7 @@ export const Camera_controls_room = (props) => {
         camera.lookAt(0, 2, 3)
     })
     
-    return <OrbitControls {...props} enableZoom={false}  />;
+    return <OrbitControls {...props} enableZoom={true}  />;
 };
 
 export const Camera_controls_minigame1 = (props) => {
