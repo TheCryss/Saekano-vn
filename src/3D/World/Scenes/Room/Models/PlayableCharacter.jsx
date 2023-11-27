@@ -2,18 +2,17 @@ import {useEffect, useRef} from 'react'
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { useKeyboardControls } from '@react-three/drei';
 import { useDispatch, useSelector } from 'react-redux';
-import { setAction } from '../../../../../store/slicers/RoomSlicers';
+import { setInteraction } from '../../../../../store/slicers/RoomSlicers';
 export const PlayableCharacter = (props) => {
     const group = useRef();
     const { nodes, materials,animations } = useGLTF("/assets/models/playable_character/Tomoya.glb");
     const { actions } = useAnimations(animations, group);
     const dispatch = useDispatch();
-    const roomInteractions = useSelector(state => state.room.room)
-    const getInteraction = useSelector(state => state.room.action)
+    const getInteraction = useSelector(state => state.room.interaction)
     const interactPressed = useKeyboardControls(state => state.action1)
     useEffect(() => {
         if(interactPressed){
-            dispatch(setAction(!getInteraction))
+            dispatch(setInteraction(!getInteraction))
         }
     }, [interactPressed])
 

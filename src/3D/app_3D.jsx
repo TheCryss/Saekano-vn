@@ -25,8 +25,7 @@ export const app_3D = () => {
 
     const { getActualContent, nextContent, nextScene } = useGame();
     const dispatch = useDispatch();
-    const roomInteractions = useSelector(state => state.room.room)
-    // console.log(roomInteractions);
+    const {room,interaction} = useSelector(state => state.room)
     const getCamera = () => {
         const { content } = getActualContent();
         // console.log(getActualContent());
@@ -56,7 +55,7 @@ export const app_3D = () => {
 
     return (
         <>
-            {roomInteractions.utahaInteraction && <Panel3D />}
+            {room.utahaInteraction && interaction && <Panel3D />}
             <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {camera}

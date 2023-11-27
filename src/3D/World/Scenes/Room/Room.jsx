@@ -25,7 +25,7 @@ export const Room = () => {
         walk: "Walk",
         run: "Run",
         fall: "0Tpose",
-        jump: "Clapping",
+        jump: "Surprise",
         jumpIdle: "Surprise",
         action1: "Clapping"
     }
@@ -33,18 +33,20 @@ export const Room = () => {
     // const roomInteractions = useSelector(state => state.room.room)
     return (
         <>
+            <RigidBody type="fixed" colliders="trimesh" wireframe linearDamping={0.5} >
+                <Room3D />
+            </RigidBody>
             <KeyboardControls map={keyboardMap}>
-                <RigidBody type="fixed" colliders="trimesh" wireframe linearDamping={0.5} >
-                    <Room3D />
-                </RigidBody>
+
                 <Ecctrl position={[-5, 3.4, 4]} autoBalance={false} animated camInitDir={Math.PI / 4} friction={1} maxVelLimit={6.04} dragDampingC={0.1} autoBalanceDampingC={3} capsuleRadius={0.8} rayOriginOffest={{ "x": 0, "y": -1.2, "z": 0 }} floatingDis={0.3} name="Tomoya">
                     <EcctrlAnimation characterURL={characterURL} animationSet={animationSet}>
                         <PlayableCharacter scale={1.6} position={[0, -1.1, 0]} ></PlayableCharacter>
                     </EcctrlAnimation>
                 </Ecctrl>
-                <Utaha scale={1.6} position={[0, 1, 0]} />
-                <Lights_Room />
             </KeyboardControls>
+
+            <Utaha scale={1.6} position={[0, 1, 0]} />
+            <Lights_Room />
 
         </>
     )
