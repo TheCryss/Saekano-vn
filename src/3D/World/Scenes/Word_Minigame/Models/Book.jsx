@@ -13,7 +13,7 @@ export const Book = (props) => {
 
         useEffect(() => {
             const action = actions["Move"]
-            action.play()
+            // action.play()
         }, []) 
 
     return (
@@ -37,7 +37,11 @@ export const Book = (props) => {
                         // receiveShadow
                         geometry={nodes.Cube001_1.geometry}
                         material={materials.Paper}
-                    />
+                    >
+{/*                     <Html position={[0,-0.1,-.6]} transform occlude  rotation-x={-Math.PI/2} rotation-z={Math.PI/2}>
+                        <Poem  />
+                    </Html> */}
+                    </mesh>
                 </group>
                 <mesh
                     name="Line_in_the_middle"
