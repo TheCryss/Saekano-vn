@@ -17,14 +17,15 @@ const Experience = () => {
             case "room":
                 return (<Room/>);
             case "Minijuego-guion":
-                return (<Room debug/>); // this have to change
-                // return (<Minigame1/>);
+                // return (<Room debug/>); // this have to change
+                return (<Minigame1/>);
             default:
                 return (<Login/>);
             }
         }
         // return (<Login/>);
-        return (<Room/>)
+        // return (<Room/>)
+        return (<Minigame1/>)
     }
     return (
         <>
