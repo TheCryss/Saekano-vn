@@ -12,11 +12,11 @@ export const Book = (props) => {
     const { nodes, materials, animations } = useGLTF("/assets/models/book/Book.glb");
     const { actions } = useAnimations(animations, group);
 
-    useEffect(() => {
+/*     useEffect(() => {
         const action = actions["Move"]
         action.play()
         action.setLoop(THREE.LoopOnce, 1 )
-    }, [])
+    }, []) */
 
     return (
         <group ref={group} {...props} dispose={null}>

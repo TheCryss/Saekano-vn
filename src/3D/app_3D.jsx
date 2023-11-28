@@ -26,10 +26,9 @@ export const app_3D = () => {
     const { getActualContent, nextContent, nextScene } = useGame();
     const dispatch = useDispatch();
     const {room,interaction} = useSelector(state => state.room)
+    const {  scenario } = useSelector(state => state.gameStatus)
     const getCamera = () => {
-        const { content } = getActualContent();
-        console.log(getActualContent());
-        switch (content) {
+        switch (scenario) {
             case "room":
                 return {
                     camera: <Camera_controls_room />,

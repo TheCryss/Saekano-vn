@@ -19,5 +19,5 @@ export const Camera_controls_room = (props) => {
 };
 
 export const Camera_controls_minigame1 = (props) => {
-    return <OrbitControls {...props}  />;
+    return <OrbitControls {...props} enabled={false}  />;
 };

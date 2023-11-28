@@ -11,6 +11,7 @@ const initialState = {
     actualContentIndex: 0,
     scenario: 0,
     dev: false,
+    is3D: false,
 }
 
 export const gameStatusSlice = createSlice({
@@ -44,9 +45,15 @@ export const gameStatusSlice = createSlice({
 
         setDev: (state, action) => {
             state.dev = action.payload
+        },
+        setScenario: (state, action) => {
+            state.scenario = action.payload
+        },
+        setIs3D:(state,action) =>{
+            state.is3D = action.payload
         }
     }
 })
 
-export const { nextScene, nextContent, setDev } = gameStatusSlice.actions
+export const { nextScene, nextContent, setDev,setScenario,setIs3D } = gameStatusSlice.actions
 export default gameStatusSlice.reducer

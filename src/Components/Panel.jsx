@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useSelector, useDispatch } from "react-redux";
-import { nextScene, nextContent } from '../store/slicers/GameStatusSlice';
+import { nextScene, nextContent, setScenario,setIs3D} from '../store/slicers/GameStatusSlice';
 import { useNavigate } from 'react-router-dom'
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
@@ -45,6 +45,8 @@ export const Panel = () => {
 
         if (actualScene["3d"]) {
             console.log("3D")
+            dispatch(setScenario(actualScene.scenario))
+            dispatch(setIs3D(true))
             navigate(`/${actualScene.scenario}`) // Here you put the 3D scene (content)
         } else {
 

@@ -3,21 +3,23 @@ import Login from './Scenes/Login/Login'
 import {Room} from './Scenes/Room/Room'
 import { Minigame1 } from './Scenes/Word_Minigame/Minigame1'
 import {Lights} from './Staging/Lights'
-import { useGame } from '../../context/GameContext'
+import { useSelector, useDispatch } from "react-redux";
 //Libraries
 
 
 const Experience = () => {
-    const { getActualContent, nextContent, nextScene } = useGame();
+    const gameStatus = useSelector(state => state.gameStatus);
+
+
 
     const getScenario = () => {
-        const { is3D, content } = getActualContent()
+        const { is3D, scenario } = gameStatus
+
         if (is3D) {
-            switch (content) {
+            switch (scenario) {
             case "room":
                 return (<Room/>);
             case "Minijuego-guion":
-                // return (<Room debug/>); // this have to change
                 return (<Minigame1/>);
             default:
                 return (<Login/>);
