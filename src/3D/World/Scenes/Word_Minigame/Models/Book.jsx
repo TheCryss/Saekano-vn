@@ -1,7 +1,8 @@
 import { useRef, useEffect } from 'react'
 import { useGLTF, Html, useAnimations } from '@react-three/drei';
 import { Poem } from '../Text/Poem';
-
+import { Minigame_Help } from '../Text/Minigame_Help';
+import * as THREE from "three";
 
 /*     <Html Html position = { [0, -.1, -0.55]} transform occlude  rotation - x={ -Math.PI / 2 } rotation - z={ Math.PI / 2 }>
         <Poem />
@@ -11,10 +12,11 @@ export const Book = (props) => {
     const { nodes, materials, animations } = useGLTF("/assets/models/book/Book.glb");
     const { actions } = useAnimations(animations, group);
 
-        useEffect(() => {
-            const action = actions["Move"]
-            // action.play()
-        }, []) 
+    useEffect(() => {
+        const action = actions["Move"]
+        action.play()
+        action.setLoop(THREE.LoopOnce, 1 )
+    }, [])
 
     return (
         <group ref={group} {...props} dispose={null}>
@@ -38,7 +40,7 @@ export const Book = (props) => {
                         geometry={nodes.Cube001_1.geometry}
                         material={materials.Paper}
                     >
-{/*                     <Html position={[0,-0.1,-.6]} transform occlude  rotation-x={-Math.PI/2} rotation-z={Math.PI/2}>
+                        {/*                     <Html position={[0,-0.1,-.6]} transform occlude  rotation-x={-Math.PI/2} rotation-z={Math.PI/2}>
                         <Poem  />
                     </Html> */}
                     </mesh>
@@ -70,7 +72,13 @@ export const Book = (props) => {
                         // receiveShadow
                         geometry={nodes.Cube003_1.geometry}
                         material={materials.Paper}
-                    />
+                    >
+                        <Html position={[0, 0.18, 0.52]}  transform occlude rotation-x={-Math.PI / 1.5} rotation-z={Math.PI / 2}
+                        >
+                            <Minigame_Help />
+                        </Html>
+                    </mesh>
+
                 </group>
                 <mesh
                     name="Hoja"
@@ -81,8 +89,8 @@ export const Book = (props) => {
                     position={[0, 0.057, 0.56]}
                     rotation={[-0.262, 0, 0]}
                 >
-                    <Html position={[0,1e-3,0]} transform occlude  rotation-x={-Math.PI/2} rotation-z={-Math.PI/2}>
-                        <Poem  />
+                    <Html position={[0, 1e-3, 0]} transform occlude rotation-x={-Math.PI / 2} rotation-z={-Math.PI / 2} >
+                        <Poem />
                     </Html>
                 </mesh>
             </group>

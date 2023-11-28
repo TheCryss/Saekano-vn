@@ -28,7 +28,7 @@ export const app_3D = () => {
     const {room,interaction} = useSelector(state => state.room)
     const getCamera = () => {
         const { content } = getActualContent();
-        // console.log(getActualContent());
+        console.log(getActualContent());
         switch (content) {
             case "room":
                 return {
