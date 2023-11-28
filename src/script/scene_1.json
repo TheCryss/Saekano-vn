@@ -321,6 +321,11 @@
                     "speech": "¿La chica del sombrero?"
                 }
             ]
+        },
+        {
+            "3d":true,
+            "scenario": "Minijuego-guion"
+
         }
     ]
 }
