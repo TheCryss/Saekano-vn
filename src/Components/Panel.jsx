@@ -11,7 +11,7 @@ import './Panel.css';
 export const Panel = ({data}) => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
-    const scenes = data.scenes
+    // const scenes = data.scenes
 
     const [isAuto, setIsAuto] = useState(false)
     const [currentMusic, setCurrentMusic] = useState(null)
@@ -38,18 +38,18 @@ export const Panel = ({data}) => {
     }
 
     const playEvent = () => {
-        const { actualSceneIndex, actualContentIndex } = gameStatus
+        const { actualSceneIndex, actualContentIndex,scenes,actualContent } = gameStatus
 
         const actualScene = scenes[actualSceneIndex]
 
         if (actualScene["3d"]) {
-            console.log("3D")
+            // console.log("3D")
             dispatch(setScenario(actualScene.scenario))
             dispatch(setIs3D(true))
             navigate(`/3D/${actualScene.scenario}`) // Here you put the 3D scene (content)
         } else {
 
-            const actualContent = actualScene.content[actualContentIndex]
+            
             const keys = Object.keys(actualContent)
 
             switch (keys[0]) {
@@ -83,7 +83,6 @@ export const Panel = ({data}) => {
     const nodeRefCharacter = useRef(null);
 
     const onClickText = () => {
-        // console.log(gameStatus)
         if (gameStatus.finishedScene) {
             dispatch(nextScene())
         }

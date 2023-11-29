@@ -10,21 +10,20 @@
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "En tal caso, más vale ir adelantando. Debo convencerlas de que mi novela no se trata de ningún capricho, se trata..."
+                    "speech": "En tal caso, más vale ir adelantando. Debo convencerlas de que mi novela no se trata de ningún capricho, se trata...",
+                    "background": "Act_2-Scene_1-1"
                 },
                 {
                     "character": "Tomoya",
                     "speech": "Aghhh, ya verán de lo que se trata."
-                },
-                {
-                    "Music": ""
                 }
             ]
         },
         {
             "id": 2,
             "3d": true,
-            "scenario": "Minijuego-guion"
+            "scenario": "Minijuego-guion",
+            "content":[]
         },
         {
             "id": 3,
@@ -66,7 +65,7 @@
         {
             "id": 4,
             "3d": true,
-            "scenario": "Habitación de Tomoya",
+            "scenario": "Habitacion",
             "content" : [
                 {
                     "Music": "Music_2"
@@ -95,7 +94,7 @@
         {
             "id": 4,
             "3d": true,
-            "scenario": "room",
+            "scenario": "Habitacion",
             "bifurcation": true,
             "content": [
                 [

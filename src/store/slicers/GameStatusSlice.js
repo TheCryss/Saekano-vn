@@ -41,7 +41,13 @@ export const gameStatusSlice = createSlice({
                 if (!(state.scenes[nextScene] == undefined)) {
                     state.actualSceneIndex = nextScene
                     state.actualContentIndex = 0
-                } else state.finishedScript = true
+                } else {
+                    state.finishedScript = true
+                    state.acto = state.acto + 1
+                    state.scenes = getScenes(state.acto);
+                    state.actualSceneIndex = 0
+                    state.actualContentIndex = -1
+                }
             }
         },
 
@@ -80,9 +86,15 @@ export const gameStatusSlice = createSlice({
                 state.actualContent = state.scenes[state.actualSceneIndex].scenario
             }
         },
+        setActualSceneIndex: (state, action) => {
+            state.actualSceneIndex = action.payload
+        },
+        setActualContentIndex: (state, action) => {
+            state.actualContentIndex = action.payload
+        },  
 
     }
 })
 
-export const { nextScene, nextContent, setDev,setScenario,setIs3D, is3D ,setActualContent} = gameStatusSlice.actions
+export const { nextScene, nextContent, setDev,setScenario,setIs3D, is3D ,setActualContent,setActo, setActualContentIndex, setActualSceneIndex } = gameStatusSlice.actions
 export default gameStatusSlice.reducer
