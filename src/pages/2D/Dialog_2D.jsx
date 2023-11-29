@@ -40,10 +40,10 @@ const Dialog_2D = () => {
         checkBackground()
     },[actualContent])
 
-    useEffect(() => {
-        dispatch(setActualSceneIndex(4))
-        dispatch(setActualContentIndex(10))
-    },[])
+    // useEffect(() => {
+    //     dispatch(setActualSceneIndex(4))
+    //     dispatch(setActualContentIndex(10))
+    // },[])
 
 
     return (

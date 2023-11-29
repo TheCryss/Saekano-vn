@@ -5,6 +5,8 @@ import { Minigame_Help } from '../Text/Minigame_Help';
 import * as THREE from "three";
 import { useSelector,useDispatch } from 'react-redux';
 import { setInteraction,setEnd,setHalf ,setWinner} from '../../../../../store/slicers/Minigame1Slice';
+import { nextScene,setIs3D,setActualContent,setScenario } from '../../../../../store/slicers/GameStatusSlice';
+import { useNavigate } from 'react-router-dom';
 
 /*     <Html Html position = { [0, -.1, -0.55]} transform occlude  rotation - x={ -Math.PI / 2 } rotation - z={ Math.PI / 2 }>
         <Poem />
@@ -15,6 +17,7 @@ export const Book = (props) => {
     const { actions } = useAnimations(animations, group);
     const { end, half, interaction } = useSelector(state => state.minigame1)
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleChildData = (childData) => {
         console.log(childData);
@@ -24,6 +27,11 @@ export const Book = (props) => {
         if (childData.end) {
             dispatch(setWinner(childData.winner));
             dispatch(setEnd(true));
+            dispatch(nextScene());
+            dispatch(setIs3D(false));
+            dispatch(setActualContent());
+            dispatch(setScenario(0));
+            // navigate('/acto/1')
         }
     }
 
