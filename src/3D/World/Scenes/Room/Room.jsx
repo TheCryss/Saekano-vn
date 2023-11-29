@@ -12,7 +12,7 @@ import { Eriri } from './Models/Eriri'
 import FloorRoom from './Models/FloorRoom'
 
 
-export const Room = () => {
+ const Room = () => {
     const keyboardMap = [
         { name: 'backward', keys: ['ArrowUp', 'KeyW'] },
         { name: 'forward', keys: ['ArrowDown', 'KeyS'] },
@@ -58,3 +58,5 @@ export const Room = () => {
         </>
     )
 }
+
+export default Room
