@@ -5,10 +5,6 @@
             "3d": false,
             "content": [
                 {
-                    "character": "...",
-                    "speech": "..."
-                },
-                {
                     "character": "Tomoya",
                     "speech": "Vale, he acordado con todas ellas que nos reuniremos aquí. En algún momento deberían ir llegando una por una."
                 },
@@ -34,7 +30,9 @@
             "3d": false,
             "content": [
                 {
-                    "Music": "Music_2"
+                    "Music": "Music_2",
+                    "background": "Act_2-Scene_1-2"
+
                 },
                 {
                     "character": "Tomoya",

@@ -22,7 +22,7 @@ const Experience = () => {
 
         if (is3D) {
             switch (scenario) {
-                case "room":
+                case "Habitacion":
                     return (<Room />);
                 case "Minijuego-guion":
                     return (<Minigame1 />);
@@ -36,9 +36,9 @@ const Experience = () => {
     }
     return (
         <>
-            <Suspense >
+            {/* <Suspense > */}
                 {getScenario()}
-            </Suspense>
+            {/* </Suspense> */}
         </>
     )
 }

@@ -16,10 +16,10 @@ const app_3D = () => {
 
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(setScenario("Minijuego-guion"));
-        dispatch(setIs3D(true));
-    }, []);
+    // useEffect(() => {
+    //     dispatch(setScenario("Habitacion"));
+    //     dispatch(setIs3D(true));
+    // }, []);
 
     const orthographicCameraSettings = {
         makeDefault: true, // Make this camera the default camera

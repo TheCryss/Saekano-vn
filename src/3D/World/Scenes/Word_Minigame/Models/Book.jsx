@@ -20,7 +20,6 @@ export const Book = (props) => {
     const navigate = useNavigate();
 
     const handleChildData = (childData) => {
-        console.log(childData);
         if (childData.half) {
             dispatch(setHalf(true))
         }
@@ -30,7 +29,7 @@ export const Book = (props) => {
             dispatch(nextScene());
             dispatch(setIs3D(false));
             dispatch(setActualContent());
-            dispatch(setScenario(0));
+            dispatch(setScenario(""));
             navigate('/acto/1')
         }
     }

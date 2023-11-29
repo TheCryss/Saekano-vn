@@ -6,6 +6,7 @@ import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
 
 import './Panel.css';
+import { a } from '@react-spring/three';
 
 
 export const Panel = ({data}) => {
@@ -43,7 +44,7 @@ export const Panel = ({data}) => {
         const actualScene = scenes[actualSceneIndex]
 
         if (actualScene["3d"]) {
-            // console.log("3D")
+            console.log(actualScene.scenario);
             dispatch(setScenario(actualScene.scenario))
             dispatch(setIs3D(true))
             navigate(`/3D/${actualScene.scenario}`) // Here you put the 3D scene (content)

@@ -21,7 +21,7 @@ const initialState = {
     actualSceneIndex: 0,
     finishedContent: false,
     actualContentIndex: 0,
-    scenario: 0,
+    scenario: "",
     acto:1,
     is3D: false,
     scenes: getScenes(1),

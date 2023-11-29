@@ -1,7 +1,6 @@
 import { OrbitControls } from "@react-three/drei";
 import { useThree, useFrame } from '@react-three/fiber';
-import { useEffect, useRef } from 'react';
-import { Vector3 } from 'three';
+
 
 export const Camera_controls = (props) => {
     useFrame(({ camera }) => {
