@@ -320,8 +320,8 @@
         },
         {
             "3d":true,
-            "scenario": "Minijuego-guion"
-
+            "scenario": "Minijuego-guion",
+            "content":[]
         }
     ]
 }
