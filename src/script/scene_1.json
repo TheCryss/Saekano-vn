@@ -5,32 +5,40 @@
             "content": [
                 {
                     "character": "Narrador",
-                    "speech": "La alarma suena incesantemente.",
-                    "background": "Act_1-Scene_1-1"
+                    "speech": "La alarma suena incesantemente."
+                    
                 },
                 {
                     "character": "Narrador",
                     "speech": "Tomoya apaga la alarma que anuncia que las vacaciones de verano han terminado.",
-                    "music": "Music_1"
+                    "music": "Music_1",
+                    "background": "Act_1-Scene_1-1"
+
                 },
                 {
                     "music": "Music_1"
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Debo de alistarme para ir a la escuela."
+                    "speech": "Debo de alistarme para ir a la escuela.",
+                    "background": "Act_1-Scene_1-2"
+
                 },
                 {
                     "character": "Tomoya",
                     "thought": "Pero en el fondo, no olvidaba aquel momento que tuve aquel día..."
+
                 },
                 {
                     "character": "Tomoya",
-                    "thought": "¿Por qué a mí? ¿Por qué ese día y no otro? Me era imposible olvidarlo."
+                    "thought": "¿Por qué a mí? ¿Por qué ese día y no otro? Me era imposible olvidarlo.",
+                    "background": "Act_0-1"
+
                 },
                 {
                     "character": "Tomoya",
-                    "thought": "Tal vez no sería... ¿El destino comunicándome un mensaje...?"
+                    "thought": "Tal vez no sería... ¿El destino comunicándome un mensaje...?",
+                    "background": "Act_1-Scene_1-t"
                 },
                 {
                     "character": "Tomoya",
@@ -47,7 +55,9 @@
             "content": [
                 {
                     "character": "Narrador",
-                    "speech": "Al llegar, la escuela no se encuentra llena."
+                    "speech": "Al llegar, la escuela no se encuentra llena.",
+                    "background": "Act_1-Scene_2-1"
+
                 },
                 {
                     "character": "Tomoya",
@@ -55,11 +65,15 @@
                 },
                 {
                     "character": "Narrador",
-                    "speech": "Tomoya da un vistazo rápido a la distribución de los salones."
+                    "speech": "Tomoya da un vistazo rápido a la distribución de los salones.",
+                    "background": "Act_1-Scene_2-2"
+
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Mira, que aquí estoy. Salón B-2."
+                    "speech": "Mira, que aquí estoy. Salón B-2.",
+                    "background": "Act_1-Scene_2-t"
+
                 },
                 {
                     "character": "Tomoya",
@@ -84,7 +98,9 @@
             "content": [
                 {
                     "character": "Narrador",
-                    "speech": "Al llegar Tomoya se acomoda en una silla para iniciar lo que había pensado."
+                    "speech": "Al llegar Tomoya se acomoda en una silla para iniciar lo que había pensado.",
+                    "background": "Act_1-Scene_3-1"
+
                 },
                 {
                     "character": "Narrador",
@@ -93,7 +109,9 @@
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "¡Una novela visual!"
+                    "speech": "¡Una novela visual!",
+                    "background": "Act_1-Scene_3-2"
+
                 },
                 {
                     "character": "Tomoya",
@@ -125,7 +143,8 @@
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Es..."
+                    "speech": "Es...",
+                    "background": "Act_1-Scene_3-1"
                 },
                 {
                     "character": "Tomoya",

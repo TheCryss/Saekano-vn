@@ -83,7 +83,7 @@ export const Panel = ({data}) => {
     const nodeRefCharacter = useRef(null);
 
     const onClickText = () => {
-        console.log(gameStatus)
+        // console.log(gameStatus)
         if (gameStatus.finishedScene) {
             dispatch(nextScene())
         }

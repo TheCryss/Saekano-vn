@@ -25,6 +25,7 @@ const initialState = {
     acto:1,
     is3D: false,
     scenes: getScenes(1),
+    actualContent: {is3D:false},
 }
 
 export const gameStatusSlice = createSlice({
@@ -69,8 +70,19 @@ export const gameStatusSlice = createSlice({
             state.acto = action.payload;
             state.scenes = getScenes(state.acto);
         },
+        is3D:(state) =>{
+            return state.is3D
+        }        ,
+        setActualContent: (state) => {
+            if (!state.is3D) {
+                state.actualContent = state.scenes[state.actualSceneIndex].content[state.actualContentIndex]
+            } else{
+                state.actualContent = state.scenes[state.actualSceneIndex].scenario
+            }
+        },
+
     }
 })
 
-export const { nextScene, nextContent, setDev,setScenario,setIs3D } = gameStatusSlice.actions
+export const { nextScene, nextContent, setDev,setScenario,setIs3D, is3D ,setActualContent} = gameStatusSlice.actions
 export default gameStatusSlice.reducer
