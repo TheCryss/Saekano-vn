@@ -8,6 +8,11 @@ import { Loader } from "@react-three/drei";
 import Experience from "./World/Experience"
 import { Auth } from "./World/Scenes/Login/Text/Auth";
 import { useGame } from "../context/GameContext";
+// import Transitions from "../Components/Transitions";
+import { Fallback } from "../Components/Fallback";
+import { lazy, Suspense } from "react"
+
+// const Auth = lazy(() => import("./World/Scenes/Login/Text/Auth"))
 
 
 const Login3D = () => {
@@ -28,7 +33,7 @@ const Login3D = () => {
     return (
         <>
             <Auth></Auth>
-            <Canvas shadows >
+            <Canvas shadows frameloop="demand" >
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {/* <OrbitControls></OrbitControls> */}
                 <Camera_controls></Camera_controls>
@@ -37,7 +42,6 @@ const Login3D = () => {
                 </Physics>
             </Canvas>
             <Loader />
-
 
         </>
     )
