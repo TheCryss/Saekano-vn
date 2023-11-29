@@ -31,7 +31,7 @@ export const Book = (props) => {
             dispatch(setIs3D(false));
             dispatch(setActualContent());
             dispatch(setScenario(0));
-            // navigate('/acto/1')
+            navigate('/acto/1')
         }
     }
 
