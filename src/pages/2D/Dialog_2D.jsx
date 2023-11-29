@@ -1,13 +1,15 @@
 import { Panel } from '../../Components/Panel'
 import { useGame } from '../../context/GameContext'
 import { useState, useEffect } from 'react'
+import Transitions from '../../Components/Transitions';
 
 
-export const Dialog_2D = () => {
+
+const Dialog_2D = () => {
     const { getActualContent } = useGame()
     const [background, setBackground] = useState("Act_0-1")
 
-    const checkBackground = () => {
+    const checkBackground = () => { 
         const { is3D, content } = getActualContent()
 
         if (!is3D && "background" in content) {
@@ -29,3 +31,5 @@ export const Dialog_2D = () => {
         </>
     )
 }
+
+export default Transitions(Dialog_2D)

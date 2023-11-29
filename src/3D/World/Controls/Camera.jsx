@@ -19,5 +19,5 @@ export const Camera_controls_room = (props) => {
 };
 
 export const Camera_controls_minigame1 = (props) => {
-    return <OrbitControls {...props} enabled={false}  />;
+    return <OrbitControls {...props} minAzimuthAngle={-Math.PI / 4} maxAzimuthAngle={Math.PI / 4}/>;
 };

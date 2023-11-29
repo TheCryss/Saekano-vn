@@ -47,7 +47,7 @@ export const Panel = () => {
             console.log("3D")
             dispatch(setScenario(actualScene.scenario))
             dispatch(setIs3D(true))
-            navigate(`/${actualScene.scenario}`) // Here you put the 3D scene (content)
+            navigate(`/3D/${actualScene.scenario}`) // Here you put the 3D scene (content)
         } else {
 
             const actualContent = actualScene.content[actualContentIndex]

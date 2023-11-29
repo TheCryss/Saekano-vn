@@ -1,8 +1,7 @@
 import { Outlet } from "react-router-dom"
-import Transitions from "../Components/Transitions"
 import { Fallback } from "../Components/Fallback"
-import { lazy, Suspense } from "react"
-const Dialog_Layout = () => {
+import { Suspense } from "react"
+const _3D_Layout = () => {
     return (
         <div className="w-full h-full bg-white ">
             <Suspense fallback={<Fallback/>}>
@@ -12,4 +11,4 @@ const Dialog_Layout = () => {
     )
 }
 
-export default Dialog_Layout
+export default _3D_Layout

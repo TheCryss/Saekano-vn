@@ -6,11 +6,21 @@ import { OrthographicCamera } from '@react-three/drei';
 import { Loader } from "@react-three/drei";
 import { useGame } from "../context/GameContext";
 import { useDispatch, useSelector } from "react-redux";
+import { setScenario, setIs3D } from "../store/slicers/GameStatusSlice"
+import { useEffect } from "react"
 //libs
 import Experience from "./World/Experience";
 import { Panel3D } from "../Components/Panel3D";
 
-export const app_3D = () => {
+const app_3D = () => {
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(setScenario("Minijuego-guion"));
+        dispatch(setIs3D(true));
+    }, []);
+
     const orthographicCameraSettings = {
         makeDefault: true, // Make this camera the default camera
         zoom: 35,             // Zoom level of the camera
@@ -24,7 +34,6 @@ export const app_3D = () => {
     };
 
     const { getActualContent, nextContent, nextScene } = useGame();
-    const dispatch = useDispatch();
     const {room,interaction} = useSelector(state => state.room)
     const {  scenario } = useSelector(state => state.gameStatus)
     const getCamera = () => {
@@ -58,7 +67,7 @@ export const app_3D = () => {
             <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {camera}
-                <Physics timeStep="vary" debug>
+                <Physics timeStep="vary" >
                     <Experience />
                 </Physics>
             </Canvas>
@@ -66,3 +75,5 @@ export const app_3D = () => {
         </>
     )
 }
+
+export default app_3D
