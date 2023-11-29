@@ -1,8 +1,10 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect,useState } from 'react'
 import { useGLTF, Html, useAnimations } from '@react-three/drei';
 import { Poem } from '../Text/Poem';
 import { Minigame_Help } from '../Text/Minigame_Help';
 import * as THREE from "three";
+import { useSelector,useDispatch } from 'react-redux';
+import { setInteraction,setEnd,setHalf ,setWinner} from '../../../../../store/slicers/Minigame1Slice';
 
 /*     <Html Html position = { [0, -.1, -0.55]} transform occlude  rotation - x={ -Math.PI / 2 } rotation - z={ Math.PI / 2 }>
         <Poem />
@@ -11,12 +13,27 @@ export const Book = (props) => {
     const group = useRef();
     const { nodes, materials, animations } = useGLTF("/assets/models/book/Book.glb");
     const { actions } = useAnimations(animations, group);
+    const { end, half, interaction } = useSelector(state => state.minigame1)
+    const dispatch = useDispatch();
+
+    const handleChildData = (childData) => {
+        console.log(childData);
+        if (childData.half) {
+            dispatch(setHalf(true))
+        }
+        if (childData.end) {
+            dispatch(setWinner(childData.winner));
+            dispatch(setEnd(true));
+        }
+    }
 
     useEffect(() => {
         const action = actions["Move"]
-        action.play()
-        action.setLoop(THREE.LoopOnce, 1 )
-    }, [])
+        if (half) {
+            action.play()
+            action.setLoop(THREE.LoopOnce, 1)
+        }
+    }, [half])
 
     return (
         <group ref={group} {...props} dispose={null}>
@@ -73,7 +90,7 @@ export const Book = (props) => {
                         geometry={nodes.Cube003_1.geometry}
                         material={materials.Paper}
                     >
-                        <Html position={[0, 0.18, 0.52]}  transform occlude rotation-x={-Math.PI / 1.5} rotation-z={Math.PI / 2}
+                        <Html position={[0, 0.18, 0.52]} transform occlude rotation-x={-Math.PI / 1.5} rotation-z={Math.PI / 2}
                         >
                             <Minigame_Help />
                         </Html>
@@ -90,7 +107,7 @@ export const Book = (props) => {
                     rotation={[-0.262, 0, 0]}
                 >
                     <Html position={[0, 1e-3, 0]} transform occlude rotation-x={-Math.PI / 2} rotation-z={-Math.PI / 2} >
-                        <Poem />
+                        <Poem sendDataToParent={handleChildData} />
                     </Html>
                 </mesh>
             </group>
