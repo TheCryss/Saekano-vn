@@ -10,7 +10,7 @@ const initialState = {
     finishedContent: false,
     actualContentIndex: 0,
     scenario: 0,
-    dev: false,
+    acto:1,
     is3D: false,
 }
 
@@ -51,7 +51,10 @@ export const gameStatusSlice = createSlice({
         },
         setIs3D:(state,action) =>{
             state.is3D = action.payload
-        }
+        },
+        setActo:(state,action) =>{
+            state.acto = action.payload
+        },
     }
 })
 

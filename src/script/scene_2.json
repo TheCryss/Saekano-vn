@@ -5,15 +5,15 @@
             "3d": false,
             "content": [
                 {
-                    "character": "Tamayo",
+                    "character": "Tomoya",
                     "speech": "Vale, he acordado con todas ellas que nos reuniremos aquí. En algún momento deberían ir llegando una por una."
                 },
                 {
-                    "character": "Tamayo",
+                    "character": "Tomoya",
                     "speech": "En tal caso, más vale ir adelantando. Debo convencerlas de que mi novela no se trata de ningún capricho, se trata..."
                 },
                 {
-                    "character": "Tamayo",
+                    "character": "Tomoya",
                     "speech": "Aghhh, ya verán de lo que se trata."
                 },
                 {
@@ -34,31 +34,31 @@
                     "Music": "Music_2"
                 },
                 {
-                    "character": "Tamayo",
+                    "character": "Tomoya",
                     "speech": "Lo tengo"
                 },
                 {
-                    "character": "Tamayo",
+                    "character": "Tomoya",
                     "speech": "¡Lo tengo!"
                 },
                 {
-                    "character": "Tamayo",
+                    "character": "Tomoya",
                     "speech": "Con este concepto en mano, es imposible que me vuelvan a negar mi idea otra vez. Es más, ni deberían..."
                 },
                 {
                     "Music": ""
                 },
                 {
-                    "character": "Tamayo",
+                    "character": "Tomoya",
                     "speech": "¡Lo tengo!"
                 },
                 {
-                    "character": "Tamayo",
+                    "character": "Tomoya",
                     "speech": "¿¡Egh!?",
                     "sound": "Opening_door"
                 },
                 {
-                    "character": "Tamayo",
+                    "character": "Tomoya",
                     "speech": "¿¡Ya han llegado tan rápido!?"
                 }
             ]
@@ -95,7 +95,7 @@
         {
             "id": 4,
             "3d": true,
-            "scenario": "Habitación de Tomoya",
+            "scenario": "room",
             "bifurcation": true,
             "content": [
                 [
