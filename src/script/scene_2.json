@@ -5,6 +5,10 @@
             "3d": false,
             "content": [
                 {
+                    "character": "...",
+                    "speech": "..."
+                },
+                {
                     "character": "Tomoya",
                     "speech": "Vale, he acordado con todas ellas que nos reuniremos aquí. En algún momento deberían ir llegando una por una."
                 },

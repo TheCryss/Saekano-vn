@@ -46,7 +46,7 @@ export const gameStatusSlice = createSlice({
                     state.acto = state.acto + 1
                     state.scenes = getScenes(state.acto);
                     state.actualSceneIndex = 0
-                    state.actualContentIndex = -1
+                    state.actualContentIndex = 0
                 }
             }
         },
