@@ -1,42 +1,44 @@
 {
     "scenes": [
         {
-            "id": 1,
             "3d": false,
             "content": [
                 {
+                    "character": "Narrador",
+                    "speech": "La alarma suena incesantemente."
+                    
+                },
+                {
+                    "character": "Narrador",
+                    "speech": "Tomoya apaga la alarma que anuncia que las vacaciones de verano han terminado.",
+                    "music": "Music_1",
+                    "background": "Act_1-Scene_1-1"
 
                 },
                 {
                     "music": "Music_1"
                 },
                 {
-                    "character": "Narrador",
-                    "speech": "La alarma suena incesantemente.",
-                    "background": "Act_1-Scene_1-1"
-                },
-                {
-                    "character": "Narrador",
-                    "speech": "Tomoyo apaga la alarma que anuncia que las vacaciones de verano han terminado."
-                },
-                {
-                    "music": "Music_1"
+                    "character": "Tomoya",
+                    "speech": "Debo de alistarme para ir a la escuela.",
+                    "background": "Act_1-Scene_1-2"
+
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Debo de alistarme para ir a la escuela."
+                    "thought": "Pero en el fondo, no olvidaba aquel momento que tuve aquel día..."
+
                 },
                 {
                     "character": "Tomoya",
-                    "thought": "Pero en el fondo, no olvidaba aquel momento que tuve aquel día…"
+                    "thought": "¿Por qué a mí? ¿Por qué ese día y no otro? Me era imposible olvidarlo.",
+                    "background": "Act_0-1"
+
                 },
                 {
                     "character": "Tomoya",
-                    "thought": "¿Por qué a mí? ¿Por qué ese día y no otro? Me era imposible olvidarlo."
-                },
-                {
-                    "character": "Tomoya",
-                    "thought": "Tal vez no sería… ¿El destino comunicándome un mensaje…?"
+                    "thought": "Tal vez no sería... ¿El destino comunicándome un mensaje...?",
+                    "background": "Act_1-Scene_1-t"
                 },
                 {
                     "character": "Tomoya",
@@ -44,17 +46,18 @@
                 },
                 {
                     "character": "Tomoya",
-                    "thought": "Y si alcanzo, es posible que pueda adelantar mi gran proyecto…"
+                    "thought": "Y si alcanzo, es posible que pueda adelantar mi gran proyecto..."
                 }
             ]
         },
         {
-            "id": 2,
             "3d":false,
             "content": [
                 {
                     "character": "Narrador",
-                    "speech": "Al llegar, la escuela no se encuentra llena."
+                    "speech": "Al llegar, la escuela no se encuentra llena.",
+                    "background": "Act_1-Scene_2-1"
+
                 },
                 {
                     "character": "Tomoya",
@@ -62,15 +65,15 @@
                 },
                 {
                     "character": "Narrador",
-                    "speech": "Al llegar, la escuela no se encuentra llena."
-                },
-                {
-                    "character": "Narrador",
-                    "speech": "Tomoyo da un vistazo rápido a la distribución de los salones."
+                    "speech": "Tomoya da un vistazo rápido a la distribución de los salones.",
+                    "background": "Act_1-Scene_2-2"
+
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Mira, que aquí estoy. Salón B-2."
+                    "speech": "Mira, que aquí estoy. Salón B-2.",
+                    "background": "Act_1-Scene_2-t"
+
                 },
                 {
                     "character": "Tomoya",
@@ -78,36 +81,37 @@
                 },
                 {
                     "character": "Narrador",
-                    "speech": "Tomoyo leyendo algunos nombres asignados en los puestos, encuentra dos nombres que le son familiares."
+                    "speech": "Tomoya leyendo algunos nombres asignados en los puestos, encuentra dos nombres que le son familiares."
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Se encuentran… ¿¡Se encuentran conmigo!?"
+                    "speech": "Se encuentran... ¿¡Se encuentran conmigo!?"
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Hmmm… Ya pensaré algo, tengo que hacer primero lo que he pensado"
+                    "speech": "Hmmm... Ya pensaré algo, tengo que hacer primero lo que he pensado"
                 }
             ]
         },
         {
-            "id": 3,
             "3d": false,
             "content": [
                 {
                     "character": "Narrador",
-                    "speech": "Al llegar Tomoyo se acomoda en una silla para iniciar lo que había pensado."
+                    "speech": "Al llegar Tomoya se acomoda en una silla para iniciar lo que había pensado.",
+                    "background": "Act_1-Scene_3-1"
+
                 },
                 {
                     "character": "Narrador",
-                    "speech": "Finalmente, mi gran proyecto…"
-                },
-                {
+                    "speech": "Finalmente, mi gran proyecto...",
                     "sound": "Sparkles"
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "¡Una novela visual!"
+                    "speech": "¡Una novela visual!",
+                    "background": "Act_1-Scene_3-2"
+
                 },
                 {
                     "character": "Tomoya",
@@ -132,12 +136,6 @@
             ]
         },
         {
-            "id": 4,
-            "3d": true,
-            "scenario": "Minijuego-guion"
-        },
-        {
-            "id": 5,
             "3d": false,
             "content": [
                 {
@@ -145,11 +143,12 @@
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Es…"
+                    "speech": "Es...",
+                    "background": "Act_1-Scene_3-1"
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "¡Es…!"
+                    "speech": "¡Es...!"
                 },
                 {
                     "sound": "Stinger_victory"
@@ -163,7 +162,7 @@
                     "speech": "¿¡Cómo antes no se me pudo haber ocurrido!?"
                 },
                 {
-                    "sound": "Opening_door.ogg"
+                    "sound": "Opening_door"
                 },
                 {
                     "character": "Tomoya",
@@ -179,7 +178,7 @@
                 },
                 {
                     "character": "Narrador",
-                    "speech": "A Tamayo esta voz le pareció conocida"
+                    "speech": "A Tomoya esta voz le pareció conocida"
                 },
                 {
                     "character": "Tomoya",
@@ -227,7 +226,6 @@
             ]
         },
         {
-            "id": 6,
             "3d": false,
             "content": [
                 {
@@ -240,7 +238,7 @@
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Dejando de lado a mi ilustradora, bueno… Posible ilustradora, debo de enfocarme en alguien en el guión."
+                    "speech": "Dejando de lado a mi ilustradora, bueno... Posible ilustradora, debo de enfocarme en alguien en el guión."
                 },
                 {
                     "character": "Yoshihiko",
@@ -272,7 +270,7 @@
                 },
                 {
                     "character": "Tomoya",
-                    "thought": "Club de teatro, ¿Escritora…? Lo tengo. Mi concepto de guión no podrá ser bueno, ¡Sino el mejor!. Y quien para darme de razón que la misma líder del club de teatro."
+                    "thought": "Club de teatro, ¿Escritora...? Lo tengo. Mi concepto de guión no podrá ser bueno, ¡Sino el mejor!. Y quien para darme de razón que la misma líder del club de teatro."
                 },
                 {
                     "character": "Tomoya",
@@ -281,7 +279,6 @@
             ]
         },
         {
-            "id": 7,
             "3d":false,
             "content": [
                 {
@@ -322,11 +319,11 @@
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "¿¡…!?"
+                    "speech": "¿¡...!?"
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "¿Eres…? ¿¡Tú eres…!?"
+                    "speech": "¿Eres...? ¿¡Tú eres...!?"
                 },
                 {
                     "music": "Music_1"

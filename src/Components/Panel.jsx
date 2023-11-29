@@ -1,22 +1,30 @@
 import { useState, useEffect, useRef } from 'react'
-import { useGame } from '../context/GameContext'
+import { useSelector, useDispatch } from "react-redux";
+import { nextScene, nextContent, setScenario,setIs3D} from '../store/slicers/GameStatusSlice';
 import { useNavigate } from 'react-router-dom'
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
+
 import './Panel.css';
 
-export const Panel = () => {
-    const { getActualContent, nextContent, nextScene } = useGame();
+
+export const Panel = ({data}) => {
     const navigate = useNavigate()
+    const dispatch = useDispatch();
+    // const scenes = data.scenes
+
     const [isAuto, setIsAuto] = useState(false)
     const [currentMusic, setCurrentMusic] = useState(null)
     const [character, setCharacter] = useState("...")
     const [dialog, setDialog] = useState("...")
 
+    const gameStatus = useSelector((state) => state.gameStatus)
+
     const playMusic = (musicName) => {
         if (currentMusic) {
-            currentMusic.pause();
+            if (!currentMusic.paused) currentMusic.pause()
         } else {
+            console.log("Test")
             const newMusic = new Audio("/assets/music/" + musicName + ".ogg");
             newMusic.volume = 0.2;
             newMusic.loop = true;
@@ -30,52 +38,56 @@ export const Panel = () => {
     }
 
     const playEvent = () => {
-        const { is3D, content } = getActualContent()
-        if (is3D) {
-            console.log("is3D")
-            navigate(`/${content}`) // Here you put the 3D scene (content)
+        const { actualSceneIndex, actualContentIndex,scenes,actualContent } = gameStatus
+
+        const actualScene = scenes[actualSceneIndex]
+
+        if (actualScene["3d"]) {
+            // console.log("3D")
+            dispatch(setScenario(actualScene.scenario))
+            dispatch(setIs3D(true))
+            navigate(`/3D/${actualScene.scenario}`) // Here you put the 3D scene (content)
         } else {
-            const keys = Object.keys(content)
+
+            
+            const keys = Object.keys(actualContent)
+
             switch (keys[0]) {
                 case "character":
-                    setCharacter(content.character)
+                    setCharacter(actualContent.character)
                     if (keys[1] == "speech") {
-                        setDialog(content.speech)
+                        setDialog(actualContent.speech)
                     } else {
-                        setDialog(content.thought)
+                        setDialog(actualContent.thought)
                     }
                     break;
                 default: break;
             }
 
-            if ("sound" in content) {
-                playSound(content.sound)
+            if ("sound" in actualContent) {
+                playSound(actualContent.sound)
             }
 
-            if ("music" in content) {
-                playMusic(content.music)
+            if ("music" in actualContent) {
+                playMusic(actualContent.music)
             }
         }
     }
 
     useEffect(() => {
         playEvent()
-    }, [getActualContent])
+    }, [gameStatus])
+
 
     const nodeRef = useRef(null);
     const nodeRefCharacter = useRef(null);
 
     const onClickText = () => {
-        const result = nextContent();
-
-        if (!result.success) {
-            const { success } = nextScene();
-            if (!success) {
-                console.log("no more scenes");
-            } else {
-                console.log("next scene");
-            }
+        if (gameStatus.finishedScene) {
+            dispatch(nextScene())
         }
+
+        dispatch(nextContent())
     }
 
     useEffect(() => {
@@ -95,24 +107,31 @@ export const Panel = () => {
     }, [isAuto, onClickText])
 
     const handleSkip = () => {
-        const { success } = nextScene();
-
-        if (!success) {
-            console.log("no more scenes");
-        } else {
-            console.log("next scene");
-        }
+        dispatch(nextScene());
     }
 
     const handleExit = () => {
-        console.log(currentMusic)
-        console.log(!currentMusic.pause)
+        if (!currentMusic) {
+            if (!currentMusic.paused) currentMusic.pause()
+        }
+
         navigate("/")
+    }
+
+    const handleTest = () => {
+        if (!currentMusic) {
+            if (!currentMusic.paused) {
+                console.log("Audio paused");
+                currentMusic.pause()
+            } else {
+                console.log("Audio played");
+                currentMusic.play()
+            }
+        }
     }
 
     return (
         <>
-
             <div className='flex justify-center '>
 
                 <div className=' w-1/6 text-md my-8 h-40 flex flex-col mt-12 '>
@@ -126,6 +145,7 @@ export const Panel = () => {
                     <button onClick={handleExit} className={`border-[#C6F5EB] text-pink-950 border-4 select-none my-2 flex items-center justify-center  bg-[rgba(242,198,245,0.75)] hover:bg-[#F5EAC6] hover:scale-105 hover:  transition-all  rounded-md py-1 font-bold `} type='button'>
                         Exit
                     </button>
+
                 </div>
                 <div className='w-3/4 h-56' onClick={onClickText} >
                     <div className=' ml-8 mb-3  h-10  flex items-center justify-center rounded-md  bg-[rgba(242,198,245,0.75)] w-40 border-[#C6F5EB] text-pink-950 border-4 select-none font-bold' >

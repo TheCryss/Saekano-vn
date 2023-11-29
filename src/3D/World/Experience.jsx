@@ -1,39 +1,46 @@
+//Libraries
+import { lazy, Suspense } from 'react';
+import { useSelector, useDispatch } from "react-redux";
 //Models
 import Login from './Scenes/Login/Login'
-import {Room} from './Scenes/Room/Room'
-import { Minigame1 } from './Scenes/Word_Minigame/Minigame1'
-import {Lights} from './Staging/Lights'
-import { useGame } from '../../context/GameContext'
-//Libraries
+const Room = lazy(() => import('./Scenes/Room/Room'))
+const Minigame1 = lazy(() => import('./Scenes/Word_Minigame/Minigame1'))
+import { Fallback } from '../../Components/Fallback'
+import { Lights } from './Staging/Lights'
+
+
+
 
 
 const Experience = () => {
-  const { getActualContent, nextContent, nextScene } = useGame();
+    const gameStatus = useSelector(state => state.gameStatus);
 
-  const getScenario = () => {
-    const { is3D, content } = getActualContent()
-    console.log(content)
-    if (is3D) {
-      switch (content) {
-        case "room":
-          return (<Room/>);
-          break;
-        case "Minijuego-guion":
-          // return (<Room/>); // this have to change
-          return (<Minigame1/>);
-          break;
-        default:
-          return (<Login/>);
-          break;
-      }
+
+
+    const getScenario = () => {
+        const { is3D, scenario } = gameStatus
+
+        if (is3D) {
+            switch (scenario) {
+                case "room":
+                    return (<Room />);
+                case "Minijuego-guion":
+                    return (<Minigame1 />);
+                default:
+                    return (<Login />);
+            }
+        }
+        return (<Login />);
+        // return (<Room/>)
+        // return (<Minigame1/>)
     }
-    return (<Login/>);
-  }
-  return (
-  <>
-    {getScenario()}
-  </>
-  )
+    return (
+        <>
+            <Suspense >
+                {getScenario()}
+            </Suspense>
+        </>
+    )
 }
 
 export default Experience
