@@ -1,7 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
-import data from '../../script/scene_1.json'
+import data1 from '../../script/scene_1.json';
+import data2 from '../../script/scene_2.json';
 
-const scenes = data.scenes
+const getScenes = (acto) => {
+    switch(acto) {
+        case 1:
+            return data1.scenes;
+        case 2:
+            return data2.scenes;
+        // Add more cases as needed
+        default:
+            return [];
+    }
+}
+// const scenes = data.scenes
 
 const initialState = {
     finishedScript: false,
@@ -12,6 +24,7 @@ const initialState = {
     scenario: 0,
     acto:1,
     is3D: false,
+    scenes: getScenes(1),
 }
 
 export const gameStatusSlice = createSlice({
@@ -22,9 +35,9 @@ export const gameStatusSlice = createSlice({
             if (!state.scriptFinished) {
                 state.finishedScene = false;
                 const nextScene = state.actualSceneIndex + 1
-                console.log(scenes[nextScene])
+                console.log(state.scenes[nextScene])
 
-                if (!(scenes[nextScene] == undefined)) {
+                if (!(state.scenes[nextScene] == undefined)) {
                     state.actualSceneIndex = nextScene
                     state.actualContentIndex = 0
                 } else state.finishedScript = true
@@ -36,7 +49,7 @@ export const gameStatusSlice = createSlice({
                 if (!state.finishedScene) {
                     const nextContent = state.actualContentIndex + 1;
 
-                    if (!(scenes[state.actualSceneIndex].content[nextContent] == undefined)) {
+                    if (!(state.scenes[state.actualSceneIndex].content[nextContent] == undefined)) {
                         state.actualContentIndex = nextContent
                     } else state.finishedScene = true
                 }
@@ -53,7 +66,8 @@ export const gameStatusSlice = createSlice({
             state.is3D = action.payload
         },
         setActo:(state,action) =>{
-            state.acto = action.payload
+            state.acto = action.payload;
+            state.scenes = getScenes(state.acto);
         },
     }
 })

@@ -4,15 +4,14 @@ import { nextScene, nextContent, setScenario,setIs3D} from '../store/slicers/Gam
 import { useNavigate } from 'react-router-dom'
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
-import data from '../script/scene_1.json'
 
 import './Panel.css';
 
-const scenes = data.scenes
 
-export const Panel = () => {
+export const Panel = ({data}) => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
+    const scenes = data.scenes
 
     const [isAuto, setIsAuto] = useState(false)
     const [currentMusic, setCurrentMusic] = useState(null)
