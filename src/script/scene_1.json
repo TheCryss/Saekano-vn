@@ -10,7 +10,7 @@
                 },
                 {
                     "character": "Narrador",
-                    "speech": "Tomoyo apaga la alarma que anuncia que las vacaciones de verano han terminado.",
+                    "speech": "Tomoya apaga la alarma que anuncia que las vacaciones de verano han terminado.",
                     "music": "Music_1"
                 },
                 {
@@ -55,11 +55,7 @@
                 },
                 {
                     "character": "Narrador",
-                    "speech": "Al llegar, la escuela no se encuentra llena."
-                },
-                {
-                    "character": "Narrador",
-                    "speech": "Tomoyo da un vistazo rápido a la distribución de los salones."
+                    "speech": "Tomoya da un vistazo rápido a la distribución de los salones."
                 },
                 {
                     "character": "Tomoya",
@@ -71,7 +67,7 @@
                 },
                 {
                     "character": "Narrador",
-                    "speech": "Tomoyo leyendo algunos nombres asignados en los puestos, encuentra dos nombres que le son familiares."
+                    "speech": "Tomoya leyendo algunos nombres asignados en los puestos, encuentra dos nombres que le son familiares."
                 },
                 {
                     "character": "Tomoya",
@@ -88,7 +84,7 @@
             "content": [
                 {
                     "character": "Narrador",
-                    "speech": "Al llegar Tomoyo se acomoda en una silla para iniciar lo que había pensado."
+                    "speech": "Al llegar Tomoya se acomoda en una silla para iniciar lo que había pensado."
                 },
                 {
                     "character": "Narrador",
