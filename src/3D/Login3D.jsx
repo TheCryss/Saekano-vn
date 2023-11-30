@@ -7,7 +7,6 @@ import { Loader } from "@react-three/drei";
 //libs
 import Experience from "./World/Experience"
 import { Auth } from "./World/Scenes/Login/Text/Auth";
-import { useGame } from "../context/GameContext";
 // import Transitions from "../Components/Transitions";
 import { Fallback } from "../Components/Fallback";
 import { lazy, Suspense } from "react"
@@ -28,7 +27,6 @@ const Login3D = () => {
                 bottom: -8,        // Bottom boundary of the view */
     };
 
-    const { getActualContent, nextContent, nextScene } = useGame();
 
     return (
         <>

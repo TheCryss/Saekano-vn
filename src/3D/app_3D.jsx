@@ -4,7 +4,6 @@ import { Camera_controls_room, Camera_controls_minigame1 } from "./World/Control
 import { Physics } from "@react-three/rapier"
 import { OrthographicCamera } from '@react-three/drei';
 import { Loader } from "@react-three/drei";
-import { useGame } from "../context/GameContext";
 import { useDispatch, useSelector } from "react-redux";
 import { setScenario, setIs3D } from "../store/slicers/GameStatusSlice"
 import { useEffect } from "react"
@@ -33,9 +32,8 @@ const app_3D = () => {
                 bottom: -8,        // Bottom boundary of the view */
     };
 
-    const { getActualContent, nextContent, nextScene } = useGame();
-    const {room,interaction} = useSelector(state => state.room)
-    const {  scenario } = useSelector(state => state.gameStatus)
+    const { room,interaction } = useSelector(state => state.room)
+    const { scenario } = useSelector(state => state.gameStatus)
     const getCamera = () => {
         switch (scenario) {
             case "room":

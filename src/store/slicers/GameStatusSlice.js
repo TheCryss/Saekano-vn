@@ -1,50 +1,48 @@
-import { createSlice } from "@reduxjs/toolkit";
-import data1 from '../../script/scene_1.json';
-import data2 from '../../script/scene_2.json';
+import { createSlice } from '@reduxjs/toolkit'
+import script_1 from '../../script/scene_1.json'
+import script_2 from '../../script/scene_2.json'
 
-const getScenes = (acto) => {
-    switch(acto) {
-        case 1:
-            return data1.scenes;
-        case 2:
-            return data2.scenes;
-        // Add more cases as needed
-        default:
-            return [];
+
+const scripts = [script_1, script_2]
+
+const getScriptScenes = (act) => {
+    if (1 <= act && act <= scripts.length) {
+        return scripts[act - 1].scenes
     }
 }
-// const scenes = data.scenes
 
 const initialState = {
+    actualScriptScenes: getScriptScenes(1),
+    act: 1,
+    actualContent: { is3D: false },
+    is3D: false,
+    isBifurcation: false,
+    bifurcation: 1,
     finishedScript: false,
     finishedScene: false,
     actualSceneIndex: 0,
     finishedContent: false,
     actualContentIndex: 0,
-    scenario: "",
-    acto:1,
-    is3D: false,
-    scenes: getScenes(1),
-    actualContent: {is3D:false},
+    scenario: '',
+    playerBifurcations: [0, 0, 0]
 }
 
 export const gameStatusSlice = createSlice({
-    name: "gameStatus",
+    name: 'gameStatus',
     initialState,
     reducers: {
         nextScene: (state) => {
             if (!state.scriptFinished) {
-                state.finishedScene = false;
+                state.finishedScene = false
                 const nextScene = state.actualSceneIndex + 1
-                console.log(state.scenes[nextScene])
 
-                if (!(state.scenes[nextScene] == undefined)) {
+                if (!(state.actualScriptScenes[nextScene] == undefined)) {
                     state.actualSceneIndex = nextScene
                     state.actualContentIndex = 0
                 } else {
                     state.finishedScript = true
-                    state.acto = state.acto + 1
-                    state.scenes = getScenes(state.acto);
+                    state.act = state.act + 1
+                    state.actualScriptScenes = getScriptScenes(state.act)
                     state.actualSceneIndex = 0
                     state.actualContentIndex = 0
                 }
@@ -54,11 +52,17 @@ export const gameStatusSlice = createSlice({
         nextContent: (state) => {
             if (!state.scriptFinished) {
                 if (!state.finishedScene) {
-                    const nextContent = state.actualContentIndex + 1;
+                    const nextContent = state.actualContentIndex + 1
 
-                    if (!(state.scenes[state.actualSceneIndex].content[nextContent] == undefined)) {
-                        state.actualContentIndex = nextContent
-                    } else state.finishedScene = true
+                    if (state.isBifurcation) {
+                        const playerChoice = state.playerBifurcations[state.bifurcation - 1]
+
+                        if (!(state.actualScriptScenes[state.actualSceneIndex].content[playerChoice][nextContent] == undefined)) state.actualContentIndex = nextContent
+                        else state.finishedScene = true
+                    } else {
+                        if (!(state.actualScriptScenes[state.actualSceneIndex].content[nextContent] == undefined)) state.actualContentIndex = nextContent
+                        else state.finishedScene = true
+                    }
                 }
             }
         },
@@ -66,35 +70,55 @@ export const gameStatusSlice = createSlice({
         setDev: (state, action) => {
             state.dev = action.payload
         },
+
         setScenario: (state, action) => {
             state.scenario = action.payload
         },
-        setIs3D:(state,action) =>{
+
+        setIs3D:(state, action) => {
             state.is3D = action.payload
         },
-        setActo:(state,action) =>{
-            state.acto = action.payload;
-            state.scenes = getScenes(state.acto);
+
+        setAct:(state, action) => {
+            state.act = action.payload
+            state.getScriptScenes = getScriptScenes(state.act)
         },
+
         is3D:(state) =>{
             return state.is3D
-        }        ,
-        setActualContent: (state) => {
+        },
+
+        updateActualContent: (state) => {
             if (!state.is3D) {
-                state.actualContent = state.scenes[state.actualSceneIndex].content[state.actualContentIndex]
-            } else{
-                state.actualContent = state.scenes[state.actualSceneIndex].scenario
+                if ('bifurcation' in state.actualScriptScenes[state.actualSceneIndex]) {
+                    const playerChoice = state.playerBifurcations[state.bifurcation - 1]
+
+                    state.isBifurcation = true
+                    state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[playerChoice][state.actualContentIndex]
+                } else {
+                    state.isBifurcation = false
+                    state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[state.actualContentIndex]
+                }
+            } else {
+                state.actualContent = state.actualScriptScenes[state.actualSceneIndex].scenario
             }
         },
+
         setActualSceneIndex: (state, action) => {
             state.actualSceneIndex = action.payload
         },
+
         setActualContentIndex: (state, action) => {
             state.actualContentIndex = action.payload
-        },  
+        },
 
+        setPlayerBifurcation: (state, action) => {
+            const { bifurcationNumber, bifurcationOption } = action.payload
+
+            state.playerBifurcations[bifurcationNumber] = bifurcationOption
+        },
     }
 })
 
-export const { nextScene, nextContent, setDev,setScenario,setIs3D, is3D ,setActualContent,setActo, setActualContentIndex, setActualSceneIndex } = gameStatusSlice.actions
+export const { nextScene, nextContent, setDev, setScenario, setIs3D, is3D, updateActualContent, setAct, setActualContentIndex, setActualSceneIndex } = gameStatusSlice.actions
 export default gameStatusSlice.reducer

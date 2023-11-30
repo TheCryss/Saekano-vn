@@ -6,13 +6,11 @@ import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
 
 import './Panel.css';
-import { a } from '@react-spring/three';
 
 
-export const Panel = ({data}) => {
+export const Panel = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
-    // const scenes = data.scenes
 
     const [isAuto, setIsAuto] = useState(false)
     const [currentMusic, setCurrentMusic] = useState(null)
@@ -39,18 +37,15 @@ export const Panel = ({data}) => {
     }
 
     const playEvent = () => {
-        const { actualSceneIndex, actualContentIndex,scenes,actualContent } = gameStatus
-
-        const actualScene = scenes[actualSceneIndex]
+        const { actualSceneIndex, actualScriptScenes, actualContent } = gameStatus
+        const actualScene = actualScriptScenes[actualSceneIndex]
 
         if (actualScene["3d"]) {
-            console.log(actualScene.scenario);
+            console.log(actualScene)
             dispatch(setScenario(actualScene.scenario))
             dispatch(setIs3D(true))
             navigate(`/3D/${actualScene.scenario}`) // Here you put the 3D scene (content)
         } else {
-
-            
             const keys = Object.keys(actualContent)
 
             switch (keys[0]) {
@@ -84,11 +79,8 @@ export const Panel = ({data}) => {
     const nodeRefCharacter = useRef(null);
 
     const onClickText = () => {
-        if (gameStatus.finishedScene) {
-            dispatch(nextScene())
-        }
-
-        dispatch(nextContent())
+        if (gameStatus.finishedScene) dispatch(nextScene())
+        else dispatch(nextContent())
     }
 
     useEffect(() => {
@@ -117,18 +109,6 @@ export const Panel = ({data}) => {
         }
 
         navigate("/")
-    }
-
-    const handleTest = () => {
-        if (!currentMusic) {
-            if (!currentMusic.paused) {
-                console.log("Audio paused");
-                currentMusic.pause()
-            } else {
-                console.log("Audio played");
-                currentMusic.play()
-            }
-        }
     }
 
     return (
