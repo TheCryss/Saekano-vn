@@ -36,9 +36,9 @@ const app_3D = () => {
     const { scenario } = useSelector(state => state.gameStatus)
     const getCamera = () => {
         switch (scenario) {
-            case "room":
+            case "Habitacion":
                 return {
-                    camera: <Camera_controls_room />,
+                    camera: <Camera_controls_room/>,
                     onPointerDown: (e) => {
                         e.target.requestPointerLock();
                     },
