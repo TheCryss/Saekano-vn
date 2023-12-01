@@ -1,14 +1,14 @@
 import { Panel } from '../../Components/Panel'
 import { useState, useEffect } from 'react'
 import Transitions from '../../Components/Transitions';
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { updateActualContent, setActualContentIndex } from '../../store/slicers/GameStatusSlice'
 
 
 const Dialog_2D = () => {
     const gameStatus = useSelector((state) => state.gameStatus)
-    const { actualContentIndex, actualContent} = gameStatus
-    const [background, setBackground] = useState("Act_0-1")
+    const { actualSceneIndex, actualContentIndex, actualContent } = gameStatus
+    const [background, setBackground] = useState('Act_0-1')
     const dispatch = useDispatch()
 
     const checkBackground = () => {
@@ -18,25 +18,19 @@ const Dialog_2D = () => {
         }
     }
 
-    // useEffect(() => {
-    //     dispatch(setActualContentIndex(8))
-    // }, [])
-
     useEffect(() => {
         dispatch(updateActualContent())
-    }, [actualContentIndex])
+    }, [actualContentIndex, actualSceneIndex])
 
     useEffect(() => {
-        console.log(gameStatus)
-        console.log(actualContent)
         checkBackground()
     }, [actualContent])
 
     return (
         <>
-            <div className="h-screen w-full bg-cover transition-all duration-700 " style={{ backgroundImage: `url('/assets/background/${background}.png')` }}>
+            <div className='h-screen w-full bg-cover transition-all duration-700 ' style={{ backgroundImage: `url('/assets/background/${background}.png')` }}>
                 <div className='flex flex-col h-screen justify-end'>
-                    <Panel/>
+                    <Panel gameStatus={gameStatus}/>
                 </div>
             </div>
         </>

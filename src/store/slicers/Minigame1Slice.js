@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     end: false,
@@ -8,7 +8,7 @@ const initialState = {
 };
 
 const minigame1Slice = createSlice({
-    name: "minigame1",
+    name: 'minigame1',
     initialState,
     reducers: {
         setEnd : (state, action) => {
