@@ -33,7 +33,7 @@ const app_3D = () => {
     };
 
     const { room,interaction } = useSelector(state => state.room)
-    const { scenario } = useSelector(state => state.gameStatus)
+    const { scenario,finishedScene } = useSelector(state => state.gameStatus)
     const getCamera = () => {
         switch (scenario) {
             case "Habitacion":
@@ -61,7 +61,7 @@ const app_3D = () => {
 
     return (
         <>
-            {true && <Panel3D />}
+            {!finishedScene && <Panel3D />}
             <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {camera}
