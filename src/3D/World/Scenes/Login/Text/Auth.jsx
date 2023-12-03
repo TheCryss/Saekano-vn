@@ -6,13 +6,13 @@ import { useNavigate } from 'react-router-dom'
 import { setStatus } from '../../../../../store/slicers/GameStatusSlice'
 import { useDispatch } from 'react-redux'
 
+
 export const Auth = () => {
     const auth = useAuth()
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
     const { displayName, email } = auth.userLogged
-    const savedata = getUser(email)
     const [valuesUser, setValuesUser] = useState(null)
 
     const onHandleGoogle = async (e) => {
@@ -26,9 +26,19 @@ export const Auth = () => {
         }
     }
 
-    const handleContinueGame = async () => {
+    const getSaveData = async () => {
         const { data } = await getUser(email)
-        const { savedata } = data[0]
+
+        if (!data) return {}
+        else {
+            const { savedata } = data[0]
+
+            return savedata
+        }
+    }
+
+    const handleContinueGame = async () => {
+        const savedata = await getSaveData()
 
         if (savedata) {
             dispatch(setStatus(savedata))
@@ -47,11 +57,17 @@ export const Auth = () => {
     }
 
     useEffect(() => {
-        setValuesUser({
-            email: email,
-            name: displayName,
-            savedata: checkSavedata(savedata)
-        })
+        const fetchSaveData = async () => {
+            const saveData = await getSaveData()
+
+            setValuesUser({
+                email: email,
+                name: displayName,
+                savedata: checkSavedata(saveData)
+            })
+        }
+
+        fetchSaveData()
     }, [email, displayName])
 
     useEffect(() => {
@@ -76,6 +92,14 @@ export const Auth = () => {
             navigate('/acto/1')
 
         } else handleContinueGame()
+    }
+
+    const onHandleControls = () => {
+        const modal = document.getElementById('controls-dialog')
+        if (modal) {
+            if (modal.open) modal.close()
+            else modal.showModal()
+        }
     }
 
     return (
@@ -110,6 +134,23 @@ export const Auth = () => {
                         <button onClick={() => onHandleGame(0)} className='select-none w-48  bg-pink-600   hover:bg-indigo-500 hover:scale-105  transition-all text-white rounded-md py-1 font-bold ' type='button'>
                             Continuar
                         </button>
+
+                        <button onClick={() => onHandleControls()}>
+                            Controles
+                        </button>
+
+                        <dialog
+                            id="controls-dialog"
+                            className="w-72 p-4 bg-white border rounded-lg shadow-md hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                        >
+
+                            <button
+                                className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:shadow-outline-green"
+                                onClick={() => onHandleControls()}
+                            >
+                                Cerrar
+                            </button>
+                        </dialog>
                     </div>
                 </div>
             </form>
