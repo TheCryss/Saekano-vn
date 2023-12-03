@@ -110,7 +110,11 @@ export const Panel = ({ gameStatus }) => {
 
     const handleExit = async () => {
         if (!currentMusic) {
-            if (!currentMusic.paused) currentMusic.pause()
+            try{
+                if (!currentMusic.paused) currentMusic.pause()
+            } catch  {
+                console.log('No music')
+            }
         }
         const result = await editUser(userLogged.email, {
             savedata: {

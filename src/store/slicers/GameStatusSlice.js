@@ -107,7 +107,7 @@ export const gameStatusSlice = createSlice({
                     state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[state.actualContentIndex]
                 }
             } else {
-                state.actualContent = state.actualScriptScenes[state.actualSceneIndex].scenario
+                state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[state.actualContentIndex]
             }
         },
 
