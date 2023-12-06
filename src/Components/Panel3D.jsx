@@ -46,7 +46,6 @@ export const Panel3D = () => {
         if (finishedScene)
             console.log("finished scene");
         else {
-            console.log("next content");
             // playEvent()
             dispatch(nextContent())
         }

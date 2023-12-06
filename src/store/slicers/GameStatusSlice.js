@@ -77,13 +77,15 @@ export const gameStatusSlice = createSlice({
                 if (!state.finishedScene) {
                     const nextContent = state.actualContentIndex + 1
 
+                    console.log(nextContent)
+
                     if (state.isBifurcation) {
                         const playerChoice = state.playerBifurcations[state.bifurcation - 1]
 
-                        if (!(state.actualScriptScenes[state.actualSceneIndex].content[playerChoice][nextContent] == undefined)) state.actualContentIndex = nextContent
+                        if (state.actualScriptScenes[state.actualSceneIndex].content[playerChoice][nextContent]) state.actualContentIndex = nextContent
                         else state.finishedScene = true
                     } else {
-                        if (!(state.actualScriptScenes[state.actualSceneIndex].content[nextContent] == undefined)) state.actualContentIndex = nextContent
+                        if (state.actualScriptScenes[state.actualSceneIndex].content[nextContent]) state.actualContentIndex = nextContent
                         else state.finishedScene = true
                     }
                 }
@@ -116,8 +118,6 @@ export const gameStatusSlice = createSlice({
 
             if ('bifurcation' in state.actualScriptScenes[state.actualSceneIndex]) {
                 const playerChoice = state.playerBifurcations[state.bifurcation - 1]
-                console.log(playerChoice)
-                console.log(state.bifurcation)
 
                 state.isBifurcation = true
                 state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[playerChoice][state.actualContentIndex]
