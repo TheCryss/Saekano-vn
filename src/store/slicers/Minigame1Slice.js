@@ -20,11 +20,8 @@ const minigame1Slice = createSlice({
         setInteraction : (state, action) => {
             state.interaction = action.payload
         },
-        setWinner : (state, action) => {
-            state.winner = action.payload
-        },
     },
 });
 
-export const { setEnd,setHalf,setInteraction,setWinner } = minigame1Slice.actions;
+export const { setEnd,setHalf,setInteraction } = minigame1Slice.actions;
 export default minigame1Slice.reducer;

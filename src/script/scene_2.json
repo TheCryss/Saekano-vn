@@ -93,17 +93,11 @@
                 {
                     "character": "Tomoya",
                     "speech": "Aquí lo tienen."
-                },
-                {
-                    "End": "Music_2"
-                },
-                {
-                    "Music": "Music_"
                 }
             ]
         },
         {
-            "id": 4,
+            "id": 5,
             "3d": true,
             "scenario": "Habitacion",
             "bifurcation": true,

@@ -11,24 +11,24 @@ const getScriptScenes = (act) => {
     }
 }
 
-const initialState = {
-    actualScriptScenes: getScriptScenes(2),
-    act: 2,
-    actualContent: { is3D: false },
-    is3D: false,
-    isBifurcation: false,
-    bifurcation: 1,
-    finishedScript: false,
-    finishedScene: false,
-    finishedContent: false,
-    actualSceneIndex: 3,
-    actualContentIndex: 0,
-    scenario: '',
-    playerBifurcations: [0, 0, 0],
-    npcInteractions: [0, 0, 0, 0], // Utaha, Eriri, Megumi, Tomoya
-}
+// const initialState = {
+//     actualScriptScenes: getScriptScenes(2),
+//     act: 2,
+//     actualContent: { is3D: false },
+//     is3D: false,
+//     isBifurcation: false,
+//     bifurcation: 1,
+//     finishedScript: false,
+//     finishedScene: false,
+//     finishedContent: false,
+//     actualSceneIndex: 0,
+//     actualContentIndex: 0,
+//     scenario: '',
+//     playerBifurcations: [0, 0, 0],
+//     npcInteractions: [0, 0, 0, 0], // Utaha, Eriri, Megumi, Tomoya
+// }
 
-/* const initialState = {
+const initialState = {
     actualScriptScenes: getScriptScenes(1),
     act: 1,
     actualContent: { is3D: false },
@@ -43,7 +43,7 @@ const initialState = {
     scenario: '',
     playerBifurcations: [0, 0, 0],
     npcInteractions: [0, 0, 0, 0], // Utaha, Eriri, Megumi, Tomoya
-} */
+}
 
 export const gameStatusSlice = createSlice({
     name: 'gameStatus',
@@ -114,26 +114,16 @@ export const gameStatusSlice = createSlice({
         updateActualContent: (state) => {
             state.actualScriptScenes = getScriptScenes(state.act)
 
-            if (!state.is3D) {
-                if ('bifurcation' in state.actualScriptScenes[state.actualSceneIndex]) {
-                    const playerChoice = state.playerBifurcations[state.bifurcation - 1]
+            if ('bifurcation' in state.actualScriptScenes[state.actualSceneIndex]) {
+                const playerChoice = state.playerBifurcations[state.bifurcation - 1]
+                console.log(playerChoice)
+                console.log(state.bifurcation)
 
-                    state.isBifurcation = true
-                    state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[playerChoice][state.actualContentIndex]
-                } else {
-                    state.isBifurcation = false
-                    state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[state.actualContentIndex]
-                }
+                state.isBifurcation = true
+                state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[playerChoice][state.actualContentIndex]
             } else {
-                if ('bifurcation' in state.actualScriptScenes[state.actualSceneIndex]) {
-                    const playerChoice = state.playerBifurcations[state.bifurcation - 1]
-
-                    state.isBifurcation = true
-                    state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[playerChoice][state.actualContentIndex]
-                } else {
-                    state.isBifurcation = false
-                    state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[state.actualContentIndex]
-                }
+                state.isBifurcation = false
+                state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[state.actualContentIndex]
             }
         },
 
@@ -191,6 +181,7 @@ export const {
     setStatus,
     increaseNPCInteraction,
     setFinishedScene,
-    setFinishedScript} = gameStatusSlice.actions
+    setFinishedScript,
+    setPlayerBifurcation } = gameStatusSlice.actions
 
 export default gameStatusSlice.reducer

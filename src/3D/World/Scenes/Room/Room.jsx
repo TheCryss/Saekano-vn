@@ -11,7 +11,7 @@ import { Megumi } from './Models/Megumi'
 import { Utaha } from './Models/Utaha'
 import { Eriri } from './Models/Eriri'
 import FloorRoom from './Models/FloorRoom'
-import { nextScene, setFinishedScript } from '../../../../store/slicers/GameStatusSlice'
+import { nextScene, setFinishedScript, updateActualContent } from '../../../../store/slicers/GameStatusSlice'
 
 const Room = () => {
     const keyboardMap = [
@@ -38,14 +38,13 @@ const Room = () => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(setFinishedScript(false))
+        dispatch(nextScene())
     }, [])
 
-    useEffect(() => {
-        console.log("aqui")
-        if (finishedScene) {
-            dispatch(nextScene())
-        }
-    }, [finishedScene])
+    // useEffect(() => {
+    //     console.log("aqui")
+    //     dispatch(updateActualContent())
+    // }, [finishedScene])
 
     return (
         <>

@@ -4,8 +4,8 @@ import { Poem } from '../Text/Poem';
 import { Minigame_Help } from '../Text/Minigame_Help';
 import * as THREE from "three";
 import { useSelector,useDispatch } from 'react-redux';
-import { setInteraction,setEnd,setHalf ,setWinner} from '../../../../../store/slicers/Minigame1Slice';
-import { nextScene, setIs3D, updateActualContent, setScenario } from '../../../../../store/slicers/GameStatusSlice';
+import { setInteraction,setEnd,setHalf } from '../../../../../store/slicers/Minigame1Slice';
+import { nextScene, setIs3D, updateActualContent, setScenario, setPlayerBifurcation } from '../../../../../store/slicers/GameStatusSlice';
 import { useNavigate } from 'react-router-dom';
 
 /*     <Html Html position = { [0, -.1, -0.55]} transform occlude  rotation - x={ -Math.PI / 2 } rotation - z={ Math.PI / 2 }>
@@ -24,7 +24,18 @@ export const Book = (props) => {
             dispatch(setHalf(true))
         }
         if (childData.end) {
-            dispatch(setWinner(childData.winner));
+            switch (childData.winner) {
+                case "eriri":
+                    dispatch(setPlayerBifurcation({ "bifurcationNumber": 0, "bifurcationOption":0 }))
+                    break;
+                case "megumi":
+                    dispatch(setPlayerBifurcation({ "bifurcationNumber": 0, "bifurcationOption": 1 }))
+                    break;
+                case "utaha":
+                    dispatch(setPlayerBifurcation({ "bifurcationNumber": 0, "bifurcationOption": 2 }))
+                    break;
+            }
+
             dispatch(setEnd(true));
             dispatch(nextScene());
             dispatch(setIs3D(false));
@@ -104,7 +115,7 @@ export const Book = (props) => {
                         </Text>
                         <Text position={[-0, 0.18, 0.52]} color={"#faa820"} scale={0.091} rotation-x={-Math.PI / 1.5} rotation-z={Math.PI / 2}
                         // textAlign= "justify"
-                        lineHeight = {1.5} 
+                        lineHeight = {1.5}
                         maxWidth={10}
                         >
                             Selecciona 5 palabras en cada hoja para escribir un poema, elige con cuidado ya que el poema que crees afectara la historia.

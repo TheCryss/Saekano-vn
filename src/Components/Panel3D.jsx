@@ -57,7 +57,7 @@ export const Panel3D = () => {
 
         intervalId = setInterval(() => {
             onClickText();
-        }, 100);
+        }, 2000);
 
         return () => {
             if (intervalId) {
