@@ -77,7 +77,7 @@ const app_3D = () => {
 
     return (
         <>
-            {!finishedScene && <Panel3D />}
+            {/* {!finishedScene && <Panel3D />} */}
             {finishedScene && isAnyInteraction() && areInteractionsLeft() && <Panel3DInteraction />}
             <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />

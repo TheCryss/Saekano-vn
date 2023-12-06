@@ -124,30 +124,35 @@ export const Auth = () => {
                 <div className='flex justify-center'>
                     <div className=' absolute z-10 flex flex-col bottom-40 '>
                         {!email   ?(
-                            <button className='select-none my-3  w-48  bg-pink-600   hover:bg-indigo-500 hover:scale-105  transition-all text-white rounded-md py-1 font-bold ' type='submit'>
+                            <button className='select-none   w-48  bg-pink-600   hover:bg-indigo-500 hover:scale-105  transition-all text-white rounded-md py-1 font-bold ' type='submit'>
                                 Iniciar Sesion
                             </button>
                         ) : (
-                            <button onClick={() => onHandleGame(1)} className='select-none my-3  w-48  bg-pink-600   hover:bg-indigo-500 hover:scale-105  transition-all text-white rounded-md py-1 font-bold ' type='button'>
+                            <>
+                            <button onClick={() => onHandleGame(1)} className='select-none  w-48  bg-pink-600   hover:bg-indigo-500 hover:scale-105  transition-all text-white rounded-md py-1 font-bold ' type='button'>
                                 Nuevo Juego
                             </button>
-                        )}
 
-                        <button onClick={() => onHandleGame(0)} className='select-none w-48  bg-pink-600   hover:bg-indigo-500 hover:scale-105  transition-all text-white rounded-md py-1 font-bold ' type='button'>
+                            <button onClick={() => onHandleGame(0)} className='select-none w-48  bg-pink-600   hover:bg-indigo-500 hover:scale-105 my-3  transition-all text-white rounded-md py-1 font-bold ' type='button'>
                             Continuar
                         </button>
 
                         <button onClick={() => onHandleControls()} className='select-none w-48  bg-pink-600   hover:bg-indigo-500 hover:scale-105  transition-all text-white rounded-md py-1 font-bold ' type='button'>
                             Controles
                         </button>
+                            </>
+                        )}
 
                         <dialog
                             id="controls-dialog"
-                            className="w-72 p-4 bg-white border rounded-lg shadow-md absolute"
+                            className=" w-2/3 p-4 bg-[rgba(242,198,245,0.75)] border rounded-lg shadow-md absolute"
                         >
+                            <div className='bg-cover bg-center 'style={{ backgroundImage: `url(/assets/img/controles.png)`, height: '500px' }}>
+</div>
                             <button
                                 className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:shadow-outline-green"
                                 onClick={() => onHandleControls()}
+                                type='button'
                             >
                                 Cerrar
                             </button>
