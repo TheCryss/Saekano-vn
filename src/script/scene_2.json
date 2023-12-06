@@ -69,12 +69,13 @@
             "3d": true,
             "scenario": "Habitacion",
             "content" : [
-                {
-                    "Music": "Music_2"
-                },
+
                 {
                     "character": "Eriri",
                     "speech": "Has dejado la puerta abierta, Baka."
+                },
+                {
+                    "Music": "Music_2"
                 },
                 {
                     "character": "Utaha",
@@ -88,12 +89,16 @@
                     "character": "Tomoya",
                     "speech": "..."
                 },
+
                 {
                     "character": "Tomoya",
                     "speech": "Aquí lo tienen."
                 },
                 {
-                    "Music": ""
+                    "End": "Music_2"
+                },
+                {
+                    "Music": "Music_"
                 }
             ]
         },

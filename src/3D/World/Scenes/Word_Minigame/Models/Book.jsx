@@ -1,5 +1,5 @@
 import { useRef, useEffect,useState } from 'react'
-import { useGLTF, Html, useAnimations } from '@react-three/drei';
+import { useGLTF, Html, useAnimations,Text } from '@react-three/drei';
 import { Poem } from '../Text/Poem';
 import { Minigame_Help } from '../Text/Minigame_Help';
 import * as THREE from "three";
@@ -97,10 +97,19 @@ export const Book = (props) => {
                         geometry={nodes.Cube003_1.geometry}
                         material={materials.Paper}
                     >
-                        <Html position={[0, 0.18, 0.52]} transform occlude rotation-x={-Math.PI / 1.5} rotation-z={Math.PI / 2}
+                        <Text position={[-0.7, 0.18, 0.52]} color={"#f8367c"} scale={0.13} rotation-x={-Math.PI / 1.5} rotation-z={Math.PI / 2}
+                        fontWeight={"bold"}
                         >
-                            <Minigame_Help />
-                        </Html>
+                            Como Jugar
+                        </Text>
+                        <Text position={[-0, 0.18, 0.52]} color={"#faa820"} scale={0.091} rotation-x={-Math.PI / 1.5} rotation-z={Math.PI / 2}
+                        // textAlign= "justify"
+                        lineHeight = {1.5} 
+                        maxWidth={10}
+                        >
+                            Selecciona 5 palabras en cada hoja para escribir un poema, elige con cuidado ya que el poema que crees afectara la historia.
+                        </Text>
+
                     </mesh>
 
                 </group>

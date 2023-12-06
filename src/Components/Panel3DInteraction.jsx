@@ -7,7 +7,7 @@ export const Panel3DInteraction = () => {
     const dispatch = useDispatch()
     const gameStatus = useSelector(state => state.gameStatus)
     const [dialog, setDialog] = useState('...')
-    const [character, setCharacter] = useState('...')
+    const [character, setCharacter] = useState('..I.')
 
     const { npcInteractions, finishedScene } = useSelector(state => state.gameStatus)
     const { room, interaction } = useSelector(state => state.room)

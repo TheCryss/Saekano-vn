@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { nextContent, updateActualContent } from '../store/slicers/GameStatusSlice'
+import { nextContent, nextScene, updateActualContent } from '../store/slicers/GameStatusSlice'
+import { useFetchers } from 'react-router-dom'
 
 
 export const Panel3D = () => {
@@ -9,7 +10,7 @@ export const Panel3D = () => {
     const [character, setCharacter] = useState('...')
     const dispatch = useDispatch();
     const gameStatus = useSelector((state) => state.gameStatus)
-    const { actualContentIndex } = gameStatus
+    const { actualContentIndex,finishedScene } = gameStatus
 
 
     const playEvent = () => {
@@ -26,9 +27,10 @@ export const Panel3D = () => {
                     setDialog(actualContent.thought)
                 }
                 break;
-            case 'Music':
-                console.log("music");
-                dispatch(nextContent())
+            // case 'End':
+            //     // console.log("music");
+            //     dispatch(nextScene())
+
             default: break
         }
     }
@@ -38,8 +40,10 @@ export const Panel3D = () => {
         dispatch(updateActualContent())
     }, [actualContentIndex])
 
+
+
     const onClickText = () => {
-        if (gameStatus.finishedScene)
+        if (finishedScene)
             console.log("finished scene");
         else {
             console.log("next content");
@@ -53,8 +57,7 @@ export const Panel3D = () => {
 
         intervalId = setInterval(() => {
             onClickText();
-        }, 100);
-
+        }, 2000);
 
         return () => {
             if (intervalId) {

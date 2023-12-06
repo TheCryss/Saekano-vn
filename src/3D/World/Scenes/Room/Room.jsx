@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import { Room3D } from './Models/Room'
 import { RigidBody } from '@react-three/rapier'
 import { KeyboardControls } from '@react-three/drei'
@@ -10,9 +11,9 @@ import { Megumi } from './Models/Megumi'
 import { Utaha } from './Models/Utaha'
 import { Eriri } from './Models/Eriri'
 import FloorRoom from './Models/FloorRoom'
+import { setFinishedScript } from '../../../../store/slicers/GameStatusSlice'
 
-
- const Room = () => {
+const Room = () => {
     const keyboardMap = [
         { name: 'backward', keys: ['ArrowUp', 'KeyW'] },
         { name: 'forward', keys: ['ArrowDown', 'KeyS'] },
@@ -33,6 +34,10 @@ import FloorRoom from './Models/FloorRoom'
         action1: "Clapping"
     }
     const characterURL = "/assets/models/playable_character/Tomoya.glb"
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(setFinishedScript(false))
+    }, [])
 
     return (
         <>

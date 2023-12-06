@@ -11,7 +11,7 @@ const getScriptScenes = (act) => {
     }
 }
 
-const initialState = {
+/* const initialState = {
     actualScriptScenes: getScriptScenes(2),
     act: 2,
     actualContent: { is3D: false },
@@ -21,7 +21,24 @@ const initialState = {
     finishedScript: false,
     finishedScene: false,
     finishedContent: false,
-    actualSceneIndex: 4,
+    actualSceneIndex: 3,
+    actualContentIndex: 0,
+    scenario: '',
+    playerBifurcations: [0, 0, 0],
+    npcInteractions: [0, 0, 0, 0], // Utaha, Eriri, Megumi, Tomoya
+} */
+
+const initialState = {
+    actualScriptScenes: getScriptScenes(1),
+    act: 1,
+    actualContent: { is3D: false },
+    is3D: false,
+    isBifurcation: false,
+    bifurcation: 1,
+    finishedScript: false,
+    finishedScene: false,
+    finishedContent: false,
+    actualSceneIndex: 0,
     actualContentIndex: 0,
     scenario: '',
     playerBifurcations: [0, 0, 0],
@@ -152,6 +169,12 @@ export const gameStatusSlice = createSlice({
         resetNpcInteractions: (state) => {
             state.npcInteractions = [0, 0, 0, 0]
         },
+        setFinishedScript: (state,action) => {
+            state.finishedScript = action.payload
+        },
+        setFinishedScene: (state,action) => {
+            state.finishedScene = action.payload
+        }
     }
 })
 
@@ -166,6 +189,8 @@ export const {
     setActualContentIndex,
     setActualSceneIndex,
     setStatus,
-    increaseNPCInteraction } = gameStatusSlice.actions
+    increaseNPCInteraction,
+    setFinishedScene,
+    setFinishedScript} = gameStatusSlice.actions
 
 export default gameStatusSlice.reducer

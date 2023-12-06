@@ -19,10 +19,10 @@ const app_3D = () => {
     const dispatch = useDispatch();
     const { room } = useSelector(state => state.room)
 
-    useEffect(() => {
+/*     useEffect(() => {
         dispatch(setScenario("Habitacion"));
         dispatch(setIs3D(true));
-    }, []);
+    }, []); */
 
     const orthographicCameraSettings = {
         makeDefault: true, // Make this camera the default camera
@@ -36,7 +36,7 @@ const app_3D = () => {
                 bottom: -8,        // Bottom boundary of the view */
     };
 
-    const { scenario, finishedScene, npcInteractions } = useSelector(state => state.gameStatus)
+    const { scenario, finishedScene, npcInteractions,finishedScript } = useSelector(state => state.gameStatus)
 
     const getCamera = () => {
         switch (scenario) {
@@ -77,7 +77,7 @@ const app_3D = () => {
 
     return (
         <>
-            {/* {!finishedScene && <Panel3D />} */}
+            {!finishedScene && !finishedScript && <Panel3D />}
             {finishedScene && isAnyInteraction() && areInteractionsLeft() && <Panel3DInteraction />}
             <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />
