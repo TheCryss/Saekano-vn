@@ -27,10 +27,6 @@ export const Panel3D = () => {
                     setDialog(actualContent.thought)
                 }
                 break;
-            // case 'End':
-            //     // console.log("music");
-            //     dispatch(nextScene())
-
             default: break
         }
     }
@@ -38,8 +34,8 @@ export const Panel3D = () => {
     useEffect(() => {
         playEvent()
         dispatch(updateActualContent())
-    }, [actualContentIndex])
 
+    }, [actualContentIndex])
 
 
     const onClickText = () => {

@@ -40,6 +40,7 @@ const initialState = {
     finishedContent: false,
     actualSceneIndex: 0,
     actualContentIndex: 0,
+    close3DPanel: false,
     scenario: '',
     playerBifurcations: [0, 0, 0],
     npcInteractions: [0, 0, 0, 0], // Utaha, Eriri, Megumi, Tomoya
@@ -164,7 +165,7 @@ export const gameStatusSlice = createSlice({
         },
         setFinishedScene: (state,action) => {
             state.finishedScene = action.payload
-        }
+        },
     }
 })
 
@@ -182,6 +183,7 @@ export const {
     increaseNPCInteraction,
     setFinishedScene,
     setFinishedScript,
-    setPlayerBifurcation } = gameStatusSlice.actions
+    setPlayerBifurcation,
+} = gameStatusSlice.actions
 
 export default gameStatusSlice.reducer

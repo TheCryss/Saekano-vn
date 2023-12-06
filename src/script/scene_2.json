@@ -1,7 +1,7 @@
 {
     "scenes": [
         {
-            "id": 1,
+            "id": 0,
             "3d": false,
             "content": [
                 {
@@ -20,13 +20,13 @@
             ]
         },
         {
-            "id": 2,
+            "id": 1,
             "3d": true,
             "scenario": "Minijuego-guion",
             "content":[]
         },
         {
-            "id": 3,
+            "id": 2,
             "3d": false,
             "content": [
                 {
@@ -65,7 +65,7 @@
             ]
         },
         {
-            "id": 4,
+            "id": 3,
             "3d": true,
             "scenario": "Habitacion",
             "content" : [
@@ -93,11 +93,15 @@
                 {
                     "character": "Tomoya",
                     "speech": "Aquí lo tienen."
+                },
+                {
+                    "character": "...",
+                    "speech": "..."
                 }
             ]
         },
         {
-            "id": 5,
+            "id": 4,
             "3d": true,
             "scenario": "Habitacion",
             "bifurcation": true,

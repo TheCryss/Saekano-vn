@@ -36,7 +36,7 @@ const app_3D = () => {
                 bottom: -8,        // Bottom boundary of the view */
     };
 
-    const { scenario, finishedScene, npcInteractions,finishedScript } = useSelector(state => state.gameStatus)
+    const { scenario, finishedScene, npcInteractions,finishedScript,close3DPanel } = useSelector(state => state.gameStatus)
 
     const getCamera = () => {
         switch (scenario) {
@@ -67,7 +67,7 @@ const app_3D = () => {
     }
 
     const areInteractionsLeft = () => {
-        console.log(npcInteractions)
+        //console.log(npcInteractions)
         if (npcInteractions[0] < 4 ) {//|| npcInteractions[1] < 4 || npcInteractions[2] < 4 || npcInteractions[3] < 4) {
             return true
         } else {

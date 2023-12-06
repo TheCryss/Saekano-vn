@@ -38,7 +38,7 @@ const Room = () => {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(setFinishedScript(false))
-        dispatch(nextScene())
+        //dispatch(nextScene())
     }, [])
 
     // useEffect(() => {
