@@ -11,7 +11,7 @@ const getScriptScenes = (act) => {
     }
 }
 
-/* const initialState = {
+const initialState = {
     actualScriptScenes: getScriptScenes(2),
     act: 2,
     actualContent: { is3D: false },
@@ -26,9 +26,9 @@ const getScriptScenes = (act) => {
     scenario: '',
     playerBifurcations: [0, 0, 0],
     npcInteractions: [0, 0, 0, 0], // Utaha, Eriri, Megumi, Tomoya
-} */
+}
 
-const initialState = {
+/* const initialState = {
     actualScriptScenes: getScriptScenes(1),
     act: 1,
     actualContent: { is3D: false },
@@ -43,7 +43,7 @@ const initialState = {
     scenario: '',
     playerBifurcations: [0, 0, 0],
     npcInteractions: [0, 0, 0, 0], // Utaha, Eriri, Megumi, Tomoya
-}
+} */
 
 export const gameStatusSlice = createSlice({
     name: 'gameStatus',

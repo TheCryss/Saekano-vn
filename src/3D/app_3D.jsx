@@ -19,10 +19,10 @@ const app_3D = () => {
     const dispatch = useDispatch();
     const { room } = useSelector(state => state.room)
 
-/*     useEffect(() => {
+    useEffect(() => {
         dispatch(setScenario("Habitacion"));
         dispatch(setIs3D(true));
-    }, []); */
+    }, []);
 
     const orthographicCameraSettings = {
         makeDefault: true, // Make this camera the default camera
