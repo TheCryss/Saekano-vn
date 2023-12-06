@@ -5,7 +5,7 @@ import { Physics } from "@react-three/rapier"
 import { OrthographicCamera } from '@react-three/drei';
 import { Loader } from "@react-three/drei";
 import { useDispatch, useSelector } from "react-redux";
-import { setScenario, setIs3D } from "../store/slicers/GameStatusSlice"
+import { setScenario, setIs3D, nextScene } from "../store/slicers/GameStatusSlice"
 import { useEffect } from "react"
 import { useNavigate } from 'react-router-dom'
 //libs
@@ -23,6 +23,7 @@ const app_3D = () => {
     //     dispatch(setScenario("Minijuego-guion"));
     //     dispatch(setIs3D(true));
     // }, []);
+
 
     const orthographicCameraSettings = {
         makeDefault: true, // Make this camera the default camera

@@ -41,10 +41,11 @@ const Room = () => {
         //dispatch(nextScene())
     }, [])
 
-    // useEffect(() => {
-    //     console.log("aqui")
-    //     dispatch(updateActualContent())
-    // }, [finishedScene])
+    useEffect(() => {
+        if (finishedScene) {
+            dispatch(nextScene())
+        }
+    }, [finishedScene])
 
     return (
         <>

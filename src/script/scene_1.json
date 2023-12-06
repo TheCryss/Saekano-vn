@@ -51,51 +51,6 @@
             ]
         },
         {
-            "3d": false,
-            "bifurcation": true,
-            "content": [
-                [
-                    {
-                        "character": "Narrador",
-                        "speech": "Al llegar, la escuela no se encuentra llena.",
-                        "background": "Act_1-Scene_2-1"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Supongo que he llegado temprano, más vale ubicar mi salón y disponerme rápido."
-                    },
-                    {
-                        "character": "Narrador",
-                        "speech": "Tomoya da un vistazo rápido a la distribución de los salones.",
-                        "background": "Act_1-Scene_2-2"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Mira, que aquí estoy. Salón B-2.",
-                        "background": "Act_1-Scene_2-t"
-                    }
-                ],
-                [
-                    {
-                        "character": "Tomoya",
-                        "speech": "Espera"
-                    },
-                    {
-                        "character": "Narrador",
-                        "speech": "Tomoya leyendo algunos nombres asignados en los puestos, encuentra dos nombres que le son familiares."
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Se encuentran... ¿¡Se encuentran conmigo!?"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Hmmm... Ya pensaré algo, tengo que hacer primero lo que he pensado"
-                    }
-                ]
-            ]
-        },
-        {
             "3d":false,
             "content": [
                 {

@@ -120,6 +120,8 @@ export const gameStatusSlice = createSlice({
             if ('bifurcation' in state.actualScriptScenes[state.actualSceneIndex]) {
                 const playerChoice = state.playerBifurcations[state.bifurcation - 1]
 
+                console.log(playerChoice)
+
                 state.isBifurcation = true
                 state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[playerChoice][state.actualContentIndex]
             } else {
