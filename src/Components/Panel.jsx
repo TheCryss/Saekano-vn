@@ -110,7 +110,7 @@ export const Panel = ({ gameStatus }) => {
 
     const handleExit = async () => {
         if (!currentMusic) {
-            try{
+            try {
                 if (!currentMusic.paused) currentMusic.pause()
             } catch  {
                 console.log('No music')

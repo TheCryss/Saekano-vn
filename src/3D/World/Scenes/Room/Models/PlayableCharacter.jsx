@@ -11,12 +11,24 @@ export const PlayableCharacter = (props) => {
     const getInteraction = useSelector(state => state.room.interaction)
     const interactPressed = useKeyboardControls(state => state.action1)
     useEffect(() => {
-        if(interactPressed){
-            dispatch(setInteraction(!getInteraction))
+        let timeoutId;
+        if (interactPressed) {
+            dispatch(setInteraction(!getInteraction));
+            // Change back after 5 seconds (5000 milliseconds)
+            timeoutId = setTimeout(() => {
+                //dispatch(setInteraction(!getInteraction));
+                console.log("interactPressed")
+            }, 1000);
         }
-    }, [interactPressed])
+        // Clean up function
+        return () => {
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+        };
+    }, [interactPressed]);
 
-    
+
     return (
         <group ref={group} {...props} dispose={null}>
             <group name="Scene">

@@ -2,18 +2,19 @@ import { useState, useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { nextContent, updateActualContent } from '../store/slicers/GameStatusSlice'
+
+
 export const Panel3D = () => {
     const [dialog, setDialog] = useState('...')
     const [character, setCharacter] = useState('...')
     const dispatch = useDispatch();
     const gameStatus = useSelector((state) => state.gameStatus)
-    const [isAuto, setIsAuto] = useState(true)
     const { actualContentIndex } = gameStatus
 
 
     const playEvent = () => {
         const { actualContent } = gameStatus
-        console.log(actualContentIndex);
+        console.log(actualContent)
         const keys = Object.keys(actualContent)
         switch (keys[0]) {
             case 'character':
@@ -49,20 +50,18 @@ export const Panel3D = () => {
 
     useEffect(() => {
         let intervalId;
-        // console.log("isAuto", isAuto)
 
-        if (isAuto) {
-            intervalId = setInterval(() => {
-                onClickText();
-            }, 5000);
-        }
+        intervalId = setInterval(() => {
+            onClickText();
+        }, 100);
+
 
         return () => {
             if (intervalId) {
                 clearInterval(intervalId);
             }
         }
-    }, [isAuto])
+    }, [])
 
     return (
         <>
@@ -73,8 +72,6 @@ export const Panel3D = () => {
                         <div >
                             {character}
                         </div>
-
-
                     </div>
                     <div className='w-full bg-[rgba(242,198,245,0.75)] border-[#C6F5EB] text-pink-950 border-4 text-md mb-8 h-20 rounded-lg items-center  flex justify-center select-none'>
                         {dialog}

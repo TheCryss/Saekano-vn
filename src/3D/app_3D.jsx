@@ -7,18 +7,22 @@ import { Loader } from "@react-three/drei";
 import { useDispatch, useSelector } from "react-redux";
 import { setScenario, setIs3D } from "../store/slicers/GameStatusSlice"
 import { useEffect } from "react"
+import { useNavigate } from 'react-router-dom'
 //libs
 import Experience from "./World/Experience";
 import { Panel3D } from "../Components/Panel3D";
+import { Panel3DInteraction } from "../Components/Panel3DInteraction";
+
 
 const app_3D = () => {
-
+    const navigate = useNavigate()
     const dispatch = useDispatch();
+    const { room } = useSelector(state => state.room)
 
-    // useEffect(() => {
-    //     dispatch(setScenario("Habitacion"));
-    //     dispatch(setIs3D(true));
-    // }, []);
+    useEffect(() => {
+        dispatch(setScenario("Habitacion"));
+        dispatch(setIs3D(true));
+    }, []);
 
     const orthographicCameraSettings = {
         makeDefault: true, // Make this camera the default camera
@@ -32,8 +36,8 @@ const app_3D = () => {
                 bottom: -8,        // Bottom boundary of the view */
     };
 
-    const { room,interaction } = useSelector(state => state.room)
-    const { scenario,finishedScene } = useSelector(state => state.gameStatus)
+    const { scenario, finishedScene, npcInteractions } = useSelector(state => state.gameStatus)
+
     const getCamera = () => {
         switch (scenario) {
             case "Habitacion":
@@ -54,14 +58,27 @@ const app_3D = () => {
                     onPointerDown: undefined, // No event handler for this case
                 };
         }
-
     };
 
     const { camera, onPointerDown } = getCamera();
 
+    const isAnyInteraction = () => {
+        return room.utahaInteraction || room.eririInteraction || room.megumiInteraction || room.tomoyaInteraction
+    }
+
+    const areInteractionsLeft = () => {
+        console.log(npcInteractions)
+        if (npcInteractions[0] < 4 ) {//|| npcInteractions[1] < 4 || npcInteractions[2] < 4 || npcInteractions[3] < 4) {
+            return true
+        } else {
+            //navigate('./')
+        }
+    }
+
     return (
         <>
             {!finishedScene && <Panel3D />}
+            {finishedScene && isAnyInteraction() && areInteractionsLeft() && <Panel3DInteraction />}
             <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {camera}

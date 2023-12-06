@@ -12,8 +12,8 @@ const getScriptScenes = (act) => {
 }
 
 const initialState = {
-    actualScriptScenes: getScriptScenes(1),
-    act: 1,
+    actualScriptScenes: getScriptScenes(2),
+    act: 2,
     actualContent: { is3D: false },
     is3D: false,
     isBifurcation: false,
@@ -21,10 +21,11 @@ const initialState = {
     finishedScript: false,
     finishedScene: false,
     finishedContent: false,
-    actualSceneIndex: 0,
+    actualSceneIndex: 4,
     actualContentIndex: 0,
     scenario: '',
-    playerBifurcations: [0, 0, 0]
+    playerBifurcations: [0, 0, 0],
+    npcInteractions: [0, 0, 0, 0], // Utaha, Eriri, Megumi, Tomoya
 }
 
 export const gameStatusSlice = createSlice({
@@ -107,7 +108,15 @@ export const gameStatusSlice = createSlice({
                     state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[state.actualContentIndex]
                 }
             } else {
-                state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[state.actualContentIndex]
+                if ('bifurcation' in state.actualScriptScenes[state.actualSceneIndex]) {
+                    const playerChoice = state.playerBifurcations[state.bifurcation - 1]
+
+                    state.isBifurcation = true
+                    state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[playerChoice][state.actualContentIndex]
+                } else {
+                    state.isBifurcation = false
+                    state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[state.actualContentIndex]
+                }
             }
         },
 
@@ -134,9 +143,29 @@ export const gameStatusSlice = createSlice({
             state.actualSceneIndex = actualSceneIndex
             state.bifurcation = bifurcation
             state.playerBifurcations = playerBifurcations
-        }
+        },
+
+        increaseNPCInteraction: (state, action) => {
+            state.npcInteractions[action.payload] = state.npcInteractions[action.payload] + 1
+        },
+
+        resetNpcInteractions: (state) => {
+            state.npcInteractions = [0, 0, 0, 0]
+        },
     }
 })
 
-export const { nextScene, nextContent, setDev, setScenario, setIs3D, is3D, updateActualContent, setAct, setActualContentIndex, setActualSceneIndex, setStatus } = gameStatusSlice.actions
+export const {
+    nextScene,
+    nextContent,
+    setDev, setScenario,
+    setIs3D,
+    is3D,
+    updateActualContent,
+    setAct,
+    setActualContentIndex,
+    setActualSceneIndex,
+    setStatus,
+    increaseNPCInteraction } = gameStatusSlice.actions
+
 export default gameStatusSlice.reducer

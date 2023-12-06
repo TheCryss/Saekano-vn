@@ -287,6 +287,80 @@
                         "Music": ""
                     }
                 ]
+            ],
+            "npc_interactions": [
+                [
+                    {
+                        "character": "Utaha",
+                        "speech": "1"
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "2"
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "3"
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "4"
+                    }
+                ],
+                [
+                    {
+                        "character": "Eriri",
+                        "speech": "1"
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "2"
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "3"
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "4"
+                    }
+                ],
+                [
+                    {
+                        "character": "Megumi",
+                        "speech": "1"
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "2"
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "3"
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "4"
+                    }
+                ],
+                [
+                    {
+                        "character": "Tomoya",
+                        "speech": "1"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "2"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "3"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "4"
+                    }
+                ]
             ]
         }
     ]

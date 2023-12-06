@@ -100,6 +100,8 @@ export const Auth = () => {
             if (modal.open) modal.close()
             else modal.showModal()
         }
+
+        console.log(modal.open)
     }
 
     return (
@@ -135,15 +137,14 @@ export const Auth = () => {
                             Continuar
                         </button>
 
-                        <button onClick={() => onHandleControls()}>
+                        <button onClick={() => onHandleControls()} className='select-none w-48  bg-pink-600   hover:bg-indigo-500 hover:scale-105  transition-all text-white rounded-md py-1 font-bold ' type='button'>
                             Controles
                         </button>
 
                         <dialog
                             id="controls-dialog"
-                            className="w-72 p-4 bg-white border rounded-lg shadow-md hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                            className="w-72 p-4 bg-white border rounded-lg shadow-md absolute"
                         >
-
                             <button
                                 className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none focus:shadow-outline-green"
                                 onClick={() => onHandleControls()}
