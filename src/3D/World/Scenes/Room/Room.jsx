@@ -11,7 +11,7 @@ import { Megumi } from './Models/Megumi'
 import { Utaha } from './Models/Utaha'
 import { Eriri } from './Models/Eriri'
 import FloorRoom from './Models/FloorRoom'
-import { nextScene, setFinishedScript, updateActualContent } from '../../../../store/slicers/GameStatusSlice'
+import { nextScene, setFinishedScript, updateActualContent,setNpcInteractionsFinished } from '../../../../store/slicers/GameStatusSlice'
 
 const Room = () => {
     const keyboardMap = [
@@ -34,18 +34,25 @@ const Room = () => {
         action1: "Clapping"
     }
     const characterURL = "/assets/models/playable_character/Tomoya.glb"
-    const { finishedScene } = useSelector(state => state.gameStatus)
+    const { finishedScene, npcInteractionsFinished, isBifurcation } = useSelector(state => state.gameStatus)
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(setFinishedScript(false))
         //dispatch(nextScene())
     }, [])
-
     useEffect(() => {
-        if (finishedScene) {
+        if (!isBifurcation) {
+            dispatch(setNpcInteractionsFinished(true))
+        } else {
+            dispatch(setNpcInteractionsFinished(false))
+        }
+    }, [isBifurcation])
+    
+    useEffect(() => {
+        if (finishedScene && npcInteractionsFinished ) {
             dispatch(nextScene())
         }
-    }, [finishedScene])
+    }, [finishedScene,npcInteractionsFinished])
 
     return (
         <>
