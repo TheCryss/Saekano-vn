@@ -69,7 +69,7 @@ const Room = () => {
             </KeyboardControls>
 
             <Utaha scale={2} position={[0, 1, 0]} />
-            <Eriri scale={2} position={[4.9, 0.8, 17]} />
+            <Eriri scale={2} position={[4.9, 0.7, 27]} />
             <Megumi scale={2} position={[-6.9, 0, 7]} rotation-y={Math.PI/2} />
 
             <Lights_Room />

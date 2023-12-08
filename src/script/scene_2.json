@@ -196,7 +196,11 @@
                     },
                     {
                         "character": "Narrador",
-                        "speech": "Utaha sostiene el papel suavemente mientras sus ojos van pasando por cada línea, susurrando cuidadosamente lo que se encuentra escrito. Las demás solo se quedan mirándola fijamente."
+                        "speech": "Utaha sostiene el papel suavemente mientras sus ojos van pasando por cada línea, susurrando cuidadosamente lo que se encuentra escrito."
+                    },
+                    {
+                        "character":"Narrador",
+                        "speech": " Las demás solo se quedan mirándola fijamente."
                     },
                     {
                         "character": "Narrador",
@@ -358,6 +362,37 @@
                         "speech": "4"
                     }
                 ]
+            ]
+        },
+        {
+            "id": 5,
+            "3d": true,
+            "scenario": "Habitacion",
+            "content" : [
+
+                {
+                    "character": "Utaha",
+                    "speech": "Como sea, será sobre este concepto en el que trabajaremos supongo"
+                },
+                {
+                    "Music": "Music_2"
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Pero más te vale que la sigas mejorando, no quiero que el trabajo de todas se vaya a la basura por tu culpa"
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Su amenaza retumba internamente sobre mí. "
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Eghh… Claro que sí, ¡No las decepcionaré!"
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Sin nada más que mediar, Utaha procede a irse al escritorio para trabajar sobre el guión. Eriri sobre las ilustraciones y Megumi a ser el modelo de heroína para las dos."
+                }
             ]
         }
     ]

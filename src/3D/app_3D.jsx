@@ -5,7 +5,7 @@ import { Physics } from "@react-three/rapier"
 import { OrthographicCamera } from '@react-three/drei';
 import { Loader } from "@react-three/drei";
 import { useDispatch, useSelector } from "react-redux";
-import { setScenario, setIs3D, nextScene } from "../store/slicers/GameStatusSlice"
+import { setNpcInteractionsFinished } from "../store/slicers/GameStatusSlice"
 import { useEffect } from "react"
 import { useNavigate } from 'react-router-dom'
 //libs
@@ -37,7 +37,7 @@ const app_3D = () => {
                 bottom: -8,        // Bottom boundary of the view */
     };
 
-    const { scenario, finishedScene, npcInteractions,finishedScript,close3DPanel } = useSelector(state => state.gameStatus)
+    const { scenario, finishedScene, npcInteractions,finishedScript,actualScriptScenes, actualSceneIndex } = useSelector(state => state.gameStatus)
 
     const getCamera = () => {
         switch (scenario) {
@@ -67,19 +67,16 @@ const app_3D = () => {
         return room.utahaInteraction || room.eririInteraction || room.megumiInteraction || room.tomoyaInteraction
     }
 
-    const areInteractionsLeft = () => {
-        //console.log(npcInteractions)
-        if (npcInteractions[0] < 4 ) {//|| npcInteractions[1] < 4 || npcInteractions[2] < 4 || npcInteractions[3] < 4) {
-            return true
-        } else {
-            //navigate('./')
+    useEffect(() => {
+        if (npcInteractions[0] >= 4) {
+            dispatch(setNpcInteractionsFinished(true));
         }
-    }
+    }, [npcInteractions]);
 
     return (
         <>
             {!finishedScene && !finishedScript && <Panel3D />}
-            {finishedScene && isAnyInteraction() && areInteractionsLeft() && <Panel3DInteraction />}
+            {finishedScene && isAnyInteraction() && setNpcInteractionsFinished && <Panel3DInteraction />}
             <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {camera}
