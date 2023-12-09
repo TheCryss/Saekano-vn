@@ -166,7 +166,8 @@
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "¿Egh?"
+                    "speech": "¿Egh?",
+                    "background": "Act_1-Scene_4-1"
                 },
                 {
                     "character": "Tomoya",
@@ -189,7 +190,8 @@
                 },
                 {
                     "character": "Yoshihiko",
-                    "speech": "Claro, ¿No me recuerdas?"
+                    "speech": "Claro, ¿No me recuerdas?",
+                    "background": "Act_1-Scene_4-2"
                 },
                 {
                     "character": "Tomoya",
@@ -205,7 +207,8 @@
                 },
                 {
                     "character": "Narrador",
-                    "speech": "Yoshihiko mira a través de la ventana las personas que se encuentran buscando su salón"
+                    "speech": "Yoshihiko mira a través de la ventana las personas que se encuentran buscando su salón",
+                    "background": "Act_1-Scene_4-3"
                 },
                 {
                     "character": "Yoshihiko",
@@ -213,7 +216,8 @@
                 },
                 {
                     "character": "Yoshihiko",
-                    "speech": "Eriri Spencer Sawamura, dama cuyo padre se trata de un diplomático inglés. Ganó una exhibición nada más llegar aquí. ¡Y se trata de la estrella del club de arte!"
+                    "speech": "Eriri Spencer Sawamura, dama cuyo padre se trata de un diplomático inglés. Ganó una exhibición nada más llegar aquí. ¡Y se trata de la estrella del club de arte!",
+                    "background": "Act_1-Scene_4-4"                    
                 },
                 {
                     "character": "Yoshihiko",
@@ -221,7 +225,8 @@
                 },
                 {
                     "character": "Tomoya",
-                    "thought": "Estrella del club de arte... Lo tengo... Debo hablar con ella para tenerla en mi proyecto."
+                    "thought": "Estrella del club de arte... Lo tengo... Debo hablar con ella para tenerla en mi proyecto.",
+                    "background": "Act_1-Scene_4-5"
                 }
             ]
         },
@@ -230,7 +235,8 @@
             "content": [
                 {
                     "character": "Tomoya",
-                    "thought": "Ya he hablado con ella"
+                    "thought": "Ya he hablado con ella",
+                    "background": "Black"
                 },
                 {
                     "character": "Tomoya",
@@ -242,7 +248,8 @@
                 },
                 {
                     "character": "Yoshihiko",
-                    "speech": "¿Por qué estás tan pensativo? ¿Ya acaso alguien te ha rechazado?"
+                    "speech": "¿Por qué estás tan pensativo? ¿Ya acaso alguien te ha rechazado?",
+                    "background": "Act_1-Scene_5-1"
                 },
                 {
                     "character": "Tomoya",
@@ -250,7 +257,8 @@
                 },
                 {
                     "character": "Yoshihiko",
-                    "speech": "Calla, calla. Que acaba de salir Utaha Kasumigaoka-san"
+                    "speech": "Calla, calla. Que acaba de salir Utaha Kasumigaoka-san",
+                    "background": "Act_1-Scene_5-2"
                 },
                 {
                     "character": "Tomoya",
@@ -258,11 +266,13 @@
                 },
                 {
                     "character": "Yoshihiko",
-                    "speech": "Utaha Kasumigaoka-san, chica con talento. Nadie ha conseguido robarle el primer puesto en los dos años que lleva en la escuela. Siempre con su ritmo, logra dormir en clase y aun así ocupa los primeros puestos."
+                    "speech": "Utaha Kasumigaoka-san, chica con talento. Nadie ha conseguido robarle el primer puesto en los dos años que lleva en la escuela. Siempre con su ritmo, logra dormir en clase y aun así ocupa los primeros puestos.",
+                    "background": "Act_1-Scene_5-3"
                 },
                 {
                     "character": "Yoshihiko",
-                    "speech": "Aparte de que se trata de una de las líderes del club de teatro."
+                    "speech": "Aparte de que se trata de una de las líderes del club de teatro.",
+                    "background": "Act_1-Scene_5-4"
                 },
                 {
                     "character": "Yoshihiko",
@@ -283,7 +293,8 @@
             "content": [
                 {
                     "character": "Tomoya",
-                    "thought": "No ha salido bien, lo ha vuelto a arrugar en una bola de papel como lo hizo Eriri."
+                    "thought": "No ha salido bien, lo ha vuelto a arrugar en una bola de papel como lo hizo Eriri.",
+                    "background": "Black"
                 },
                 {
                     "character": "Tomoya",
@@ -323,7 +334,8 @@
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "¿Eres...? ¿¡Tú eres...!?"
+                    "speech": "¿Eres...? ¿¡Tú eres...!?",
+                    "background": "Act_2-Scene_1-1"
                 },
                 {
                     "music": "Music_1"
