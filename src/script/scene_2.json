@@ -296,6 +296,7 @@
                     }
                 ]
             ],
+            "npc_max_interactions": [4, 3, 3, 0],
             "npc_interactions": [
                 [
                     {

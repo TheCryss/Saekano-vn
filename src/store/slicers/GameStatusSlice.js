@@ -45,6 +45,7 @@ const initialState = {
     npcInteractionsFinished: false,
     playerBifurcations: [0, 0, 0],
     npcInteractions: [0, 0, 0, 0], // Utaha, Eriri, Megumi, Tomoya
+    npcMaxInteractions: [0, 0, 0, 0], // Utaha, Eriri, Megumi, Tomoya
 }
 
 export const gameStatusSlice = createSlice({
@@ -117,6 +118,10 @@ export const gameStatusSlice = createSlice({
 
         updateActualContent: (state) => {
             state.actualScriptScenes = getScriptScenes(state.act)
+
+            if ('npc_max_interactions' in state.actualScriptScenes[state.actualSceneIndex]) {
+                state.npcMaxInteractions = state.actualScriptScenes[state.actualSceneIndex].npc_max_interactions
+            }
 
             if ('bifurcation' in state.actualScriptScenes[state.actualSceneIndex]) {
                 const playerChoice = state.playerBifurcations[state.bifurcation - 1]

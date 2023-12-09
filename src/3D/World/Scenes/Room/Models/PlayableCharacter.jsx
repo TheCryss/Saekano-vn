@@ -10,22 +10,11 @@ export const PlayableCharacter = (props) => {
     const dispatch = useDispatch();
     const getInteraction = useSelector(state => state.room.interaction)
     const interactPressed = useKeyboardControls(state => state.action1)
+
     useEffect(() => {
-        let timeoutId;
         if (interactPressed) {
-            dispatch(setInteraction(!getInteraction));
-            // Change back after 5 seconds (5000 milliseconds)
-            timeoutId = setTimeout(() => {
-                //dispatch(setInteraction(!getInteraction));
-                console.log("interactPressed")
-            }, 1000);
-        }
-        // Clean up function
-        return () => {
-            if (timeoutId) {
-                clearTimeout(timeoutId);
-            }
-        };
+            dispatch(setInteraction(true));
+		} else dispatch(setInteraction(false));
     }, [interactPressed]);
 
 

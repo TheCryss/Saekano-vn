@@ -36,7 +36,7 @@ const app_3D = () => {
                 bottom: -8,        // Bottom boundary of the view */
     };
 
-    const { scenario, finishedScene, npcInteractions, finishedScript, actualScriptScenes, actualSceneIndex } = useSelector(state => state.gameStatus)
+    const { scenario, finishedScene, npcInteractions, finishedScript, npcMaxInteractions } = useSelector(state => state.gameStatus)
 
     const getCamera = () => {
         switch (scenario) {
@@ -74,7 +74,11 @@ const app_3D = () => {
     }
 
     useEffect(() => {
-        if (npcInteractions[0] >= 4) {
+        console.log(npcMaxInteractions)
+        if (npcInteractions[0] >= npcMaxInteractions[0] &&
+                npcInteractions[1] >= npcMaxInteractions[1] &&
+                npcInteractions[2] >= npcMaxInteractions[2] &&
+                npcInteractions[3] >= npcMaxInteractions[3]) {
             dispatch(setNpcInteractionsFinished(true));
         }
     }, [npcInteractions]);

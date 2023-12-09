@@ -13,18 +13,15 @@ export const Panel3DInteraction = () => {
     const { room, interaction } = useSelector(state => state.room)
 
     const checkInteraction = () => {
-        if (finishedScene) {//&& interaction) {
-
+        if (finishedScene && interaction) {
             if (room.utahaInteraction) { dispatch(increaseNPCInteraction(0)); playEvent(0) }
             else if (room.eririInteraction) { dispatch(increaseNPCInteraction(1)); playEvent(1) }
             else if (room.megumiInteraction) { dispatch(increaseNPCInteraction(2)); playEvent(2) }
             else if (room.tomoyaInteraction) { dispatch(increaseNPCInteraction(3)); playEvent(3) }
-
         }
     }
 
     const playEvent = (character) => {
-
         const { actualScriptScenes, actualSceneIndex } = gameStatus
         const actualScene = actualScriptScenes[actualSceneIndex]
         console.log(actualScene)
@@ -44,7 +41,7 @@ export const Panel3DInteraction = () => {
 
     useEffect(() => {
         checkInteraction()
-    }, [room])
+    }, [room, interaction])
 
     return (
         <>
