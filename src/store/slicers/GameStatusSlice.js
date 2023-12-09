@@ -191,6 +191,7 @@ export const {
     setFinishedScript,
     setPlayerBifurcation,
     setNpcInteractionsFinished,
+    resetNpcInteractions,
 } = gameStatusSlice.actions
 
 export default gameStatusSlice.reducer

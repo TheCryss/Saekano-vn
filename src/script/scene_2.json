@@ -394,6 +394,28 @@
                     "thought": "Sin nada más que mediar, Utaha procede a irse al escritorio para trabajar sobre el guión. Eriri sobre las ilustraciones y Megumi a ser el modelo de heroína para las dos."
                 }
             ]
+        },
+        {
+            "id": 6,
+            "3d": true,
+            "scenario": "Minijuego-Habitacion",
+            "content":[
+                {
+                    "character": "Utaha",
+                    "speech": "..."
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "3d": true,
+            "scenario": "Minijuego-Habitacion",
+            "content":[
+                {
+                    "character": "Utaha",
+                    "speech": "..."
+                }
+            ]
         }
     ]
 }

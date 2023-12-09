@@ -8,10 +8,6 @@ const Minigame1 = lazy(() => import('./Scenes/Word_Minigame/Minigame1'))
 import { Fallback } from '../../Components/Fallback'
 import { Lights } from './Staging/Lights'
 
-
-
-
-
 const Experience = () => {
     const gameStatus = useSelector(state => state.gameStatus);
 
@@ -26,6 +22,8 @@ const Experience = () => {
                     return (<Room />);
                 case "Minijuego-guion":
                     return (<Minigame1 />);
+                case "Minijuego-Habitacion":
+                    return (<Room />);
                 default:
                     return (<Login />);
             }
@@ -37,7 +35,7 @@ const Experience = () => {
     return (
         <>
             {/* <Suspense > */}
-                {getScenario()}
+            {getScenario()}
             {/* </Suspense> */}
         </>
     )

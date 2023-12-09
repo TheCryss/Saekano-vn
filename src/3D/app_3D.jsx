@@ -19,11 +19,6 @@ const app_3D = () => {
     const dispatch = useDispatch();
     const { room } = useSelector(state => state.room)
 
-    // useEffect(() => {
-    //     dispatch(setScenario("Minijuego-guion"));
-    //     dispatch(setIs3D(true));
-    // }, []);
-
 
     const orthographicCameraSettings = {
         makeDefault: true, // Make this camera the default camera
@@ -37,13 +32,20 @@ const app_3D = () => {
                 bottom: -8,        // Bottom boundary of the view */
     };
 
-    const { scenario, finishedScene, npcInteractions,finishedScript,actualScriptScenes, actualSceneIndex } = useSelector(state => state.gameStatus)
+    const { scenario, finishedScene, npcInteractions, finishedScript, actualScriptScenes, actualSceneIndex } = useSelector(state => state.gameStatus)
 
     const getCamera = () => {
         switch (scenario) {
             case "Habitacion":
                 return {
-                    camera: <Camera_controls_room/>,
+                    camera: <Camera_controls_room />,
+                    onPointerDown: (e) => {
+                        e.target.requestPointerLock();
+                    },
+                };
+            case "Minijuego-Habitacion":
+                return {
+                    camera: <Camera_controls_room />,
                     onPointerDown: (e) => {
                         e.target.requestPointerLock();
                     },
