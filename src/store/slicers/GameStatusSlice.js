@@ -119,20 +119,22 @@ export const gameStatusSlice = createSlice({
         updateActualContent: (state) => {
             state.actualScriptScenes = getScriptScenes(state.act)
 
-            if ('npc_max_interactions' in state.actualScriptScenes[state.actualSceneIndex]) {
-                state.npcMaxInteractions = state.actualScriptScenes[state.actualSceneIndex].npc_max_interactions
-            }
-
             if ('bifurcation' in state.actualScriptScenes[state.actualSceneIndex]) {
                 const playerChoice = state.playerBifurcations[state.bifurcation - 1]
 
-                console.log(playerChoice)
-
                 state.isBifurcation = true
                 state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[playerChoice][state.actualContentIndex]
+
+                if ('npc_max_interactions' in state.actualScriptScenes[state.actualSceneIndex]) {
+                    state.npcMaxInteractions = state.actualScriptScenes[state.actualSceneIndex].npc_max_interactions[playerChoice]
+                }
             } else {
                 state.isBifurcation = false
                 state.actualContent = state.actualScriptScenes[state.actualSceneIndex].content[state.actualContentIndex]
+
+                if ('npc_max_interactions' in state.actualScriptScenes[state.actualSceneIndex]) {
+                    state.npcMaxInteractions = state.actualScriptScenes[state.actualSceneIndex].npc_max_interactions
+                }
             }
         },
 

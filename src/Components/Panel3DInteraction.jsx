@@ -9,7 +9,7 @@ export const Panel3DInteraction = () => {
     const [dialog, setDialog] = useState('...')
     const [character, setCharacter] = useState('...')
 
-    const { npcInteractions, finishedScene } = useSelector(state => state.gameStatus)
+    const { isBifurcation, bifurcation, playerBifurcations, npcInteractions, finishedScene } = useSelector(state => state.gameStatus)
     const { room, interaction } = useSelector(state => state.room)
 
     const checkInteraction = () => {
@@ -24,13 +24,21 @@ export const Panel3DInteraction = () => {
     const playEvent = (character) => {
         const { actualScriptScenes, actualSceneIndex } = gameStatus
         const actualScene = actualScriptScenes[actualSceneIndex]
-        console.log(actualScene)
+        let actualContent = null;
 
         if ("npc_interactions" in actualScene) {
-            const npcInteractionsContent = actualScene.npc_interactions
-            const characterInteraction = npcInteractions[character]
+            if (isBifurcation) {
+                const npcInteractionsContent = actualScene.npc_interactions
+                const playerBifurcation = playerBifurcations[bifurcation - 1]
+                const characterInteraction = npcInteractions[character]
 
-            const actualContent = npcInteractionsContent[character][characterInteraction]
+                actualContent = npcInteractionsContent[playerBifurcation][character][characterInteraction]
+            } else {
+                const npcInteractionsContent = actualScene.npc_interactions
+                const characterInteraction = npcInteractions[character]
+
+                actualContent = npcInteractionsContent[character][characterInteraction]
+            }
 
             if (actualContent) {
                 setCharacter(actualContent.character)
