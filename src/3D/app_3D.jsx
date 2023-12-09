@@ -6,15 +6,19 @@ import { OrthographicCamera } from '@react-three/drei';
 import { Loader } from "@react-three/drei";
 import { useDispatch, useSelector } from "react-redux";
 import { setNpcInteractionsFinished } from "../store/slicers/GameStatusSlice"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from 'react-router-dom'
 //libs
 import Experience from "./World/Experience";
 import { Panel3D } from "../Components/Panel3D";
 import { Panel3DInteraction } from "../Components/Panel3DInteraction";
+import { LoadingScreen3D } from "../Components/LoadingScreen3D";
 
 
 const app_3D = () => {
+
+    const [started, setStarted] = useState(false);
+
     const navigate = useNavigate()
     const dispatch = useDispatch();
     const { room } = useSelector(state => state.room)
@@ -77,6 +81,7 @@ const app_3D = () => {
 
     return (
         <>
+            <LoadingScreen3D started={started} onStarted={() => setStarted(true)} />
             {!finishedScene && !finishedScript && <Panel3D />}
             {finishedScene && isAnyInteraction() && setNpcInteractionsFinished && <Panel3DInteraction />}
             <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
@@ -86,7 +91,6 @@ const app_3D = () => {
                     <Experience />
                 </Physics>
             </Canvas>
-            <Loader />
         </>
     )
 }
