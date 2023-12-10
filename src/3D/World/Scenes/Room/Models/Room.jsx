@@ -1,17 +1,24 @@
 import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import { CuboidCollider, Physics, RigidBody } from "@react-three/rapier";
 
 export const Room3D = (props) => {
     const { nodes, materials } = useGLTF("/assets/models/room/Room.glb");
     return (
         <group {...props} dispose={null}>
-            <mesh
-                castShadow
-                //receiveShadow
-                geometry={nodes.Stall.geometry}
-                material={materials.Wood}
-                position={[-5.5, 3.5, -2]}
-            />
+
+            {/* Library 0 */}
+            <RigidBody type="fixed" colliders='cuboid' wireframe>
+                <mesh
+                    castShadow
+                    //receiveShadow
+                    geometry={nodes.Stall.geometry}
+                    material={materials.Wood}
+                    position={[-5.5, 3.5, -2]}
+                />
+            </RigidBody>
+
+            {/* Library 0 books */}
             <group position={[-9.25, 0.85, -2]}>
                 <mesh
                     castShadow
@@ -76,6 +83,8 @@ export const Room3D = (props) => {
                     material={materials["Book 5"]}
                 />
             </group>
+
+            {/* Bed */}
             <group position={[-6.993, 0.9, -8.257]}>
                 <mesh
                     castShadow
@@ -83,19 +92,28 @@ export const Room3D = (props) => {
                     geometry={nodes.Cube007.geometry}
                     material={materials.Wood}
                 />
-                <mesh
-                    castShadow
-                    //receiveShadow
-                    geometry={nodes.Cube007_1.geometry}
-                    material={materials.Mattress}
-                />
-                <mesh
-                    castShadow
-                    //receiveShadow
-                    geometry={nodes.Cube007_2.geometry}
-                    material={materials.Pillow}
-                />
+                {/* Mattress */}
+                <RigidBody type="fixed" colliders='cuboid' wireframe>
+                    <mesh
+                        castShadow
+                        //receiveShadow
+                        geometry={nodes.Cube007_1.geometry}
+                        material={materials.Mattress}
+                    />
+                </RigidBody>
+
+                {/* Pillow */}
+                <RigidBody type="fixed" colliders='cuboid' wireframe>
+                    <mesh
+                        castShadow
+                        //receiveShadow
+                        geometry={nodes.Cube007_2.geometry}
+                        material={materials.Pillow}
+                    />
+                </RigidBody>
             </group>
+
+            {/* TV */}
             <group position={[-5.5, 3.34, -2.1]} scale={[1, 1, 0.08]}>
                 <mesh
                     castShadow
@@ -110,32 +128,49 @@ export const Room3D = (props) => {
                     material={materials.TV_Screen}
                 />
             </group>
+
+            {/* Black/Brown desk */}
+
             <group
                 position={[5, 1.591, -9.036]}
                 rotation={[Math.PI, 0, Math.PI]}
                 scale={[1.5, 1, 1]}
             >
-                <mesh
-                    castShadow
-                    //receiveShadow
-                    geometry={nodes.Cube029.geometry}
-                    material={materials.Desk_Black}
-                />
+                <RigidBody type="fixed" colliders="cuboid" wireframe>
+                    <mesh
+                        castShadow
+                        //receiveShadow
+                        geometry={nodes.Cube029.geometry}
+                        material={materials.Desk_Black}
+                    />
+                </RigidBody>
                 <mesh
                     castShadow
                     //receiveShadow
                     geometry={nodes.Cube029_1.geometry}
                     material={materials.Desk_DarkBrown}
                 />
+
             </group>
-            <mesh
-                castShadow
-                //receiveShadow
-                geometry={nodes.Chair.geometry}
-                material={materials.Chair}
-                position={[4.85, 2.048, -6.409]}
-                rotation={[Math.PI / 2, 0, 0]}
-            />
+
+            {/* Black/Browm chair */}
+            <RigidBody type="fixed" colliders={false} wireframe>
+                <CuboidCollider
+                    args={[0.8, 0.8, 0.5]}
+                    position={[4.85, 2.048, -6.409]}
+                />
+
+                <mesh
+                    castShadow
+                    //receiveShadow
+                    geometry={nodes.Chair.geometry}
+                    material={materials.Chair}
+                    position={[4.85, 2.048, -6.409]}
+                    rotation={[Math.PI / 2, 0, 0]}
+                />
+            </RigidBody>
+
+            {/* Carpet blue and white*/}
             <mesh
                 castShadow
                 //receiveShadow
@@ -143,20 +178,30 @@ export const Room3D = (props) => {
                 material={materials.Carpet}
                 position={[-4.9, 0.21, 4]}
             />
-            <mesh
-                castShadow
-                //receiveShadow
-                geometry={nodes.TrashCan.geometry}
-                material={materials.Trashcan}
-                position={[1.079, 0.21, -8.715]}
-            />
-            <mesh
-                castShadow
-                //receiveShadow
-                geometry={nodes.Table.geometry}
-                material={materials.Chair}
-                position={[-6, 0.822, 9.75]}
-            />
+
+            {/* Trashcan */}
+            <RigidBody type="fixed" colliders='cuboid' wireframe>
+                <mesh
+                    castShadow
+                    //receiveShadow
+                    geometry={nodes.TrashCan.geometry}
+                    material={materials.Trashcan}
+                    position={[1.079, 0.21, -8.715]}
+                />
+            </RigidBody>
+
+            {/* table browm */}
+            <RigidBody type="fixed" colliders='cuboid' wireframe>
+                <mesh
+                    castShadow
+                    //receiveShadow
+                    geometry={nodes.Table.geometry}
+                    material={materials.Chair}
+                    position={[-6, 0.822, 9.75]}
+                />
+            </RigidBody>
+
+            {/* white chair (eriri chair)  */}
             <mesh
                 castShadow
                 //receiveShadow
@@ -165,13 +210,17 @@ export const Room3D = (props) => {
                 position={[5, 2.048, 26.3]}
                 rotation={[Math.PI / 2, 0, Math.PI]}
             />
+
+            {/* white desk (eriri desk)  */}
             <group position={[4.85, 1.6, 29.591]} scale={[1.5, 1, 1]}>
-                <mesh
-                    castShadow
-                    //receiveShadow
-                    geometry={nodes.Cube017.geometry}
-                    material={materials.Desk_White}
-                />
+                <RigidBody type="fixed" colliders='cuboid' wireframe>
+                    <mesh
+                        castShadow
+                        //receiveShadow
+                        geometry={nodes.Cube017.geometry}
+                        material={materials.Desk_White}
+                    />
+                </RigidBody>
                 <mesh
                     castShadow
                     //receiveShadow
@@ -179,6 +228,8 @@ export const Room3D = (props) => {
                     material={materials.Desk_Green}
                 />
             </group>
+
+            {/* windows */}
             <mesh
                 castShadow
                 //receiveShadow
@@ -187,19 +238,41 @@ export const Room3D = (props) => {
                 position={[-10, 5.51, 5]}
                 rotation={[-Math.PI, 0, 0]}
             />
-            <mesh
-                castShadow
-                //receiveShadow
-                geometry={nodes.Wall.geometry}
-                material={materials.Wall}
-                position={[-10, 4, 0]}
-            />
+
+            {/* walls */}
+            <RigidBody type="fixed" colliders={false} wireframe>
+
+                {/* Wall 1 */}
+                <CuboidCollider
+                    args={[0.1, 4.1, 22]}
+                    position={[-9.8, 4.27, 11.4]}
+                />
+
+                {/* Wall 2 */}
+                <CuboidCollider
+                    args={[0.1, 4.1, 22]}
+                    position={[-2, 4.27, -9.8]}
+                    rotation={[0, -Math.PI / 2, 0]}
+                />
+
+                <mesh
+                    castShadow
+                    //receiveShadow
+                    geometry={nodes.Wall.geometry}
+                    material={materials.Wall}
+                    position={[-10, 4, 0]}
+                />
+            </RigidBody>
+
             <mesh
                 castShadow
                 //receiveShadow
                 geometry={nodes.Floor.geometry}
                 material={materials.Floor}
             />
+
+
+            {/* Door */}
             <group
                 position={[-10.019, 6.151, 14.5]}
                 rotation={[-Math.PI / 2, 0, 0]}
@@ -218,6 +291,8 @@ export const Room3D = (props) => {
                     material={materials.Silver}
                 />
             </group>
+
+            {/* Paper on brown desk */}
             <mesh
                 castShadow
                 //receiveShadow
@@ -226,6 +301,8 @@ export const Room3D = (props) => {
                 position={[4.615, 2.261, -8.8]}
                 rotation={[0, 0.279, 0]}
             />
+
+            {/* thing on white desk */}
             <group
                 position={[5, 2.5, 28.7]}
                 rotation={[2.88, 0, Math.PI]}
@@ -253,20 +330,30 @@ export const Room3D = (props) => {
                 rotation={[-1.92, 0, Math.PI]}
                 scale={[-9.7, -0.188, -1.844]}
             />
-            <mesh
-                castShadow
-                //receiveShadow
-                geometry={nodes.TrashCan001.geometry}
-                material={materials["Trashcan.001"]}
-                position={[0.866, 0.21, 28.437]}
-            />
-            <mesh
-                castShadow
-                //receiveShadow
-                geometry={nodes.Stall2.geometry}
-                material={materials["Wood.001"]}
-                position={[-5.5, 3.5, 19]}
-            />
+
+            {/* trash can beside white desk */}
+            <RigidBody type="fixed" colliders='cuboid' wireframe>
+                <mesh
+                    castShadow
+                    //receiveShadow
+                    geometry={nodes.TrashCan001.geometry}
+                    material={materials["Trashcan.001"]}
+                    position={[0.866, 0.21, 28.437]}
+                />
+            </RigidBody>
+
+            {/* library 1 */}
+            <RigidBody type="fixed" colliders='cuboid' wireframe>
+                <mesh
+                    castShadow
+                    //receiveShadow
+                    geometry={nodes.Stall2.geometry}
+                    material={materials["Wood.001"]}
+                    position={[-5.5, 3.5, 19]}
+                />
+            </RigidBody>
+
+            {/* library 1 books */}
             <group position={[-9.25, 5.6, 19]}>
                 <mesh
                     castShadow
@@ -331,14 +418,20 @@ export const Room3D = (props) => {
                     material={materials["Book 5.001"]}
                 />
             </group>
-            <mesh
-                castShadow
-                //receiveShadow
-                geometry={nodes.Big_table.geometry}
-                material={materials["Chair.001"]}
-                position={[15.366, 1.634, 9.879]}
-                scale={[1, 2.3, 2.5]}
-            />
+
+            {/* chess table */}
+            <RigidBody type="fixed" colliders='cuboid' wireframe>
+                <mesh
+                    castShadow
+                    //receiveShadow
+                    geometry={nodes.Big_table.geometry}
+                    material={materials["Chair.001"]}
+                    position={[15.366, 1.634, 9.879]}
+                    scale={[1, 2.3, 2.5]}
+                />
+            </RigidBody>
+
+            {/* colorful carpet */}
             <mesh
                 castShadow
                 //receiveShadow
@@ -346,6 +439,8 @@ export const Room3D = (props) => {
                 material={materials["Carpet.001"]}
                 position={[-4.9, 0.21, 25]}
             />
+
+            {/* wall besides closet */}
             <mesh
                 castShadow
                 //receiveShadow
@@ -354,6 +449,8 @@ export const Room3D = (props) => {
                 position={[13.509, 4, -9.9]}
                 scale={[6.5, 4.1, 0.129]}
             />
+
+            {/* chess carpet */}
             <mesh
                 castShadow
                 //receiveShadow
@@ -362,30 +459,38 @@ export const Room3D = (props) => {
                 position={[15.379, 3.008, 9.842]}
                 scale={0.507}
             />
+
+            {/* closet */}
             <group
                 position={[13.128, 3.792, -7.547]}
                 rotation={[0, -Math.PI / 2, 0]}
                 scale={[-0.102, -3.42, -1.696]}
             >
-                <mesh
-                    castShadow
-                    //receiveShadow
-                    geometry={nodes.Cube055.geometry}
-                    material={materials["Wood_transparent.002"]}
-                />
-                <mesh
-                    castShadow
-                    //receiveShadow
-                    geometry={nodes.Cube055_1.geometry}
-                    material={materials["Wood_transparent.001"]}
-                />
-                <mesh
-                    castShadow
-                    //receiveShadow
-                    geometry={nodes.Cube055_2.geometry}
-                    material={materials["Wood_transparent.003"]}
-                />
+                <RigidBody type="fixed" colliders='cuboid' wireframe>
+                    <mesh
+                        castShadow
+                        //receiveShadow
+                        geometry={nodes.Cube055.geometry}
+                        material={materials["Wood_transparent.002"]}
+                    />
+
+                    <mesh
+                        castShadow
+                        //receiveShadow
+                        geometry={nodes.Cube055_1.geometry}
+                        material={materials["Wood_transparent.001"]}
+                    />
+
+                    <mesh
+                        castShadow
+                        //receiveShadow
+                        geometry={nodes.Cube055_2.geometry}
+                        material={materials["Wood_transparent.003"]}
+                    />
+                </RigidBody>
             </group>
+
+
             <mesh
                 castShadow
                 //receiveShadow
@@ -413,7 +518,7 @@ export const Room3D = (props) => {
                 rotation={[Math.PI, 0, Math.PI]}
                 scale={[0.1, 4.1, 18.592]}
             />
-        </group>
+        </group >
     );
 }
 
