@@ -10,6 +10,9 @@ import { useFrame } from '@react-three/fiber'
 import { Megumi } from './Models/Megumi'
 import { Utaha } from './Models/Utaha'
 import { Eriri } from './Models/Eriri'
+import {Pencil } from './Models/Pencil'
+import {Paint_palette } from './Models/Paint_palette'
+import {Hook} from './Models/Hook'
 import FloorRoom from './Models/FloorRoom'
 import { nextScene, setFinishedScript, updateActualContent,setNpcInteractionsFinished,setScenario,resetNpcInteractions } from '../../../../store/slicers/GameStatusSlice'
 
@@ -86,7 +89,11 @@ const Room = () => {
 
             <Lights_Room />
             <FloorRoom/>
-
+            
+            {false && <> <Paint_palette scale={1} position={[3,2.3,-8.8]}/>
+            <Pencil scale={1} position={[15,3.1,10]}/>
+            <Hook scale={1} position={[-5,1.3,-9.3]} rotation-x={Math.PI/2.5} />
+            </> }
         </>
     )
 }
