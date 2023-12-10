@@ -2,7 +2,7 @@ import { Panel } from '../../Components/Panel'
 import { useState, useEffect } from 'react'
 import Transitions from '../../Components/Transitions';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateActualContent, setActualContentIndex } from '../../store/slicers/GameStatusSlice'
+import { updateActualContent } from '../../store/slicers/GameStatusSlice'
 
 
 const Dialog_2D = () => {
