@@ -14,14 +14,14 @@ import {Pencil } from './Models/Pencil'
 import {Paint_palette } from './Models/Paint_palette'
 import {Hook} from './Models/Hook'
 import FloorRoom from './Models/FloorRoom'
-import { nextScene, 
-    setFinishedScript, 
+import { nextScene,
+    setFinishedScript,
     updateActualContent,
     setNpcInteractionsFinished,
     setScenario,
     resetNpcInteractions } from '../../../../store/slicers/GameStatusSlice'
 
-import { setPaintPalette, setHook, setPencil } from '../../../../store/slicers/RoomSlicers'
+import { setPaintPalette, setHook, setPencil, setPaintPaletteDelivered, setHookDelivered, setPencilDelivered } from '../../../../store/slicers/RoomSlicers'
 
 const Room = () => {
     const keyboardMap = [
@@ -47,7 +47,7 @@ const Room = () => {
     const characterURL = "/assets/models/playable_character/Tomoya.glb"
     const { finishedScene, npcInteractionsFinished, isBifurcation, actualSceneIndex,actualScriptScenes } = useSelector(state => state.gameStatus)
     const actualScene = actualScriptScenes[actualSceneIndex]
-    const { objects, objectsColliders, interaction} = useSelector(state => state.room)
+    const { objects, objectsColliders, interaction, room } = useSelector(state => state.room)
     const { hook, paint_palette, pencil } = objects
     const { hookCollider, paint_paletteCollider, pencilCollider } = objectsColliders
 
@@ -65,7 +65,7 @@ const Room = () => {
             dispatch(setNpcInteractionsFinished(false))
         }
     }, [isBifurcation])
-    
+
     useEffect(() => {
         if (finishedScene && npcInteractionsFinished ) {
             dispatch(nextScene())
@@ -83,7 +83,7 @@ const Room = () => {
             setMinigame2(true)
         }
     },[actualScene.scenario])
-    
+
     const pickUpObject = () => {
         if (interaction) {
                 if (hookCollider) dispath(setHook(true))
@@ -116,12 +116,12 @@ const Room = () => {
 
             <Lights_Room />
             <FloorRoom/>
-            
-            { minigame2 && <> 
+
+            { minigame2 && <>
                 {!pencil && <Pencil scale={1} position={[15,3.1,10]}/>}
                 {!paint_palette && <Paint_palette scale={1} position={[3,2.3,-8.8]}/>}
                 {!hook && <Hook scale={1} position={[-5,1.3,-9.3]} rotation-x={Math.PI/2.5} />}
-            </> 
+            </>
             }
         </>
     )

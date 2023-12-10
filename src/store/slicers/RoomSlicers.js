@@ -12,6 +12,11 @@ const initialState = {
       paint_paletteCollider: false,
       pencilCollider: false
     },
+    deliveredObjects: {
+      hookDelivered: false,
+      paint_paletteDelivered: false,
+      pencilDelivered: false
+    },
     objects: {
       hook: false,
       paint_palette: false,
@@ -57,19 +62,32 @@ const roomSlice = createSlice({
     setPencil: (state, action) => {
       state.objects.pencil = action.payload;
     },
+    setHookDelivered: (state, action) => {
+      state.deliveredObjects.hookDelivered = action.payload;
+    },
+    setPaintPaletteDelivered: (state, action) => {
+      state.deliveredObjects.paint_paletteDelivered = action.payload;
+    },
+    setPencilDelivered: (state, action) => {
+      state.deliveredObjects.pencilDelivered = action.payload;
+    },
   },
 });
 
-export const { 
-  setUtahaInteraction, 
-  setEririInteraction, 
-  setMegumiInteraction, 
-  setTomoyaInteraction, 
-  setInteraction, 
+export const {
+  setUtahaInteraction,
+  setEririInteraction,
+  setMegumiInteraction,
+  setTomoyaInteraction,
+  setInteraction,
   setPaintPaletteCollider,
   setPaintPalette,
   setHookCollider,
   setHook,
-  setPencilCollider, 
-  setPencil } = roomSlice.actions;
+  setPencilCollider,
+  setPencil,
+  setHookDelivered,
+  setPencilDelivered,
+  setPaintPaletteDelivered
+} = roomSlice.actions;
 export default roomSlice.reducer;
