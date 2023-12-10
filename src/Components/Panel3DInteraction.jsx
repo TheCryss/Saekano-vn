@@ -9,8 +9,11 @@ export const Panel3DInteraction = () => {
     const [dialog, setDialog] = useState('...')
     const [character, setCharacter] = useState('...')
 
-    const { isBifurcation, bifurcation, playerBifurcations, npcInteractions, finishedScene } = useSelector(state => state.gameStatus)
-    const { room, interaction } = useSelector(state => state.room)
+    const { isBifurcation, bifurcation, playerBifurcations, npcInteractions, finishedScene, scenario } = useSelector(state => state.gameStatus)
+
+    const { room, interaction,deliveredObjects } = useSelector(state => state.room)
+    const { hookDelivered,paint_paletteDelivered, pencilDelivered } = deliveredObjects
+
 
     const checkInteraction = () => {
         if (finishedScene && interaction) {
@@ -50,6 +53,24 @@ export const Panel3DInteraction = () => {
     useEffect(() => {
         checkInteraction()
     }, [room, interaction])
+
+    useEffect(() => {
+        if (scenario == "Minijuego-Habitacion") {
+            setDialog("Busca mi objeto dentro de la habitación y traemelo")
+            if (room.utahaInteraction && pencilDelivered) {
+                setDialog("Gracias por traerme mi lápiz")
+            }
+            if (room.eririInteraction && paint_paletteDelivered) {
+                setDialog("Gracias por traerme mi paleta de pintura, baka.")
+            }
+            if (room.megumiInteraction && hookDelivered) {
+                setDialog("Gracias por traerme el perchero, no lo encontraba")
+            }
+        } else {
+            setDialog("...")
+        }
+
+    },[scenario,room])
 
     return (
         <>
