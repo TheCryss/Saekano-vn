@@ -1,10 +1,7 @@
-import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 export const Inventory = () => {
     const { hook, paint_palette, pencil } = useSelector(state => state.room.objects)
-    const [background, setBackground] = useState('hook')
-    console.log(hook, paint_palette, pencil);
     return (
         <div className='absolute z-20  m-5 mg' >
             <div className='bg-amber-900 flex rounded-lg px-3' >

@@ -14,6 +14,7 @@ import { Panel3D } from "../Components/Panel3D";
 import { Inventory } from "../Components/Inventory";
 import { Panel3DInteraction } from "../Components/Panel3DInteraction";
 import { LoadingScreen3D } from "../Components/LoadingScreen3D";
+import { Choices } from "../Components/Choices";
 
 
 const app_3D = () => {
@@ -105,7 +106,8 @@ const app_3D = () => {
             <LoadingScreen3D started={started} onStarted={() => setStarted(true)} />
             {!finishedScene && !finishedScript && showPanel3D && <Panel3D />}
             {finishedScene && isAnyInteraction()   && setNpcInteractionsFinished && <Panel3DInteraction />}
-            {1 && <Inventory/>}
+            {minigame2 && <Inventory/>}
+            {minigame2 && isAnyInteraction() && <Choices/>}
             <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {camera}
