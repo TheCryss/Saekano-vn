@@ -1,5 +1,7 @@
 import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import { RigidBody, CuboidCollider } from '@react-three/rapier';
+
 
 export const Room3D = (props) => {
     const { nodes, materials } = useGLTF("/assets/models/room/Room.glb");
@@ -331,14 +333,29 @@ export const Room3D = (props) => {
                     material={materials["Book 5.001"]}
                 />
             </group>
-            <mesh
-                castShadow
-                //receiveShadow
-                geometry={nodes.Big_table.geometry}
-                material={materials["Chair.001"]}
-                position={[15.366, 1.634, 9.879]}
-                scale={[1, 2.3, 2.5]}
-            />
+            <RigidBody type="fixed" colliders="cuboid"  position={props.position}>
+                <CuboidCollider
+                    args={[1.25, 0, 1]}
+                />
+                <mesh
+                    castShadow
+                    //receiveShadow
+                    geometry={nodes.Big_table.geometry}
+                    material={materials["Chair.001"]}
+                    position={[15.366, 1.634, 9.879]}
+                    scale={[1, 2.3, 2.5]}
+                />
+                <mesh
+                    castShadow
+                    //receiveShadow
+                    geometry={nodes.Chess.geometry}
+                    material={materials["Carpet.002"]}
+                    position={[15.379, 3.008, 9.842]}
+                    scale={0.507}
+                />
+            </RigidBody>
+
+
             <mesh
                 castShadow
                 //receiveShadow
@@ -354,14 +371,7 @@ export const Room3D = (props) => {
                 position={[13.509, 4, -9.9]}
                 scale={[6.5, 4.1, 0.129]}
             />
-            <mesh
-                castShadow
-                //receiveShadow
-                geometry={nodes.Chess.geometry}
-                material={materials["Carpet.002"]}
-                position={[15.379, 3.008, 9.842]}
-                scale={0.507}
-            />
+
             <group
                 position={[13.128, 3.792, -7.547]}
                 rotation={[0, -Math.PI / 2, 0]}

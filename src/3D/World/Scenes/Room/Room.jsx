@@ -39,6 +39,7 @@ const Room = () => {
     const characterURL = "/assets/models/playable_character/Tomoya.glb"
     const { finishedScene, npcInteractionsFinished, isBifurcation, actualSceneIndex,actualScriptScenes } = useSelector(state => state.gameStatus)
     const actualScene = actualScriptScenes[actualSceneIndex]
+    const [minigame2, setMinigame2] = React.useState(false)
 
     const dispatch = useDispatch()
     useEffect(() => {
@@ -59,6 +60,7 @@ const Room = () => {
             dispatch(resetNpcInteractions())
         }
     }, [finishedScene,npcInteractionsFinished])
+
     useEffect(() => {
         dispatch(setScenario(actualScene.scenario))
     },[actualSceneIndex])
@@ -66,6 +68,7 @@ const Room = () => {
     useEffect(() => {
         if (actualScene.scenario == "Minijuego-Habitacion") {
             dispatch(setNpcInteractionsFinished(false))
+            setMinigame2(true)
         }
     },[actualScene.scenario])
 
@@ -90,10 +93,12 @@ const Room = () => {
             <Lights_Room />
             <FloorRoom/>
             
-            {false && <> <Paint_palette scale={1} position={[3,2.3,-8.8]}/>
-            <Pencil scale={1} position={[15,3.1,10]}/>
-            <Hook scale={1} position={[-5,1.3,-9.3]} rotation-x={Math.PI/2.5} />
-            </> }
+            { minigame2 && <> 
+                <Paint_palette scale={1} position={[3,2.3,-8.8]}/>
+                <Pencil scale={1} position={[15,3.1,10]}/>
+                <Hook scale={1} position={[-5,1.3,-9.3]} rotation-x={Math.PI/2.5} />
+            </> 
+            }
         </>
     )
 }

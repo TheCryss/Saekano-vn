@@ -7,6 +7,11 @@ const initialState = {
         megumiInteraction: false,
         tomoyaInteraction: false,
     },
+    objects:{
+      hook: false,
+      paint_palette: false,
+      pencil: false
+    },
     interaction: false,
 };
 

@@ -35,6 +35,16 @@ const app_3D = () => {
                 top: 8,            // Top boundary of the view
                 bottom: -8,        // Bottom boundary of the view */
     };
+    const [showPanel3D, setShowPanel3D] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowPanel3D(true);
+        }, 2000); // Retraso de 1 segundo
+
+        // Limpieza al desmontar
+        return () => clearTimeout(timer);
+    }, []);
 
     const { scenario, finishedScene, npcInteractions, finishedScript, npcMaxInteractions } = useSelector(state => state.gameStatus)
 
@@ -76,9 +86,9 @@ const app_3D = () => {
     useEffect(() => {
         console.log(npcMaxInteractions)
         if (npcInteractions[0] >= npcMaxInteractions[0] &&
-                npcInteractions[1] >= npcMaxInteractions[1] &&
-                npcInteractions[2] >= npcMaxInteractions[2] &&
-                npcInteractions[3] >= npcMaxInteractions[3]) {
+            npcInteractions[1] >= npcMaxInteractions[1] &&
+            npcInteractions[2] >= npcMaxInteractions[2] &&
+            npcInteractions[3] >= npcMaxInteractions[3]) {
             dispatch(setNpcInteractionsFinished(true));
         }
     }, [npcInteractions]);
@@ -86,12 +96,12 @@ const app_3D = () => {
     return (
         <>
             <LoadingScreen3D started={started} onStarted={() => setStarted(true)} />
-            {!finishedScene && !finishedScript && <Panel3D />}
-            {finishedScene && isAnyInteraction() && setNpcInteractionsFinished && <Panel3DInteraction />}
+            {!finishedScene && !finishedScript && showPanel3D && <Panel3D />}
+            {finishedScene && isAnyInteraction()   && setNpcInteractionsFinished && <Panel3DInteraction />}
             <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {camera}
-                <Physics timeStep="vary" >
+                <Physics timeStep="vary">
                     <Experience />
                 </Physics>
             </Canvas>
