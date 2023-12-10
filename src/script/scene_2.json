@@ -433,8 +433,20 @@
             "scenario": "Minijuego-Habitacion",
             "content":[
                 {
+                    "character": "...",
+                    "speech": ".."
+                },
+                {
                     "character": "Utaha",
-                    "speech": "..."
+                    "speech": "ahora teines que buscar objetos"
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "ahora teines que buscar objetos 2"
+                },
+                {
+                    "character": "...",
+                    "speech": ".."
                 }
             ]
         },

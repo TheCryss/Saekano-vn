@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import { useDispatch,useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Room3D } from './Models/Room'
 import { RigidBody } from '@react-three/rapier'
 import { KeyboardControls } from '@react-three/drei'
@@ -14,7 +14,14 @@ import {Pencil } from './Models/Pencil'
 import {Paint_palette } from './Models/Paint_palette'
 import {Hook} from './Models/Hook'
 import FloorRoom from './Models/FloorRoom'
-import { nextScene, setFinishedScript, updateActualContent,setNpcInteractionsFinished,setScenario,resetNpcInteractions } from '../../../../store/slicers/GameStatusSlice'
+import { nextScene, 
+    setFinishedScript, 
+    updateActualContent,
+    setNpcInteractionsFinished,
+    setScenario,
+    resetNpcInteractions } from '../../../../store/slicers/GameStatusSlice'
+
+import { setPaintPalette, setHook, setPencil } from '../../../../store/slicers/RoomSlicers'
 
 const Room = () => {
     const keyboardMap = [
@@ -36,10 +43,15 @@ const Room = () => {
         jumpIdle: "Surprise",
         action1: "Clapping"
     }
+    const dispath = useDispatch()
     const characterURL = "/assets/models/playable_character/Tomoya.glb"
     const { finishedScene, npcInteractionsFinished, isBifurcation, actualSceneIndex,actualScriptScenes } = useSelector(state => state.gameStatus)
     const actualScene = actualScriptScenes[actualSceneIndex]
-    const [minigame2, setMinigame2] = React.useState(false)
+    const { objects, objectsColliders, interaction} = useSelector(state => state.room)
+    const { hook, paint_palette, pencil } = objects
+    const { hookCollider, paint_paletteCollider, pencilCollider } = objectsColliders
+
+    const [minigame2, setMinigame2] = useState(false)
 
     const dispatch = useDispatch()
     useEffect(() => {
@@ -71,6 +83,18 @@ const Room = () => {
             setMinigame2(true)
         }
     },[actualScene.scenario])
+    
+    const pickUpObject = () => {
+        if (interaction) {
+                if (hookCollider) dispath(setHook(true))
+                if (pencilCollider) dispath(setPencil(true))
+                if (paint_paletteCollider) dispath(setPaintPalette(true))
+            }
+    }
+
+    useEffect(() => {
+        pickUpObject()
+    }, [objects, interaction])
 
     return (
         <>
@@ -94,9 +118,9 @@ const Room = () => {
             <FloorRoom/>
             
             { minigame2 && <> 
-                <Paint_palette scale={1} position={[3,2.3,-8.8]}/>
-                <Pencil scale={1} position={[15,3.1,10]}/>
-                <Hook scale={1} position={[-5,1.3,-9.3]} rotation-x={Math.PI/2.5} />
+                {!pencil && <Pencil scale={1} position={[15,3.1,10]}/>}
+                {!paint_palette && <Paint_palette scale={1} position={[3,2.3,-8.8]}/>}
+                {!hook && <Hook scale={1} position={[-5,1.3,-9.3]} rotation-x={Math.PI/2.5} />}
             </> 
             }
         </>

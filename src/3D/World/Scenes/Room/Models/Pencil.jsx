@@ -1,18 +1,22 @@
 
 import React, { useRef } from "react";
 import { RigidBody, CuboidCollider, Physics } from '@react-three/rapier';
-
-
 import { useGLTF } from "@react-three/drei";
+import { setPencilCollider } from '../../../../../store/slicers/RoomSlicers';
+import { useDispatch, useSelector } from "react-redux";
 
 export function Pencil(props) {
     const { nodes, materials } = useGLTF("/assets/models/pencil/pencil.glb");
+    const dispatch = useDispatch();
+
     return (
         <>
             <RigidBody type="fixed" colliders="cuboid" position-y={2} position={props.position}>
                 <CuboidCollider
-                sensor
+                    sensor
                     args={[5.25, 1.75, 5]}
+                    onIntersectionEnter={(() => dispatch(setPencilCollider(true)))}
+                    onIntersectionExit={(() => dispatch(setPencilCollider(false)))}
                 />
             </RigidBody>
             <group {...props} dispose={null}>

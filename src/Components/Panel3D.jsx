@@ -15,7 +15,7 @@ export const Panel3D = () => {
 
     const playEvent = () => {
         const { actualContent } = gameStatus
-        console.log(actualContent)
+        // console.log(actualContent)
         const keys = Object.keys(actualContent)
         switch (keys[0]) {
             case 'character':
@@ -39,8 +39,9 @@ export const Panel3D = () => {
 
 
     const onClickText = () => {
-        if (finishedScene)
-            console.log("finished scene");
+        if (finishedScene){
+            // console.log("finished scene");
+        }
         else {
             // playEvent()
             dispatch(nextContent())
