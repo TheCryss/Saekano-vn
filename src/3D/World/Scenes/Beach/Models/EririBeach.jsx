@@ -12,7 +12,7 @@ export const EririBeach = (props) => {
 
     const dispatch = useDispatch();
     useEffect(() => {
-        const action = actions["Idle"]
+        const action = actions["Surprise"]
         action.play()
     }, [])
 

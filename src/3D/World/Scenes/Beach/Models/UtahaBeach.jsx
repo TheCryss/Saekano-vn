@@ -5,7 +5,7 @@ import { setUtahaInteraction } from '../../../../../store/slicers/RoomSlicers';
 import { useDispatch, useSelector } from "react-redux";
 
 
-export const Utaha = (props) => {
+export const UtahaBeach= (props) => {
     const group = useRef();
     const { nodes, materials, animations } = useGLTF("/assets/models/utaha/UtahaBeach.glb");
     const { actions } = useAnimations(animations, group);
@@ -18,7 +18,7 @@ export const Utaha = (props) => {
 
     return (
         <>
-            <RigidBody type={"fixed"} position-y={3} >
+            <RigidBody type={"fixed"} position-y={3} position={props.position} >
                 <CuboidCollider
                     args={[3, 3, 3]}
                     sensor
@@ -27,7 +27,7 @@ export const Utaha = (props) => {
                 />
             </RigidBody>
 
-            <RigidBody type="fixed" colliders="cuboid" position-y={2}>
+            <RigidBody type="fixed" colliders="cuboid" position-y={2} position={props.position}>
                 <CuboidCollider
                     args={[1.25, 1.75, 1]}
                 />

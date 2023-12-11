@@ -120,7 +120,7 @@ const app_3D = () => {
             <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {camera}
-                <Physics timeStep="vary" debug>
+                <Physics timeStep="vary" >
                     <Experience />
                 </Physics>
             </Canvas>
