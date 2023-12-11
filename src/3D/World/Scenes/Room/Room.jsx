@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Room3D } from './Models/Room'
-import { RigidBody } from '@react-three/rapier'
 import { KeyboardControls } from '@react-three/drei'
 import Ecctrl, { EcctrlAnimation } from 'ecctrl'
 import { PlayableCharacter } from './Models/PlayableCharacter'
@@ -45,7 +44,7 @@ const Room = () => {
     }
     const dispath = useDispatch()
     const characterURL = "/assets/models/playable_character/Tomoya.glb"
-    const { finishedScene, npcInteractionsFinished, isBifurcation, actualSceneIndex,actualScriptScenes } = useSelector(state => state.gameStatus)
+    const { finishedScene, npcInteractionsFinished, isBifurcation, actualSceneIndex, actualScriptScenes } = useSelector(state => state.gameStatus)
     const actualScene = actualScriptScenes[actualSceneIndex]
     const { objects, objectsColliders, interaction, room } = useSelector(state => state.room)
     const { hook, paint_palette, pencil } = objects
@@ -67,7 +66,7 @@ const Room = () => {
     }, [isBifurcation])
 
     useEffect(() => {
-        if (finishedScene && npcInteractionsFinished ) {
+        if (finishedScene && npcInteractionsFinished) {
             dispatch(nextScene())
             dispatch(resetNpcInteractions())
         }
@@ -75,14 +74,14 @@ const Room = () => {
 
     useEffect(() => {
         dispatch(setScenario(actualScene.scenario))
-    },[actualSceneIndex])
+    }, [actualSceneIndex])
 
     useEffect(() => {
         if (actualScene.scenario == "Minijuego-Habitacion") {
             dispatch(setNpcInteractionsFinished(false))
             setMinigame2(true)
         }
-    },[actualScene.scenario])
+    }, [actualScene.scenario])
 
     const pickUpObject = () => {
         if (interaction) {
@@ -98,9 +97,7 @@ const Room = () => {
 
     return (
         <>
-            <RigidBody type="fixed" colliders="trimesh" wireframe linearDamping={0.5} >
-                <Room3D />
-            </RigidBody>
+            <Room3D />
             <KeyboardControls map={keyboardMap}>
 
                 <Ecctrl position={[-5, 3.4, 4]} autoBalance={false} animated camInitDir={Math.PI / 4} friction={1} maxVelLimit={6.04} dragDampingC={0.1} autoBalanceDampingC={3} capsuleRadius={0.8} rayOriginOffest={{ "x": 0, "y": -1.2, "z": 0 }} floatingDis={0.3} name="Tomoya">
@@ -112,10 +109,10 @@ const Room = () => {
 
             <Utaha scale={2} position={[0, 1, 0]} />
             <Eriri scale={2} position={[4.9, 0.7, 27]} />
-            <Megumi scale={2} position={[-6.9, 0, 7]} rotation-y={Math.PI/2} />
+            <Megumi scale={2} position={[-6.9, 0, 7]} rotation-y={Math.PI / 2} />
 
             <Lights_Room />
-            <FloorRoom/>
+            <FloorRoom />
 
             { minigame2 && <>
                 {!pencil && <Pencil scale={1} position={[15,3.1,10]}/>}
