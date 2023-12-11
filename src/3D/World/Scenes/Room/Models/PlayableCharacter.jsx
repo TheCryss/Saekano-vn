@@ -25,36 +25,42 @@ export const PlayableCharacter = (props) => {
                     <group name="Left_eye">
                         <skinnedMesh
                             name="Cube003"
+                            castShadow
                             geometry={nodes.Cube003.geometry}
                             material={materials.Eyes}
                             skeleton={nodes.Cube003.skeleton}
                         />
                         <skinnedMesh
                             name="Cube003_1"
+                            castShadow
                             geometry={nodes.Cube003_1.geometry}
                             material={materials.Uniform_Blue}
                             skeleton={nodes.Cube003_1.skeleton}
                         />
                         <skinnedMesh
                             name="Cube003_2"
+                            castShadow
                             geometry={nodes.Cube003_2.geometry}
                             material={materials.Uniform_Black}
                             skeleton={nodes.Cube003_2.skeleton}
                         />
                         <skinnedMesh
                             name="Cube003_3"
+                            castShadow
                             geometry={nodes.Cube003_3.geometry}
                             material={materials.Uniform_White}
                             skeleton={nodes.Cube003_3.skeleton}
                         />
                         <skinnedMesh
                             name="Cube003_4"
+                            castShadow
                             geometry={nodes.Cube003_4.geometry}
                             material={materials["Skin.001"]}
                             skeleton={nodes.Cube003_4.skeleton}
                         />
                         <skinnedMesh
                             name="Cube003_5"
+                            castShadow
                             geometry={nodes.Cube003_5.geometry}
                             material={materials["Hair.001"]}
                             skeleton={nodes.Cube003_5.skeleton}

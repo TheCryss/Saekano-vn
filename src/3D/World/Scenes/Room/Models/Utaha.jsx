@@ -42,36 +42,48 @@ export const Utaha = (props) => {
                                 geometry={nodes.NurbsPath006.geometry}
                                 material={materials.Hair}
                                 skeleton={nodes.NurbsPath006.skeleton}
+                                castShadow
+
                             />
                             <skinnedMesh
                                 name="NurbsPath006_1"
                                 geometry={nodes.NurbsPath006_1.geometry}
                                 material={materials.Skin}
                                 skeleton={nodes.NurbsPath006_1.skeleton}
+                                castShadow
+
                             />
                             <skinnedMesh
                                 name="NurbsPath006_2"
                                 geometry={nodes.NurbsPath006_2.geometry}
                                 material={materials.Eyes}
                                 skeleton={nodes.NurbsPath006_2.skeleton}
+                                castShadow
+
                             />
                             <skinnedMesh
                                 name="NurbsPath006_3"
                                 geometry={nodes.NurbsPath006_3.geometry}
                                 material={materials.Uniform_blue}
                                 skeleton={nodes.NurbsPath006_3.skeleton}
+                                castShadow
+
                             />
                             <skinnedMesh
                                 name="NurbsPath006_4"
                                 geometry={nodes.NurbsPath006_4.geometry}
                                 material={materials.Uniform_White}
                                 skeleton={nodes.NurbsPath006_4.skeleton}
+                                castShadow
+
                             />
                             <skinnedMesh
                                 name="NurbsPath006_5"
                                 geometry={nodes.NurbsPath006_5.geometry}
                                 material={materials.Uniform_Black}
                                 skeleton={nodes.NurbsPath006_5.skeleton}
+                                castShadow
+
                             />
                         </group>
                         <primitive object={nodes.Root} />

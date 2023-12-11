@@ -26,24 +26,32 @@ export const PlayableCharacterBeach = (props) => {
                             geometry={nodes.Cube006.geometry}
                             material={materials["Skin.001"]}
                             skeleton={nodes.Cube006.skeleton}
+                            castShadow
+
                         />
                         <skinnedMesh
                             name="Cube006_1"
                             geometry={nodes.Cube006_1.geometry}
                             material={materials.Hair}
                             skeleton={nodes.Cube006_1.skeleton}
+                            castShadow
+
                         />
                         <skinnedMesh
                             name="Cube006_2"
                             geometry={nodes.Cube006_2.geometry}
                             material={materials.Eyes}
                             skeleton={nodes.Cube006_2.skeleton}
+                            castShadow
+
                         />
                         <skinnedMesh
                             name="Cube006_3"
                             geometry={nodes.Cube006_3.geometry}
                             material={materials.Uniform_Blue}
                             skeleton={nodes.Cube006_3.skeleton}
+                            castShadow
+
                         />
                     </group>
                     <primitive object={nodes.Root} />

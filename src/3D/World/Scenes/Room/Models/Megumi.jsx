@@ -40,48 +40,64 @@ export const Megumi = (props) => {
                                 geometry={nodes.Cube001.geometry}
                                 material={materials.Skin}
                                 skeleton={nodes.Cube001.skeleton}
+                                castShadow
+
                             />
                             <skinnedMesh
                                 name="Cube001_1"
                                 geometry={nodes.Cube001_1.geometry}
                                 material={materials.Hair}
                                 skeleton={nodes.Cube001_1.skeleton}
+                                castShadow
+
                             />
                             <skinnedMesh
                                 name="Cube001_2"
                                 geometry={nodes.Cube001_2.geometry}
                                 material={materials.Eyes}
                                 skeleton={nodes.Cube001_2.skeleton}
+                                castShadow
+
                             />
                             <skinnedMesh
                                 name="Cube001_3"
                                 geometry={nodes.Cube001_3.geometry}
                                 material={materials.Bun}
                                 skeleton={nodes.Cube001_3.skeleton}
+                                castShadow
+
                             />
                             <skinnedMesh
                                 name="Cube001_4"
                                 geometry={nodes.Cube001_4.geometry}
                                 material={materials.Uniform_blue}
                                 skeleton={nodes.Cube001_4.skeleton}
+                                castShadow
+
                             />
                             <skinnedMesh
                                 name="Cube001_5"
                                 geometry={nodes.Cube001_5.geometry}
                                 material={materials.Uniform_White}
                                 skeleton={nodes.Cube001_5.skeleton}
+                                castShadow
+
                             />
                             <skinnedMesh
                                 name="Cube001_6"
                                 geometry={nodes.Cube001_6.geometry}
                                 material={materials.Uniform_Black}
                                 skeleton={nodes.Cube001_6.skeleton}
+                                castShadow
+
                             />
                             <skinnedMesh
                                 name="Cube001_7"
                                 geometry={nodes.Cube001_7.geometry}
                                 material={materials.Uniform_White_Skirt}
                                 skeleton={nodes.Cube001_7.skeleton}
+                                castShadow
+
                             />
                         </group>
                         <primitive object={nodes.Root} />
@@ -92,7 +108,7 @@ export const Megumi = (props) => {
                     </group>
                 </group>
             </group>
-            </>
-            );
+        </>
+    );
 }
 useGLTF.preload("/assets/models/megumi/Megumi.glb");

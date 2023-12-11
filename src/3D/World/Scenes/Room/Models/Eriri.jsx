@@ -18,7 +18,7 @@ export const Eriri = (props) => {
 
     return (
         <>
-            <RigidBody type={"fixed"} position-y={3}  position={props.position}>
+            <RigidBody type={"fixed"} position-y={3} position={props.position}>
                 <CuboidCollider
                     args={[3, 3, 3]}
                     sensor
@@ -41,36 +41,48 @@ export const Eriri = (props) => {
                                 geometry={nodes.Cube.geometry}
                                 material={materials.Skin}
                                 skeleton={nodes.Cube.skeleton}
+                                castShadow
+
                             />
                             <skinnedMesh
                                 name="Cube_1"
                                 geometry={nodes.Cube_1.geometry}
                                 material={materials.Hair}
                                 skeleton={nodes.Cube_1.skeleton}
+                                castShadow
+
                             />
                             <skinnedMesh
                                 name="Cube_2"
                                 geometry={nodes.Cube_2.geometry}
                                 material={materials.Eyes}
                                 skeleton={nodes.Cube_2.skeleton}
+                                castShadow
+
                             />
                             <skinnedMesh
                                 name="Cube_3"
                                 geometry={nodes.Cube_3.geometry}
                                 material={materials.Uniform_blue}
                                 skeleton={nodes.Cube_3.skeleton}
+                                castShadow
+
                             />
                             <skinnedMesh
                                 name="Cube_4"
                                 geometry={nodes.Cube_4.geometry}
                                 material={materials.Uniform_White}
                                 skeleton={nodes.Cube_4.skeleton}
+                                castShadow
+
                             />
                             <skinnedMesh
                                 name="Cube_5"
                                 geometry={nodes.Cube_5.geometry}
                                 material={materials.Uniform_Black}
                                 skeleton={nodes.Cube_5.skeleton}
+                                castShadow
+
                             />
                         </group>
                         <primitive object={nodes.Root} />

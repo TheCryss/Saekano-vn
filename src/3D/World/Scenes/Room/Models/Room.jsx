@@ -288,8 +288,8 @@ export const Room3D = (props) => {
             </RigidBody>
 
             <mesh
-                castShadow
-                //receiveShadow
+                // castShadow
+                receiveShadow
                 geometry={nodes.Floor.geometry}
                 material={materials.Floor}
             />
@@ -449,7 +449,7 @@ export const Room3D = (props) => {
                     //receiveShadow
                     geometry={nodes.Big_table.geometry}
                     material={materials["Chair.001"]}
-                    position={[15.366, 1.634, 9.879]}
+                    position={[19.366, 1.634, 12.379]}
                     scale={[1, 2.3, 2.5]}
                 />
             </RigidBody>
@@ -475,11 +475,11 @@ export const Room3D = (props) => {
 
             {/* chess carpet */}
             <mesh
-                castShadow
-                //receiveShadow
+                // castShadow
+                receiveShadow
                 geometry={nodes.Chess.geometry}
                 material={materials["Carpet.002"]}
-                position={[15.379, 3.008, 9.842]}
+                position={[15.379, 2.408, 9.842]}
                 scale={0.507}
             />
 
