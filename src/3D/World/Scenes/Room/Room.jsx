@@ -139,7 +139,7 @@ const Room = () => {
             <FloorRoom />
 
             {minigame2 && <>
-                {!pencil && <Pencil scale={1} position={[15, 2.5, 10]} />}
+                {!pencil && <Pencil scale={1} position={[15, 2.6, 12.5]} />}
                 {!paint_palette && <Paint_palette scale={1} position={[3, 2.3, -8.8]} />}
                 {!hook && <Hook scale={1} position={[-5, 1.3, -9.3]} rotation-x={Math.PI / 2.5} />}
             </>

@@ -449,8 +449,8 @@ export const Room3D = (props) => {
                     //receiveShadow
                     geometry={nodes.Big_table.geometry}
                     material={materials["Chair.001"]}
-                    position={[19.366, 1.634, 12.379]}
-                    scale={[1, 2.3, 2.5]}
+                    position={[15.366, 1.334, 12.379]}
+                    scale={[1/1.2, 2.3/1.2, 2.5/1.2]}
                 />
             </RigidBody>
 
@@ -479,7 +479,7 @@ export const Room3D = (props) => {
                 receiveShadow
                 geometry={nodes.Chess.geometry}
                 material={materials["Carpet.002"]}
-                position={[15.379, 2.408, 9.842]}
+                position={[15.379, 2.508, 12.442]}
                 scale={0.507}
             />
 

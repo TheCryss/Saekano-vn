@@ -32,12 +32,12 @@ export const Choices = () => {
 
     return (
         <div className="absolute w-full min-h-screen flex items-center justify-center">
-            <div className='absolute bottom-1/2 left- z-20 w-1/6 text-md  h-40 flex flex-col mt-12 '>
+            {!(hookDelivered && room.megumiInteraction) && !(paint_paletteDelivered && room.eririInteraction) && !(pencilDelivered && room.utahaInteraction) && <div className='absolute bottom-1/2 left- z-20 w-1/6 text-md  h-40 flex flex-col mt-12 '>
 
-                {hook && !hookDelivered && <button onClick={() =>deliverObject("hook")}  className={`border-[#C6F5EB] text-pink-950 border-4 select-none my-2 flex items-center justify-center  bg-[rgba(242,198,245,0.75)]  hover:bg-[#F5EAC6] hover:scale-105 hover:  transition-all  rounded-md py-1 font-bold `} type='button'>
+                {hook && !hookDelivered && <button onClick={() => deliverObject("hook")} className={`border-[#C6F5EB] text-pink-950 border-4 select-none my-2 flex items-center justify-center  bg-[rgba(242,198,245,0.75)]  hover:bg-[#F5EAC6] hover:scale-105 hover:  transition-all  rounded-md py-1 font-bold `} type='button'>
                     Perchero
-                </button> }
-                {paint_palette && !paint_paletteDelivered && <button onClick={() =>deliverObject("paint_palette")} className={`border-[#C6F5EB] text-pink-950 border-4 select-none my-2 flex items-center justify-center  bg-[rgba(242,198,245,0.75)] hover:bg-[#F5EAC6] hover:scale-105 hover:  transition-all  rounded-md py-1 font-bold `} type='button'>
+                </button>}
+                {paint_palette && !paint_paletteDelivered && <button onClick={() => deliverObject("paint_palette")} className={`border-[#C6F5EB] text-pink-950 border-4 select-none my-2 flex items-center justify-center  bg-[rgba(242,198,245,0.75)] hover:bg-[#F5EAC6] hover:scale-105 hover:  transition-all  rounded-md py-1 font-bold `} type='button'>
                     Paleta de pintura
                 </button>}
                 {pencil && !pencilDelivered && <button onClick={() => deliverObject("pencil")} className={`border-[#C6F5EB] text-pink-950 border-4 select-none my-2 flex items-center justify-center  bg-[rgba(242,198,245,0.75)] hover:bg-[#F5EAC6] hover:scale-105 hover:  transition-all  rounded-md py-1 font-bold `} type='button'>
@@ -45,6 +45,9 @@ export const Choices = () => {
                 </button>}
 
             </div>
+
+            }
+
         </div>
     )
 }
