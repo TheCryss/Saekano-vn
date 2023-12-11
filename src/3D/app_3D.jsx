@@ -59,6 +59,13 @@ const app_3D = () => {
                         e.target.requestPointerLock();
                     },
                 };
+                case "Playa":
+                    return {
+                        camera: <Camera_controls_room />,
+                        onPointerDown: (e) => {
+                            e.target.requestPointerLock();
+                        },
+                    };
             case "Minijuego-Habitacion":
                 return {
                     camera: <Camera_controls_room />,
@@ -82,6 +89,8 @@ const app_3D = () => {
     useEffect(() => {
         if (scenario == "Minijuego-Habitacion") {
             setMinigame2(true)
+        } else {
+            setMinigame2(false)
         }
     },[scenario])
 
@@ -111,7 +120,7 @@ const app_3D = () => {
             <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {camera}
-                <Physics timeStep="vary">
+                <Physics timeStep="vary" >
                     <Experience />
                 </Physics>
             </Canvas>

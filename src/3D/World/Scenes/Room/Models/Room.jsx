@@ -263,6 +263,29 @@ export const Room3D = (props) => {
                     position={[-10, 4, 0]}
                 />
             </RigidBody>
+                        <RigidBody type="fixed" colliders={false} wireframe>
+
+                {/* Wall 1 */}
+                <CuboidCollider
+                    args={[0.1, 4.1, 22]}
+                    position={[-9.8, 4.27, 11.4]}
+                />
+
+                {/* Wall 2 */}
+                <CuboidCollider
+                    args={[0.1, 4.1, 22]}
+                    position={[-2, 4.27, -9.8]}
+                    rotation={[0, -Math.PI / 2, 0]}
+                />
+
+                <mesh
+                    castShadow
+                    //receiveShadow
+                    geometry={nodes.Wall.geometry}
+                    material={materials.Wall}
+                    position={[-10, 4, 0]}
+                />
+            </RigidBody>
 
             <mesh
                 castShadow
@@ -490,6 +513,7 @@ export const Room3D = (props) => {
                 </RigidBody>
             </group>
 
+            <RigidBody type="fixed" colliders='cuboid' wireframe>
 
             <mesh
                 castShadow
@@ -518,6 +542,7 @@ export const Room3D = (props) => {
                 rotation={[Math.PI, 0, Math.PI]}
                 scale={[0.1, 4.1, 18.592]}
             />
+            </RigidBody>
         </group >
     );
 }
