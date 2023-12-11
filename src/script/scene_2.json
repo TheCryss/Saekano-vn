@@ -438,26 +438,7 @@
                 },
                 {
                     "character": "Utaha",
-                    "speech": "ahora teines que buscar objetos"
-                },
-                {
-                    "character": "Utaha",
-                    "speech": "ahora teines que buscar objetos 2"
-                },
-                {
-                    "character": "...",
-                    "speech": ".."
-                }
-            ]
-        },
-        {
-            "id": 7,
-            "3d": true,
-            "scenario": "Minijuego-Habitacion",
-            "content":[
-                {
-                    "character": "Utaha",
-                    "speech": "..."
+                    "speech": "Mientras tanto, ¿Por qué no te pones a trabajar en algo?"
                 }
             ]
         }

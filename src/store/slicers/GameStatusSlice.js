@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import script_1 from '../../script/scene_1.json'
 import script_2 from '../../script/scene_2.json'
-import script_3 from '../../script/scene_2.json'
+import script_3 from '../../script/scene_3.json'
 
 
 const scripts = [script_1, script_2, script_3]

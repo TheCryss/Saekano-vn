@@ -10,18 +10,22 @@ import { useFrame } from '@react-three/fiber'
 import { Megumi } from './Models/Megumi'
 import { Utaha } from './Models/Utaha'
 import { Eriri } from './Models/Eriri'
-import {Pencil } from './Models/Pencil'
-import {Paint_palette } from './Models/Paint_palette'
-import {Hook} from './Models/Hook'
+import { Pencil } from './Models/Pencil'
+import { Paint_palette } from './Models/Paint_palette'
+import { Hook } from './Models/Hook'
 import FloorRoom from './Models/FloorRoom'
-import { nextScene,
+import { useNavigate } from 'react-router-dom';
+import {
+    nextScene,
     setFinishedScript,
     updateActualContent,
     setNpcInteractionsFinished,
     setScenario,
-    resetNpcInteractions } from '../../../../store/slicers/GameStatusSlice'
+    setIs3D,
+    resetNpcInteractions
+} from '../../../../store/slicers/GameStatusSlice'
 
-import { setPaintPalette, setHook, setPencil} from '../../../../store/slicers/RoomSlicers'
+import { setPaintPalette, setHook, setPencil } from '../../../../store/slicers/RoomSlicers'
 
 
 const Room = () => {
@@ -46,8 +50,9 @@ const Room = () => {
         action1: "Clapping"
     }
     const dispath = useDispatch()
+    const navigate = useNavigate()
     const characterURL = "/assets/models/playable_character/Tomoya.glb"
-    const { finishedScene, npcInteractionsFinished, isBifurcation, actualSceneIndex,actualScriptScenes } = useSelector(state => state.gameStatus)
+    const { finishedScene, npcInteractionsFinished, isBifurcation, actualSceneIndex, actualScriptScenes } = useSelector(state => state.gameStatus)
     const actualScene = actualScriptScenes[actualSceneIndex]
     const { objects, objectsColliders, interaction, room } = useSelector(state => state.room)
     const { hook, paint_palette, pencil } = objects
@@ -69,29 +74,39 @@ const Room = () => {
     }, [isBifurcation])
 
     useEffect(() => {
-        if (finishedScene && npcInteractionsFinished ) {
+        if (finishedScene && npcInteractionsFinished && !hookDelivered && !pencilDelivered && !paint_paletteDelivered) {
             dispatch(nextScene())
             dispatch(resetNpcInteractions())
+            // dispatch(updateActualContent());
+            // dispatch(setScenario(""));
+            // navigate('/acto/1')
+        } else if (finishedScene && npcInteractionsFinished && hookDelivered && pencilDelivered && paint_paletteDelivered) {
+            dispatch(nextScene())
+            dispatch(setIs3D(false));
+            dispatch(resetNpcInteractions())
+            dispatch(updateActualContent());
+            dispatch(setScenario(""));
+            navigate('/acto/1')
         }
-    }, [finishedScene,npcInteractionsFinished])
+    }, [finishedScene, npcInteractionsFinished])
 
     useEffect(() => {
         dispatch(setScenario(actualScene.scenario))
-    },[actualSceneIndex])
+    }, [actualSceneIndex])
 
     useEffect(() => {
         if (actualScene.scenario == "Minijuego-Habitacion") {
             dispatch(setNpcInteractionsFinished(false))
             setMinigame2(true)
         }
-    },[actualScene.scenario])
+    }, [actualScene.scenario])
 
     const pickUpObject = () => {
         if (interaction) {
-                if (hookCollider) dispath(setHook(true))
-                if (pencilCollider) dispath(setPencil(true))
-                if (paint_paletteCollider) dispath(setPaintPalette(true))
-            }
+            if (hookCollider) dispath(setHook(true))
+            if (pencilCollider) dispath(setPencil(true))
+            if (paint_paletteCollider) dispath(setPaintPalette(true))
+        }
     }
 
     useEffect(() => {
@@ -99,15 +114,15 @@ const Room = () => {
     }, [objects, interaction])
 
     useEffect(() => {
-        if( hookDelivered && pencilDelivered && paint_paletteDelivered){
+        if (hookDelivered && pencilDelivered && paint_paletteDelivered) {
             dispatch(setNpcInteractionsFinished(true))
         }
-    },[hookDelivered,pencilDelivered,paint_paletteDelivered])
+    }, [hookDelivered, pencilDelivered, paint_paletteDelivered])
 
 
     return (
         <>
-                <Room3D />
+            <Room3D />
             <KeyboardControls map={keyboardMap}>
 
                 <Ecctrl position={[-5, 3.4, 4]} autoBalance={false} animated camInitDir={Math.PI / 4} friction={1} maxVelLimit={6.04} dragDampingC={0.1} autoBalanceDampingC={3} capsuleRadius={0.8} rayOriginOffest={{ "x": 0, "y": -1.2, "z": 0 }} floatingDis={0.3} name="Tomoya">
@@ -119,15 +134,15 @@ const Room = () => {
 
             <Utaha scale={2} position={[0, 1, 0]} />
             <Eriri scale={2} position={[4.9, 0.7, 27]} />
-            <Megumi scale={2} position={[-6.9, 0, 7]} rotation-y={Math.PI/2} />
+            <Megumi scale={2} position={[-6.9, 0, 7]} rotation-y={Math.PI / 2} />
 
             <Lights_Room />
-            <FloorRoom/>
+            <FloorRoom />
 
-            { minigame2 && <>
-                {!pencil && <Pencil scale={1} position={[15,3.1,10]}/>}
-                {!paint_palette && <Paint_palette scale={1} position={[3,2.3,-8.8]}/>}
-                {!hook && <Hook scale={1} position={[-5,1.3,-9.3]} rotation-x={Math.PI/2.5} />}
+            {minigame2 && <>
+                {!pencil && <Pencil scale={1} position={[15, 3.1, 10]} />}
+                {!paint_palette && <Paint_palette scale={1} position={[3, 2.3, -8.8]} />}
+                {!hook && <Hook scale={1} position={[-5, 1.3, -9.3]} rotation-x={Math.PI / 2.5} />}
             </>
             }
         </>
