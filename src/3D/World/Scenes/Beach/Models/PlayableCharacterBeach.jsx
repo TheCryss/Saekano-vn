@@ -3,7 +3,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 import { useKeyboardControls } from '@react-three/drei';
 import { useDispatch } from 'react-redux';
 import { setInteraction } from '../../../../../store/slicers/RoomSlicers';
-export const PlayableCharacter = (props) => {
+export const PlayableCharacterBeach = (props) => {
     const group = useRef();
     const { nodes, materials } = useGLTF("/assets/models/playable_character/TomoyaBeach.glb");
     const dispatch = useDispatch();

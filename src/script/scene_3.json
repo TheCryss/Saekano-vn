@@ -3,7 +3,6 @@
         {
             "3d": false,
             "content": [
-
                 {
                     "character": "Tomoya",
                     "speech": "Vale, he acordado con todas ellas que nos reuniremos aquí. En algún momento deberían ir llegando una por una."
@@ -16,7 +15,13 @@
         },
         {
             "3d": true,
-            "content": []
+            "scenario": "Playa",
+            "content": [
+                {
+                    "character": "",
+                    "speech": ""
+                }
+            ]
         }
     ]
 }

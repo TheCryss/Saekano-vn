@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Room3D } from './Models/Room'
-import { RigidBody } from '@react-three/rapier'
-import { KeyboardControls } from '@react-three/drei'
 import Ecctrl, { EcctrlAnimation } from 'ecctrl'
+import { RigidBody } from '@react-three/rapier'
+import { useNavigate } from 'react-router-dom';
+import { KeyboardControls } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
+import { Room3D } from './Models/Room'
 import { PlayableCharacter } from './Models/PlayableCharacter'
 import { Lights_Room } from '../../Staging/Lights'
-import { useFrame } from '@react-three/fiber'
 import { Megumi } from './Models/Megumi'
 import { Utaha } from './Models/Utaha'
 import { Eriri } from './Models/Eriri'
@@ -14,7 +15,6 @@ import { Pencil } from './Models/Pencil'
 import { Paint_palette } from './Models/Paint_palette'
 import { Hook } from './Models/Hook'
 import FloorRoom from './Models/FloorRoom'
-import { useNavigate } from 'react-router-dom';
 import {
     nextScene,
     setFinishedScript,
@@ -124,7 +124,6 @@ const Room = () => {
         <>
             <Room3D />
             <KeyboardControls map={keyboardMap}>
-
                 <Ecctrl position={[-5, 3.4, 4]} autoBalance={false} animated camInitDir={Math.PI / 4} friction={1} maxVelLimit={6.04} dragDampingC={0.1} autoBalanceDampingC={3} capsuleRadius={0.8} rayOriginOffest={{ "x": 0, "y": -1.2, "z": 0 }} floatingDis={0.3} name="Tomoya">
                     <EcctrlAnimation characterURL={characterURL} animationSet={animationSet}>
                         <PlayableCharacter scale={2} position={[0, -1.1, 0]} ></PlayableCharacter>

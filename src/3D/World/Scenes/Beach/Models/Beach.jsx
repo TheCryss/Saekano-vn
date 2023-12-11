@@ -1,15 +1,15 @@
-import React from 'react'
-
-const Beach = (props) => {
+import { useEffect, useRef } from 'react'
+import { useGLTF, useAnimations } from "@react-three/drei";
+const Beach3D = (props) => {
     const group = useRef();
     const { nodes, materials, animations } = useGLTF("/assets/models/beach/beach.glb");
     const { actions } = useAnimations(animations, group);
 
-    useEffect(() => {
-        const action = actions["Idle"]
-        action.play()
-    }, [])
-    
+    // useEffect(() => {
+    //     const action = actions["Idle"]
+    //     action.play()
+    // }, [])
+
     return (
         <group ref={group} {...props} dispose={null}>
             <group name="Scene">
@@ -21,50 +21,50 @@ const Beach = (props) => {
                 >
                     <mesh
                         name="Plane003"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane003.geometry}
                         material={materials["Palm_leaf.025"]}
                     />
                     <mesh
                         name="Plane003_1"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane003_1.geometry}
                         material={materials["Palm_leaf.026"]}
                     />
                     <mesh
                         name="Plane003_2"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane003_2.geometry}
                         material={materials["Palm_leaf.027"]}
                     />
                     <mesh
                         name="Plane003_3"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane003_3.geometry}
                         material={materials["Palm_leaf.028"]}
                     />
                     <mesh
                         name="Plane003_4"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane003_4.geometry}
                         material={materials["Palm_leaf.029"]}
                     />
                     <mesh
                         name="Plane003_5"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane003_5.geometry}
                         material={materials["Palm_leaf.030"]}
                     />
                     <mesh
                         name="Plane003_6"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane003_6.geometry}
                         material={materials["Palm_wood.002"]}
                     />
@@ -77,50 +77,50 @@ const Beach = (props) => {
                 >
                     <mesh
                         name="Plane004"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane004.geometry}
                         material={materials["Palm_leaf.031"]}
                     />
                     <mesh
                         name="Plane004_1"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane004_1.geometry}
                         material={materials["Palm_leaf.032"]}
                     />
                     <mesh
                         name="Plane004_2"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane004_2.geometry}
                         material={materials["Palm_leaf.033"]}
                     />
                     <mesh
                         name="Plane004_3"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane004_3.geometry}
                         material={materials["Palm_leaf.034"]}
                     />
                     <mesh
                         name="Plane004_4"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane004_4.geometry}
                         material={materials["Palm_leaf.035"]}
                     />
                     <mesh
                         name="Plane004_5"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane004_5.geometry}
                         material={materials["Palm_leaf.036"]}
                     />
                     <mesh
                         name="Plane004_6"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane004_6.geometry}
                         material={materials["Palm_wood.003"]}
                     />
@@ -133,50 +133,50 @@ const Beach = (props) => {
                 >
                     <mesh
                         name="Plane005"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane005.geometry}
                         material={materials["Palm_leaf.037"]}
                     />
                     <mesh
                         name="Plane005_1"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane005_1.geometry}
                         material={materials["Palm_leaf.038"]}
                     />
                     <mesh
                         name="Plane005_2"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane005_2.geometry}
                         material={materials["Palm_leaf.039"]}
                     />
                     <mesh
                         name="Plane005_3"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane005_3.geometry}
                         material={materials["Palm_leaf.040"]}
                     />
                     <mesh
                         name="Plane005_4"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane005_4.geometry}
                         material={materials["Palm_leaf.041"]}
                     />
                     <mesh
                         name="Plane005_5"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane005_5.geometry}
                         material={materials["Palm_leaf.042"]}
                     />
                     <mesh
                         name="Plane005_6"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane005_6.geometry}
                         material={materials["Palm_wood.004"]}
                     />
@@ -189,50 +189,50 @@ const Beach = (props) => {
                 >
                     <mesh
                         name="Plane006"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane006.geometry}
                         material={materials["Palm_leaf.043"]}
                     />
                     <mesh
                         name="Plane006_1"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane006_1.geometry}
                         material={materials["Palm_leaf.044"]}
                     />
                     <mesh
                         name="Plane006_2"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane006_2.geometry}
                         material={materials["Palm_leaf.045"]}
                     />
                     <mesh
                         name="Plane006_3"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane006_3.geometry}
                         material={materials["Palm_leaf.046"]}
                     />
                     <mesh
                         name="Plane006_4"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane006_4.geometry}
                         material={materials["Palm_leaf.047"]}
                     />
                     <mesh
                         name="Plane006_5"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane006_5.geometry}
                         material={materials["Palm_leaf.048"]}
                     />
                     <mesh
                         name="Plane006_6"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane006_6.geometry}
                         material={materials["Palm_wood.005"]}
                     />
@@ -245,50 +245,50 @@ const Beach = (props) => {
                 >
                     <mesh
                         name="Plane007"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane007.geometry}
                         material={materials["Palm_leaf.049"]}
                     />
                     <mesh
                         name="Plane007_1"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane007_1.geometry}
                         material={materials["Palm_leaf.050"]}
                     />
                     <mesh
                         name="Plane007_2"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane007_2.geometry}
                         material={materials["Palm_leaf.051"]}
                     />
                     <mesh
                         name="Plane007_3"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane007_3.geometry}
                         material={materials["Palm_leaf.052"]}
                     />
                     <mesh
                         name="Plane007_4"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane007_4.geometry}
                         material={materials["Palm_leaf.053"]}
                     />
                     <mesh
                         name="Plane007_5"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane007_5.geometry}
                         material={materials["Palm_leaf.054"]}
                     />
                     <mesh
                         name="Plane007_6"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane007_6.geometry}
                         material={materials["Palm_wood.006"]}
                     />
@@ -301,50 +301,50 @@ const Beach = (props) => {
                 >
                     <mesh
                         name="Plane002"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane002.geometry}
                         material={materials.Palm_leaf}
                     />
                     <mesh
                         name="Plane002_1"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane002_1.geometry}
                         material={materials["Palm_leaf.002"]}
                     />
                     <mesh
                         name="Plane002_2"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane002_2.geometry}
                         material={materials["Palm_leaf.003"]}
                     />
                     <mesh
                         name="Plane002_3"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane002_3.geometry}
                         material={materials["Palm_leaf.004"]}
                     />
                     <mesh
                         name="Plane002_4"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane002_4.geometry}
                         material={materials["Palm_leaf.005"]}
                     />
                     <mesh
                         name="Plane002_5"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane002_5.geometry}
                         material={materials["Palm_leaf.006"]}
                     />
                     <mesh
                         name="Plane002_6"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane002_6.geometry}
                         material={materials.Palm_wood}
                     />
@@ -768,15 +768,15 @@ const Beach = (props) => {
                 >
                     <mesh
                         name="Plane013"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane013.geometry}
                         material={materials.Gray}
                     />
                     <mesh
                         name="Plane013_1"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane013_1.geometry}
                         material={materials.Pink}
                     />
@@ -788,15 +788,15 @@ const Beach = (props) => {
                 >
                     <mesh
                         name="Plane014"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane014.geometry}
                         material={materials["Gray.001"]}
                     />
                     <mesh
                         name="Plane014_1"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Plane014_1.geometry}
                         material={materials.Blue}
                     />
@@ -812,15 +812,15 @@ const Beach = (props) => {
                 <group name="Floor" position={[0, 0.5, 0]}>
                     <mesh
                         name="Cube002"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Cube002.geometry}
                         material={materials.Sand}
                     />
                     <mesh
                         name="Cube002_1"
-                        castShadow
-                        receiveShadow
+                       // castShadow
+                        //receiveShadow
                         geometry={nodes.Cube002_1.geometry}
                         material={materials.Water_Plane}
                     />
@@ -840,5 +840,5 @@ const Beach = (props) => {
     );
 }
 
-export default Beach
+export default Beach3D
 useGLTF.preload("/assets/models/beach/beach.glb");
