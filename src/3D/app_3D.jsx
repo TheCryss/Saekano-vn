@@ -46,7 +46,7 @@ const app_3D = () => {
 
         // Limpieza al desmontar
         return () => clearTimeout(timer);
-    }, []);
+    }, [room.scenario]);
 
     const { scenario, finishedScene, npcInteractions, finishedScript, npcMaxInteractions } = useSelector(state => state.gameStatus)
 

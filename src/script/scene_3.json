@@ -4,12 +4,73 @@
             "3d": false,
             "content": [
                 {
-                    "character": "Tomoya",
-                    "speech": "Vale, he acordado con todas ellas que nos reuniremos aquí. En algún momento deberían ir llegando una por una."
+                    "character": "Megumi",
+                    "speech": "Ya he terminado"
                 },
                 {
-                    "character": "",
-                    "speech": ""
+                    "character": "Utaha",
+                    "speech": "También"
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Igualmente"
+                },
+                {
+                    "character":"Tomoya",
+                    "speech":"Y yo... Pues si no hay nada más que hacer."
+                },
+                {
+                    "character":"Utaha",
+                    "speech": "Esperen..."
+                },
+                {
+                    "character":"Tomoya & Eriri & Megumi",
+                    "speech": "¿...?"
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "Necesito inspiración"
+                },
+                {
+                    "character":"Megumi",
+                    "speech": "¿Por qué no ir a la playa?"
+                }
+            ]
+        },
+        {
+            "3d":false,
+            "content": [
+                {
+                    "character": "Tomoya",
+                    "thought": "¿A la playa?"
+                },
+                {
+                    "character":"Tomoya",
+                    "speech":"¿Uh…?"
+                },
+                {
+                    "character":"Tomoya",
+                    "thought":"¿Por qué la alarma se encuentra tan temprano? No recuerdo tener que haber madrugado."
+                },
+                {
+                    "character":"Tomoya",
+                    "thought":"“¿Por qué no ir a la playa?”"
+                },
+                {
+                    "character":"Tomoya",
+                    "thought":"Ah. ¡Eso!"
+                },
+                {
+                    "character":"Tomoya",
+                    "thought": " Más vale apresurarme, no quiero llegar tarde allá"
+                },
+                {
+                    "character":"Tomoya",
+                    "thought": "Debería de llevar algo que nos pueda ayudar a inspirarnos en el juego"
+                },
+                {
+                    "character":"Tomoya",
+                    "thought": "¿Que debería llevar?"
                 }
             ]
         },

@@ -22,6 +22,7 @@ const initialState = {
       paint_palette: false,
       pencil: false
     },
+    watermelonCut: false,
     interaction: false,
 };
 
@@ -71,6 +72,9 @@ const roomSlice = createSlice({
     setPencilDelivered: (state, action) => {
       state.deliveredObjects.pencilDelivered = action.payload;
     },
+    setWatermelonCut: (state, action) => {
+      state.watermelonCut = action.payload;
+    },
   },
 });
 
@@ -88,6 +92,7 @@ export const {
   setPencil,
   setHookDelivered,
   setPencilDelivered,
-  setPaintPaletteDelivered
+  setPaintPaletteDelivered,
+  setWatermelonCut
 } = roomSlice.actions;
 export default roomSlice.reducer;
