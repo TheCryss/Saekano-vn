@@ -81,12 +81,14 @@ const Room = () => {
             // dispatch(setScenario(""));
             // navigate('/acto/1')
         } else if (finishedScene && npcInteractionsFinished && hookDelivered && pencilDelivered && paint_paletteDelivered) {
+            setTimeout(() => {
             dispatch(nextScene())
             dispatch(setIs3D(false));
             dispatch(resetNpcInteractions())
             dispatch(updateActualContent());
             dispatch(setScenario(""));
             navigate('/acto/1')
+            }, 3000);
         }
     }, [finishedScene, npcInteractionsFinished])
 

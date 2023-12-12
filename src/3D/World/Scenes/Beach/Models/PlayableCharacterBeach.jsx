@@ -1,9 +1,9 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, forwardRef } from 'react'
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { useKeyboardControls } from '@react-three/drei';
 import { useDispatch } from 'react-redux';
 import { setInteraction } from '../../../../../store/slicers/RoomSlicers';
-export const PlayableCharacterBeach = (props) => {
+export const PlayableCharacterBeach = forwardRef((props, ref) => {
     const group = useRef();
     const { nodes, materials } = useGLTF("/assets/models/playable_character/TomoyaBeach.glb");
     const dispatch = useDispatch();
@@ -20,7 +20,7 @@ export const PlayableCharacterBeach = (props) => {
         <group ref={group} {...props} dispose={null}>
             <group name="Scene">
                 <group name="Armature" position={[0, 0.495, 0]}>
-                    <group name="Tomoya">
+                    <group name="Tomoya" ref={ref}>
                         <skinnedMesh
                             name="Cube006"
                             geometry={nodes.Cube006.geometry}
@@ -63,6 +63,6 @@ export const PlayableCharacterBeach = (props) => {
             </group>
         </group>
     );
-}
+})
 
 useGLTF.preload("/assets/models/playable_character/TomoyaBeach.glb");
