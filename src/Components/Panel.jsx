@@ -46,9 +46,6 @@ export const Panel = ({ gameStatus }) => {
         const { actualSceneIndex, actualScriptScenes, actualContent, playerBifucartions,act,sc } = gameStatus
         const actualScene = actualScriptScenes[actualSceneIndex]
 
-        console.log(actualScene)
-        console.log(actualContent)
-
         if (actualScene['3d']) {
             dispatch(setScenario(actualScene.scenario))
             dispatch(setIs3D(true))
@@ -61,7 +58,7 @@ export const Panel = ({ gameStatus }) => {
                     if (keys[1] == 'speech') {
                         setDialog(actualContent.speech)
                     } else {
-                        setDialog(actualContent.thought)
+                        setDialog(<i style={{ color: 'black ' }} >{actualContent.thought}</i>)
                     }
                     break;
                 default: break;

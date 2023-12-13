@@ -28,13 +28,16 @@ const Park = () => {
     const { scenario, playerBifurcations, finishedScene, npcInteractionsFinished, actualScriptScenes, isBifurcation, actualSceneIndex, actualContentIndex } = useSelector(state => state.gameStatus)
     const [end, setEnd] = useState(false)
     const [finalResult, setFinalResult] = useState(0)
+    const [girl, setGirl] = useState(0)
     const actualScene = actualScriptScenes[actualSceneIndex]
     const dispatch = useDispatch()
     const navigate = useNavigate();
 
     //Ganadora de la ultima
-    // const result = playerBifucartions[-2]
-
+    useEffect(() => {
+        const result = playerBifurcations[-2]
+        setGirl(result)
+    }, [])
     const findMostFrequentValue = (list) => {
         let frequency = {};  // array of frequency.
         let max = 0;  // holds the max frequency.
@@ -99,11 +102,10 @@ const Park = () => {
     return (
         <>
             <Park3D position={[0, -7, 0]} scale={0.08} />
-            <Utaha scale={2} position={[0, 10, 0]} />
-            <Eriri scale={2} position={[4.9, 10, 27]} />
-            <Megumi scale={2} position={[-6.9, 10, 7]} rotation-y={Math.PI / 2} />
+            {(girl == 2) && <Utaha scale={2} position={[0, 10, 0]} />}
+            {(girl == 0) && <Eriri scale={2} position={[4.9, 10, 27]} />}
+            {(girl == 1) && <Megumi scale={2} position={[-6.9, 10, 7]} rotation-y={Math.PI / 2} />}
             <PlayableCharacter scale={2} position={[0, 10, 0]} />
-            {/* <PlayableCharacter scale={2} position={[0, 10, 0]} /> */}
             <Lights_Room />
         </>
     )

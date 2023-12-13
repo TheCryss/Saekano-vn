@@ -47,7 +47,8 @@
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "Es la mejor obra que podemos haber hecho."
+                    "speech": "Es la mejor obra que podemos haber hecho.",
+                    "background": "Act_5-Scene1-2"
                 },
                 {
                     "character": "Tomoya",
@@ -82,7 +83,8 @@
                 [
                     {
                         "character": "Megumi",
-                        "speech": "Adiós Tomoya, fue un placer haber sido tu heroína."
+                        "speech": "Adiós Tomoya, fue un placer haber sido tu heroína.",
+                        "Background": "Black"
                     },
                     {
                         "character": "Utaha",
@@ -110,7 +112,8 @@
                     },
                     {
                         "character": "Tomoya",
-                        "speech": "¿Eriri…?"
+                        "speech": "¿Eriri…?",
+                        "background": "Act_5-Scene_2-1"
                     },
                     {
                         "character": "Eriri",
@@ -134,7 +137,8 @@
                     },
                     {
                         "character": "Tomoya",
-                        "speech": "Eriri se sonroja al tenerlo en sus manos"
+                        "speech": "Eriri se sonroja al tenerlo en sus manos",
+                        "background": "Act_5-Scene_2-2"
                     },
                     {
                         "character": "Tomoya",
@@ -158,7 +162,8 @@
                     },
                     {
                         "character": "Eriri",
-                        "speech": "Desde hace tiempo, he estado sintiendo algo más que amistad hacia ti."
+                        "speech": "Desde hace tiempo, he estado sintiendo algo más que amistad hacia ti.",
+                        "background": "Act_5-Scene_2-3"
                     },
                     {
                         "character": "Eriri",
@@ -180,7 +185,8 @@
                 [
                     {
                         "character": "Eriri",
-                        "speech": "Hasta luego Tomoya, espero volverte a ver pronto"
+                        "speech": "Hasta luego Tomoya, espero volverte a ver pronto",
+                        "background": "Black"
                     },
                     {
                         "character": "Utaha",
@@ -208,7 +214,8 @@
                     },
                     {
                         "character":"Megumi",
-                        "speech":"Oh"
+                        "speech":"Oh",
+                        "background":"Act_5-Scene_3-1"
                     },
                     {
                         "character":"Megumi",
@@ -228,7 +235,8 @@
                     },
                     {
                         "character":"Megumi",
-                        "speech":"Hay algo que he estado sintiendo y que necesito decirte"
+                        "speech":"Hay algo que he estado sintiendo y que necesito decirte",
+                        "background":"Act_5-Scene_3-2"
                     },
                     {
                         "character":"Megumi",
@@ -252,7 +260,8 @@
                     },
                     {
                         "character":"Tomoya",
-                        "speech": "Yo..."
+                        "speech": "Yo...",
+                        "background":"Act_5-Scene_3-3"
                     }
                 ],
                 [

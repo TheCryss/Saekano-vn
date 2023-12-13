@@ -83,8 +83,6 @@ export const gameStatusSlice = createSlice({
                 if (!state.finishedScene) {
                     const nextContent = state.actualContentIndex + 1
 
-                    console.log(nextContent)
-
                     if (state.isBifurcation) {
                         const playerChoice = state.playerBifurcations[state.bifurcation - 1]
 
