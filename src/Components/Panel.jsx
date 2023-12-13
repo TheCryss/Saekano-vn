@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useDispatch } from 'react-redux';
-import { nextScene, nextContent, setScenario,setIs3D} from '../store/slicers/GameStatusSlice';
+import { nextScene, nextContent, setScenario, setIs3D } from '../store/slicers/GameStatusSlice';
 import { useNavigate } from 'react-router-dom'
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import { useAuth } from '../context/AuthContext'
@@ -8,6 +8,7 @@ import { editUser } from '../db/user-collection'
 
 
 import './Panel.css';
+import { ClipLoader } from 'react-spinners';
 
 
 export const Panel = ({ gameStatus }) => {
@@ -112,7 +113,7 @@ export const Panel = ({ gameStatus }) => {
         if (!currentMusic) {
             try {
                 if (!currentMusic.paused) currentMusic.pause()
-            } catch  {
+            } catch {
                 console.log('No music')
             }
         }
@@ -137,7 +138,15 @@ export const Panel = ({ gameStatus }) => {
                 <div className=' w-1/6 text-md my-8 h-40 flex flex-col mt-12 '>
 
                     <button onClick={() => setIsAuto(!isAuto)} className={`border-[#C6F5EB] text-pink-950 border-4 select-none my-2 flex items-center justify-center  bg-[rgba(242,198,245,0.75)]  hover:bg-[#F5EAC6] hover:scale-105 hover:  transition-all  rounded-md py-1 font-bold `} type='button'>
-                        Auto
+                        <div className='flex items-center justify-center'>
+                            {isAuto ?
+                                <div className='grid  grid-cols-2'>
+                                    <ClipLoader color='#f5f1e4' size={26} />
+                                    <p className='text'>Auto On</p>
+                                </div>
+                                :
+                                'Auto Off'}
+                        </div>
                     </button>
                     <button onClick={handleSkip} className={`border-[#C6F5EB] text-pink-950 border-4 select-none my-2 flex items-center justify-center  bg-[rgba(242,198,245,0.75)] hover:bg-[#F5EAC6] hover:scale-105 hover:  transition-all  rounded-md py-1 font-bold `} type='button'>
                         Skip
