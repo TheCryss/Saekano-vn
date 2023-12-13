@@ -6,6 +6,8 @@ import Login from './Scenes/Login/Login'
 const Room = lazy(() => import('./Scenes/Room/Room'))
 const Minigame1 = lazy(() => import('./Scenes/Word_Minigame/Minigame1'))
 const Beach = lazy(() => import('./Scenes/Beach/Beach'))
+const Beach2 = lazy(() => import('./Scenes/Beach/Beach2'))
+
 import { Fallback } from '../../Components/Fallback'
 import { Lights } from './Staging/Lights'
 
@@ -25,7 +27,7 @@ const Experience = () => {
                 case "Playa":
                     return (<Beach/>);
                 case "Minijuego-Playa":
-                    return (<Beach/>);
+                    return (<Beach2/>);
                 default:
                     return (<Login />);
             }

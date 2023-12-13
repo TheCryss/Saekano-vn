@@ -77,9 +77,7 @@ const Room = () => {
         if (finishedScene && npcInteractionsFinished && !hookDelivered && !pencilDelivered && !paint_paletteDelivered) {
             dispatch(nextScene())
             dispatch(resetNpcInteractions())
-            // dispatch(updateActualContent());
-            // dispatch(setScenario(""));
-            // navigate('/acto/1')
+
         } else if (finishedScene && npcInteractionsFinished && hookDelivered && pencilDelivered && paint_paletteDelivered) {
             setTimeout(() => {
             dispatch(nextScene())

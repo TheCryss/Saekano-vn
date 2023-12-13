@@ -1,17 +1,168 @@
 {
     "scenes": [
         {
-            "3d":false,
+            "3d": false,
             "scenario": "",
-            "content":[
+            "background": "Black",
+            "content": [
                 {
-                    "character": "Utaha & Eriri & Megumi",
-                    "speech": "Espera te ponemos la vend"
+                    "character": "...",
+                    "speech": "Lo que tengo que hacer para tener un equipo de trabajo…"
+                }
+            ]
+        },
+        {
+            "3d": true,
+            "scenario": "Minijuego-Playa",
+            "content": [
+                {
+                    "character": "...",
+                    "speech": "..."
+                }
+            ]
+        },
+        {
+            "3d": true,
+            "scenario": "Minijuego-Playa",
+            "content": [
+                {
+                    "Tomoya": "Tomoya",
+                    "speech": "Otra vez..."
+                },
+                {
+                    "Tomoya": "Tomoya",
+                    "speech": "A levantarse que esa novela no se va a terminar sola..."
+                },
+                {
+                    "Tomoya": "Tomoya",
+                    "speech": "Otra vez..."
+                },
+                {
+                    "Tomoya": "Tomoya",
+                    "speech": "Hoy no hemos quedado para reunirnos, hoy se supone que vamos a adelantar el trabajo de manera independiente."
+                },
+                {
+                    "Tomoya": "Tomoya",
+                    "speech": "Pero necesito reunirme con alguien para responder algunas dudas..."
+                }
+
+            ]
+        },
+        {
+            "3d": true,
+            "scenario": "Eleccion",
+            "bifurcation": true,
+            "content": [
+                {
+                    "character": "...",
+                    "speech": "..."
+                }
+            ]
+        },
+        {
+            "3d": true,
+            "scenario": "Eleccion",
+            "content": [
+                {
+                    "character": "Tomoya",
+                    "speech": "Supongo que es lo más urgente del momento."
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "¿Qué?"
+                    "speech": "Debo de alistarme para vernos en el parque."
                 }
+            ]
+        },
+        {
+            "3d": true,
+            "bifurcation": true,
+            "content": [
+                [
+                    {
+                        "character": "Narrador",
+                        "speech": "Megumi sonríe tímidamente."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "Tomoya, eso es muy dulce."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "Me hace feliz saber que mi autenticidad es algo que valores."
+                    }
+                ],
+                [
+                    {
+                        "character": "Narrador",
+                        "speech": "Megumi sonríe cálidamente."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "¿En serio planeas eso?"
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "Es reconfortante saber que puedo hacer que los días especiales para ti."
+                    }
+                ],
+                [
+                    {
+                        "character": "Narrador",
+                        "speech": "Megumi asiente con gratitud."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "Me alegra ser tu ancla Tomoya."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "Siempre estaré disponible para ti, brindándote estabilidad y apoyo."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Ya sabes, por eso te ví como la indicada para esta novela."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "Gracias Tomoya."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Además, debo de ser honesto."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "¡El trabajo que has hecho nos ha ayudado bastante!"
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "¡No digas eso! Yo siento que me falta esforzarme un poco más."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "No, no. Lo que has hecho está bien."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Lo digo en serio."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "Gracias..."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "¿Puedo preguntarte otra cosa más?"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Adelante."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "¿No te incomoda que sea tímida?"
+                    }
+                ]
             ]
         }
     ]

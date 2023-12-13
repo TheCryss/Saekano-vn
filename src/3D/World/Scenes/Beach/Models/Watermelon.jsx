@@ -2,6 +2,9 @@ import React, { useRef, useEffect, useState } from "react";
 
 import { useGLTF } from "@react-three/drei";
 import { RigidBody, CuboidCollider } from '@react-three/rapier';
+import { setWatermelonInteraction } from '../../../../../store/slicers/RoomSlicers';
+import { useDispatch, useSelector } from "react-redux";
+
 
 export const Watermelon = (props) => {
     const [renderWatermelon, setRenderWatermelon] = useState(false);
@@ -11,10 +14,9 @@ export const Watermelon = (props) => {
         }
     }, [props.position]);
     const { nodes, materials } = useGLTF("/assets/models/watermelon/Watermelon.glb");
+    const dispatch = useDispatch();
     return (
         <>
-
-
             {renderWatermelon &&
                 <>
                     <RigidBody type="fixed" colliders="cuboid" position={props.position}>
@@ -22,12 +24,12 @@ export const Watermelon = (props) => {
                             args={[1.25, 1.75, 1]}
                         />
                     </RigidBody>
-                    <RigidBody type={"fixed"} position-y={3} position={props.position}>
+                    <RigidBody type={"fixed"} position={props.position}>
                         <CuboidCollider
                             args={[3, 3, 3]}
                             sensor
-                            // onIntersectionEnter={(() => dispatch(setEririInteraction(true)))}
-                            // onIntersectionExit={(() => dispatch(setEririInteraction(false)))}
+                            onIntersectionEnter={(() => dispatch(setWatermelonInteraction(true)))}
+                            onIntersectionExit={(() => dispatch(setWatermelonInteraction(false)))}
                         />
                     </RigidBody>
                 </>

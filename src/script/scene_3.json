@@ -352,11 +352,93 @@
         },
         {
             "3d": true,
+            "scenario": "Playa",
+            "content": [
+                {
+                    "character": "Eriri",
+                    "speech": "Finalmente, todos juntos."
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "¿Alguien me recuerda por qué acordamos venir todos aquí?"
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Para disfrutar de la playa y de esta hermosa vista."
+                },
+                {
+                    "character": "Tamayo",
+                    "speech": "Y para tomar la inspiración de nuestra novela."
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Uh."
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Aunque el ambiente se siente un poco..."
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Tenue."
+                },
+                {
+                    "character": "Megumi",
+                    "speech": "Uh"
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Amigos..."
+                },
+                {
+                    "character": "Eriri & Utaha & Tamayo",
+                    "speech": "¿...?"
+                },
+                {
+                    "character": "Megumi",
+                    "speech": "Para que podamos pasar un buen rato en la playa he decidido traer algo para que todos nosotros podamos disfrutar del día."
+                },
+                {
+                    "character": "Megumi",
+                    "speech": "¡Y qué mejor que jugar a Suikawari!"
+                },
+                {
+                    "character": "Tamayo",
+                    "thought": "No puede ser..."
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Guau Megumi, esa sí que es una buena idea."
+                },
+                {
+                    "character": "Megumi",
+                    "speech": "¿Y quién no para empezar que nuestro querido director?"
+                },
+                {
+                    "character": "Megumi",
+                    "speech": "Aunque claro, solo podremos jugar una vez, ya que solo traje una sandía..."
+                },
+                {
+                    "character": "Utaha",
+                    "thought": "Dale [Name], es hora de que nos ayudes a inspirarnos."
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "Sé un buen director y ponte la venda."
+                },
+                {
+                    "character": "Tamayo",
+                    "speech": "Lo que tengo que hacer para tener un equipo de trabajo..."
+                }
+            ]
+        },
+        {
+            "3d": true,
             "scenario": "Playa-transicion",
             "content": [
                 {
-                    "character": "Narrador",
-                    "speech": "Tomoya se encuentra en la playa."
+                    "character": "...",
+                    "speech": "..."
                 }
             ]
         }

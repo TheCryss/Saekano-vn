@@ -29,12 +29,11 @@ import {
 
 
 
-const Beach = () => {
+const Beach2 = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [randomPosition, setRandomPosition] = useState([0, 0, 0])
     const [watermelonCut, setWatermelonCut] = useState(false);
-    const [minigame3,setMinigame3] = useState(false)
     const keyboardMap = [
         { name: 'backward', keys: ['ArrowUp', 'KeyW'] },
         { name: 'forward', keys: ['ArrowDown', 'KeyS'] },
@@ -43,7 +42,6 @@ const Beach = () => {
         { name: 'jump', keys: ['Space'] },
         { name: 'run', keys: ['Shift'] },
         { name: 'action1', keys: ['KeyE'] }
-        // { name: 'action1', keys: ['KeyR'] },
     ]
 
     const WatermelonPosition = [
@@ -78,7 +76,9 @@ const Beach = () => {
         setRandomPosition(WatermelonPosition[Math.floor(Math.random() * WatermelonPosition.length)])
     }, [])
 
-    const { scenario, finishedScene, npcInteractionsFinished,actualScriptScenes, isBifurcation, actualSceneIndex, actualContentIndex } = useSelector(state => state.gameStatus)
+    const { scenario, finishedScene, npcInteractionsFinished, actualScriptScenes, isBifurcation, actualSceneIndex, actualContentIndex } = useSelector(state => state.gameStatus)
+    const { interaction, room } = useSelector(state => state.room)
+
     const actualScene = actualScriptScenes[actualSceneIndex]
 
     useEffect(() => {
@@ -95,34 +95,40 @@ const Beach = () => {
 
     useEffect(() => {
         dispatch(setScenario(actualScene.scenario))
-    }, [actualSceneIndex,finishedScene])
+    }, [actualSceneIndex, finishedScene])
 
     useEffect(() => {
-        // console.log(finishedScene, npcInteractionsFinished, scenario);
-        if (finishedScene && npcInteractionsFinished && !minigame3 ) {
-            dispatch(nextScene())
-            dispatch(resetNpcInteractions())
-        } else if(finishedScene && npcInteractionsFinished && watermelonCut){
-            console.log("watermelonCut");
+        if (interaction && room.watermelonInteraction) {
+            setWatermelonCut(true)
         }
-    }, [watermelonCut, npcInteractionsFinished, actualContentIndex, finishedScene])
+    }, [room.watermelonInteraction, interaction])
+
+    // useEffect(() => {
+    //     // console.log(finishedScene, npcInteractionsFinished, scenario);
+    //     if (finishedScene && npcInteractionsFinished && !minigame3 ) {
+    //         dispatch(nextScene())
+    //         dispatch(resetNpcInteractions())
+    //     } else if(finishedScene && npcInteractionsFinished && watermelonCut){
+    //         console.log("watermelonCut");
+    //     }
+    // }, [watermelonCut, npcInteractionsFinished, actualContentIndex, finishedScene])
 
 
-    useEffect(() => {
-        console.log(scenario);
-        if (actualScene.scenario == "Minijuego-Playa") {
-            dispatch(setNpcInteractionsFinished(false))
-            setMinigame3(true)
-        } else if(actualScene.scenario ==  "Playa-transicion"){
-            dispatch(nextScene())
-            dispatch(setIs3D(false));
-            dispatch(resetNpcInteractions())
-            dispatch(updateActualContent());
-            dispatch(setScenario(""));
-            navigate('/acto/1')
+    // useEffect(() => {
+    //     console.log(scenario);
+    //     if (actualScene.scenario == "Minijuego-Playa") {
+    //         dispatch(setNpcInteractionsFinished(false))
+    //         setMinigame3(true)
+    //     } else if(actualScene.scenario ==  "Playa-transicion"){
+    //         dispatch(nextScene())
+    //         dispatch(setIs3D(false));
+    //         dispatch(resetNpcInteractions())
+    //         dispatch(updateActualContent());
+    //         dispatch(setScenario(""));
+    //         navigate('/acto/1')
 
-        }
-    }, [actualScene.scenario])
+    //     }
+    // }, [actualScene.scenario])
 
     return (
         <>
@@ -138,20 +144,22 @@ const Beach = () => {
             <EririBeach scale={2} position={[4.9, -1, 27]} />
             <MegumiBeach scale={2} position={[12.9, -1, 7]} rotation-y={-Math.PI / 4} />
             <SandCastle scale={0.1} position={[10, -1, 10]} rotation-x={-Math.PI / 2} />
-            <Watermelon position={randomPosition} rotation-y={-Math.PI / 2} />
-            {false && <WatermelonCut position={[-10, -1.3, 0]} rotation-y={-Math.PI / 2} />}
+
+            {!watermelonCut ? <Watermelon position={randomPosition} rotation-y={-Math.PI / 2} />
+                : <WatermelonCut position={randomPosition} rotation-y={-Math.PI / 2} />
+            }
             <KeyboardControls map={keyboardMap}>
                 <Ecctrl position={[-5, 3.4, 4]} autoBalance={false} animated camInitDir={Math.PI / 4} friction={1} maxVelLimit={6.04} dragDampingC={0.1} autoBalanceDampingC={3} capsuleRadius={0.7} capsuleHalfHeight={0.3} rayOriginOffest={{ "x": 0, "y": -1.1, "z": 0 }} floatingDis={0.3} name="Tomoya" followLight={true} followLightPos={{ x: 0, y: 5, z: 0 }} >
                     <EcctrlAnimation characterURL={characterURL} animationSet={animationSet} >
                         <PlayableCharacterBeach scale={2} position={[0, -1.59, 0]} />
-                        {/* <PCWatermelon scale={2} position={[0, -1.59, 0]} /> */}
 
+                        {/* <PCWatermelon scale={2} position={[0, -1.59, 0]} /> */}
                     </EcctrlAnimation>
                 </Ecctrl>
             </KeyboardControls>
-            {(!watermelonCut && (scenario != "Minijuego-Playa")) ? <SunLight position={[0, 5, 0]} /> : null}
+            {!watermelonCut ? null :  <SunLight />}
         </>
     )
 }
 
-export default Beach
+export default Beach2

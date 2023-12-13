@@ -6,6 +6,7 @@ const initialState = {
         eririInteraction: false,
         megumiInteraction: false,
         tomoyaInteraction: false,
+        watermelonInteraction: false,
     },
     objectsColliders: {
       hookCollider: false,
@@ -75,6 +76,10 @@ const roomSlice = createSlice({
     setWatermelonCut: (state, action) => {
       state.watermelonCut = action.payload;
     },
+    setWatermelonInteraction: (state, action) => {
+      state.room.watermelonInteraction = action.payload;
+    }
+
   },
 });
 
@@ -93,6 +98,7 @@ export const {
   setHookDelivered,
   setPencilDelivered,
   setPaintPaletteDelivered,
-  setWatermelonCut
+  setWatermelonCut,
+  setWatermelonInteraction,
 } = roomSlice.actions;
 export default roomSlice.reducer;

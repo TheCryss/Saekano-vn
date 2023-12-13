@@ -34,6 +34,8 @@ function App() {
                             <Route path='Habitacion' Component={app_3D} />
                             <Route path='Minijuego-guion' Component={app_3D} />
                             <Route path='Playa' Component={app_3D} />
+                            <Route path='Minijuego-Playa' Component={app_3D} />
+
                         </Route>
 
                         <Route path='acto' element={<AuthGuard><Dialog_Layout /></AuthGuard>} >
