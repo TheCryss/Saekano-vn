@@ -6,7 +6,7 @@ const choices = [
     [],
     ["Manga", "Salida de Baño", "Novela Ligera"],
     ["", "", ""],
-    ["Eriri", "Megumi", "Utaha"],
+    ["Eriri", "Utaha", "Megumi"],
     ["", "", ""],
     ["", "", ""],
 
@@ -31,12 +31,13 @@ const Choices2D = () => {
                 <button onClick={() => { dispatch(setPlayerBifurcation({ "bifurcationNumber": bifurcation, "bifurcationOption": 0 })); setEnd(true) }} className={`border-[#C6F5EB] text-pink-950 border-4 select-none my-2 flex items-center justify-center  bg-[rgba(242,198,245,0.75)]  hover:bg-[#F5EAC6] hover:scale-105 hover:  transition-all  rounded-md py-1 font-bold `} type='button'>
                     {choices[bifurcation - 1][0]}
                 </button>
-                <button onClick={() => { dispatch(setPlayerBifurcation({ "bifurcationNumber": bifurcation , "bifurcationOption": 1 })); setEnd(true) }} className={`border-[#C6F5EB] text-pink-950 border-4 select-none my-2 flex items-center justify-center  bg-[rgba(242,198,245,0.75)] hover:bg-[#F5EAC6] hover:scale-105 hover:  transition-all  rounded-md py-1 font-bold `} type='button'>
-                    {choices[bifurcation - 1][2]}
-                </button>
                 <button onClick={() => { dispatch(setPlayerBifurcation({ "bifurcationNumber": bifurcation , "bifurcationOption": 2 })); setEnd(true) }} className={`border-[#C6F5EB] text-pink-950 border-4 select-none my-2 flex items-center justify-center  bg-[rgba(242,198,245,0.75)] hover:bg-[#F5EAC6] hover:scale-105 hover:  transition-all  rounded-md py-1 font-bold `} type='button'>
                     {choices[bifurcation - 1][1]}
                 </button>
+                <button onClick={() => { dispatch(setPlayerBifurcation({ "bifurcationNumber": bifurcation , "bifurcationOption": 1 })); setEnd(true) }} className={`border-[#C6F5EB] text-pink-950 border-4 select-none my-2 flex items-center justify-center  bg-[rgba(242,198,245,0.75)] hover:bg-[#F5EAC6] hover:scale-105 hover:  transition-all  rounded-md py-1 font-bold `} type='button'>
+                    {choices[bifurcation - 1][2]}
+                </button>
+
             </div>
         </div>
     )

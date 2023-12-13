@@ -35,34 +35,43 @@ const Park = () => {
 
     //Ganadora de la ultima
     useEffect(() => {
-        const result = playerBifurcations.slice(2,3)
+        const result = playerBifurcations.slice(4,5)
         setGirl(result)
         console.log(result);
     }, [playerBifurcations])
     const findMostFrequentValue = (list) => {
-        let frequency = {};  // array of frequency.
-        let max = 0;  // holds the max frequency.
-        let result;   // holds the max frequency element.
+        let m =0;  // array of frequency.
+        let e = 0;
+        let u = 0;  // holds the max frequency.
         for (let value of list) {
-            frequency[value] = (frequency[value] || 0) + 1; // increment frequency.
-            if (frequency[value] > max) { // is this frequency > max so far ?
-                max = frequency[value];  // update max.
-                result = value;          // update result.
+            if(value == 0){
+                e++;
+            } else if(value == 1) {
+                m++;
+
+            } else if(value == 2){
+                u++;
             }
         }
-        return result;
+        if ((e >= m)&& (e >= u)) {
+            return 0;
+        } else if ((m > u) && (m > e)) {
+            return 1;
+        } else {
+            return 2;
+        }
     }
 
     useEffect(() => {
         // console.log(playerBifurcations);
-        const result2 = findMostFrequentValue(playerBifurcations.slice(2, -1).concat(playerBifurcations.slice(0,1)))
+        const result2 = findMostFrequentValue([playerBifurcations[0], playerBifurcations[2], playerBifurcations[4]])
         setEnd(true)
         setFinalResult(result2)
     }, [playerBifurcations])
 
     useEffect(() => {
         if (end) {
-            dispatch(setPlayerBifurcation({ "bifurcationNumber": 4, "bifurcationOption": finalResult }))
+            dispatch(setPlayerBifurcation({ "bifurcationNumber": 5, "bifurcationOption": finalResult }))
         }
     }, [end])
 
@@ -103,7 +112,7 @@ const Park = () => {
     return (
         <>
             <Park3D position={[0, -7, 0]} scale={0.08} />
-            {(girl == 2) && <Utaha scale={2} position={[1, 2, -1]} />}
+            {(girl == 2) && <Utaha scale={2} position={[1, 3, -1]} />}
             {(girl == 0) && <Eriri scale={2} position={[1, 2, -1]} />}
             {(girl == 1) && <Megumi scale={2} position={[1, 2, -1]} />}
             <PlayableCharacter scale={2} position={[3, 2, -1]} />
