@@ -103,9 +103,9 @@ const Park = () => {
     return (
         <>
             <Park3D position={[0, -7, 0]} scale={0.08} />
-            {(girl == 1) && <Utaha scale={2} position={[1, 3, -1]} />}
+            {(girl == 2) && <Utaha scale={2} position={[1, 3, -1]} />}
             {(girl == 0) && <Eriri scale={2} position={[1, 2, -1]} />}
-            {(girl == 2) && <Megumi scale={2} position={[1, 2, -1]} />}
+            {(girl == 1) && <Megumi scale={2} position={[1, 2, -1]} />}
             <PlayableCharacter scale={2} position={[3, 2, -1]} />
             <Lights_Room />
         </>
