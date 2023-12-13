@@ -35,7 +35,7 @@ const Park = () => {
 
     //Ganadora de la ultima
     useEffect(() => {
-        const result = playerBifurcations.slice(2,3)
+        const result = playerBifurcations.slice(3,4)
         setGirl(result)
         console.log(result);
     }, [playerBifurcations])

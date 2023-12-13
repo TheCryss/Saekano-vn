@@ -78,110 +78,8 @@
         },
         {
             "3d": false,
-            "bifurcacion": true,
-            "content": [
-                [
-                    {
-                        "character": "Megumi",
-                        "speech": "Adiós Tomoya, fue un placer haber sido tu heroína.",
-                        "Background": "Black"
-                    },
-                    {
-                        "character": "Utaha",
-                        "speech": "Espero que tengamos algún guión en el futuro qué hacer."
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Hasta luego chicas, fue un placer."
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Vale, por fin todo terminado."
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Qué extraño, este dibujo es de Eriri."
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Tengo que subir a revisar que no haya dejado algo más."
-                    },
-                    {
-                        "character": "Narrador",
-                        "speech": "Tomoya sube a la habitación en búsqueda de ella."
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "¿Eriri…?",
-                        "background": "Act_5-Scene_2-1"
-                    },
-                    {
-                        "character": "Eriri",
-                        "speech": "¡…!"
-                    },
-                    {
-                        "character": "Eriri",
-                        "speech": "Lo, lo siento"
-                    },
-                    {
-                        "character": "Eriri",
-                        "speech": "Se me habían quedado algo, y no lo encuentro en ningún lugar de tu habitación."
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "¿Te refieres a esto?"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Tomoya le entregó el dibujo"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Eriri se sonroja al tenerlo en sus manos",
-                        "background": "Act_5-Scene_2-2"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Debo de admitir que te quedó bastante bien."
-                    },
-                    {
-                        "character": "Eriri",
-                        "speech": "Si..."
-                    },
-                    {
-                        "character": "Eriri",
-                        "speech": "¿Puedo contarte algo?"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Dime"
-                    },
-                    {
-                        "character": "Eriri",
-                        "speech": "No es fácil para mí decir esto, pero creo que es hora que lo haga."
-                    },
-                    {
-                        "character": "Eriri",
-                        "speech": "Desde hace tiempo, he estado sintiendo algo más que amistad hacia ti.",
-                        "background": "Act_5-Scene_2-3"
-                    },
-                    {
-                        "character": "Eriri",
-                        "speech": "Cuando empezamos a trabajar juntos en nuestros proyectos, descubrí que mis sentimientos iban más allá de la simple amistad."
-                    },
-                    {
-                        "character": "Eriri",
-                        "speech": "Me di cuenta de que cada momento contigo se volvía especial, y… bueno, no puedo negar más lo que siento."
-                    },
-                    {
-                        "character": "Eriri",
-                        "speech": "Me gustas, y quiero ser algo más que tu amiga..."
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Te amo."
-                    }
-                ],
+            "end": "Megumi",
+            "content":
                 [
                     {
                         "character": "Eriri",
@@ -263,90 +161,202 @@
                         "speech": "Yo...",
                         "background":"Act_5-Scene_3-3"
                     }
-                ],
-                [
-                    {
-                        "character": "Eriri",
-                        "speech": "Hasta luego Tomoya, espero volverte a ver pronto",
-                        "background": "UtahaFinal-01"
-                    },
-                    {
-                        "character": "Megumi",
-                        "speech": "Adiós Tomoya, fue un placer haber sido tu heroína",
-                        "background": "UtahaFinal-02"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Hasta luego chicas, fue un placer",
-                        "background": "UtahaFinal-03"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Um…"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Más vale que revise"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "thought": "Subo de nueva hasta la habitación"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "¿Utaha…?"
-                    },
-                    {
-                        "character": "Utaha",
-                        "speech": "¡Oh!",
-                        "background": "UtahaFinal-04"
-                    },
-                    {
-                        "character": "Utaha",
-                        "speech": "Lo siento si no salí antes."
-                    },
-                    {
-                        "character": "Utaha",
-                        "speech": "Solo que decidí quedarme un poco más…"
-                    },
-                    {
-                        "character": "Utaha",
-                        "speech": "Contigo"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "¿¡...!?"
-                    },
-                    {
-                        "character": "Utaha",
-                        "speech": "Sabes"
-                    },
-                    {
-                        "character": "Utaha",
-                        "speech": "Todo este tiempo lo disfrute estando contigo"
-                    },
-                    {
-                        "character": "Utaha",
-                        "speech": "La escritura del guión fue algo que me gustó mucho"
-                    },
-                    {
-                        "character": "Utaha",
-                        "speech": "Pero siento que algunas cosas fueron dedicadas para mí"
-                    },
-                    {
-                        "character": "Utaha",
-                        "speech": "Y creo que esto nos ha unido mucho más de lo que éramos al inicio"
-                    },
-                    {
-                        "character": "Utaha",
-                        "speech": "Creo que eres la primera persona en hacerme sentirme así, de este modo."
-                    },
-                    {
-                        "character": "Utaha",
-                        "speech": "Y creo que voy a tomar una decisión",
-                        "background": "UtahaFinal-05"
-                    }
                 ]
+
+        },
+        {
+            "3d": false,
+            "end": "Eriri",
+            "content":[
+                {
+                    "character": "Megumi",
+                    "speech": "Adiós Tomoya, fue un placer haber sido tu heroína.",
+                    "Background": "Black"
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "Espero que tengamos algún guión en el futuro qué hacer."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Hasta luego chicas, fue un placer."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Vale, por fin todo terminado."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Qué extraño, este dibujo es de Eriri."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Tengo que subir a revisar que no haya dejado algo más."
+                },
+                {
+                    "character": "Narrador",
+                    "speech": "Tomoya sube a la habitación en búsqueda de ella."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "¿Eriri…?",
+                    "background": "Act_5-Scene_2-1"
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "¡…!"
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Lo, lo siento"
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Se me habían quedado algo, y no lo encuentro en ningún lugar de tu habitación."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "¿Te refieres a esto?"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Tomoya le entregó el dibujo"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Eriri se sonroja al tenerlo en sus manos",
+                    "background": "Act_5-Scene_2-2"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Debo de admitir que te quedó bastante bien."
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Si..."
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "¿Puedo contarte algo?"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Dime"
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "No es fácil para mí decir esto, pero creo que es hora que lo haga."
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Desde hace tiempo, he estado sintiendo algo más que amistad hacia ti.",
+                    "background": "Act_5-Scene_2-3"
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Cuando empezamos a trabajar juntos en nuestros proyectos, descubrí que mis sentimientos iban más allá de la simple amistad."
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Me di cuenta de que cada momento contigo se volvía especial, y… bueno, no puedo negar más lo que siento."
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Me gustas, y quiero ser algo más que tu amiga..."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Te amo."
+                }
+            ]
+        }
+        ,
+        {
+            "3d": false,
+            "end": "Utaha",
+            "content":
+            [
+                {
+                    "character": "Eriri",
+                    "speech": "Hasta luego Tomoya, espero volverte a ver pronto",
+                    "background": "UtahaFinal-01"
+                },
+                {
+                    "character": "Megumi",
+                    "speech": "Adiós Tomoya, fue un placer haber sido tu heroína",
+                    "background": "UtahaFinal-02"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Hasta luego chicas, fue un placer",
+                    "background": "UtahaFinal-03"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Um…"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Más vale que revise"
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Subo de nueva hasta la habitación"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "¿Utaha…?"
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "¡Oh!",
+                    "background": "UtahaFinal-04"
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "Lo siento si no salí antes."
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "Solo que decidí quedarme un poco más…"
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "Contigo"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "¿¡...!?"
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "Sabes"
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "Todo este tiempo lo disfrute estando contigo"
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "La escritura del guión fue algo que me gustó mucho"
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "Pero siento que algunas cosas fueron dedicadas para mí"
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "Y creo que esto nos ha unido mucho más de lo que éramos al inicio"
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "Creo que eres la primera persona en hacerme sentirme así, de este modo."
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "Y creo que voy a tomar una decisión",
+                    "background": "UtahaFinal-05"
+                }
             ]
         }
     ]
