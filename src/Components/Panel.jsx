@@ -5,6 +5,10 @@ import { useNavigate } from 'react-router-dom'
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import { useAuth } from '../context/AuthContext'
 import { editUser } from '../db/user-collection'
+import {
+    setActualSceneIndex,
+    setActualContentIndex
+} from '../store/slicers/GameStatusSlice'
 
 
 import './Panel.css';
@@ -19,9 +23,42 @@ export const Panel = ({ gameStatus }) => {
     const dispatch = useDispatch();
 
     const [isAuto, setIsAuto] = useState(false)
+    const [last, setLast] = useState(10)
     const [currentMusic, setCurrentMusic] = useState(null)
     const [character, setCharacter] = useState('...')
     const [dialog, setDialog] = useState('...')
+    const { actualContentIndex, actualScriptScenes, finishedScene, actualSceneIndex, playerBifurcations } = gameStatus
+
+    useEffect(() => {
+        if (actualScriptScenes[actualSceneIndex].end != undefined) {
+            setLast(playerBifurcations[playerBifurcations.length - 1])
+        }
+    }, [actualSceneIndex, playerBifurcations]
+    )
+
+    useEffect(() => {
+        if (finishedScene && last != 10) {
+            if (last == 0) {
+                dispatch(setActualSceneIndex(2))
+                dispatch(setActualContentIndex(0))
+            }
+            if (last == 1) {
+                dispatch(setActualSceneIndex(2))
+                dispatch(setActualContentIndex(0))
+
+            }
+            if (last == 2) {
+                dispatch(setActualSceneIndex(3))
+                dispatch(setActualContentIndex(0))
+            }
+        }
+    }, [finishedScene, last, actualContentIndex])
+
+    useEffect(() => {
+        if (finishedScene && actualScriptScenes[actualSceneIndex].end != undefined) {
+            navigate('./')
+        }
+    }, [finishedScene, actualSceneIndex, actualContentIndex])
 
 
     const playMusic = (musicName) => {
@@ -40,10 +77,10 @@ export const Panel = ({ gameStatus }) => {
         new Audio('/assets/sound/' + soundName + '.ogg').play()
     }
 
-    const { finishedScript,act } = gameStatus
+    const { finishedScript, act } = gameStatus
 
     const playEvent = () => {
-        const { actualSceneIndex, actualScriptScenes, actualContent, playerBifucartions,act,sc } = gameStatus
+        const { actualSceneIndex, actualScriptScenes, actualContent, playerBifucartions, act, sc } = gameStatus
         const actualScene = actualScriptScenes[actualSceneIndex]
 
         if (actualScene['3d']) {
@@ -83,12 +120,12 @@ export const Panel = ({ gameStatus }) => {
     const nodeRefCharacter = useRef(null);
 
     const onClickText = () => {
-        if( act == 6 && finishedScript ){
+        if (act == 6 && finishedScript) {
             console.log("fin del juego");
         } else {
-        if (gameStatus.finishedScene) dispatch(nextScene())
-        else dispatch(nextContent())
-    }
+            if (gameStatus.finishedScene) dispatch(nextScene())
+            else dispatch(nextContent())
+        }
     }
 
     useEffect(() => {

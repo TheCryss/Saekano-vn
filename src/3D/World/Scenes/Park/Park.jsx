@@ -35,7 +35,7 @@ const Park = () => {
 
     //Ganadora de la ultima
     useEffect(() => {
-        const result = playerBifurcations.slice(3,4)
+        const result = playerBifurcations.slice(4,5)
         setGirl(result)
         console.log(result);
     }, [playerBifurcations])
@@ -55,14 +55,14 @@ const Park = () => {
 
     useEffect(() => {
         // console.log(playerBifurcations);
-        const result2 = findMostFrequentValue(playerBifurcations.slice(2, -1).concat(playerBifurcations.slice(0,1)))
+        const result2 = findMostFrequentValue(playerBifurcations.slice(3, 4).concat(playerBifurcations.slice(0,1)))
         setEnd(true)
         setFinalResult(result2)
     }, [playerBifurcations])
 
     useEffect(() => {
         if (end) {
-            dispatch(setPlayerBifurcation({ "bifurcationNumber": 4, "bifurcationOption": finalResult }))
+            dispatch(setPlayerBifurcation({ "bifurcationNumber": 5, "bifurcationOption": finalResult }))
         }
     }, [end])
 
@@ -103,9 +103,9 @@ const Park = () => {
     return (
         <>
             <Park3D position={[0, -7, 0]} scale={0.08} />
-            {(girl == 2) && <Utaha scale={2} position={[1, 2, -1]} />}
+            {(girl == 1) && <Utaha scale={2} position={[1, 3, -1]} />}
             {(girl == 0) && <Eriri scale={2} position={[1, 2, -1]} />}
-            {(girl == 1) && <Megumi scale={2} position={[1, 2, -1]} />}
+            {(girl == 2) && <Megumi scale={2} position={[1, 2, -1]} />}
             <PlayableCharacter scale={2} position={[3, 2, -1]} />
             <Lights_Room />
         </>

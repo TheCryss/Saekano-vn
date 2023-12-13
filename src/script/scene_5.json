@@ -78,7 +78,8 @@
         },
         {
             "3d": false,
-            "end": "Megumi",
+            "scenario": "Megumi",
+            "end": true,
             "content":
                 [
                     {
@@ -166,7 +167,7 @@
         },
         {
             "3d": false,
-            "end": "Eriri",
+            "scenario": "Eriri",
             "content":[
                 {
                     "character": "Megumi",
@@ -273,7 +274,7 @@
         ,
         {
             "3d": false,
-            "end": "Utaha",
+            "scenario": "Utaha",
             "content":
             [
                 {
