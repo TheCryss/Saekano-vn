@@ -249,10 +249,6 @@
                 [
                     {
                         "character": "Utaha",
-                        "speech": "tres puntos."
-                    },
-                    {
-                        "character": "Utaha",
                         "speech": "..."
                     },
                     {
@@ -298,8 +294,8 @@
             ],
             "npc_max_interactions": [
                 [4, 3, 3, 0],
-                [1, 1, 1, 0]
-            ],
+                [4, 3, 3, 0],
+                [4, 3, 3, 0]            ],
             "npc_interactions": [
                 [
                     [
@@ -372,25 +368,133 @@
                     [
                         {
                             "character": "Utaha",
-                            "speech": "3"
+                            "speech": "Asi que esta es la historia.."
+                        },
+                        {
+                            "character": "Utaha",
+                            "speech": "No es muy buena pero se puede trabajar"
+                        },
+                        {
+                            "character": "Utaha",
+                            "speech": "Que bueno que tienes una gran escritora de tu lado"
+                        },
+                        {
+                            "character": "Utaha",
+                            "speech": "¿Qué opinas Eriri?"
                         }
                     ],
                     [
                         {
                             "character": "Eriri",
-                            "speech": "1"
+                            "speech": "Jum.. puedo hacer algo con esto"
+                        },
+                        {
+                            "character": "Eriri",
+                            "speech": "Preparate para ver mi arte"
+                        },
+                        {
+                            "character": "Eriri",
+                            "speech": "Seran los mejores diseños que hayas visto"
                         }
+
                     ],
                     [
                         {
                             "character": "Megumi",
-                            "speech": "1"
+                            "speech": "¿Por qué tengo que ser yo la heroina?"
+                        },
+                        {
+                            "character": "Megumi",
+                            "speech": "..."
+                        },
+                        {
+                            "character": "Megumi",
+                            "speech": "Bueno, no es como si tuviera otra opcion"
                         }
                     ],
                     [
                         {
                             "character": "Tomoya",
                             "speech": "1"
+                        },
+                        {
+                            "character": "Tomoya",
+                            "speech": "2"
+                        },
+                        {
+                            "character": "Tomoya",
+                            "speech": "3"
+                        },
+                        {
+                            "character": "Tomoya",
+                            "speech": "4"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "character": "Utaha",
+                            "speech": "Asi que esta es la historia.."
+                        },
+                        {
+                            "character": "Utaha",
+                            "speech": "No es muy buena pero se puede trabajar"
+                        },
+                        {
+                            "character": "Utaha",
+                            "speech": "Que bueno que tienes una gran escritora de tu lado"
+                        },
+                        {
+                            "character": "Utaha",
+                            "speech": "¿Qué opinas Eriri?"
+                        }
+                    ],
+                    [
+                        {
+                            "character": "Eriri",
+                            "speech": "Jum.. puedo hacer algo con esto"
+                        },
+                        {
+                            "character": "Eriri",
+                            "speech": "Preparate para ver mi arte"
+                        },
+                        {
+                            "character": "Eriri",
+                            "speech": "Seran los mejores diseños que hayas visto"
+                        }
+
+                    ],
+                    [
+                        {
+                            "character": "Megumi",
+                            "speech": "¿Por qué tengo que ser yo la heroina?"
+                        },
+                        {
+                            "character": "Megumi",
+                            "speech": "..."
+                        },
+                        {
+                            "character": "Megumi",
+                            "speech": "Bueno, no es como si tuviera otra opcion"
+                        }
+                    ],
+                    [
+                        {
+                            "character": "Tomoya",
+                            "speech": "1"
+                        },
+                        {
+                            "character": "Tomoya",
+                            "speech": "2"
+                        },
+                        {
+                            "character": "Tomoya",
+                            "speech": "3"
+                        },
+                        {
+                            "character": "Tomoya",
+                            "speech": "4"
                         }
                     ]
                 ]
@@ -433,7 +537,7 @@
             "content":[
                 {
                     "character": "...",
-                    "speech": ".."
+                    "speech": "..."
                 },
                 {
                     "character": "Utaha",

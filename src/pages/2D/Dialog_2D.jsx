@@ -1,9 +1,9 @@
 import { Panel } from '../../Components/Panel'
+import Choices2D from '../../Components/Choices2D'
 import { useState, useEffect } from 'react'
 import Transitions from '../../Components/Transitions';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateActualContent } from '../../store/slicers/GameStatusSlice'
-
 
 const Dialog_2D = () => {
     const gameStatus = useSelector((state) => state.gameStatus)
@@ -30,7 +30,10 @@ const Dialog_2D = () => {
         <>
             <div className='h-screen w-full bg-cover transition-all duration-700 ' style={{ backgroundImage: `url('/assets/background/${background}.png')` }}>
                 <div className='flex flex-col h-screen justify-end'>
-                    <Panel gameStatus={gameStatus}/>
+                    {gameStatus.isBifurcation ?
+                        <Choices2D />
+                        : <Panel gameStatus={gameStatus} />
+                    }
                 </div>
             </div>
         </>

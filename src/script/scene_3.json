@@ -5,7 +5,7 @@
             "content": [
                 {
                     "character": "Megumi",
-                    "speech": "Ya he terminado"
+                    "speech": "Ya he terminado."
                 },
                 {
                     "character": "Utaha",
@@ -16,62 +16,87 @@
                     "speech": "Igualmente"
                 },
                 {
-                    "character":"Tomoya",
-                    "speech":"Y yo... Pues si no hay nada más que hacer."
+                    "character": "Tomoya",
+                    "speech": "Y yo... Pues si no hay nada más que hacer."
                 },
                 {
-                    "character":"Utaha",
+                    "character": "Utaha",
                     "speech": "Esperen..."
                 },
                 {
-                    "character":"Tomoya & Eriri & Megumi",
+                    "character": "Tomoya & Eriri & Megumi",
                     "speech": "¿...?"
                 },
                 {
                     "character": "Utaha",
-                    "speech": "Necesito inspiración"
+                    "speech": "Necesito inspiración."
                 },
                 {
-                    "character":"Megumi",
+                    "character": "Megumi",
                     "speech": "¿Por qué no ir a la playa?"
                 }
             ]
         },
         {
-            "3d":false,
+            "3d": false,
             "content": [
                 {
                     "character": "Tomoya",
                     "thought": "¿A la playa?"
                 },
                 {
-                    "character":"Tomoya",
-                    "speech":"¿Uh…?"
+                    "character": "Tomoya",
+                    "speech": "¿Uh…?"
                 },
                 {
-                    "character":"Tomoya",
-                    "thought":"¿Por qué la alarma se encuentra tan temprano? No recuerdo tener que haber madrugado."
+                    "character": "Tomoya",
+                    "thought": "¿Por qué la alarma se encuentra tan temprano? No recuerdo tener que haber madrugado."
                 },
                 {
-                    "character":"Tomoya",
-                    "thought":"“¿Por qué no ir a la playa?”"
+                    "character": "Tomoya",
+                    "thought": "“¿Por qué no ir a la playa?”"
                 },
                 {
-                    "character":"Tomoya",
-                    "thought":"Ah. ¡Eso!"
+                    "character": "Tomoya",
+                    "thought": "Ah. ¡Eso!"
                 },
                 {
-                    "character":"Tomoya",
-                    "thought": " Más vale apresurarme, no quiero llegar tarde allá"
+                    "character": "Tomoya",
+                    "thought": " Más vale apresurarme, no quiero llegar tarde allá."
                 },
                 {
-                    "character":"Tomoya",
-                    "thought": "Debería de llevar algo que nos pueda ayudar a inspirarnos en el juego"
+                    "character": "Tomoya",
+                    "thought": "Debería de llevar algo que nos pueda ayudar a inspirarnos en el juego."
                 },
                 {
-                    "character":"Tomoya",
+                    "character": "Tomoya",
                     "thought": "¿Que debería llevar?"
                 }
+            ]
+        },
+        {
+            "3d": false,
+            "bifurcation": true,
+            "content": [
+                [
+                    {
+                        "character": "...",
+                        "speech": "..."
+                    }
+                ]
+            ]
+        },
+        {
+            "3d": false,
+            "content": [
+                    {
+                        "character": "Tomoya",
+                        "speech": "Creo que lo tengo."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Más vale no llegar tarde."
+                    }
             ]
         },
         {
@@ -79,7 +104,268 @@
             "scenario": "Playa",
             "content": [
                 {
+                    "character": "Narrador",
+                    "speech": "Tomoya ha llegado a la playa."
+                },
+                {
+                    "character": "Narrador",
+                    "speech": "A lo lejos se divisa la silueta de alguien."
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "No alcanzo a poder distinguir de quién se trata."
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "¿Hola…?"
+                },
+                {
+                    "character": "...",
+                    "thought": "¿?"
+                }
+            ]
+        },
+        {
+            "3d": true,
+            "scenario": "Playa",
+            "bifurcation": true,
+            "content": [
+                [
+                    {
+                        "character": "Tomoya",
+                        "speech": "Oh, ya te encontrabas aquí desde antes."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "Ni lo digas, pensé que Utaha sería la primera en llegar aquí."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "Ya que necesitaba ayuda con su \"Inspiración\". Pff, patrañas, yo no la necesitaba  y aun así me encuentro aquí."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Te molesta estar aquí."
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "Eriri reacciona sobresaltada a lo que dijo Tomoya."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "¡No!, bueno, no del todo a decir verdad."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "thought": "De repente, recuerdo el manga que había traído desde mi pieza."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": " Eriri."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "Dime."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Había traído algo desde mi casa. Pensé que era algo que se podía compartir para buscar la inspiración que necesita Utaha para la novela."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Pero ya que ella no se encuentra, pienso que te lo puedo dar mientras tanto."
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "Tomoya le entrega el manga a Eriri."
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "Eriri reacciona emocionadamente."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "No puede ser… ¡Es la edición especial de Vinland Saga!."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "No sabes lo que me encantan las ilustraciones de este manga. ¡Sus trazos capturan lo que es en esencia la cruda y emocionante historia de la serie!"
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "¡Su autor, Makoto Yukimura, es conocido por su atención al detalle y su habilidad para retratar el mundo del protagonista con una precisión histórica asombrosa!"
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "Eriri reacciona emocionadamente."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "No puede ser... ¡Es la edición especial de Vinland Saga!."
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "¡Su autor, Makoto Yukimura, es conocido por su atención al detalle y su habilidad para retratar el mundo del protagonista con una precisión histórica asombrosa!"
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "Eriri mira a los ojos a Tomoya y le da un abrazo."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "¡Gracias!"
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "De repente, Eriri parece reaccionar sobre lo que está haciendo y vuelve a irse hacia atrás."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "Hmph..."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "Igual no te creas que es gran cosa."
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "Eriri procede a guardar cuidadosamente el manga que Tomoya le ha dado."
+                    }
+                ],
+                [
+                    {
+                        "character": "Tomoya",
+                        "speech": "Oh, ya te encontrabas aquí desde antes."
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Claro, una buena escritura, siempre encuentra la inspiración correcta en el silencio y la brisa del mar."
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Por eso he decidido venir más temprano."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Tiene sentido."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Utaha."
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Dime."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Había traído algo desde mi casa. Pensé que era algo que se podía compartir entre ustedes para buscar la inspiración que necesitas."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Pero teniendo en cuenta que las demás chicas no se encuentran, creo que te lo puedo dar mientras tanto."
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "Tomoya le entrega la novela ligera."
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "Utaha hace un leve gesto de sorpresa, bastante peculiar, teniendo en cuenta que la serenidad reina dentro de ella."
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": " ¡Oh!"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "¿Qué sucede?"
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Nada."
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Solo que no imaginé que la tuvieras."
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Golden Time es una novela que valoro bastante. Es agradable saber que compartes algo tan significativo para mí."
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "Utaha se sonroja levemente."
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Gracias nuevamente."
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "Utaha guarda la novela con cuidado."
+                    }
+                ],
+                [
 
+                    {
+                        "character": "Tomoya",
+                        "speech": "Oh, ya te encontrabas aquí desde antes."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "Sí, no sé dónde se encuentran las demás chicas."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "Podemos hablar entre los dos para matar el tiempo si así es necesario."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Si..."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Megumi."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "¿Egh?"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Había traído algo desde mi casa. Pensé que era algo que se podía compartir entre ustedes para buscar la inspiración que necesita Utaha para la novela."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Pero ya que ella no se encuentra, pienso que te lo puedo dar mientras tanto."
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "Tomoya le entrega la salida de baño."
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "Megumi se sorprende intensamente. Aunque es una chica de pocas emociones, es la primera vez que Tomoya ve que reacciona fuertemente a algo."
+                    }
+                ]
+            ]
+        },
+        {
+            "3d": true,
+            "scenario": "Minijuego-Playa",
+            "content":[
+                {
+                    "character": "...",
+                    "speech": ".."
+                },
+                {
+                    "character": "Todos",
+                    "speech": "Que empiece el juego"
+                },
+                {
+                    "character": "...",
+                    "speech": ".."
                 }
             ]
         }

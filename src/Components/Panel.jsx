@@ -133,9 +133,7 @@ export const Panel = ({ gameStatus }) => {
     return (
         <>
             <div className='flex justify-center '>
-
                 <div className=' w-1/6 text-md my-8 h-40 flex flex-col mt-12 '>
-
                     <button onClick={() => setIsAuto(!isAuto)} className={`border-[#C6F5EB] text-pink-950 border-4 select-none my-2 flex items-center justify-center  bg-[rgba(242,198,245,0.75)]  hover:bg-[#F5EAC6] hover:scale-105 hover:  transition-all  rounded-md py-1 font-bold `} type='button'>
                         Auto
                     </button>
@@ -148,7 +146,7 @@ export const Panel = ({ gameStatus }) => {
 
                 </div>
                 <div className='w-3/4 h-56' onClick={onClickText} >
-                    <div className=' ml-8 mb-3  h-10  flex items-center justify-center rounded-md  bg-[rgba(242,198,245,0.75)] w-40 border-[#C6F5EB] text-pink-950 border-4 select-none font-bold' >
+                    <div className=' ml-8 mb-3  h-10  flex items-center justify-center rounded-md  bg-[rgba(242,198,245,0.75)] w-60 border-[#C6F5EB] text-pink-950 border-4 select-none font-bold' >
                         <SwitchTransition>
                             <CSSTransition key={character} timeout={200} nodeRef={nodeRefCharacter} classNames='fade' addEndListener={(done) => {
                                 nodeRef.current.addEventListener('transitionend', done, false);

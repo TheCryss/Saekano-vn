@@ -17,6 +17,15 @@ import { SunLight } from '../../Staging/Lights'
 import { SandCastle } from './Models/SandCastle';
 import { Watermelon } from './Models/Watermelon'
 import { WatermelonCut } from './Models/WatermelonCut'
+import {
+    nextScene,
+    setFinishedScript,
+    updateActualContent,
+    setNpcInteractionsFinished,
+    setScenario,
+    setIs3D,
+    resetNpcInteractions
+} from '../../../../store/slicers/GameStatusSlice'
 
 
 
@@ -25,6 +34,7 @@ const Beach = () => {
     const navigate = useNavigate();
     const [randomPosition, setRandomPosition] = useState([0, 0, 0])
     const [watermelonCut, setWatermelonCut] = useState(false);
+    const [minigame3,setMinigame3] = useState(false)
     const keyboardMap = [
         { name: 'backward', keys: ['ArrowUp', 'KeyW'] },
         { name: 'forward', keys: ['ArrowDown', 'KeyS'] },
@@ -36,7 +46,7 @@ const Beach = () => {
         // { name: 'action1', keys: ['KeyR'] },
     ]
 
-    const WatermelonPosition= [
+    const WatermelonPosition = [
         [-15, -1.3, -3],
         [-10, -1.3, 0],
         [0, -1.3, -30],
@@ -64,9 +74,47 @@ const Beach = () => {
 
     useEffect(() => {
         setRandomPosition(WatermelonPosition[Math.floor(Math.random() * WatermelonPosition.length)])
-    },[])
+    }, [])
+
+    const { scenario, finishedScene, npcInteractionsFinished,actualScriptScenes, isBifurcation, actualSceneIndex, actualContentIndex } = useSelector(state => state.gameStatus)
+    const actualScene = actualScriptScenes[actualSceneIndex]
+
+    useEffect(() => {
+        dispatch(setFinishedScript(false))
+    }, [])
+
+    useEffect(() => {
+        if (!isBifurcation) {
+            dispatch(setNpcInteractionsFinished(true))
+        } else {
+            dispatch(setNpcInteractionsFinished(true))
+        }
+    }, [isBifurcation])
+
+    useEffect(() => {
+        dispatch(setScenario(actualScene.scenario))
+    }, [actualSceneIndex,finishedScene])
+
+    useEffect(() => {
+        // console.log(finishedScene, npcInteractionsFinished, scenario);
+        if (finishedScene && npcInteractionsFinished && !minigame3 ) {
+            dispatch(nextScene())
+            dispatch(resetNpcInteractions())
+        } else if(finishedScene && npcInteractionsFinished && watermelonCut){
+            console.log("watermelonCut");
+        }
+    }, [watermelonCut, npcInteractionsFinished, actualContentIndex, finishedScene])
 
 
+    useEffect(() => {
+        console.log(scenario);
+        if (actualScene.scenario == "Minijuego-Playa") {
+            dispatch(setNpcInteractionsFinished(false))
+            setMinigame3(true)
+        } else {
+            dispatch(setNpcInteractionsFinished(true))
+        }
+    }, [actualScene.scenario])
 
     return (
         <>
@@ -87,13 +135,14 @@ const Beach = () => {
             <KeyboardControls map={keyboardMap}>
                 <Ecctrl position={[-5, 3.4, 4]} autoBalance={false} animated camInitDir={Math.PI / 4} friction={1} maxVelLimit={6.04} dragDampingC={0.1} autoBalanceDampingC={3} capsuleRadius={0.7} capsuleHalfHeight={0.3} rayOriginOffest={{ "x": 0, "y": -1.1, "z": 0 }} floatingDis={0.3} name="Tomoya" followLight={true} followLightPos={{ x: 0, y: 5, z: 0 }} >
                     <EcctrlAnimation characterURL={characterURL} animationSet={animationSet} >
-                        <PlayableCharacterBeach  scale={2} position={[0, -1.59, 0]} />
+                        {(!watermelonCut && (scenario != "Minijuego-Playa")) ? <PlayableCharacterBeach scale={2} position={[0, -1.59, 0]} />
+                            : <PCWatermelon scale={2} position={[0, -1.59, 0]} />}
                         {/* <PCWatermelon scale={2} position={[0, -1.59, 0]} /> */}
 
                     </EcctrlAnimation>
                 </Ecctrl>
             </KeyboardControls>
-            {/* <SunLight position={[0, 5, 0]}/> */}
+            {(!watermelonCut && (scenario != "Minijuego-Playa")) ? <SunLight position={[0, 5, 0]} /> : null}
         </>
     )
 }

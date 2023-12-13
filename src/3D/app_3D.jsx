@@ -21,6 +21,7 @@ const app_3D = () => {
 
     const [started, setStarted] = useState(false);
     const [minigame2, setMinigame2] = useState(false);
+    const [minigame3, setMinigame3] = useState(false);
     const navigate = useNavigate()
     const dispatch = useDispatch();
     const { room } = useSelector(state => state.room)
@@ -59,13 +60,20 @@ const app_3D = () => {
                         e.target.requestPointerLock();
                     },
                 };
-                case "Playa":
-                    return {
-                        camera: <Camera_controls_room />,
-                        onPointerDown: (e) => {
-                            e.target.requestPointerLock();
-                        },
-                    };
+            case "Playa":
+                return {
+                    camera: <Camera_controls_room />,
+                    onPointerDown: (e) => {
+                        e.target.requestPointerLock();
+                    },
+                };
+            case "Minijuego-Playa":
+                return {
+                    camera: <Camera_controls_room />,
+                    onPointerDown: (e) => {
+                        e.target.requestPointerLock();
+                    },
+                }
             case "Minijuego-Habitacion":
                 return {
                     camera: <Camera_controls_room />,
@@ -92,7 +100,13 @@ const app_3D = () => {
         } else {
             setMinigame2(false)
         }
-    },[scenario])
+
+        if (scenario == "Minijuego-Playa") {
+            setMinigame3(true)
+        } else {
+            setMinigame3(false)
+        }
+    }, [scenario])
 
     const { camera, onPointerDown } = getCamera();
 
@@ -114,9 +128,9 @@ const app_3D = () => {
         <>
             <LoadingScreen3D started={started} onStarted={() => setStarted(true)} />
             {!finishedScene && !finishedScript && showPanel3D && <Panel3D />}
-            {finishedScene && isAnyInteraction()   && setNpcInteractionsFinished && <Panel3DInteraction />}
-            {minigame2 && <Inventory/>}
-            {minigame2 && isAnyInteraction() && <Choices/>}
+            {finishedScene && isAnyInteraction() && setNpcInteractionsFinished && <Panel3DInteraction />}
+            {minigame2 && <Inventory />}
+            {minigame2 && isAnyInteraction() && <Choices />}
             <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {camera}

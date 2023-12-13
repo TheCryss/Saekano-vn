@@ -24,6 +24,8 @@ const Experience = () => {
                     return (<Room />);
                 case "Playa":
                     return (<Beach/>);
+                case "Minijuego-Playa":
+                    return (<Beach/>);
                 default:
                     return (<Login />);
             }
