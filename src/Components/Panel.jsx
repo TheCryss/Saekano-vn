@@ -25,7 +25,7 @@ export const Panel = ({ gameStatus }) => {
     const [isAuto, setIsAuto] = useState(false)
     const [currentMusic, setCurrentMusic] = useState(null)
     const [character, setCharacter] = useState('...')
-    const [winner, setWinner] = useState(0)
+    const [winner, setWinner] = useState(50)
     const [dialog, setDialog] = useState('...')
     const { act, actualContentIndex, actualScriptScenes, finishedScene, actualSceneIndex, playerBifurcations, finishedScript } = gameStatus
     useEffect(() => {
