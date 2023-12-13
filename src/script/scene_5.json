@@ -76,93 +76,7 @@
                 }
             ]
         },
-        {
-            "3d": false,
-            "content":
-                [
-                    {
-                        "character": "Eriri",
-                        "speech": "Hasta luego Tomoya, espero volverte a ver pronto",
-                        "background": "Black"
-                    },
-                    {
-                        "character": "Utaha",
-                        "speech": " Espero que tengamos algún guión en el futuro qué hacer"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Hasta luego chicas, fue un placer"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Vale, por fin todo terminado"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "thought": "Subo a la habitación"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "thought": "¿¡!?"
-                    },
-                    {
-                        "character": "Tomoya",
-                        "thought": "¿Megumi?"
-                    },
-                    {
-                        "character":"Megumi",
-                        "speech":"Oh",
-                        "background":"Act_5-Scene_3-1"
-                    },
-                    {
-                        "character":"Megumi",
-                        "speech":"Lo siento incomodarte solo..."
-                    },
-                    {
-                        "character":"Megumi",
-                        "speech":" Solo que…"
-                    },
-                    {
-                        "character":"Tomoya",
-                        "speech": "Megumi parece sonrojarse más y más"
-                    },
-                    {
-                        "character":"Megumi",
-                        "thought": "¿Qué sucede Megumi?"
-                    },
-                    {
-                        "character":"Megumi",
-                        "speech":"Hay algo que he estado sintiendo y que necesito decirte",
-                        "background":"Act_5-Scene_3-2"
-                    },
-                    {
-                        "character":"Megumi",
-                        "speech":"Durante todo este tiempo que hemos pasado juntos, he llegado a apreciarte de una manera especial. No puedo dejar de pensar en ti"
-                    },
-                    {
-                        "character":"Megumi",
-                        "speech":"Y cada momento que tuvimos se vuelve más valioso para mí."
-                    },
-                    {
-                        "character":"Megumi",
-                        "speech":" No es fácil para mí expresar mis sentimientos, pero creo que es necesario."
-                    },
-                    {
-                        "character":"Megumi",
-                        "speech":"Me gustas Tomoya, más de lo que inicialmente pensé que podría llegar a gustarme alguien."
-                    },
-                    {
-                        "character":"Tomoya",
-                        "speech":"Megumi…"
-                    },
-                    {
-                        "character":"Tomoya",
-                        "speech": "Yo...",
-                        "background":"Act_5-Scene_3-3"
-                    }
-                ]
 
-        },
         {
             "3d": false,
             "content":[
@@ -267,6 +181,93 @@
                     "speech": "Te amo."
                 }
             ]
+        },
+        {
+            "3d": false,
+            "content":
+                [
+                    {
+                        "character": "Eriri",
+                        "speech": "Hasta luego Tomoya, espero volverte a ver pronto",
+                        "background": "Black"
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": " Espero que tengamos algún guión en el futuro qué hacer"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Hasta luego chicas, fue un placer"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Vale, por fin todo terminado"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "thought": "Subo a la habitación"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "thought": "¿¡!?"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "thought": "¿Megumi?"
+                    },
+                    {
+                        "character":"Megumi",
+                        "speech":"Oh",
+                        "background":"Act_5-Scene_3-1"
+                    },
+                    {
+                        "character":"Megumi",
+                        "speech":"Lo siento incomodarte solo..."
+                    },
+                    {
+                        "character":"Megumi",
+                        "speech":" Solo que…"
+                    },
+                    {
+                        "character":"Tomoya",
+                        "speech": "Megumi parece sonrojarse más y más"
+                    },
+                    {
+                        "character":"Megumi",
+                        "thought": "¿Qué sucede Megumi?"
+                    },
+                    {
+                        "character":"Megumi",
+                        "speech":"Hay algo que he estado sintiendo y que necesito decirte",
+                        "background":"Act_5-Scene_3-2"
+                    },
+                    {
+                        "character":"Megumi",
+                        "speech":"Durante todo este tiempo que hemos pasado juntos, he llegado a apreciarte de una manera especial. No puedo dejar de pensar en ti"
+                    },
+                    {
+                        "character":"Megumi",
+                        "speech":"Y cada momento que tuvimos se vuelve más valioso para mí."
+                    },
+                    {
+                        "character":"Megumi",
+                        "speech":" No es fácil para mí expresar mis sentimientos, pero creo que es necesario."
+                    },
+                    {
+                        "character":"Megumi",
+                        "speech":"Me gustas Tomoya, más de lo que inicialmente pensé que podría llegar a gustarme alguien."
+                    },
+                    {
+                        "character":"Tomoya",
+                        "speech":"Megumi…"
+                    },
+                    {
+                        "character":"Tomoya",
+                        "speech": "Yo...",
+                        "background":"Act_5-Scene_3-3"
+                    }
+                ]
+
         }
         ,
         {

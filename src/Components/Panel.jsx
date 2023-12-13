@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useDispatch } from 'react-redux';
-import { nextScene, nextContent, setScenario, setIs3D } from '../store/slicers/GameStatusSlice';
+import { nextScene, nextContent, setScenario, setIs3D, updateActualContent } from '../store/slicers/GameStatusSlice';
 import { useNavigate } from 'react-router-dom'
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import { useAuth } from '../context/AuthContext'
@@ -25,8 +25,12 @@ export const Panel = ({ gameStatus }) => {
     const [isAuto, setIsAuto] = useState(false)
     const [currentMusic, setCurrentMusic] = useState(null)
     const [character, setCharacter] = useState('...')
+    const [winner, setWinner] = useState(0)
     const [dialog, setDialog] = useState('...')
-    const { actualContentIndex, actualScriptScenes, finishedScene, actualSceneIndex, playerBifurcations } = gameStatus
+    const { act, actualContentIndex, actualScriptScenes, finishedScene, actualSceneIndex, playerBifurcations, finishedScript } = gameStatus
+    useEffect(() => {
+        setWinner(playerBifurcations[5])
+    }, [playerBifurcations])
 
     const playMusic = (musicName) => {
         if (currentMusic) {
@@ -44,7 +48,6 @@ export const Panel = ({ gameStatus }) => {
         new Audio('/assets/sound/' + soundName + '.ogg').play()
     }
 
-    const { finishedScript, act } = gameStatus
 
     const playEvent = () => {
         const { actualSceneIndex, actualScriptScenes, actualContent, playerBifucartions, act, sc } = gameStatus
@@ -87,8 +90,21 @@ export const Panel = ({ gameStatus }) => {
     const nodeRefCharacter = useRef(null);
 
     const onClickText = () => {
-            if (gameStatus.finishedScene) dispatch(nextScene())
-            else dispatch(nextContent())
+
+        if (act == 5 && actualSceneIndex == 0 && finishedScene) {
+            for (let i = 0; i <= winner; i++) {
+                dispatch(nextScene())
+            }
+
+        } else {
+            if (gameStatus.finishedScene) {
+                if (actualSceneIndex == winner+1) {
+                    console.log('winner', winner);
+                } else {
+                dispatch(nextScene()) }
+                }
+            else { dispatch(nextContent()) }
+        }
     }
 
     useEffect(() => {

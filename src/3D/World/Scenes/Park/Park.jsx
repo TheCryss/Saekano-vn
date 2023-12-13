@@ -40,9 +40,9 @@ const Park = () => {
         console.log(result);
     }, [playerBifurcations])
     const findMostFrequentValue = (list) => {
-        let m;  // array of frequency.
-        let e;
-        let u;  // holds the max frequency.
+        let m =0;  // array of frequency.
+        let e = 0;
+        let u = 0;  // holds the max frequency.
         for (let value of list) {
             if(value == 0){
                 e++;
@@ -53,7 +53,7 @@ const Park = () => {
                 u++;
             }
         }
-        if ((e > m)&& (e > u)) {
+        if ((e >= m)&& (e >= u)) {
             return 0;
         } else if ((m > u) && (m > e)) {
             return 1;
@@ -71,7 +71,7 @@ const Park = () => {
 
     useEffect(() => {
         if (end) {
-            dispatch(setPlayerBifurcation({ "bifurcationNumber": 5, "bifurcationOption": 2 }))
+            dispatch(setPlayerBifurcation({ "bifurcationNumber": 5, "bifurcationOption": finalResult }))
         }
     }, [end])
 
