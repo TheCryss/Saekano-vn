@@ -1,13 +1,9 @@
 {
     "scenes": [
         {
-            "id": 1,
+            "id": 0,
             "3d": false,
             "content": [
-                {
-                    "character": "...",
-                    "speech": "..."
-                },
                 {
                     "character": "Tomoya",
                     "speech": "Vale, he acordado con todas ellas que nos reuniremos aquí. En algún momento deberían ir llegando una por una."
@@ -15,7 +11,7 @@
                 {
                     "character": "Tomoya",
                     "speech": "En tal caso, más vale ir adelantando. Debo convencerlas de que mi novela no se trata de ningún capricho, se trata...",
-                    "background": "Act_2-Scene_1-1"
+                    "background": "Scene-02-01"
                 },
                 {
                     "character": "Tomoya",
@@ -24,17 +20,19 @@
             ]
         },
         {
-            "id": 2,
+            "id": 1,
             "3d": true,
             "scenario": "Minijuego-guion",
             "content":[]
         },
         {
-            "id": 3,
+            "id": 2,
             "3d": false,
             "content": [
                 {
-                    "Music": "Music_2"
+                    "Music": "Music_2",
+                    "background": "Scene-02-02"
+
                 },
                 {
                     "character": "Tomoya",
@@ -67,31 +65,38 @@
             ]
         },
         {
-            "id": 4,
+            "id": 3,
             "3d": true,
             "scenario": "Habitacion",
             "content" : [
-                {
-                    "Music": "Music_2"
-                },
+
                 {
                     "character": "Eriri",
                     "speech": "Has dejado la puerta abierta, Baka."
                 },
                 {
-                    "character": "Utaha",
-                    "speech": "Ya la hemos cerrado por ti, y ni te preocupes en asegurarla, no creemos que nos vaya a tomar mucho tiempo escucharte para después irnos."
+                    "Music": "Music_2"
                 },
                 {
-                    "character": "Eriri",
+                    "character": "Utaha",
+                    "speech": "Ya la hemos cerrado por ti, y ni te preocupes en asegurarla."
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "No creemos que nos vaya a tomar mucho tiempo escucharte para después irnos"
+                },
+                {
+                    "character": "Tomoya",
                     "speech": "..."
                 },
+
                 {
-                    "character": "Utaha",
+                    "character": "Tomoya",
                     "speech": "Aquí lo tienen."
                 },
                 {
-                    "Music": ""
+                    "character": "...",
+                    "speech": "..."
                 }
             ]
         },
@@ -187,11 +192,60 @@
                 ],
                 [
                     {
+                        "character": "Utaha",
+                        "speech": "..."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "..."
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "No me gusta, me parece aburrido."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "Para mí no."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "Para mí no."
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "Eriri y Utaha miran fijamente a Megumi."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": " ¿Podrá parecer aburrido al inicio, pero por qué no iniciar de una manera diferente? Todas las novelas tienen un inicio emocionante, con un personaje que parece tenerlo todo."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "Pero ninguna novela ha hecho que haya un personaje real."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "No sé cómo sonará, pero, siento que me parece algo más real y nuevo para el jugador."
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "Ambas se quedan mirándose como si no supieran qué pensar."
+                    },
+                    {
+                        "Music": ""
+                    }
+                ],
+                [
+                    {
                         "Music": "Music_2"
                     },
                     {
                         "character": "Narrador",
-                        "speech": "Utaha sostiene el papel suavemente mientras sus ojos van pasando por cada línea, susurrando cuidadosamente lo que se encuentra escrito. Las demás solo se quedan mirándola fijamente."
+                        "speech": "Utaha sostiene el papel suavemente mientras sus ojos van pasando por cada línea, susurrando cuidadosamente lo que se encuentra escrito."
+                    },
+                    {
+                        "character":"Narrador",
+                        "speech": " Las demás solo se quedan mirándola fijamente."
                     },
                     {
                         "character": "Narrador",
@@ -236,55 +290,259 @@
                     {
                         "Music": ""
                     }
+                ]
+            ],
+            "npc_max_interactions": [
+                [4, 3, 3, 0],
+                [4, 3, 3, 0],
+                [4, 3, 3, 0]            ],
+            "npc_interactions": [
+                [
+                    [
+                        {
+                            "character": "Utaha",
+                            "speech": "Asi que esta es la historia.."
+                        },
+                        {
+                            "character": "Utaha",
+                            "speech": "No es muy buena pero se puede trabajar"
+                        },
+                        {
+                            "character": "Utaha",
+                            "speech": "Que bueno que tienes una gran escritora de tu lado"
+                        },
+                        {
+                            "character": "Utaha",
+                            "speech": "¿Qué opinas Eriri?"
+                        }
+                    ],
+                    [
+                        {
+                            "character": "Eriri",
+                            "speech": "Jum.. puedo hacer algo con esto"
+                        },
+                        {
+                            "character": "Eriri",
+                            "speech": "Preparate para ver mi arte"
+                        },
+                        {
+                            "character": "Eriri",
+                            "speech": "Seran los mejores diseños que hayas visto"
+                        }
+
+                    ],
+                    [
+                        {
+                            "character": "Megumi",
+                            "speech": "¿Por qué tengo que ser yo la heroina?"
+                        },
+                        {
+                            "character": "Megumi",
+                            "speech": "..."
+                        },
+                        {
+                            "character": "Megumi",
+                            "speech": "Bueno, no es como si tuviera otra opcion"
+                        }
+                    ],
+                    [
+                        {
+                            "character": "Tomoya",
+                            "speech": "1"
+                        },
+                        {
+                            "character": "Tomoya",
+                            "speech": "2"
+                        },
+                        {
+                            "character": "Tomoya",
+                            "speech": "3"
+                        },
+                        {
+                            "character": "Tomoya",
+                            "speech": "4"
+                        }
+                    ]
                 ],
                 [
-                    {
-                        "Music": "Music_2"
-                    },
-                    {
-                        "character": "Utaha",
-                        "speech": "..."
-                    },
-                    {
-                        "character": "Eriri",
-                        "speech": "..."
-                    },
-                    {
-                        "character": "Utaha",
-                        "speech": "No me gusta, me parece aburrido."
-                    },
-                    {
-                        "character": "Eriri",
-                        "speech": "Para mí no."
-                    },
-                    {
-                        "character": "Megumi",
-                        "speech": "Para mí no."
-                    },
-                    {
-                        "character": "Narrador",
-                        "speech": "Eriri y Utaha miran fijamente a Megumi."
-                    },
-                    {
-                        "character": "Megumi",
-                        "speech": " ¿Podrá parecer aburrido al inicio, pero por qué no iniciar de una manera diferente? Todas las novelas tienen un inicio emocionante, con un personaje que parece tenerlo todo."
-                    },
-                    {
-                        "character": "Megumi",
-                        "speech": "Pero ninguna novela ha hecho que haya un personaje real."
-                    },
-                    {
-                        "character": "Megumi",
-                        "speech": "No sé cómo sonará, pero, siento que me parece algo más real y nuevo para el jugador."
-                    },
-                    {
-                        "character": "Narrador",
-                        "speech": "Ambas se quedan mirándose como si no supieran qué pensar."
-                    },
-                    {
-                        "Music": ""
-                    }
+                    [
+                        {
+                            "character": "Utaha",
+                            "speech": "Asi que esta es la historia.."
+                        },
+                        {
+                            "character": "Utaha",
+                            "speech": "No es muy buena pero se puede trabajar"
+                        },
+                        {
+                            "character": "Utaha",
+                            "speech": "Que bueno que tienes una gran escritora de tu lado"
+                        },
+                        {
+                            "character": "Utaha",
+                            "speech": "¿Qué opinas Eriri?"
+                        }
+                    ],
+                    [
+                        {
+                            "character": "Eriri",
+                            "speech": "Jum.. puedo hacer algo con esto"
+                        },
+                        {
+                            "character": "Eriri",
+                            "speech": "Preparate para ver mi arte"
+                        },
+                        {
+                            "character": "Eriri",
+                            "speech": "Seran los mejores diseños que hayas visto"
+                        }
+
+                    ],
+                    [
+                        {
+                            "character": "Megumi",
+                            "speech": "¿Por qué tengo que ser yo la heroina?"
+                        },
+                        {
+                            "character": "Megumi",
+                            "speech": "..."
+                        },
+                        {
+                            "character": "Megumi",
+                            "speech": "Bueno, no es como si tuviera otra opcion"
+                        }
+                    ],
+                    [
+                        {
+                            "character": "Tomoya",
+                            "speech": "1"
+                        },
+                        {
+                            "character": "Tomoya",
+                            "speech": "2"
+                        },
+                        {
+                            "character": "Tomoya",
+                            "speech": "3"
+                        },
+                        {
+                            "character": "Tomoya",
+                            "speech": "4"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "character": "Utaha",
+                            "speech": "Asi que esta es la historia.."
+                        },
+                        {
+                            "character": "Utaha",
+                            "speech": "No es muy buena pero se puede trabajar"
+                        },
+                        {
+                            "character": "Utaha",
+                            "speech": "Que bueno que tienes una gran escritora de tu lado"
+                        },
+                        {
+                            "character": "Utaha",
+                            "speech": "¿Qué opinas Eriri?"
+                        }
+                    ],
+                    [
+                        {
+                            "character": "Eriri",
+                            "speech": "Jum.. puedo hacer algo con esto"
+                        },
+                        {
+                            "character": "Eriri",
+                            "speech": "Preparate para ver mi arte"
+                        },
+                        {
+                            "character": "Eriri",
+                            "speech": "Seran los mejores diseños que hayas visto"
+                        }
+
+                    ],
+                    [
+                        {
+                            "character": "Megumi",
+                            "speech": "¿Por qué tengo que ser yo la heroina?"
+                        },
+                        {
+                            "character": "Megumi",
+                            "speech": "..."
+                        },
+                        {
+                            "character": "Megumi",
+                            "speech": "Bueno, no es como si tuviera otra opcion"
+                        }
+                    ],
+                    [
+                        {
+                            "character": "Tomoya",
+                            "speech": "1"
+                        },
+                        {
+                            "character": "Tomoya",
+                            "speech": "2"
+                        },
+                        {
+                            "character": "Tomoya",
+                            "speech": "3"
+                        },
+                        {
+                            "character": "Tomoya",
+                            "speech": "4"
+                        }
+                    ]
                 ]
+            ]
+        },
+        {
+            "id": 5,
+            "3d": true,
+            "scenario": "Habitacion",
+            "content" : [
+                {
+                    "character": "Utaha",
+                    "speech": "Como sea, será sobre este concepto en el que trabajaremos supongo"
+                },
+                {
+                    "Music": "Music_2"
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Pero más te vale que la sigas mejorando, no quiero que el trabajo de todas se vaya a la basura por tu culpa"
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Su amenaza retumba internamente sobre mí. "
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Eghh… Claro que sí, ¡No las decepcionaré!"
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Sin nada más que mediar, Utaha procede a irse al escritorio para trabajar sobre el guión. Eriri sobre las ilustraciones y Megumi a ser el modelo de heroína para las dos."
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "3d": true,
+            "scenario": "Minijuego-Habitacion",
+            "content":[
+                {
+                    "character": "...",
+                    "speech": "..."
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "Mientras tanto, ¿Por qué no te pones a trabajar en algo?"
+                }
             ]
         }
     ]

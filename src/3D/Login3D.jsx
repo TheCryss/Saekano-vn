@@ -7,15 +7,18 @@ import { Loader } from "@react-three/drei";
 //libs
 import Experience from "./World/Experience"
 import { Auth } from "./World/Scenes/Login/Text/Auth";
-import { useGame } from "../context/GameContext";
 // import Transitions from "../Components/Transitions";
 import { Fallback } from "../Components/Fallback";
-import { lazy, Suspense } from "react"
+import { lazy, Suspense, useState } from "react"
+import { LoadingScreen3D } from "../Components/LoadingScreen3D";
 
 // const Auth = lazy(() => import("./World/Scenes/Login/Text/Auth"))
 
 
 const Login3D = () => {
+
+    const [started, setStarted] = useState(false);
+
     const orthographicCameraSettings = {
         makeDefault: true, // Make this camera the default camera
         zoom: 55,             // Zoom level of the camera
@@ -28,11 +31,11 @@ const Login3D = () => {
                 bottom: -8,        // Bottom boundary of the view */
     };
 
-    const { getActualContent, nextContent, nextScene } = useGame();
 
     return (
         <>
-            <Auth></Auth>
+            <LoadingScreen3D started={started} onStarted={() => setStarted(true)}/>
+            {started && <Auth></Auth>}
             <Canvas shadows frameloop="demand" >
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {/* <OrbitControls></OrbitControls> */}
@@ -41,7 +44,7 @@ const Login3D = () => {
                     <Experience />
                 </Physics>
             </Canvas>
-            <Loader />
+
 
         </>
     )

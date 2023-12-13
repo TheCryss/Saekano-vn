@@ -4,22 +4,29 @@ import { Camera_controls_room, Camera_controls_minigame1 } from "./World/Control
 import { Physics } from "@react-three/rapier"
 import { OrthographicCamera } from '@react-three/drei';
 import { Loader } from "@react-three/drei";
-import { useGame } from "../context/GameContext";
 import { useDispatch, useSelector } from "react-redux";
-import { setScenario, setIs3D } from "../store/slicers/GameStatusSlice"
-import { useEffect } from "react"
+import { setNpcInteractionsFinished } from "../store/slicers/GameStatusSlice"
+import { useEffect, useState } from "react"
+import { useNavigate } from 'react-router-dom'
 //libs
 import Experience from "./World/Experience";
 import { Panel3D } from "../Components/Panel3D";
+import  Choices3D  from "../Components/Choices3D";
+import { Inventory } from "../Components/Inventory";
+import { Panel3DInteraction } from "../Components/Panel3DInteraction";
+import { LoadingScreen3D } from "../Components/LoadingScreen3D";
+import { Choices } from "../Components/Choices";
+
 
 const app_3D = () => {
 
+    const [started, setStarted] = useState(false);
+    const [minigame2, setMinigame2] = useState(false);
+    const [minigame3, setMinigame3] = useState(false);
+    const navigate = useNavigate()
     const dispatch = useDispatch();
+    const { room } = useSelector(state => state.room)
 
-    useEffect(() => {
-        dispatch(setScenario("Minijuego-guion"));
-        dispatch(setIs3D(true));
-    }, []);
 
     const orthographicCameraSettings = {
         makeDefault: true, // Make this camera the default camera
@@ -32,13 +39,43 @@ const app_3D = () => {
                 top: 8,            // Top boundary of the view
                 bottom: -8,        // Bottom boundary of the view */
     };
+    const [showPanel3D, setShowPanel3D] = useState(false);
 
-    const { getActualContent, nextContent, nextScene } = useGame();
-    const {room,interaction} = useSelector(state => state.room)
-    const {  scenario } = useSelector(state => state.gameStatus)
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowPanel3D(true);
+        }, 2000); // Retraso de 1 segundo
+
+        // Limpieza al desmontar
+        return () => clearTimeout(timer);
+    }, [room.scenario]);
+
+    const { scenario, finishedScene, npcInteractions, finishedScript, npcMaxInteractions,isBifurcation } = useSelector(state => state.gameStatus)
+
     const getCamera = () => {
         switch (scenario) {
-            case "room":
+            case "Habitacion":
+                return {
+                    camera: <Camera_controls_room />,
+                    onPointerDown: (e) => {
+                        e.target.requestPointerLock();
+                    },
+                };
+            case "Playa":
+                return {
+                    camera: <Camera_controls_room />,
+                    onPointerDown: (e) => {
+                        e.target.requestPointerLock();
+                    },
+                };
+            case "Minijuego-Playa":
+                return {
+                    camera: <Camera_controls_room />,
+                    onPointerDown: (e) => {
+                        e.target.requestPointerLock();
+                    },
+                }
+            case "Minijuego-Habitacion":
                 return {
                     camera: <Camera_controls_room />,
                     onPointerDown: (e) => {
@@ -50,20 +87,58 @@ const app_3D = () => {
                     camera: <Camera_controls_minigame1 />,
                     onPointerDown: undefined, // No event handler for this case
                 };
+            case "Parque":
+                return {
+                    camera: <Camera_controls_room />,
+                    onPointerDown: undefined,
+                }
             default:
                 return {
                     camera: <Camera_controls_room />,
                     onPointerDown: undefined, // No event handler for this case
                 };
         }
-
     };
+
+    useEffect(() => {
+        if (scenario == "Minijuego-Habitacion") {
+            setMinigame2(true)
+        } else {
+            setMinigame2(false)
+        }
+
+        if (scenario == "Minijuego-Playa") {
+            setMinigame3(true)
+        } else {
+            setMinigame3(false)
+        }
+    }, [scenario])
 
     const { camera, onPointerDown } = getCamera();
 
+    const isAnyInteraction = () => {
+        return room.utahaInteraction || room.eririInteraction || room.megumiInteraction || room.tomoyaInteraction
+    }
+
+    useEffect(() => {
+        console.log(npcMaxInteractions)
+        if (npcInteractions[0] >= npcMaxInteractions[0] &&
+            npcInteractions[1] >= npcMaxInteractions[1] &&
+            npcInteractions[2] >= npcMaxInteractions[2] &&
+            npcInteractions[3] >= npcMaxInteractions[3]) {
+            dispatch(setNpcInteractionsFinished(true));
+        }
+    }, [npcInteractions]);
+
     return (
         <>
-            {room.utahaInteraction && interaction && <Panel3D />}
+            <LoadingScreen3D started={started} onStarted={() => setStarted(true)} />
+            {!finishedScene && !finishedScript && showPanel3D && <Panel3D />}
+            {finishedScene && isAnyInteraction() && setNpcInteractionsFinished && <Panel3DInteraction />}
+            {minigame2 && <Inventory />}
+            {minigame2 && isAnyInteraction() && <Choices />}
+            {/* {(isBifurcation && (scenario != "Parque")) ? <Choices3D/> : null} */}
+            { }
             <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {camera}
@@ -71,7 +146,6 @@ const app_3D = () => {
                     <Experience />
                 </Physics>
             </Canvas>
-            <Loader />
         </>
     )
 }

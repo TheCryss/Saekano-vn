@@ -1,0 +1,217 @@
+{
+    "scenes": [
+        {
+            "3d": true,
+            "scenario": "Minijuego-Playa",
+            "content": [
+                {
+                    "character": "...",
+                    "speech": "..."
+                }
+            ]
+        },
+        {
+            "3d": false,
+            "content": [
+                {
+                    "character": "...",
+                    "speech": "Lo que tengo que hacer para tener un equipo de trabajo…",
+                    "background": "Scene-03-02"
+                },
+                {
+                    "character": "...",
+                    "speech": "¿Por qué no puedo trabajar solo?"
+                },
+                {
+                    "character": "...",
+                    "speech": "¿Por qué?"
+                }
+
+            ]
+        },
+        {
+            "3d": false,
+            "content": [
+                {
+                    "character": "Tomoya",
+                    "speech": "Otra vez..."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "A levantarse que esa novela no se va a terminar sola..."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Hoy no hemos quedado para reunirnos, hoy se supone que vamos a adelantar el trabajo de manera independiente."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Pero necesito reunirme con alguien para responder algunas dudas..."
+                }
+
+            ]
+        },
+        {
+            "3d": false,
+            "bifurcation": true,
+            "content": [
+                [
+                    {
+                        "character": "...",
+                        "speech": "..."
+                    }
+                ]
+            ]
+        },
+        {
+            "3d":false,
+            "content": [
+                {
+                    "character": "Tomoya",
+                    "speech": "Si ella me ayudará."
+                }
+            ]
+        },
+        {
+            "3d": true,
+            "scenario": "Parque",
+            "bifurcacion": true,
+            "content": [
+                {
+                    "character": "Narrador",
+                    "speech": "Tomoya ha llegado a la playa."
+                },
+                {
+                    "character": "Narrador",
+                    "speech": "A lo lejos se divisa la silueta de alguien."
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "No alcanzo a poder distinguir de quién se trata."
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "¿Hola…?"
+                },
+                {
+                    "character": "...",
+                    "thought": "¿?"
+                }
+            ]
+        },
+        {
+            "3d": false,
+            "scenario": "Parque",
+            "content": [
+                {
+                    "character": "Tomoya",
+                    "speech": "Supongo que es lo más urgente del momento.",
+                    "background": "Scene-03-03"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Debo de alistarme para vernos en el parque."
+                }
+            ]
+        },
+        {
+            "3d": true,
+            "bifurcation": true,
+            "scenario": "Parque",
+            "content": [
+                [
+                    {
+                        "character": "Eriri",
+                        "speech": "Esperaba verte en otro lugar menos en este."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Ya sabes."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Pensé que este paisaje pudiera ser útil para ti inspirarte."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "Si..."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "Los paisajes son la inspiración natural de quienes nosotros hacemos ilustraciones."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "De casualidad..."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "¿Qué viste en mí como tu ilustradora?"
+                    }
+                ],
+                [
+                    {
+                        "character": "Utaha",
+                        "speech": "Sabes..."
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Creo que escogiste un buen lugar para pensar más sobre el proyecto."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Pensé que este lugar podría ser el indicado para ti."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Una persona reservada como tú."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "No soy tan reservada."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Por cierto."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "¿Qué viste en mí para ser tu escritora?."
+                    }
+                ],
+                [
+                    {
+                        "character": "Megumi",
+                        "speech": "Me parece algo curioso que saliéramos al parque."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Te he citado aquí porque creía que era el mejor lugar para ti."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "Creo que hemos hecho un gran progreso por el momento, todo el equipo está emocionado con las ideas que hemos estado implementando."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "De casualidad."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "¿Qué viste en mí como tu heroína?"
+                    }
+                ]
+            ]
+        },
+        {
+            "3d": false,
+            "scenario": "Parque-transicion",
+            "content": [
+                {
+                    "character": "...",
+                    "speech": "..."
+                }
+            ]
+        }
+    ]
+}

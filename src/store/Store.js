@@ -1,7 +1,7 @@
-import { configureStore } from "@reduxjs/toolkit";
-import roomReducer from "./slicers/RoomSlicers";
-import gameStatusReducer from "./slicers/GameStatusSlice";
-import minigame1Reducer from "./slicers/Minigame1Slice";
+import { configureStore } from '@reduxjs/toolkit';
+import roomReducer from './slicers/RoomSlicers';
+import gameStatusReducer from './slicers/GameStatusSlice';
+import minigame1Reducer from './slicers/Minigame1Slice';
 
 
 export const store = configureStore({

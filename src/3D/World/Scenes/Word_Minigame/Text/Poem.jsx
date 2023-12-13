@@ -10,7 +10,7 @@ export const Poem = ({sendDataToParent}) => {
     const eriri = [ 'Paisaje', 'Miedo', 'familia', 'Aurora', 'Esencia', 'Lamento','Resplandor', 'Palpitar', 'Soliloquio', 'Época', 'Nostalgia']
     const megumi = ['Heroina', 'Amor', 'Profundo', 'Susurro', 'Serenidad', 'Melodía','Anhelo','Perfume','Amanecer','Alba','Inefable']
     const utaha = ['Sinfonía', 'Éxtasis', 'Cielo',  'Destino', 'Quimera', 'Maravilla', 'Efímero', 'Encanto', 'Crepúsculo', 'Eclipse'  ]
-    
+
     const handleClick = (word) => {
         if (word.length < 20 && clickedWords.length < numWords) {
             setClickedWords(prevWords => [...prevWords, word]);
@@ -24,8 +24,6 @@ export const Poem = ({sendDataToParent}) => {
                 setWinner(prevWinner => ({...prevWinner,utaha:prevWinner.utaha+1}))
             }
         }
-
-        
     };
 
     useEffect(() => {
