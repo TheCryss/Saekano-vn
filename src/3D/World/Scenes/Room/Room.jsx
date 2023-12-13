@@ -86,7 +86,7 @@ const Room = () => {
             dispatch(setIs3D(false));
             dispatch(resetNpcInteractions())
             dispatch(updateActualContent());
-            dispatch(setScenario(""));
+            // dispatch(setScenario(""));
             navigate('/acto/1')
             }, 3000);
         }

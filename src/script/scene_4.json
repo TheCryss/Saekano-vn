@@ -1,0 +1,18 @@
+{
+    "scenes": [
+        {
+            "3d":false,
+            "scenario": "",
+            "content":[
+                {
+                    "character": "Utaha & Eriri & Megumi",
+                    "speech": "Espera te ponemos la vend"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "¿Qué?"
+                }
+            ]
+        }
+    ]
+}

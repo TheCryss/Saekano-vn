@@ -111,8 +111,14 @@ const Beach = () => {
         if (actualScene.scenario == "Minijuego-Playa") {
             dispatch(setNpcInteractionsFinished(false))
             setMinigame3(true)
-        } else {
-            dispatch(setNpcInteractionsFinished(true))
+        } else if(actualScene.scenario ==  "Playa-transicion"){
+            dispatch(nextScene())
+            dispatch(setIs3D(false));
+            dispatch(resetNpcInteractions())
+            dispatch(updateActualContent());
+            dispatch(setScenario(""));
+            navigate('/acto/1')
+
         }
     }, [actualScene.scenario])
 

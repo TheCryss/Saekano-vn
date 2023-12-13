@@ -89,14 +89,14 @@
         {
             "3d": false,
             "content": [
-                    {
-                        "character": "Tomoya",
-                        "speech": "Creo que lo tengo."
-                    },
-                    {
-                        "character": "Tomoya",
-                        "speech": "Más vale no llegar tarde."
-                    }
+                {
+                    "character": "Tomoya",
+                    "speech": "Creo que lo tengo."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Más vale no llegar tarde."
+                }
             ]
         },
         {
@@ -307,7 +307,6 @@
                     }
                 ],
                 [
-
                     {
                         "character": "Tomoya",
                         "speech": "Oh, ya te encontrabas aquí desde antes."
@@ -353,19 +352,11 @@
         },
         {
             "3d": true,
-            "scenario": "Minijuego-Playa",
-            "content":[
+            "scenario": "Playa-transicion",
+            "content": [
                 {
-                    "character": "...",
-                    "speech": ".."
-                },
-                {
-                    "character": "Todos",
-                    "speech": "Que empiece el juego"
-                },
-                {
-                    "character": "...",
-                    "speech": ".."
+                    "character": "Narrador",
+                    "speech": "Tomoya se encuentra en la playa."
                 }
             ]
         }
