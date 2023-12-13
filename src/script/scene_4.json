@@ -52,15 +52,53 @@
         },
         {
             "3d": false,
+            "bifurcation": true,
+            "content": [
+                [
+                    {
+                        "character": "...",
+                        "speech": "..."
+                    }
+                ]
+            ]
+        },
+        {
+            "3d":false,
             "content": [
                 {
-                    "character": "...",
-                    "speech": "..."
+                    "character": "Tomoya",
+                    "speech": "Si ella me ayudara."
                 }
             ]
         },
         {
-            "3d": true,
+                "3d": true,
+                "scenario": "Parque",
+                "content": [
+                    {
+                        "character": "Narrador",
+                        "speech": "Tomoya ha llegado a la playa."
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "A lo lejos se divisa la silueta de alguien."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "thought": "No alcanzo a poder distinguir de quién se trata."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "thought": "¿Hola…?"
+                    },
+                    {
+                        "character": "...",
+                        "thought": "¿?"
+                    }
+                ]   
+        },
+        {
+            "3d": false,
             "content": [
                 {
                     "character": "Tomoya",
@@ -79,14 +117,14 @@
                 [
                     {
                         "character": "Narrador",
-                        "speech": "Megumi sonríe tímidamente."
+                        "speech": "Eriri sonríe tímidamente."
                     },
                     {
-                        "character": "Megumi",
+                        "character": "Eriri",
                         "speech": "Tomoya, eso es muy dulce."
                     },
                     {
-                        "character": "Megumi",
+                        "character": "Eriri",
                         "speech": "Me hace feliz saber que mi autenticidad es algo que valores."
                     }
                 ],
@@ -107,14 +145,14 @@
                 [
                     {
                         "character": "Narrador",
-                        "speech": "Megumi asiente con gratitud."
+                        "speech": "Utaha asiente con gratitud."
                     },
                     {
-                        "character": "Megumi",
+                        "character": "Utaha",
                         "speech": "Me alegra ser tu ancla Tomoya."
                     },
                     {
-                        "character": "Megumi",
+                        "character": "Utaha",
                         "speech": "Siempre estaré disponible para ti, brindándote estabilidad y apoyo."
                     },
                     {
@@ -122,7 +160,7 @@
                         "speech": "Ya sabes, por eso te ví como la indicada para esta novela."
                     },
                     {
-                        "character": "Megumi",
+                        "character": "Utaha",
                         "speech": "Gracias Tomoya."
                     },
                     {
@@ -134,7 +172,7 @@
                         "speech": "¡El trabajo que has hecho nos ha ayudado bastante!"
                     },
                     {
-                        "character": "Megumi",
+                        "character": "Utaha",
                         "speech": "¡No digas eso! Yo siento que me falta esforzarme un poco más."
                     },
                     {
@@ -146,11 +184,11 @@
                         "speech": "Lo digo en serio."
                     },
                     {
-                        "character": "Megumi",
+                        "character": "Utaha",
                         "speech": "Gracias..."
                     },
                     {
-                        "character": "Megumi",
+                        "character": "Utaha",
                         "speech": "¿Puedo preguntarte otra cosa más?"
                     },
                     {
@@ -158,7 +196,7 @@
                         "speech": "Adelante."
                     },
                     {
-                        "character": "Megumi",
+                        "character": "Utaha",
                         "speech": "¿No te incomoda que sea tímida?"
                     }
                 ]

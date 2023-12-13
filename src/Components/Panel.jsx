@@ -53,10 +53,8 @@ export const Panel = ({ gameStatus }) => {
             navigate(`/3D/${actualScene.scenario}`) // Here you put the 3D scene (content)
         } else {
             const keys = Object.keys(actualContent)
-            console.log("entre q");
             switch (keys[0]) {
                 case 'character':
-                    console.log(actualContent)
                     setCharacter(actualContent.character)
                     if (keys[1] == 'speech') {
                         setDialog(actualContent.speech)

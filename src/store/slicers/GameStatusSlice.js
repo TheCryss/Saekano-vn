@@ -45,7 +45,7 @@ const initialState = {
     close3DPanel: false,
     scenario: '',
     npcInteractionsFinished: false,
-    playerBifurcations: [0, 0, 0],
+    playerBifurcations: [0, 0, 0, 0],
     npcInteractions: [0, 0, 0, 0], // Utaha, Eriri, Megumi, Tomoya
     npcMaxInteractions: [0, 0, 0, 0], // Utaha, Eriri, Megumi, Tomoya
 }

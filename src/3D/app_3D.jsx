@@ -86,6 +86,11 @@ const app_3D = () => {
                     camera: <Camera_controls_minigame1 />,
                     onPointerDown: undefined, // No event handler for this case
                 };
+            case "Parque":
+                return {
+                    camera: <Camera_controls_room />,
+                    onPointerDown: undefined,
+                }
             default:
                 return {
                     camera: <Camera_controls_room />,

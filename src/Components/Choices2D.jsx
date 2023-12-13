@@ -6,6 +6,12 @@ const choices = [
     ["Manga", "Novela Ligera", "Salida de Baño"],
     ["Manga", "Novela Ligera", "Salida de Baño"],
     ["", "", ""],
+    ["Eriri", "Megumi", "Utaha"],
+    ["", "", ""],
+    ["", "", ""],
+
+
+
 ]
 
 

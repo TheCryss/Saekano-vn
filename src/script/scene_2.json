@@ -192,6 +192,51 @@
                 ],
                 [
                     {
+                        "character": "Utaha",
+                        "speech": "..."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "..."
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "No me gusta, me parece aburrido."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "Para mí no."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "Para mí no."
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "Eriri y Utaha miran fijamente a Megumi."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": " ¿Podrá parecer aburrido al inicio, pero por qué no iniciar de una manera diferente? Todas las novelas tienen un inicio emocionante, con un personaje que parece tenerlo todo."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "Pero ninguna novela ha hecho que haya un personaje real."
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "No sé cómo sonará, pero, siento que me parece algo más real y nuevo para el jugador."
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "Ambas se quedan mirándose como si no supieran qué pensar."
+                    },
+                    {
+                        "Music": ""
+                    }
+                ],
+                [
+                    {
                         "Music": "Music_2"
                     },
                     {
@@ -241,51 +286,6 @@
                     {
                         "character": "Megumi",
                         "speech": "..."
-                    },
-                    {
-                        "Music": ""
-                    }
-                ],
-                [
-                    {
-                        "character": "Utaha",
-                        "speech": "..."
-                    },
-                    {
-                        "character": "Eriri",
-                        "speech": "..."
-                    },
-                    {
-                        "character": "Utaha",
-                        "speech": "No me gusta, me parece aburrido."
-                    },
-                    {
-                        "character": "Eriri",
-                        "speech": "Para mí no."
-                    },
-                    {
-                        "character": "Megumi",
-                        "speech": "Para mí no."
-                    },
-                    {
-                        "character": "Narrador",
-                        "speech": "Eriri y Utaha miran fijamente a Megumi."
-                    },
-                    {
-                        "character": "Megumi",
-                        "speech": " ¿Podrá parecer aburrido al inicio, pero por qué no iniciar de una manera diferente? Todas las novelas tienen un inicio emocionante, con un personaje que parece tenerlo todo."
-                    },
-                    {
-                        "character": "Megumi",
-                        "speech": "Pero ninguna novela ha hecho que haya un personaje real."
-                    },
-                    {
-                        "character": "Megumi",
-                        "speech": "No sé cómo sonará, pero, siento que me parece algo más real y nuevo para el jugador."
-                    },
-                    {
-                        "character": "Narrador",
-                        "speech": "Ambas se quedan mirándose como si no supieran qué pensar."
                     },
                     {
                         "Music": ""

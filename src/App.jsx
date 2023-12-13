@@ -35,6 +35,7 @@ function App() {
                             <Route path='Minijuego-guion' Component={app_3D} />
                             <Route path='Playa' Component={app_3D} />
                             <Route path='Minijuego-Playa' Component={app_3D} />
+                            <Route path='Parque' Component={app_3D} />
 
                         </Route>
 
