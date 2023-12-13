@@ -8,14 +8,7 @@ export const PlayableCharacter = (props) => {
     const { nodes, materials,animations } = useGLTF("/assets/models/playable_character/Tomoya.glb");
     const { actions } = useAnimations(animations, group);
     const dispatch = useDispatch();
-    const getInteraction = useSelector(state => state.room.interaction)
-    const interactPressed = useKeyboardControls(state => state.action1)
 
-    useEffect(() => {
-        if (interactPressed) {
-            dispatch(setInteraction(true));
-		} else dispatch(setInteraction(false));
-    }, [interactPressed]);
 
 
     return (

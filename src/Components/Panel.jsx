@@ -40,8 +40,10 @@ export const Panel = ({ gameStatus }) => {
         new Audio('/assets/sound/' + soundName + '.ogg').play()
     }
 
+    const { finishedScript,act } = gameStatus
+
     const playEvent = () => {
-        const { actualSceneIndex, actualScriptScenes, actualContent } = gameStatus
+        const { actualSceneIndex, actualScriptScenes, actualContent, playerBifucartions,act,sc } = gameStatus
         const actualScene = actualScriptScenes[actualSceneIndex]
 
         console.log(actualScene)
@@ -84,8 +86,12 @@ export const Panel = ({ gameStatus }) => {
     const nodeRefCharacter = useRef(null);
 
     const onClickText = () => {
+        if( act == 6 && finishedScript ){
+            console.log("fin del juego");
+        } else {
         if (gameStatus.finishedScene) dispatch(nextScene())
         else dispatch(nextContent())
+    }
     }
 
     useEffect(() => {

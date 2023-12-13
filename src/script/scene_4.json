@@ -15,7 +15,8 @@
             "content": [
                 {
                     "character": "...",
-                    "speech": "Lo que tengo que hacer para tener un equipo de trabajo…"
+                    "speech": "Lo que tengo que hacer para tener un equipo de trabajo…",
+                    "background": "Scene-03-02"
                 },
                 {
                     "character": "...",
@@ -104,7 +105,8 @@
             "content": [
                 {
                     "character": "Tomoya",
-                    "speech": "Supongo que es lo más urgente del momento."
+                    "speech": "Supongo que es lo más urgente del momento.",
+                    "background": "Scene-03-03"
                 },
                 {
                     "character": "Tomoya",

@@ -5,19 +5,335 @@
             "content": [
                 {
                     "character": "Narrador",
-                    "speech": "Cuatro semanas después..."
+                    "speech": "Cuatro semanas después...",
+                    "background": "Black"
                 },
                 {
-                    "character": "...",
-                    "speech": "¿Por qué no puedo trabajar solo?"
+                    "character": "Tomoya",
+                    "thought": "Finalmente..."
                 },
                 {
-                    "character": "...",
-                    "speech": "¿Por qué?"
+                    "character": "Tomoya",
+                    "thought": "Después de arduo trabajo."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "¡Está terminado!",
+                    "background": "Act_5-Scene_1-1"
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Todos nos enfocamos en el juego."
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Uh, hasta que por fin lo tenemos."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "No fue tan difícil ser la modelo después de todo, jeje."
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "Con nuestra narración, de seguro a la gente le encantará nuestra obra."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Si..."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "¡Si!"
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Es la mejor obra que podemos haber hecho."
+                },
+                {
+                    "character": "Tomoya",
+                    "speech": "Es más que claramente a la gente le gustará."
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Ellas siguen probando los distintos diálogos, opciones."
+                },
+                {
+                    "character": "Tomoya",
+                    "thought": "Es una verdad indudable que sin ellas, esto no pudiera haber sido posible."
+                },
+                {
+                    "character": "Eriri",
+                    "speech": "Bueno, ya he visto lo que se tenía que ver."
+                },
+                {
+                    "character": "Megumi",
+                    "thought": "También, me muero de ganas por saber qué dirán las reseñas."
+                },
+                {
+                    "character": "Utaha",
+                    "speech": "Segura que los diálogos no serán un punto negativo."
                 }
-
+            ]
+        },
+        {
+            "3d": false,
+            "bifurcacion": true,
+            "content": [
+                [
+                    {
+                        "character": "Megumi",
+                        "speech": "Adiós Tomoya, fue un placer haber sido tu heroína."
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Espero que tengamos algún guión en el futuro qué hacer."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Hasta luego chicas, fue un placer."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Vale, por fin todo terminado."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Qué extraño, este dibujo es de Eriri."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Tengo que subir a revisar que no haya dejado algo más."
+                    },
+                    {
+                        "character": "Narrador",
+                        "speech": "Tomoya sube a la habitación en búsqueda de ella."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "¿Eriri…?"
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "¡…!"
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "Lo, lo siento"
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "Se me habían quedado algo, y no lo encuentro en ningún lugar de tu habitación."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "¿Te refieres a esto?"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Tomoya le entregó el dibujo"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Eriri se sonroja al tenerlo en sus manos"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Debo de admitir que te quedó bastante bien."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "Si..."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "¿Puedo contarte algo?"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Dime"
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "No es fácil para mí decir esto, pero creo que es hora que lo haga."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "Desde hace tiempo, he estado sintiendo algo más que amistad hacia ti."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "Cuando empezamos a trabajar juntos en nuestros proyectos, descubrí que mis sentimientos iban más allá de la simple amistad."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "Me di cuenta de que cada momento contigo se volvía especial, y… bueno, no puedo negar más lo que siento."
+                    },
+                    {
+                        "character": "Eriri",
+                        "speech": "Me gustas, y quiero ser algo más que tu amiga..."
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Te amo."
+                    }
+                ],
+                [
+                    {
+                        "character": "Eriri",
+                        "speech": "Hasta luego Tomoya, espero volverte a ver pronto"
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": " Espero que tengamos algún guión en el futuro qué hacer"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Hasta luego chicas, fue un placer"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Vale, por fin todo terminado"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "thought": "Subo a la habitación"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "thought": "¿¡!?"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "thought": "¿Megumi?"
+                    },
+                    {
+                        "character":"Megumi",
+                        "speech":"Oh"
+                    },
+                    {
+                        "character":"Megumi",
+                        "speech":"Lo siento incomodarte solo..."
+                    },
+                    {
+                        "character":"Megumi",
+                        "speech":" Solo que…"
+                    },
+                    {
+                        "character":"Tomoya",
+                        "speech": "Megumi parece sonrojarse más y más"
+                    },
+                    {
+                        "character":"Megumi",
+                        "thought": "¿Qué sucede Megumi?"
+                    },
+                    {
+                        "character":"Megumi",
+                        "speech":"Hay algo que he estado sintiendo y que necesito decirte"
+                    },
+                    {
+                        "character":"Megumi",
+                        "speech":"Durante todo este tiempo que hemos pasado juntos, he llegado a apreciarte de una manera especial. No puedo dejar de pensar en ti"
+                    },
+                    {
+                        "character":"Megumi",
+                        "speech":"Y cada momento que tuvimos se vuelve más valioso para mí."
+                    },
+                    {
+                        "character":"Megumi",
+                        "speech":" No es fácil para mí expresar mis sentimientos, pero creo que es necesario."
+                    },
+                    {
+                        "character":"Megumi",
+                        "speech":"Me gustas Tomoya, más de lo que inicialmente pensé que podría llegar a gustarme alguien."
+                    },
+                    {
+                        "character":"Tomoya",
+                        "speech":"Megumi…"
+                    },
+                    {
+                        "character":"Tomoya",
+                        "speech": "Yo..."
+                    }
+                ],
+                [
+                    {
+                        "character": "Eriri",
+                        "speech": "Hasta luego Tomoya, espero volverte a ver pronto"
+                    },
+                    {
+                        "character": "Megumi",
+                        "speech": "Adiós Tomoya, fue un placer haber sido tu heroína"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Hasta luego chicas, fue un placer"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Um…"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "Más vale que revise"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "thought": "Subo de nueva hasta la habitación"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "¿Utaha…?"
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "¡Oh!"
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Lo siento si no salí antes."
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Solo que decidí quedarme un poco más…"
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Contigo"
+                    },
+                    {
+                        "character": "Tomoya",
+                        "speech": "¿¡...!?"
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Sabes"
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Todo este tiempo lo disfrute estando contigo"
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "La escritura del guión fue algo que me gustó mucho"
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Pero siento que algunas cosas fueron dedicadas para mí"
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Y creo que esto nos ha unido mucho más de lo que éramos al inicio"
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Creo que eres la primera persona en hacerme sentirme así, de este modo."
+                    },
+                    {
+                        "character": "Utaha",
+                        "speech": "Y creo que voy a tomar una decisión"
+                    }
+                ]
             ]
         }
-
     ]
 }
