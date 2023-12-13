@@ -1,0 +1,23 @@
+{
+    "scenes": [
+        {
+            "3d": false,
+            "content": [
+                {
+                    "character": "Narrador",
+                    "speech": "Cuatro semanas después..."
+                },
+                {
+                    "character": "...",
+                    "speech": "¿Por qué no puedo trabajar solo?"
+                },
+                {
+                    "character": "...",
+                    "speech": "¿Por qué?"
+                }
+
+            ]
+        }
+
+    ]
+}

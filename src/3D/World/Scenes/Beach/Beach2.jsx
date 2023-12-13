@@ -131,7 +131,7 @@ const Beach2 = () => {
     // }, [actualScene.scenario])
 
     useEffect(() => {
-        console.log("entro");
+        // console.log("entro");
         if (watermelonCut) {
             setTimeout(() => {
                 dispatch(nextScene())

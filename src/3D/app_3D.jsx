@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom'
 //libs
 import Experience from "./World/Experience";
 import { Panel3D } from "../Components/Panel3D";
+import  Choices3D  from "../Components/Choices3D";
 import { Inventory } from "../Components/Inventory";
 import { Panel3DInteraction } from "../Components/Panel3DInteraction";
 import { LoadingScreen3D } from "../Components/LoadingScreen3D";
@@ -49,7 +50,7 @@ const app_3D = () => {
         return () => clearTimeout(timer);
     }, [room.scenario]);
 
-    const { scenario, finishedScene, npcInteractions, finishedScript, npcMaxInteractions } = useSelector(state => state.gameStatus)
+    const { scenario, finishedScene, npcInteractions, finishedScript, npcMaxInteractions,isBifurcation } = useSelector(state => state.gameStatus)
 
     const getCamera = () => {
         switch (scenario) {
@@ -136,6 +137,8 @@ const app_3D = () => {
             {finishedScene && isAnyInteraction() && setNpcInteractionsFinished && <Panel3DInteraction />}
             {minigame2 && <Inventory />}
             {minigame2 && isAnyInteraction() && <Choices />}
+            {/* {(isBifurcation && (scenario != "Parque")) ? <Choices3D/> : null} */}
+            { }
             <Canvas shadows className="bg-[lightgreen]" onPointerDown={onPointerDown}>
                 <OrthographicCamera {...orthographicCameraSettings} />
                 {camera}
