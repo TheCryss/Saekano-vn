@@ -120,7 +120,6 @@ const Beach = () => {
             dispatch(updateActualContent());
             dispatch(setScenario(""));
             navigate('/acto/1')
-
         }
     }, [actualScene.scenario])
 

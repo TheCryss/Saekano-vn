@@ -433,7 +433,7 @@
             ]
         },
         {
-            "3d": true,
+            "3d": false,
             "scenario": "Playa-transicion",
             "content": [
                 {

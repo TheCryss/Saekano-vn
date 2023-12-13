@@ -1,17 +1,6 @@
 {
     "scenes": [
         {
-            "3d": false,
-            "scenario": "",
-            "background": "Black",
-            "content": [
-                {
-                    "character": "...",
-                    "speech": "Lo que tengo que hacer para tener un equipo de trabajo…"
-                }
-            ]
-        },
-        {
             "3d": true,
             "scenario": "Minijuego-Playa",
             "content": [
@@ -22,36 +11,47 @@
             ]
         },
         {
-            "3d": true,
-            "scenario": "Minijuego-Playa",
+            "3d": false,
             "content": [
                 {
-                    "Tomoya": "Tomoya",
+                    "character": "...",
+                    "speech": "Lo que tengo que hacer para tener un equipo de trabajo…"
+                },
+                {
+                    "character": "...",
+                    "speech": "¿Por qué no puedo trabajar solo?"
+                },
+                {
+                    "character": "...",
+                    "speech": "¿Por qué?"
+                }
+
+            ]
+        },
+        {
+            "3d": false,
+            "content": [
+                {
+                    "character": "Tomoya",
                     "speech": "Otra vez..."
                 },
                 {
-                    "Tomoya": "Tomoya",
+                    "character": "Tomoya",
                     "speech": "A levantarse que esa novela no se va a terminar sola..."
                 },
                 {
-                    "Tomoya": "Tomoya",
-                    "speech": "Otra vez..."
-                },
-                {
-                    "Tomoya": "Tomoya",
+                    "character": "Tomoya",
                     "speech": "Hoy no hemos quedado para reunirnos, hoy se supone que vamos a adelantar el trabajo de manera independiente."
                 },
                 {
-                    "Tomoya": "Tomoya",
+                    "character": "Tomoya",
                     "speech": "Pero necesito reunirme con alguien para responder algunas dudas..."
                 }
 
             ]
         },
         {
-            "3d": true,
-            "scenario": "Eleccion",
-            "bifurcation": true,
+            "3d": false,
             "content": [
                 {
                     "character": "...",
@@ -61,7 +61,6 @@
         },
         {
             "3d": true,
-            "scenario": "Eleccion",
             "content": [
                 {
                     "character": "Tomoya",
@@ -163,6 +162,15 @@
                         "speech": "¿No te incomoda que sea tímida?"
                     }
                 ]
+            ]
+        },
+        {
+            "3d": true,
+            "content": [
+                {
+                    "character": "Tomoya",
+                    "speech": "Supongo que es lo más urgente del momento."
+                }
             ]
         }
     ]

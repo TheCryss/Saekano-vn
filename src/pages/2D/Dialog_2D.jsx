@@ -33,6 +33,7 @@ const Dialog_2D = () => {
                     {gameStatus.isBifurcation ?
                         <Choices2D />
                         : <Panel gameStatus={gameStatus} />
+
                     }
                 </div>
             </div>

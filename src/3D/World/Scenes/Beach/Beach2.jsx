@@ -7,7 +7,7 @@ import { useFrame } from '@react-three/fiber'
 
 
 //models
-import { PlayableCharacterBeach } from './Models/PlayableCharacterBeach'
+// import { PlayableCharacterBeach } from './Models/PlayableCharacterBeach'
 import { PCWatermelon } from './Models/PCWatermelon'
 import { EririBeach } from './Models/EririBeach'
 import { UtahaBeach } from './Models/UtahaBeach'
@@ -40,7 +40,7 @@ const Beach2 = () => {
         { name: 'rightward', keys: ['ArrowLeft', 'KeyA'] },
         { name: 'leftward', keys: ['ArrowRight', 'KeyD'] },
         { name: 'jump', keys: ['Space'] },
-        { name: 'run', keys: ['Shift'] },
+        // { name: 'run', keys: ['Shift'] },
         { name: 'action1', keys: ['KeyE'] }
     ]
 
@@ -58,7 +58,7 @@ const Beach2 = () => {
     const animationSet = {
         idle: "Idle",
         walk: "Walk",
-        run: "Run",
+        // run: "Run",
         fall: "0Tpose",
         jump: "Surprise",
         jumpIdle: "Surprise",
@@ -66,8 +66,8 @@ const Beach2 = () => {
         // action1: "Hit",
 
     }
-    const characterURL = "/assets/models/playable_character/TomoyaBeach.glb"
-    // const characterURL = "/assets/models/playable_character/TomoyaWatermelon.glb"
+    // const characterURL = "/assets/models/playable_character/TomoyaBeach.glb"
+    const characterURL = "/assets/models/playable_character/TomoyaWatermelon.glb"
 
     const spotLightRef = useRef();
 
@@ -130,6 +130,21 @@ const Beach2 = () => {
     //     }
     // }, [actualScene.scenario])
 
+    useEffect(() => {
+        console.log("entro");
+        if (watermelonCut) {
+            setTimeout(() => {
+                dispatch(nextScene())
+                dispatch(setIs3D(false));
+                dispatch(resetNpcInteractions())
+                dispatch(updateActualContent());
+                dispatch(setScenario(""));
+                navigate('/acto/1')
+            }, 2000)
+        }
+
+    }, [watermelonCut])
+
     return (
         <>
             <spotLight
@@ -151,13 +166,13 @@ const Beach2 = () => {
             <KeyboardControls map={keyboardMap}>
                 <Ecctrl position={[-5, 3.4, 4]} autoBalance={false} animated camInitDir={Math.PI / 4} friction={1} maxVelLimit={6.04} dragDampingC={0.1} autoBalanceDampingC={3} capsuleRadius={0.7} capsuleHalfHeight={0.3} rayOriginOffest={{ "x": 0, "y": -1.1, "z": 0 }} floatingDis={0.3} name="Tomoya" followLight={true} followLightPos={{ x: 0, y: 5, z: 0 }} >
                     <EcctrlAnimation characterURL={characterURL} animationSet={animationSet} >
-                        <PlayableCharacterBeach scale={2} position={[0, -1.59, 0]} />
+                        {/* <PlayableCharacterBeach scale={2} position={[0, -1.59, 0]} /> */}
 
-                        {/* <PCWatermelon scale={2} position={[0, -1.59, 0]} /> */}
+                        <PCWatermelon scale={2} position={[0, -1.59, 0]} />
                     </EcctrlAnimation>
                 </Ecctrl>
             </KeyboardControls>
-            {!watermelonCut ? null :  <SunLight />}
+            {!watermelonCut ? null : <SunLight />}
         </>
     )
 }
