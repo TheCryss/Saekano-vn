@@ -267,15 +267,18 @@
                 [
                     {
                         "character": "Eriri",
-                        "speech": "Hasta luego Tomoya, espero volverte a ver pronto"
+                        "speech": "Hasta luego Tomoya, espero volverte a ver pronto",
+                        "background": "UtahaFinal-01"
                     },
                     {
                         "character": "Megumi",
-                        "speech": "Adiós Tomoya, fue un placer haber sido tu heroína"
+                        "speech": "Adiós Tomoya, fue un placer haber sido tu heroína",
+                        "background": "UtahaFinal-02"
                     },
                     {
                         "character": "Tomoya",
-                        "speech": "Hasta luego chicas, fue un placer"
+                        "speech": "Hasta luego chicas, fue un placer",
+                        "background": "UtahaFinal-03"
                     },
                     {
                         "character": "Tomoya",
@@ -295,7 +298,8 @@
                     },
                     {
                         "character": "Utaha",
-                        "speech": "¡Oh!"
+                        "speech": "¡Oh!",
+                        "background": "UtahaFinal-04"
                     },
                     {
                         "character": "Utaha",
@@ -339,7 +343,8 @@
                     },
                     {
                         "character": "Utaha",
-                        "speech": "Y creo que voy a tomar una decisión"
+                        "speech": "Y creo que voy a tomar una decisión",
+                        "background": "UtahaFinal-05"
                     }
                 ]
             ]
