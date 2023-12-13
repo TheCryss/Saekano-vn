@@ -5,7 +5,8 @@
             "content": [
                 {
                     "character": "Megumi",
-                    "speech": "Ya he terminado."
+                    "speech": "Ya he terminado.",
+                    "background": "Scene-03-01"
                 },
                 {
                     "character": "Utaha",
@@ -46,7 +47,8 @@
                 },
                 {
                     "character": "Tomoya",
-                    "speech": "¿Uh…?"
+                    "speech": "¿Uh…?",
+                    "background": "Act_1-Scene_1-2"
                 },
                 {
                     "character": "Tomoya",
@@ -91,7 +93,8 @@
             "content": [
                 {
                     "character": "Tomoya",
-                    "speech": "Creo que lo tengo."
+                    "speech": "Creo que lo tengo.",
+                    "background": "Act_1-Scene_1-t"
                 },
                 {
                     "character": "Tomoya",

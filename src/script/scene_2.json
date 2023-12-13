@@ -11,7 +11,7 @@
                 {
                     "character": "Tomoya",
                     "speech": "En tal caso, más vale ir adelantando. Debo convencerlas de que mi novela no se trata de ningún capricho, se trata...",
-                    "background": "Act_2-Scene_1-1"
+                    "background": "Scene-02-01"
                 },
                 {
                     "character": "Tomoya",
@@ -31,7 +31,7 @@
             "content": [
                 {
                     "Music": "Music_2",
-                    "background": "Act_2-Scene_1-2"
+                    "background": "Scene-02-02"
 
                 },
                 {
