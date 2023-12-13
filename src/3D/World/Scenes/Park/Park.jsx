@@ -35,9 +35,10 @@ const Park = () => {
 
     //Ganadora de la ultima
     useEffect(() => {
-        const result = playerBifurcations[-2]
+        const result = playerBifurcations.slice(2,3)
         setGirl(result)
-    }, [])
+        console.log(result);
+    }, [playerBifurcations])
     const findMostFrequentValue = (list) => {
         let frequency = {};  // array of frequency.
         let max = 0;  // holds the max frequency.
@@ -102,10 +103,10 @@ const Park = () => {
     return (
         <>
             <Park3D position={[0, -7, 0]} scale={0.08} />
-            {(girl == 2) && <Utaha scale={2} position={[0, 10, 0]} />}
-            {(girl == 0) && <Eriri scale={2} position={[4.9, 10, 27]} />}
-            {(girl == 1) && <Megumi scale={2} position={[-6.9, 10, 7]} rotation-y={Math.PI / 2} />}
-            <PlayableCharacter scale={2} position={[0, 10, 0]} />
+            {(girl == 2) && <Utaha scale={2} position={[1, 2, -1]} />}
+            {(girl == 0) && <Eriri scale={2} position={[1, 2, -1]} />}
+            {(girl == 1) && <Megumi scale={2} position={[1, 2, -1]} />}
+            <PlayableCharacter scale={2} position={[3, 2, -1]} />
             <Lights_Room />
         </>
     )

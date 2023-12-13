@@ -72,7 +72,7 @@ export const Panel3D = () => {
                 <div className='absolute z-20 w-full bottom-0'>
                     <div className="flex  justify-center">
                         <div className='w-1/2'>
-                            <div className=' mb-3 h-10  flex items-center justify-center rounded-md  bg-[rgba(242,198,245,0.75)] w-40 border-[#C6F5EB] text-pink-950 border-4 select-none font-bold' >
+                            <div className=' mb-3 h-10  flex items-center justify-center rounded-md  bg-[rgba(242,198,245,0.75)] w-60 border-[#C6F5EB] text-pink-950 border-4 select-none font-bold' >
                                 <div >
                                     {character}
                                 </div>

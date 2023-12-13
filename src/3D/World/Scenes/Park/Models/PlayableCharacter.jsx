@@ -9,6 +9,11 @@ export const PlayableCharacter = (props) => {
     const { actions } = useAnimations(animations, group);
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        const action = actions["Idle"]
+        action.play()
+    }, [])
+
 
 
     return (
